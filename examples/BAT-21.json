@@ -1,0 +1,353 @@
+{
+  "battery_id": "BAT-21",
+  "run_id": "2026-10-04T09:14:02Z",
+  "scope": "v1",
+  "versions": {
+    "git": "9f3c1ab7e5d2408bb16c0f7a2d9e4c81aa37b250",
+    "segmenters": {
+      "BSE": "xgb_bse_v1",
+      "ETD": "xgb_etd_v1",
+      "InLens": "xgb_inlens_v1"
+    },
+    "backbone": "dinov3_vitb16",
+    "heads": "lr_v1",
+    "llm": "claude-sonnet-5-5",
+    "knowledge_pack": null,
+    "prompt": null
+  },
+  "images": [
+    {
+      "detector": "BSE",
+      "file": "BAT-21_BSE.tif",
+      "pixel_size_um": 0.0488,
+      "pixel_size_source": "fei_metadata",
+      "kv": 5.0,
+      "quality_flags": [],
+      "entropy_flag": false,
+      "masked_area_frac": 0.018
+    },
+    {
+      "detector": "ETD",
+      "file": "BAT-21_ETD.tif",
+      "pixel_size_um": 0.0488,
+      "pixel_size_source": "fei_metadata",
+      "kv": 5.0,
+      "quality_flags": [
+        "sigma_edge_high"
+      ],
+      "entropy_flag": false,
+      "masked_area_frac": 0.041
+    },
+    {
+      "detector": "InLens",
+      "file": "BAT-21_InLens.tif",
+      "pixel_size_um": 0.0488,
+      "pixel_size_source": "fei_metadata",
+      "kv": 2.0,
+      "quality_flags": [],
+      "entropy_flag": false,
+      "masked_area_frac": 0.012
+    }
+  ],
+  "classification": {
+    "per_detector": {
+      "BSE": {
+        "A": 0.09,
+        "B": 0.04,
+        "C": 0.87
+      },
+      "ETD": {
+        "A": 0.22,
+        "B": 0.11,
+        "C": 0.67
+      },
+      "InLens": {
+        "A": 0.17,
+        "B": 0.09,
+        "C": 0.74
+      }
+    },
+    "fused": {
+      "A": 0.16,
+      "B": 0.08,
+      "C": 0.76
+    },
+    "predicted": "C",
+    "runner_up": "A",
+    "detector_agreement": 3,
+    "stats_classifier": {
+      "predicted": "C",
+      "probs": {
+        "A": 0.21,
+        "B": 0.07,
+        "C": 0.72
+      }
+    },
+    "unlike_any_type": false,
+    "confidence": "medium",
+    "confidence_reasons": [
+      "the ETD image carries a sharpness flag, so its contribution is down-weighted"
+    ]
+  },
+  "statistics": [
+    {
+      "id": "stats.BSE.porosity",
+      "detector": "BSE",
+      "name": "porosity",
+      "label": "porosity",
+      "value": 0.313,
+      "unit": "fraction",
+      "profiles": {
+        "A": {
+          "mean": 0.352,
+          "sd": 0.021,
+          "n": 29,
+          "median": null
+        },
+        "B": {
+          "mean": 0.264,
+          "sd": 0.018,
+          "n": 31,
+          "median": null
+        },
+        "C": {
+          "mean": 0.308,
+          "sd": 0.034,
+          "n": 28,
+          "median": null
+        }
+      },
+      "z": {
+        "A": -1.857,
+        "B": 2.722,
+        "C": 0.147
+      },
+      "separates_pred_vs_runner_up_rank": 2,
+      "cliffs_delta": -0.41,
+      "primary_detector": "BSE"
+    },
+    {
+      "id": "stats.BSE.d50",
+      "detector": "BSE",
+      "name": "d50",
+      "label": "median cross-sectional particle diameter",
+      "value": 7.86,
+      "unit": "um",
+      "profiles": {
+        "A": {
+          "mean": 9.81,
+          "sd": 1.12,
+          "n": 29,
+          "median": null
+        },
+        "B": {
+          "mean": 6.15,
+          "sd": 0.74,
+          "n": 31,
+          "median": null
+        },
+        "C": {
+          "mean": 7.92,
+          "sd": 1.41,
+          "n": 28,
+          "median": null
+        }
+      },
+      "z": {
+        "A": -1.741,
+        "B": 2.311,
+        "C": -0.043
+      },
+      "separates_pred_vs_runner_up_rank": 1,
+      "cliffs_delta": -0.73,
+      "primary_detector": "BSE"
+    },
+    {
+      "id": "stats.BSE.span",
+      "detector": "BSE",
+      "name": "span",
+      "label": "particle size span",
+      "value": 1.42,
+      "unit": "dimensionless",
+      "profiles": {
+        "A": {
+          "mean": 0.98,
+          "sd": 0.14,
+          "n": 29,
+          "median": null
+        },
+        "B": {
+          "mean": 1.11,
+          "sd": 0.12,
+          "n": 31,
+          "median": null
+        },
+        "C": {
+          "mean": 1.39,
+          "sd": 0.16,
+          "n": 28,
+          "median": null
+        }
+      },
+      "z": {
+        "A": 3.143,
+        "B": 2.583,
+        "C": 0.188
+      },
+      "separates_pred_vs_runner_up_rank": 3,
+      "cliffs_delta": 0.68,
+      "primary_detector": "BSE"
+    },
+    {
+      "id": "stats.InLens.cbd_fraction",
+      "detector": "InLens",
+      "name": "cbd_fraction",
+      "label": "carbon-binder domain fraction",
+      "value": 0.149,
+      "unit": "fraction",
+      "profiles": {
+        "A": {
+          "mean": 0.131,
+          "sd": 0.015,
+          "n": 29,
+          "median": null
+        },
+        "B": {
+          "mean": 0.179,
+          "sd": 0.014,
+          "n": 31,
+          "median": null
+        },
+        "C": {
+          "mean": 0.152,
+          "sd": 0.022,
+          "n": 28,
+          "median": null
+        }
+      },
+      "z": {
+        "A": 1.2,
+        "B": -2.143,
+        "C": -0.136
+      },
+      "separates_pred_vs_runner_up_rank": 4,
+      "cliffs_delta": 0.33,
+      "primary_detector": "InLens"
+    },
+    {
+      "id": "stats.ETD.crack_density",
+      "detector": "ETD",
+      "name": "crack_density",
+      "label": "crack density",
+      "value": 0.029,
+      "unit": "um^-1",
+      "profiles": {
+        "A": {
+          "mean": 0.018,
+          "sd": 0.009,
+          "n": 29,
+          "median": null
+        },
+        "B": {
+          "mean": 0.039,
+          "sd": 0.012,
+          "n": 31,
+          "median": null
+        },
+        "C": {
+          "mean": 0.026,
+          "sd": 0.014,
+          "n": 28,
+          "median": null
+        }
+      },
+      "z": {
+        "A": 1.222,
+        "B": -0.833,
+        "C": 0.214
+      },
+      "separates_pred_vs_runner_up_rank": 5,
+      "cliffs_delta": 0.22,
+      "primary_detector": "ETD"
+    }
+  ],
+  "maps": {
+    "BSE": {
+      "overview_png": "runs/R2/BAT-21/BSE_overview.png",
+      "crops_png": "runs/R2/BAT-21/BSE_crops.png",
+      "regions": [
+        {
+          "id": 1,
+          "box_um": [
+            8.1,
+            22.4,
+            26.3,
+            39.8
+          ],
+          "area_um2": 316.2,
+          "share_of_evidence": 0.34,
+          "phase_fractions": {
+            "pore": 0.341,
+            "cbd": 0.142,
+            "am": 0.517
+          },
+          "minus_whole_image": {
+            "pore": 0.028,
+            "cbd": -0.007,
+            "am": -0.021
+          }
+        },
+        {
+          "id": 2,
+          "box_um": [
+            48.7,
+            55.0,
+            61.2,
+            66.4
+          ],
+          "area_um2": 140.0,
+          "share_of_evidence": 0.21,
+          "phase_fractions": {
+            "pore": 0.329,
+            "cbd": 0.151,
+            "am": 0.52
+          },
+          "minus_whole_image": {
+            "pore": 0.016,
+            "cbd": 0.002,
+            "am": -0.018
+          }
+        }
+      ]
+    },
+    "InLens": {
+      "overview_png": "runs/R2/BAT-21/InLens_overview.png",
+      "crops_png": "runs/R2/BAT-21/InLens_crops.png",
+      "regions": [
+        {
+          "id": 1,
+          "box_um": [
+            31.0,
+            12.6,
+            44.1,
+            25.9
+          ],
+          "area_um2": 174.2,
+          "share_of_evidence": 0.29,
+          "phase_fractions": {
+            "pore": 0.318,
+            "cbd": 0.168,
+            "am": 0.514
+          },
+          "minus_whole_image": {
+            "pore": 0.005,
+            "cbd": 0.019,
+            "am": -0.024
+          }
+        }
+      ]
+    }
+  },
+  "explanation": null,
+  "signoff": null
+}

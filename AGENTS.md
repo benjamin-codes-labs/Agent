@@ -1,0 +1,12 @@
+# Project verification
+
+- Use `.venv/bin/python -m pytest -q` for the full test suite. The project virtual environment includes the scientific imaging dependencies required by `tests/test_get4.py`; the system Python may not.
+- The supplied TIFFs use LZW compression; `imagecodecs` is required to decode them and is listed in `requirements.txt`.
+- Tests must remain offline. `tests/conftest.py` blocks accidental real Anthropic client construction.
+- GET4 batch grouping uses `Batch_*` folders as battery types, not the battery name in `img_batteryname_filter` filenames. BSE, ETD and Inlens are analysed separately.
+- Running `.venv/bin/python sentinel/GET4.py` without arguments analyses the project-relative `Batches` directory and writes only `all_batch_comparisons.json` in the project root. It does not depend on the shell's working directory for input/output defaults. SE images are excluded and recorded in `excluded_images`.
+- GET4 uses placeholder intensity segmentation. Detector-specific material phase identities are not validated, and pairwise batch comparisons do not establish independently replicated battery-type effects.
+- `KnowledgePack.from_project(root)` loads `SiC_SEM_reference_verified.json` and `all_batch_comparisons.json`, preserves verification/caveat metadata, excludes deleted reference entries, and provides source-linked `context.*` facts. Do not map Batch_1/2/3 to A/B/C or equate GET4 intensity classes with another pipeline's material segmentation.
+- `main.py --question "..."` answers from the JSON context without loading the BAT-07 demo. `--sample path.json` accepts native teammate output and defaults to a professional review; `--image BSE=path.tif` (also ETD/Inlens) explicitly attaches an in-memory resized preview. Paths mentioned in sample JSON are not automatically attached. Plain-prose rendering stays in `main.py`; `--debug` prints source provenance and check results to stderr.
+- Q&A checks numeric placeholders, declared facts, exact local-source quotations and attachment IDs, retrying failed drafts. It does not run the classification grounding critic; the audit explicitly records `semantic_critic_ran=false`. The existing classification workflow retains its validator and critic.
+- The reference's "verified" status describes title/abstract-level checks, not full-text verification. Its retained method guidance and illustrative ranges must not be promoted to universal thresholds or proof of sample performance.

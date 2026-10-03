@@ -1,0 +1,2427 @@
+{
+  "meta": {
+    "title": "SEM features of Si/C battery electrodes: reference data",
+    "schema_version": "1.1",
+    "source_file": "SiC_SEM_reference.json (from SiC_Battery_SEM_Reference_Table_corrected.docx)",
+    "notes": [
+      "Numeric values are illustrative literature ranges for Si/graphite-type anodes at room temperature, not universal acceptance limits.",
+      "Evidence: High = widely reported and mechanistically clear; Medium = reported but system-dependent; Low = hypothesis needing a second technique.",
+      "indicator_of_properties comes only from the property-index table; verify_methods is keyword matching on verify_with_text.",
+      "Verified against OpenAlex on 2026-10-03; see verification_method, references, change_log and deleted_items."
+    ],
+    "counts": {
+      "features": 25,
+      "properties": 8,
+      "architectures": 8,
+      "imaging_modes": 8,
+      "artifacts": 9,
+      "references_core": 100,
+      "references_supplementary": 6,
+      "features_deleted": 2
+    },
+    "verified_on": "2026-10-03",
+    "verification_method": {
+      "source": "OpenAlex (title/abstract level; no full text read)",
+      "queries": "about 30 keyword searches sorted by citation count (Si anodes, Si/C, Si-graphite, SEI, binders, porosity/tortuosity/calendering, Li plating, drying cracks, tomography, SiOx, etc.)",
+      "reference_set": "100 highly cited relevant works (tier core_top100) plus 6 lower-cited supplementary works for niche claims; see references[]",
+      "status_values": {
+        "confirmed": "claim consistent with retrieved literature, unchanged",
+        "corrected": "claim kept but wording/number changed or unsupported detail removed",
+        "partially_confirmed": "core idea supported, specifics not found; kept with note",
+        "method_guidance_retained": "instrument/technique advice not testable from abstracts; retained and flagged"
+      },
+      "policy": "Features with no supporting work retrieved were deleted (D6, F1); unsupported numeric thresholds/examples were removed; deleted items are preserved in deleted_items for restoration."
+    }
+  },
+  "categories": [
+    {
+      "id": "A",
+      "name": "A. Silicon-rich active phase"
+    },
+    {
+      "id": "B",
+      "name": "B. Carbon phase and conductive network"
+    },
+    {
+      "id": "C",
+      "name": "C. Binder, interphase and particle contacts"
+    },
+    {
+      "id": "D",
+      "name": "D. Electrode architecture (pores, packing, thickness)"
+    },
+    {
+      "id": "E",
+      "name": "E. Aging features (cycled / post-mortem samples)"
+    },
+    {
+      "id": "F",
+      "name": "F. Cell-level features (post-mortem)"
+    }
+  ],
+  "features": [
+    {
+      "id": "A1",
+      "category": "A. Silicon-rich active phase",
+      "name": "Si primary particle size",
+      "how_to_recognise_and_best_mode": "Bright (high-Z) particles in BSE; cross-section preferred. InLens/SE for small particles.",
+      "what_to_measure": "Equivalent-circle diameter D10/D50/D90 from ≥200 particles; fraction of particles above a stated size; distribution width.",
+      "verify_with_text": "TEM for particle/crystallite morphology; XRD–Scherrer only for crystallite/coherent-domain size; laser diffraction for powder/agglomerate size distribution (not a substitute for single-particle SEM).",
+      "verify_methods": [
+        "TEM",
+        "XRD",
+        "Laser diffraction"
+      ],
+      "favorable_state": "Crystalline Si primary particle size ≲100–150 nm; narrow distribution.",
+      "unfavorable_state": "Solid particles ≳150 nm up to µm; broad distribution with large outliers.",
+      "linked_properties_and_mechanism": "Cycle life, capacity retention, first-cycle efficiency (ICE). Si expands ~280–300% on full lithiation; sufficiently large crystalline Si particles may crack, expose fresh surface, promote SEI growth, and lose electrical contact. The critical size is system- and constraint-dependent, not a universal cutoff.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "cycle_life"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2005790015",
+          "W2170022687",
+          "W2737421643",
+          "W2073887259",
+          "W2139664242"
+        ],
+        "note": "In situ TEM shows a critical diameter of about 150 nm on first lithiation (cracking above, none below); ~300% Si expansion is consistent across reviews; micrometre-sized Si is reported to pulverise."
+      }
+    },
+    {
+      "id": "A2",
+      "category": "A. Silicon-rich active phase",
+      "name": "Si phase fraction and dispersion",
+      "how_to_recognise_and_best_mode": "BSE area-fraction of the bright phase; map several fields across the full thickness.",
+      "what_to_measure": "Bright-phase area fraction (≥5 fields), nearest-neighbour distance, cluster size, local-fraction variance.",
+      "verify_with_text": "EDS (Si map), ICP/TGA for Si wt%; use matched imaging conditions and calibration before treating BSE area fraction as quantitative.",
+      "verify_methods": [
+        "EDS",
+        "TGA",
+        "ICP"
+      ],
+      "favorable_state": "Uniform dispersion; no clusters; spread matches the intended Si loading.",
+      "unfavorable_state": "Agglomerates of several µm or more; Si-rich and Si-poor zones; large Si-free regions.",
+      "linked_properties_and_mechanism": "Usable capacity (Si up to ~3500–4200 mAh/g vs graphite 372), local current and swelling uniformity. Clusters create local stress hot spots; area fraction approximates volume fraction only with representative sampling.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "first_cycle_efficiency",
+        "gravimetric_capacity",
+        "manufacturing_uniformity"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2911313159",
+          "W2969727678",
+          "W3191719568",
+          "W3023001541"
+        ],
+        "note": "Si capacity of ~3579 (Li15Si4) to ~4200 mAh/g (Li22Si5) versus graphite 372 mAh/g matches retrieved abstracts. BSE area-fraction guidance is a method recommendation not testable from abstracts."
+      }
+    },
+    {
+      "id": "A3",
+      "category": "A. Silicon-rich active phase",
+      "name": "Si particle shape and internal structure",
+      "how_to_recognise_and_best_mode": "SE/InLens at high magnification; BSE shows internal Si/pore contrast. Cross-section or fractured particle needed for internal view.",
+      "what_to_measure": "Aspect ratio, sphericity, internal pore fraction, pore size, wall/shell thickness, edge sharpness.",
+      "verify_with_text": "TEM for internal structure; N₂ adsorption/BET for powder surface area and pore statistics, with appropriate model limitations.",
+      "verify_methods": [
+        "TEM",
+        "BET / N2 adsorption"
+      ],
+      "favorable_state": "Porous, hollow, nano-grained or rounded particles with internal free volume.",
+      "unfavorable_state": "Dense micrometre-scale Si particles (prone to pulverisation).",
+      "linked_properties_and_mechanism": "Expansion tolerance and cycle life, balanced against tap density. Internal voids and porosity absorb part of the volume change; dense micrometre-scale particles pulverise more readily.",
+      "evidence": "Medium",
+      "indicator_of_properties": [],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W2001613536",
+          "W2077919955",
+          "W3012125219",
+          "W2737421643",
+          "W1992375084"
+        ],
+        "note": "Hollow, porous and yolk-shell Si are well supported; the angular/sharp-corner stress-concentrator statement was removed."
+      }
+    },
+    {
+      "id": "B1",
+      "category": "B. Carbon phase and conductive network",
+      "name": "Graphite / carbon host morphology",
+      "how_to_recognise_and_best_mode": "SE/ETD; cross-section for packing. Flake, spherical (rounded), potato-shaped or amorphous hard-carbon particles.",
+      "what_to_measure": "D50, aspect ratio, sphericity, surface roughness, visible edge-plane exposure.",
+      "verify_with_text": "Laser diffraction, BET, tap density, Raman",
+      "verify_methods": [
+        "Raman",
+        "BET / N2 adsorption",
+        "Laser diffraction",
+        "Tap density"
+      ],
+      "favorable_state": "Rounded/spherical particles; published spherical-graphite studies use x50 of roughly 11–18 µm (an example, not a universal optimum); smooth surface with limited fines.",
+      "unfavorable_state": "High-aspect-ratio sharp flakes, many exposed edges, very fine fragments.",
+      "linked_properties_and_mechanism": "Packing density, rate capability, ICE. Edge planes and fines raise surface area, so more SEI and Li loss in the first cycle; flakes also orient strongly during calendering.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "first_cycle_efficiency",
+        "rate_capability"
+      ],
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W4391136799",
+          "W3023001541",
+          "W2460924711",
+          "W3100240229",
+          "W4412632057",
+          "W2036522059"
+        ],
+        "note": "Particle-size distribution, platelet orientation and edge-plane exposure (initial irreversible capacity) are supported, the latter only by low-citation supplementary works; flake behaviour in calendering is supported generally."
+      }
+    },
+    {
+      "id": "B2",
+      "category": "B. Carbon phase and conductive network",
+      "name": "Carbon coating on Si or composite particles",
+      "how_to_recognise_and_best_mode": "Shell visible at high magnification on fractured or milled particles (InLens); thin nanometre-scale shells are often not resolvable by SEM.",
+      "what_to_measure": "Coverage fraction, continuity, and cracked/peeled areas. Shell thickness should be measured primarily by TEM; SEM can provide a high-magnification continuity screen, but very thin shells are often not reliably resolved.",
+      "verify_with_text": "TEM, Raman (D/G ratio), TGA, XPS.",
+      "verify_methods": [
+        "TEM",
+        "XPS",
+        "Raman",
+        "TGA"
+      ],
+      "favorable_state": "Continuous, conformal, well-bonded coating; thickness confirmed by TEM where relevant.",
+      "unfavorable_state": "Patchy, cracked or peeling shell; or overly thick and dense.",
+      "linked_properties_and_mechanism": "Electronic conductivity, SEI stability, ICE, and rate. A good shell can reduce direct electrolyte exposure; an overly thick or rigid shell may fracture during expansion and add transport resistance. Effects depend on shell chemistry, porosity, and mechanical properties.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "cycle_life",
+        "first_cycle_efficiency",
+        "gravimetric_capacity"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W2068939997",
+          "W2561730661",
+          "W2974249453",
+          "W2050394534",
+          "W2102338363"
+        ],
+        "note": "Carbon/graphene shells improving Si stability are well supported; all numeric thickness thresholds were removed."
+      }
+    },
+    {
+      "id": "B3",
+      "category": "B. Carbon phase and conductive network",
+      "name": "Void / buffer space in engineered composites",
+      "how_to_recognise_and_best_mode": "Cross-section or broken particles: gap between Si core and shell (yolk–shell), internal cavities (pomegranate-type).",
+      "what_to_measure": "Void-to-Si volume ratio, gap thickness, fraction of intact shells.",
+      "verify_with_text": "FIB-SEM tomography, TEM, tap density",
+      "verify_methods": [
+        "TEM",
+        "FIB-SEM tomography",
+        "Tap density"
+      ],
+      "favorable_state": "Void sized to accommodate the expected Si expansion while preserving shell integrity; because fully lithiated Si expands by ~280–300%, a void of about 3× the Si volume would be needed for complete accommodation at full lithiation (less when Si utilisation is limited); this is an idealised design reference, not a universal optimum.",
+      "unfavorable_state": "No void (tight shell fractures) or oversized voids (low density, low volumetric capacity).",
+      "linked_properties_and_mechanism": "Trade-off between cycle life and volumetric energy density. Void space can accommodate Si expansion, but the required amount depends on Si utilization, shell mechanics, pore compressibility, SEI growth, and electrolyte occupation.",
+      "evidence": "Medium–High",
+      "indicator_of_properties": [
+        "volumetric_energy_density"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W1992375084",
+          "W1966277940",
+          "W2021435259",
+          "W2912356322",
+          "W2969727678"
+        ],
+        "note": "Yolk-shell, empty-space and pomegranate designs and the density trade-off are well supported; void ratio re-derived from expansion."
+      }
+    },
+    {
+      "id": "B4",
+      "category": "B. Carbon phase and conductive network",
+      "name": "Conductive additives (carbon black, CNT, graphene)",
+      "how_to_recognise_and_best_mode": "InLens/SE at high magnification. Carbon black: spheres fused into chain-like aggregates; CNT: fibres; graphene: crumpled sheets.",
+      "what_to_measure": "Network connectivity (continuous paths), aggregate size, coverage of Si surfaces, bundle size.",
+      "verify_with_text": "Four-probe/ electrode conductivity, EIS, Raman",
+      "verify_methods": [
+        "Raman",
+        "EIS",
+        "Electrode conductivity"
+      ],
+      "favorable_state": "Continuous, well-dispersed network contacting Si and carbon particles.",
+      "unfavorable_state": "Large aggregates, CNT bundles, Si particles with no conductive contact.",
+      "linked_properties_and_mechanism": "Electronic conductivity, rate capability, capacity utilization. Isolated Si becomes electrically dead; additive clumps waste volume and add no connectivity.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "rate_capability",
+        "gravimetric_capacity"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W1966858105",
+          "W2950438942",
+          "W4322625758",
+          "W2533763008"
+        ],
+        "note": "Hybrid CNT/carbon conductive networks around Si are supported; size ranges removed."
+      }
+    },
+    {
+      "id": "C1",
+      "category": "C. Binder, interphase and particle contacts",
+      "name": "Binder distribution and bridging",
+      "how_to_recognise_and_best_mode": "Thin film or bridges between particles; difficult to image directly. PVDF may be assessed with F as an auxiliary signal (in cycled electrodes F can also come from LiPF₆ residue or SEI); Na is relevant only for sodium-containing CMC forms. O is non-specific and EDS is generally only supportive for dilute binder mapping.",
+      "what_to_measure": "Fraction of contacts bridged, thickness of any top-surface skin, binder signal profile from foil to surface.",
+      "verify_with_text": "peel/adhesion test, FTIR/Raman mapping, XPS, or ToF-SIMS; EDS line profiles are auxiliary and require controls.",
+      "verify_methods": [
+        "EDS",
+        "XPS",
+        "ToF-SIMS",
+        "FTIR",
+        "Raman",
+        "Peel/adhesion test"
+      ],
+      "favorable_state": "Thin, uniform film bridging Si and carbon; uniform through thickness.",
+      "unfavorable_state": "Pooling; binder enriched at the top surface (drying migration) and depleted at the foil; thick insulating films.",
+      "linked_properties_and_mechanism": "Adhesion/cohesion, cycle life, resistance. Si-compatible binders (e.g., PAA, CMC, alginate) hold particles during swelling; migration causes delamination.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "cycle_life",
+        "manufacturing_uniformity"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W2972127671",
+          "W2078405861",
+          "W2000304730",
+          "W2085287640",
+          "W2346234212",
+          "W2888404514"
+        ],
+        "note": "Binder transport to the surface during drying with loss of adhesion is directly reported (W2972127671); PAA, CMC and alginate are supported Si binders."
+      }
+    },
+    {
+      "id": "C2",
+      "category": "C. Binder, interphase and particle contacts",
+      "name": "SEI / surface film (cycled samples)",
+      "how_to_recognise_and_best_mode": "Smoothed particle surfaces, filled pores, nodular or 'cauliflower' deposits in SE/InLens. Thickness is not reliably measurable by SEM.",
+      "what_to_measure": "Fraction of pores occluded, surface-film coverage and roughness, change vs pristine at the same location.",
+      "verify_with_text": "XPS, cryo-TEM, EIS, FTIR",
+      "verify_methods": [
+        "cryo-TEM",
+        "XPS",
+        "FTIR",
+        "EIS"
+      ],
+      "favorable_state": "A thin, relatively uniform, and stable film; thickness and composition should be confirmed by cryo-TEM/XPS rather than inferred from routine SEM.",
+      "unfavorable_state": "Thick, rough, nodular, growing with cycling; cracking and reforming on Si.",
+      "linked_properties_and_mechanism": "Coulombic efficiency, impedance growth, capacity fade, and electrolyte consumption. Si surface rupture can repeatedly expose fresh surface and promote SEI growth. Beam, vacuum, solvent, and air exposure can alter the film.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "first_cycle_efficiency",
+        "internal_resistance"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W3184391242",
+          "W2051699520",
+          "W2066050686",
+          "W1982702179",
+          "W2851304407",
+          "W2908934295",
+          "W2340971382",
+          "W4387119834"
+        ],
+        "note": "SEI growth/instability on Si, characterisation by cryo-STEM/XPS/NMR/FIB-SEM, and thickness not being an SEM measurement are consistent with retrieved works."
+      }
+    },
+    {
+      "id": "C3",
+      "category": "C. Binder, interphase and particle contacts",
+      "name": "Interparticle contact quality (Si–carbon, carbon–carbon)",
+      "how_to_recognise_and_best_mode": "ETD/BSE cross-section: dark halos or gaps around particles indicate lost contact.",
+      "what_to_measure": "Fraction of interface length with a visible gap, gap width, fraction of isolated particles, coordination number.",
+      "verify_with_text": "EIS, electrode conductivity",
+      "verify_methods": [
+        "EIS",
+        "Electrode conductivity"
+      ],
+      "favorable_state": "Gap-free, intimate contacts; every Si particle touching carbon.",
+      "unfavorable_state": "Gaps or halos around Si; isolated particles; delaminated shells.",
+      "linked_properties_and_mechanism": "Internal resistance, inactive (dead) Si, capacity fade, local polarization.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "cycle_life",
+        "gravimetric_capacity",
+        "internal_resistance"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2810189301",
+          "W1988927474",
+          "W2525188174"
+        ],
+        "note": "Loss of electrical contact and 3D particle failure in Si-C composite electrodes are reported."
+      }
+    },
+    {
+      "id": "D1",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "name": "Electrode porosity",
+      "how_to_recognise_and_best_mode": "Black pore regions in ETD/BSE cross-section (carbon is dark grey in BSE); epoxy infiltration helps separate pores from carbon. ETD shadowing exaggerates pore area.",
+      "what_to_measure": "Pore area fraction (≥5–10 fields, consistent threshold), compared with mass/thickness-based porosity; mean pore size.",
+      "verify_with_text": "mass/thickness porosity, Hg porosimetry where appropriate, or FIB-SEM 3D. ETD/BSE black area is not porosity by itself; perform threshold-sensitivity analysis.",
+      "verify_methods": [
+        "Hg porosimetry",
+        "FIB-SEM tomography",
+        "Mass/thickness porosity"
+      ],
+      "favorable_state": "A system-dependent target range; about 25–40% can be used as an example for some pre-cycled graphite/Si–graphite anodes, but porosity must be evaluated with areal capacity, thickness, compaction density, pore connectivity, and wetting.",
+      "unfavorable_state": "Very low porosity may limit electrolyte access and swelling accommodation; very high porosity can reduce energy density and mechanical contact. No universal cutoffs apply across electrode designs.",
+      "linked_properties_and_mechanism": "Ion transport (rate), electrolyte uptake, energy density, swelling accommodation.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "rate_capability",
+        "volumetric_energy_density"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W3093570699",
+          "W3211056763",
+          "W2797321974",
+          "W2898767632",
+          "W3023688594"
+        ],
+        "note": "Porosity affects rate/plating (26% vs 47% graphite anodes tested) and should be assessed with several methods. 25–40% remains an illustrative example only."
+      }
+    },
+    {
+      "id": "D2",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "name": "Pore size distribution and connectivity",
+      "how_to_recognise_and_best_mode": "Cross-section; best by FIB-SEM tomography. Isolated closed voids vs connected channels.",
+      "what_to_measure": "Pore-size distribution (µm range), connected-pore fraction, geometric tortuosity, bottleneck size.",
+      "verify_with_text": "FIB-SEM 3D reconstruction, EIS (tortuosity), Hg porosimetry",
+      "verify_methods": [
+        "Hg porosimetry",
+        "FIB-SEM tomography",
+        "EIS"
+      ],
+      "favorable_state": "Interconnected pores with a system-appropriate size distribution and low tortuosity.",
+      "unfavorable_state": "Isolated voids; large voids comparable to particle size; narrow bottlenecks.",
+      "linked_properties_and_mechanism": "Rate capability, fast-charge Li-plating risk, and electrolyte wetting. Interpret together with areal capacity, thickness, compaction density, and through-thickness tortuosity.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "rate_capability"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W3023688594",
+          "W2898767632",
+          "W1991455713",
+          "W3209556830"
+        ],
+        "note": "Tortuosity and 3D pore networks from tomography are well supported; the size range was removed."
+      }
+    },
+    {
+      "id": "D3",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "name": "Particle orientation / anisotropy",
+      "how_to_recognise_and_best_mode": "Cross-section; flakes lying parallel to the current collector versus more random or tilted orientations.",
+      "what_to_measure": "Orientation-angle distribution relative to the foil normal (image structure tensor); orientation index.",
+      "verify_with_text": "XRD orientation index, recognizing that XRD and image-based orientation probe different length scales.",
+      "verify_methods": [
+        "XRD"
+      ],
+      "favorable_state": "More isotropic or tilted flake-orientation distribution; the optimum is system-dependent and should be checked with tortuosity and rate testing.",
+      "unfavorable_state": "Strong alignment parallel to the foil may increase transport anisotropy in some electrodes, but it is not universally unfavorable.",
+      "linked_properties_and_mechanism": "Through-plane Li⁺ transport, plating risk, and anisotropic swelling. Effects also depend on pore structure, graphite crystallographic texture, compaction, and electrolyte wetting.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "rate_capability"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2460924711",
+          "W3100240229",
+          "W2797321974"
+        ],
+        "note": "Platelet alignment affects rate performance (magnetically aligned graphite); effects are system dependent as already stated."
+      }
+    },
+    {
+      "id": "D4",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "name": "Calendering damage and packing density",
+      "how_to_recognise_and_best_mode": "Cross-section: crushed or cracked graphite flakes, split secondary particles, closed pores.",
+      "what_to_measure": "Fraction of fractured particles, closed-pore fraction, packing density vs target.",
+      "verify_with_text": "Electrode density, BET, tap density",
+      "verify_methods": [
+        "BET / N2 adsorption",
+        "Tap density"
+      ],
+      "favorable_state": "Intact particles, open pores at the target density.",
+      "unfavorable_state": "Crushed/cracked particles, delaminated secondary Si/C particles, closed pores.",
+      "linked_properties_and_mechanism": "Energy density, rate capability, fresh-surface area and extra SEI, and Si-composite integrity. Fresh-surface area is not measured directly by D4; BET can assist for powders but does not equal electrochemical active area in a working electrode.",
+      "evidence": "Medium–High",
+      "indicator_of_properties": [
+        "volumetric_energy_density"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W3100240229",
+          "W3046379887",
+          "W2525188174"
+        ],
+        "note": "Calendering microstructure evolution and calendering-compatible Si-graphite designs are reported."
+      }
+    },
+    {
+      "id": "D5",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "name": "Coating thickness and uniformity",
+      "how_to_recognise_and_best_mode": "Cross-section at multiple positions; surface profile.",
+      "what_to_measure": "Thickness at ≥10 positions, coefficient of variation, roughness (Ra), edge build-up.",
+      "verify_with_text": "Micrometer, profilometry",
+      "verify_methods": [
+        "Profilometry"
+      ],
+      "favorable_state": "Low variation; the acceptable limit depends on coating method, loading, and cell design.",
+      "unfavorable_state": "Wedge profile, ridges, thick edges, blade/slot-die streaks.",
+      "linked_properties_and_mechanism": "Local loading and current distribution, plating risk, capacity variation between cells.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "manufacturing_uniformity"
+      ],
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W2087251714"
+        ],
+        "note": "Process-dependent coating uniformity is supported; quantitative CV limit and plating link were not found."
+      }
+    },
+    {
+      "id": "D7",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "name": "Electrode cracking (drying or cycling)",
+      "how_to_recognise_and_best_mode": "Top view and cross-section: mud-crack network; orientation and depth.",
+      "what_to_measure": "Crack areal density, width (µm), depth as fraction of thickness, whether cracks reach the foil.",
+      "verify_with_text": "Optical microscopy, adhesion test, EIS",
+      "verify_methods": [
+        "EIS",
+        "Optical microscopy/inspection"
+      ],
+      "favorable_state": "Low crack density; no large-area through-thickness cracks; cracks do not cause obvious loss of contact or delamination.",
+      "unfavorable_state": "High-density or through-thickness cracks reaching the foil, especially when accompanied by delamination or contact loss.",
+      "linked_properties_and_mechanism": "Electronic connectivity, delamination, capacity fade. Drying cracks form above a critical thickness; cycling cracks come from swelling.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "cycle_life",
+        "internal_resistance"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2972127671",
+          "W3008653137",
+          "W2517594727"
+        ],
+        "note": "Thickness-dependent drying cracks (anodes and thick cathodes) and cracking of cycled Si-based films are reported."
+      }
+    },
+    {
+      "id": "D8",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "name": "Current-collector interface / delamination",
+      "how_to_recognise_and_best_mode": "Cross-section at the foil: gap between coating and foil.",
+      "what_to_measure": "Gap length / interface length (%), gap width, foil roughness.",
+      "verify_with_text": "Peel test, interfacial EIS",
+      "verify_methods": [
+        "EIS",
+        "Peel/adhesion test"
+      ],
+      "favorable_state": "Continuous intimate contact with the foil.",
+      "unfavorable_state": "Lifted coating, gaps, binder-poor foil interface.",
+      "linked_properties_and_mechanism": "Adhesion, interfacial resistance, sudden capacity loss.",
+      "evidence": "Medium–High",
+      "indicator_of_properties": [
+        "internal_resistance"
+      ],
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W2972127671"
+        ],
+        "note": "Loss of adhesion linked to binder transport during drying is reported; direct foil-interface delamination imaging studies were not retrieved."
+      }
+    },
+    {
+      "id": "E1",
+      "category": "E. Aging features (cycled / post-mortem samples)",
+      "name": "Si particle fracture / pulverization",
+      "how_to_recognise_and_best_mode": "Cracks through bright particles, shattered fragments, loss of sharp outlines. Compare the same region against a pristine sample.",
+      "what_to_measure": "Fraction of Si particles with cracks (≥100 particles), crack density, and fragment size.",
+      "verify_with_text": "SEM/TEM statistics under matched preparation; XRD may assess crystallinity changes but does not directly quantify particle fracture; EIS is complementary.",
+      "verify_methods": [
+        "TEM",
+        "XRD",
+        "EIS"
+      ],
+      "favorable_state": "Intact particles after the intended cycle count.",
+      "unfavorable_state": "Widespread cracking and fragmentation.",
+      "linked_properties_and_mechanism": "Capacity fade, impedance rise, isolated Si, fresh surface for SEI regrowth.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "cycle_life"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2005790015",
+          "W1988927474",
+          "W2077919955",
+          "W2767901249",
+          "W2147786599"
+        ],
+        "note": "Cracking/pulverisation of Si particles on lithiation is directly observed in situ and in composite electrodes."
+      }
+    },
+    {
+      "id": "E2",
+      "category": "E. Aging features (cycled / post-mortem samples)",
+      "name": "Electrode thickness swelling (cycled vs pristine)",
+      "how_to_recognise_and_best_mode": "Cross-section thickness at the same state of charge; residual swelling after delithiation is most informative.",
+      "what_to_measure": "Δt/t₀, reversible versus irreversible part, and uniformity across the electrode.",
+      "verify_with_text": "cell-level thickness gauge, dilatometry, or matched-state cross-sectional measurements.",
+      "verify_methods": [
+        "Dilatometry",
+        "Cell-level thickness gauge"
+      ],
+      "favorable_state": "Swelling consistent with the Si fraction and electrode constraint;",
+      "unfavorable_state": "High-Si, high-utilization, or weakly constrained electrodes may show tens of percent or more expansion; irreversible growth reflects SEI, pore rearrangement, delamination, and residual deformation.",
+      "linked_properties_and_mechanism": "Volumetric energy density, cell stack pressure and deformation, contact loss, porosity loss. Note: material volume expansion (Si ~280–300%; porous Si designs report apparent particle expansion as low as ~40%) differs from electrode thickness swelling, which is also governed by porosity, binder and constraint.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "volumetric_energy_density"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W2609154998",
+          "W2912356322",
+          "W2525188174",
+          "W3012125219",
+          "W3046379887"
+        ],
+        "note": "Electrode swelling versus material expansion is supported; graphite expansion figure removed."
+      }
+    },
+    {
+      "id": "E3",
+      "category": "E. Aging features (cycled / post-mortem samples)",
+      "name": "Pore clogging / densification by decomposition products",
+      "how_to_recognise_and_best_mode": "Cycled cross-section: pores filled with fine deposits, especially near the separator side.",
+      "what_to_measure": "Porosity change versus pristine, fraction of filled pores, and depth profile.",
+      "verify_with_text": "cross-sectional SEM/FIB-SEM 3D reconstruction or Hg porosimetry for pore changes; EDS for elemental gradients; XPS depth profiling or ToF-SIMS for surface-film chemistry, with sputtering artefacts considered.",
+      "verify_methods": [
+        "EDS",
+        "XPS",
+        "ToF-SIMS",
+        "Hg porosimetry",
+        "FIB-SEM tomography"
+      ],
+      "favorable_state": "Open pore network retained.",
+      "unfavorable_state": "Surface-side pores filled; strong porosity gradient.",
+      "linked_properties_and_mechanism": "Rate loss, impedance growth, plating risk.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "internal_resistance"
+      ],
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W4387119834",
+          "W3184391242"
+        ],
+        "note": "SEI densification/progressive SEI growth into Si electrodes is reported; separator-side pore filling profiles were not directly found."
+      }
+    },
+    {
+      "id": "E4",
+      "category": "E. Aging features (cycled / post-mortem samples)",
+      "name": "Lithium plating / dendrites",
+      "how_to_recognise_and_best_mode": "Mossy, whisker or filament deposits or smooth granular deposits on the surface. Requires air-free transfer.",
+      "what_to_measure": "Coverage area fraction, morphology class, deposit thickness, and penetration toward the separator.",
+      "verify_with_text": "cryo-/air-free SEM/TEM, XPS or ToF-SIMS; titration gas chromatography (titration GC, H₂ from Li + H₂O) can quantify metallic Li. Routine EDS generally cannot reliably detect Li.",
+      "verify_methods": [
+        "TEM",
+        "EDS",
+        "XPS",
+        "ToF-SIMS",
+        "Titration GC"
+      ],
+      "favorable_state": "None.",
+      "unfavorable_state": "Any visible plating; mossy or whisker growth.",
+      "linked_properties_and_mechanism": "Safety (short circuit), 'dead' lithium and capacity loss, low Coulombic efficiency. Linked to high rate, low temperature, high loading and poor pore transport.",
+      "evidence": "High",
+      "indicator_of_properties": [
+        "safety"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W3188626832",
+          "W3146632696",
+          "W3099202937",
+          "W2612843351",
+          "W3093570699",
+          "W4229014922"
+        ],
+        "note": "Li plating on graphite (dendrite/moss morphologies, fast charge, low temperature, porosity) is well supported; diameter range removed. Titration-GC and air-free transfer statements are method guidance."
+      }
+    },
+    {
+      "id": "E5",
+      "category": "E. Aging features (cycled / post-mortem samples)",
+      "name": "Through-thickness degradation gradient",
+      "how_to_recognise_and_best_mode": "Cycled cross-section: different crack density, swelling or film thickness from foil to separator side.",
+      "what_to_measure": "Profiles of crack density, porosity, Si fracture fraction, and film coverage versus depth.",
+      "verify_with_text": "cross-sectional SEM/FIB-SEM for cracks and pores; EDS for elemental gradients; XPS depth profiling or ToF-SIMS for film-composition gradients, with sputtering artefacts considered.",
+      "verify_methods": [
+        "EDS",
+        "XPS",
+        "ToF-SIMS",
+        "FIB-SEM tomography"
+      ],
+      "favorable_state": "Approximately uniform through thickness.",
+      "unfavorable_state": "Strong gradient, for example worse near the separator or foil, especially when reproducible across fields and samples.",
+      "linked_properties_and_mechanism": "Current distribution and local over-use; points to transport limitations or binder migration.",
+      "evidence": "Medium",
+      "indicator_of_properties": [],
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W2972127671",
+          "W4387119834",
+          "W3184391242"
+        ],
+        "note": "Binder migration and heterogeneous SEI growth support depth gradients; full depth-profile studies were not retrieved."
+      }
+    },
+    {
+      "id": "E6",
+      "category": "E. Aging features (cycled / post-mortem samples)",
+      "name": "Carbon shell / coating failure (cycled)",
+      "how_to_recognise_and_best_mode": "Broken, peeled or open shells exposing bright Si in BSE; collapsed voids.",
+      "what_to_measure": "Fraction of broken shells, void collapse fraction, exposed-Si area.",
+      "verify_with_text": "TEM, XPS",
+      "verify_methods": [
+        "TEM",
+        "XPS"
+      ],
+      "favorable_state": "Intact shells.",
+      "unfavorable_state": "Cracked or peeled shells with exposed Si.",
+      "linked_properties_and_mechanism": "SEI regrowth, falling Coulombic efficiency, fade.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "cycle_life"
+      ],
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W2974249453",
+          "W2068939997",
+          "W2969727678"
+        ],
+        "note": "Carbon coating role and coating-type differences are supported; direct shell-failure statistics were not found."
+      }
+    },
+    {
+      "id": "F2",
+      "category": "F. Cell-level features (post-mortem)",
+      "name": "Foreign deposits on the anode (e.g., cathode transition metals)",
+      "how_to_recognise_and_best_mode": "EDS-detectable Mn/Ni/Co or other metals on the anode surface; bright particles in BSE.",
+      "what_to_measure": "Metal signal map, deposit size and density.",
+      "verify_with_text": "EDS, XPS, ICP of washed electrode",
+      "verify_methods": [
+        "EDS",
+        "XPS",
+        "ICP"
+      ],
+      "favorable_state": "None.",
+      "unfavorable_state": "Metal deposits on or in the SEI.",
+      "linked_properties_and_mechanism": "SEI destabilization, extra Li loss, faster fade.",
+      "evidence": "Medium",
+      "indicator_of_properties": [
+        "cycle_life"
+      ],
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W3165447490",
+          "W2612843351"
+        ],
+        "note": "Transition-metal dissolution and cell degradation are supported; mapped to cycle life rather than safety."
+      }
+    },
+    {
+      "id": "F3",
+      "category": "F. Cell-level features (post-mortem)",
+      "name": "Copper foil corrosion / pitting",
+      "how_to_recognise_and_best_mode": "Foil surface or cross-section under the coating: pits, roughened or dissolved regions.",
+      "what_to_measure": "Pit density and depth, foil thickness loss.",
+      "verify_with_text": "EDS (Cu), EIS",
+      "verify_methods": [
+        "EDS",
+        "EIS"
+      ],
+      "favorable_state": "Smooth intact foil.",
+      "unfavorable_state": "Pitted or thinned foil, Cu deposits elsewhere in the cell.",
+      "linked_properties_and_mechanism": "Interfacial resistance, short-circuit risk (after over-discharge).",
+      "evidence": "Low–Medium",
+      "indicator_of_properties": [],
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W4403903523"
+        ],
+        "note": "Cu current-collector corrosion in the over-discharged state is reported; pit/thickness-loss metrics not found."
+      }
+    }
+  ],
+  "properties": [
+    {
+      "id": "cycle_life",
+      "name": "Cycle life / capacity retention",
+      "key_indicators_text": "Si particle size and fracture (A1, E1), carbon-shell integrity (B2, E6), Si–carbon contact (C3), binder bridging (C1), electrode cracking (D7), anode metal deposits (F2).",
+      "direction_of_effect": "Larger or fractured Si, broken shells, more cracks and contact gaps are generally associated with lower retention, but the relationship is system-dependent.",
+      "indicator_feature_ids": [
+        "A1",
+        "B2",
+        "C1",
+        "C3",
+        "D7",
+        "E1",
+        "E6",
+        "F2"
+      ]
+    },
+    {
+      "id": "first_cycle_efficiency",
+      "name": "First-cycle efficiency",
+      "key_indicators_text": "Carbon coating continuity (B2), exposed-Si/edge-plane area (A2, B1), surface-film formation (C2). BET may support powder comparisons but does not directly measure working-electrode electrochemical surface area.",
+      "direction_of_effect": "More exposed surface generally means more Li lost to SEI in the first cycle.",
+      "indicator_feature_ids": [
+        "A2",
+        "B1",
+        "B2",
+        "C2"
+      ]
+    },
+    {
+      "id": "rate_capability",
+      "name": "Rate capability / fast charge",
+      "key_indicators_text": "Porosity and pore connectivity (D1, D2), orientation (D3), additive network (B4), particle size (B1).",
+      "direction_of_effect": "Open, low-tortuosity structures can favor high rate; orientation effects are system-dependent, and plating risk (E4) rises when transport and wetting are poor.",
+      "indicator_feature_ids": [
+        "B1",
+        "B4",
+        "D1",
+        "D2",
+        "D3"
+      ]
+    },
+    {
+      "id": "volumetric_energy_density",
+      "name": "Volumetric energy density",
+      "key_indicators_text": "Packing (D4), porosity (D1), void space (B3), swelling (E2).",
+      "direction_of_effect": "Dense, low-void electrodes raise energy density but leave less swelling room.",
+      "indicator_feature_ids": [
+        "B3",
+        "D1",
+        "D4",
+        "E2"
+      ]
+    },
+    {
+      "id": "gravimetric_capacity",
+      "name": "Gravimetric capacity",
+      "key_indicators_text": "Si fraction (A2), isolated Si (C3, B4), coating thickness (B2).",
+      "direction_of_effect": "Higher usable Si fraction raises capacity; isolated or over-coated Si lowers it.",
+      "indicator_feature_ids": [
+        "A2",
+        "B2",
+        "B4",
+        "C3"
+      ]
+    },
+    {
+      "id": "internal_resistance",
+      "name": "Internal resistance / impedance growth",
+      "key_indicators_text": "Contact gaps (C3), SEI and pore clogging (C2, E3), delamination (D8), cracks (D7).",
+      "direction_of_effect": "Growth in any of these raises impedance.",
+      "indicator_feature_ids": [
+        "C2",
+        "C3",
+        "D7",
+        "D8",
+        "E3"
+      ]
+    },
+    {
+      "id": "safety",
+      "name": "Safety",
+      "key_indicators_text": "Lithium plating (E4).",
+      "direction_of_effect": "Plating is the main short-circuit route supported by the retrieved literature; defect and separator links were not verified and were removed.",
+      "indicator_feature_ids": [
+        "E4"
+      ]
+    },
+    {
+      "id": "manufacturing_uniformity",
+      "name": "Manufacturing uniformity",
+      "key_indicators_text": "Thickness variation (D5), binder migration (C1), Si dispersion (A2).",
+      "direction_of_effect": "Variation here predicts cell-to-cell scatter.",
+      "indicator_feature_ids": [
+        "A2",
+        "C1",
+        "D5"
+      ]
+    }
+  ],
+  "architectures": [
+    {
+      "id": "si_graphite_blend_physical_mixture",
+      "name": "Si/graphite blend (physical mixture)",
+      "typical_sem_signature": "BSE: separate bright Si particles or clusters among dark graphite; Si largely uncoated and exposed.",
+      "main_trade_off": "Good conductivity and easy processing; Si segregation and exposed Si surface. Commercial blends may contain ≲10 wt% Si, but composition is product-dependent.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2924361956",
+          "W2911313159",
+          "W4386225259"
+        ],
+        "note": "Si/graphite blending for commercialisation is well documented."
+      }
+    },
+    {
+      "id": "si_c_core_shell",
+      "name": "Si@C core–shell",
+      "typical_sem_signature": "Spherical Si nanoparticles with a visible continuous carbon shell; no gap between core and shell.",
+      "main_trade_off": "Better SEI stability and conductivity; a tight shell can crack as Si expands. Shell continuity and thickness should be confirmed by TEM when the shell is nanoscale.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2974249453",
+          "W2050394534",
+          "W2561730661"
+        ],
+        "note": "Si core / carbon shell designs and shell effects are supported."
+      }
+    },
+    {
+      "id": "yolk_shell_si_void_c",
+      "name": "Yolk–shell (Si@void@C)",
+      "typical_sem_signature": "Broken or milled particles show a gap between the core and shell.",
+      "main_trade_off": "Long cycle life; low tap density and volumetric capacity.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W1992375084",
+          "W2912356322"
+        ],
+        "note": "Long cycling with a density/volumetric-capacity trade-off is reported."
+      }
+    },
+    {
+      "id": "pomegranate_type_many_si_nanoparticles_in_one_carbon_shell",
+      "name": "Pomegranate-type (many Si nanoparticles in one carbon shell)",
+      "typical_sem_signature": "Micron-sized spherical secondary particles with internal cavities; outer shell continuous.",
+      "main_trade_off": "High tap density and stable SEI (shell outside); internal voids buffer expansion; more complex to make.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2021435259"
+        ],
+        "note": "Pomegranate design with stable SEI and high tap density."
+      }
+    },
+    {
+      "id": "porous_carbon_scaffold_with_si_deposited_in_pores",
+      "name": "Porous-carbon scaffold with Si deposited in pores",
+      "typical_sem_signature": "Carbon particle surfaces look clean; Si is visible only in BSE/EDS inside pores.",
+      "main_trade_off": "Built-in buffering and conduction; Si may be hidden from top-surface SEM, so use BSE/EDS and cross-sectioning to assess its distribution.",
+      "verification": {
+        "status": "partially_confirmed",
+        "supporting_works": [
+          "W2102338363",
+          "W2068939997"
+        ],
+        "note": "Si deposited on/in carbon scaffolds is supported; 'clean carbon surface in SEM' observation was not directly found."
+      }
+    },
+    {
+      "id": "si_c_secondary_particle_si_graphite_pitch_granulated",
+      "name": "Si/C secondary particle (Si + graphite + pitch granulated)",
+      "typical_sem_signature": "Rounded micron-scale granules with fine Si speckle embedded in a carbon matrix.",
+      "main_trade_off": "Good packing and processability; Si fraction and contact depend on granulation.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2911313159",
+          "W3046379887",
+          "W2609154998"
+        ],
+        "note": "Granulated/composite Si-graphite secondary particles are reported."
+      }
+    },
+    {
+      "id": "siox_c",
+      "name": "SiOx/C",
+      "typical_sem_signature": "Morphology similar to Si/C; oxide not visible by SEM (EDS shows O).",
+      "main_trade_off": "Lower capacity, lower expansion and lower first-cycle efficiency than Si; may need prelithiation.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W2109618300",
+          "W2203169036",
+          "W2901150774"
+        ],
+        "note": "Lower capacity/expansion, poorer first-cycle efficiency and prelithiation need are reported."
+      }
+    },
+    {
+      "id": "1d_2d_si_nanowires_nanosheets_thin_films_on_carbon",
+      "name": "1D/2D Si (nanowires, nanosheets, thin films) on carbon",
+      "typical_sem_signature": "Fibre or sheet networks, visible interwoven structure.",
+      "main_trade_off": "Good strain accommodation; low tap density.",
+      "verification": {
+        "status": "corrected",
+        "supporting_works": [
+          "W2124043346",
+          "W2064825917",
+          "W2050394534",
+          "W2098224539"
+        ],
+        "note": "Nanowire/nanotube strain accommodation is supported; cost claim removed."
+      }
+    }
+  ],
+  "imaging_modes": [
+    {
+      "id": "se_etd_everhart_thornley",
+      "name": "SE – ETD (Everhart–Thornley)",
+      "best_for": "Topography with shadowing; pores and cracks.",
+      "cautions": "Dark area overestimates porosity; use for qualitative pore and crack mapping.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "se_inlens_through_the_lens",
+      "name": "SE – InLens (through-the-lens)",
+      "best_for": "High-resolution near-surface detail: nano-structure, additives, SEI texture.",
+      "cautions": "Strong edge brightness; very surface-sensitive; low working distance and low kV.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "bse_backscattered",
+      "name": "BSE (backscattered)",
+      "best_for": "Atomic-number contrast: Si (bright) vs carbon (dark), foreign metals very bright.",
+      "cautions": "Use low kV for surface or higher kV for depth; grey levels need calibration for quantitative fractions.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "eds_mapping",
+      "name": "EDS mapping",
+      "best_for": "Element distribution (Si, C, O, F, P, metals).",
+      "cautions": "Li is generally not reliably detected by routine SEM-EDS; light-element quantification is condition- and substrate-dependent; interaction volume blurs small features.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "cross_section_by_broad_ion_beam_bib_milling_or_fib",
+      "name": "Cross-section by broad-ion-beam (BIB) milling or FIB",
+      "best_for": "Internal structure, pore and interface geometry with less mechanical smearing than polishing.",
+      "cautions": "Preferred over mechanical polishing, but still subject to ion-beam damage, redeposition, curtaining, and (for Ga-FIB) implantation.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "mechanical_cutting_polishing",
+      "name": "Mechanical cutting/polishing",
+      "best_for": "Quick cross-sections.",
+      "cautions": "Smears soft material and closes pores; can create fake cracks.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "air_free_cryogenic_transfer",
+      "name": "Air-free / cryogenic transfer",
+      "best_for": "Preserves Li, SEI and electrolyte residues when the transfer and temperature protocol is appropriate.",
+      "cautions": "Essential for plating and SEI studies; air exposure alters surfaces.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W3184391242"
+        ],
+        "note": "Cryogenic electron microscopy is used for Si SEI; essential-for-plating statement is method guidance."
+      }
+    },
+    {
+      "id": "fib_sem_tomography",
+      "name": "FIB-SEM tomography",
+      "best_for": "3D pore network, tortuosity, particle contacts.",
+      "cautions": "Slow and local; needs representative volume.",
+      "verification": {
+        "status": "confirmed",
+        "supporting_works": [
+          "W4387119834",
+          "W3209556830",
+          "W1991455713"
+        ],
+        "note": "FIB-SEM and X-ray tomography of 3D electrode/SEI structure are reported."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "charging",
+      "name": "Charging",
+      "how_it_appears": "Bright or dark streaks, drifting contrast on isolated particles.",
+      "how_to_distinguish_or_avoid": "Can be a genuine sign of electrical isolation; also caused by no conductive coating or high kV. Lower kV and compare with a coated region.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "beam_damage",
+      "name": "Beam damage",
+      "how_it_appears": "Bubbling, melting or shrinking of SEI, binder or Li.",
+      "how_to_distinguish_or_avoid": "Use low dose and low kV; check the same area on repeat scans.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "curtaining_milling_streaks",
+      "name": "Curtaining / milling streaks",
+      "how_it_appears": "Vertical striations across particles in cross-sections.",
+      "how_to_distinguish_or_avoid": "Aligned with the milling direction, in every phase; not cracks.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "polishing_smear",
+      "name": "Polishing smear",
+      "how_it_appears": "Pores closed, surfaces unnaturally smooth.",
+      "how_to_distinguish_or_avoid": "Compare with ion-milled sections.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "edge_effect",
+      "name": "Edge effect",
+      "how_it_appears": "Bright halos along particle edges (SE/InLens).",
+      "how_to_distinguish_or_avoid": "Usually not SEI or binder; confirm in BSE, where the halo is typically absent.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "etd_shadowing",
+      "name": "ETD shadowing",
+      "how_it_appears": "Over-dark pores and gaps.",
+      "how_to_distinguish_or_avoid": "Use BSE or ion-milled sections for porosity values.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "preparation_induced_cracks",
+      "name": "Preparation-induced cracks",
+      "how_it_appears": "Cracks from cutting, drying or vacuum.",
+      "how_to_distinguish_or_avoid": "Check whether cracks follow the cut edge or appear in control samples.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "electrolyte_salt_residue",
+      "name": "Electrolyte salt residue",
+      "how_it_appears": "Crystalline deposits, especially LiPF6 salts.",
+      "how_to_distinguish_or_avoid": "Washing with solvent (e.g., DMC) may remove salt residue but can also remove or rearrange some SEI; keep washing, drying, and transfer protocols constant.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    },
+    {
+      "id": "air_exposure",
+      "name": "Air exposure",
+      "how_it_appears": "Changed Li and SEI morphology.",
+      "how_to_distinguish_or_avoid": "Compare with air-free or cryogenic transferred samples; otherwise morphology and chemistry may reflect exposure artefacts.",
+      "verification": {
+        "status": "method_guidance_retained",
+        "supporting_works": [],
+        "note": "Instrument/technique guidance; OpenAlex titles and abstracts do not test it, so it was retained unchanged and flagged. Say the word and it will be removed."
+      }
+    }
+  ],
+  "references": [
+    {
+      "id": "W2065077785",
+      "year": 2014,
+      "cited_by_count": 7446,
+      "title": "Li-ion battery materials: present and future",
+      "doi": "10.1016/j.mattod.2014.10.040",
+      "openalex_url": "https://openalex.org/W2065077785",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2124043346",
+      "year": 2007,
+      "cited_by_count": 6701,
+      "title": "High-performance lithium battery anodes using silicon nanowires",
+      "doi": "10.1038/nnano.2007.411",
+      "openalex_url": "https://openalex.org/W2124043346",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2156562079",
+      "year": 2011,
+      "cited_by_count": 2613,
+      "title": "Lithium-ion batteries. A look into the future",
+      "doi": "10.1039/c1ee01388b",
+      "openalex_url": "https://openalex.org/W2156562079",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2021435259",
+      "year": 2014,
+      "cited_by_count": 2505,
+      "title": "A pomegranate-inspired nanoscale design for large-volume-change lithium battery anodes",
+      "doi": "10.1038/nnano.2014.6",
+      "openalex_url": "https://openalex.org/W2021435259",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2098224539",
+      "year": 2012,
+      "cited_by_count": 2499,
+      "title": "Stable cycling of double-walled silicon nanotube battery anodes through solid-electrolyte interphase control",
+      "doi": "10.1038/nnano.2012.35",
+      "openalex_url": "https://openalex.org/W2098224539",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2139664242",
+      "year": 2006,
+      "cited_by_count": 2492,
+      "title": "Nano- and bulk-silicon-based insertion anodes for lithium-ion secondary cells",
+      "doi": "10.1016/j.jpowsour.2006.09.084",
+      "openalex_url": "https://openalex.org/W2139664242",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2005790015",
+      "year": 2012,
+      "cited_by_count": 2396,
+      "title": "Size-Dependent Fracture of Silicon Nanoparticles During Lithiation",
+      "doi": "10.1021/nn204476h",
+      "openalex_url": "https://openalex.org/W2005790015",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2113095835",
+      "year": 2012,
+      "cited_by_count": 2362,
+      "title": "Designing nanostructured Si anodes for high energy lithium ion batteries",
+      "doi": "10.1016/j.nantod.2012.08.004",
+      "openalex_url": "https://openalex.org/W2113095835",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2102338363",
+      "year": 2010,
+      "cited_by_count": 2050,
+      "title": "High-performance lithium-ion anodes using a hierarchical bottom-up approach",
+      "doi": "10.1038/nmat2725",
+      "openalex_url": "https://openalex.org/W2102338363",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2147786599",
+      "year": 2004,
+      "cited_by_count": 2006,
+      "title": "Structural Changes in Silicon Anodes during Lithium Insertion/Extraction",
+      "doi": "10.1149/1.1652421",
+      "openalex_url": "https://openalex.org/W2147786599",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1992375084",
+      "year": 2012,
+      "cited_by_count": 1854,
+      "title": "A Yolk-Shell Design for Stabilized and Scalable Li-Ion Battery Alloy Anodes",
+      "doi": "10.1021/nl3014814",
+      "openalex_url": "https://openalex.org/W1992375084",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2085287640",
+      "year": 2011,
+      "cited_by_count": 1810,
+      "title": "A Major Constituent of Brown Algae for Use in High-Capacity Li-Ion Batteries",
+      "doi": "10.1126/science.1209150",
+      "openalex_url": "https://openalex.org/W2085287640",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2073887259",
+      "year": 2013,
+      "cited_by_count": 1692,
+      "title": "25th Anniversary Article: Understanding the Lithiation of Silicon and Other Alloying Anodes for Lithium-Ion Batteries",
+      "doi": "10.1002/adma.201301795",
+      "openalex_url": "https://openalex.org/W2073887259",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2167530498",
+      "year": 2013,
+      "cited_by_count": 1601,
+      "title": "Silicon-Based Nanomaterials for Lithium-Ion Batteries: A Review",
+      "doi": "10.1002/aenm.201300882",
+      "openalex_url": "https://openalex.org/W2167530498",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2550613263",
+      "year": 2016,
+      "cited_by_count": 1488,
+      "title": "Silicon based lithium-ion battery anodes: A chronicle perspective review",
+      "doi": "10.1016/j.nanoen.2016.11.013",
+      "openalex_url": "https://openalex.org/W2550613263",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2001613536",
+      "year": 2011,
+      "cited_by_count": 1464,
+      "title": "Interconnected Silicon Hollow Nanospheres for Lithium-Ion Battery Anodes with Long Cycle Life",
+      "doi": "10.1021/nl201470j",
+      "openalex_url": "https://openalex.org/W2001613536",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2077919955",
+      "year": 2014,
+      "cited_by_count": 1424,
+      "title": "Mesoporous silicon sponge as an anti-pulverization structure for high-performance lithium-ion battery anodes",
+      "doi": "10.1038/ncomms5105",
+      "openalex_url": "https://openalex.org/W2077919955",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2036408855",
+      "year": 2010,
+      "cited_by_count": 1399,
+      "title": "Nanostructured silicon for high capacity lithium battery anodes",
+      "doi": "10.1039/c0ee00281j",
+      "openalex_url": "https://openalex.org/W2036408855",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2047099464",
+      "year": 2013,
+      "cited_by_count": 1387,
+      "title": "Stable Li-ion battery anodes by in-situ polymerization of conducting hydrogel to conformally coat silicon nanoparticles",
+      "doi": "10.1038/ncomms2941",
+      "openalex_url": "https://openalex.org/W2047099464",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2737421643",
+      "year": 2017,
+      "cited_by_count": 1343,
+      "title": "Highly elastic binders integrating polyrotaxanes for silicon microparticle anodes in lithium ion batteries",
+      "doi": "10.1126/science.aal4373",
+      "openalex_url": "https://openalex.org/W2737421643",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3023001541",
+      "year": 2020,
+      "cited_by_count": 1313,
+      "title": "The success story of graphite as a lithium-ion anode material - fundamentals, remaining challenges, and recent developments including silicon (oxide) composites",
+      "doi": "10.1039/d0se00175a",
+      "openalex_url": "https://openalex.org/W3023001541",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2158006396",
+      "year": 2013,
+      "cited_by_count": 1275,
+      "title": "Self-healing chemistry enables the stable operation of silicon microparticle anodes for high-energy lithium-ion batteries",
+      "doi": "10.1038/nchem.1802",
+      "openalex_url": "https://openalex.org/W2158006396",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2128922124",
+      "year": 2007,
+      "cited_by_count": 1264,
+      "title": "Reversible Cycling of Crystalline Silicon Powder",
+      "doi": "10.1149/1.2402112",
+      "openalex_url": "https://openalex.org/W2128922124",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1966858105",
+      "year": 2009,
+      "cited_by_count": 1230,
+      "title": "Carbon nanotubes for lithium ion batteries",
+      "doi": "10.1039/b904116h",
+      "openalex_url": "https://openalex.org/W1966858105",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2064825917",
+      "year": 2008,
+      "cited_by_count": 1191,
+      "title": "Crystalline-Amorphous Core-Shell Silicon Nanowires for High Capacity and High Current Battery Electrodes",
+      "doi": "10.1021/nl8036323",
+      "openalex_url": "https://openalex.org/W2064825917",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1974018524",
+      "year": 2004,
+      "cited_by_count": 1117,
+      "title": "In Situ XRD and Electrochemical Study of the Reaction of Lithium with Amorphous Silicon",
+      "doi": "10.1149/1.1739217",
+      "openalex_url": "https://openalex.org/W1974018524",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2078405861",
+      "year": 2010,
+      "cited_by_count": 1112,
+      "title": "Toward Efficient Binders for Li-Ion Battery Si-Based Anodes: Polyacrylic Acid",
+      "doi": "10.1021/am100871y",
+      "openalex_url": "https://openalex.org/W2078405861",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2758610127",
+      "year": 2017,
+      "cited_by_count": 1086,
+      "title": "Challenges and Recent Progress in the Development of Si Anodes for Lithium-Ion Battery",
+      "doi": "10.1002/aenm.201700715",
+      "openalex_url": "https://openalex.org/W2758610127",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2050394534",
+      "year": 2009,
+      "cited_by_count": 1052,
+      "title": "Carbon-Silicon Core-Shell Nanowires as High Capacity Electrode for Lithium Ion Batteries",
+      "doi": "10.1021/nl901670t",
+      "openalex_url": "https://openalex.org/W2050394534",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2784970327",
+      "year": 2018,
+      "cited_by_count": 1049,
+      "title": "Silicon-Based Anodes for Lithium-Ion Batteries: From Fundamentals to Practical Applications",
+      "doi": "10.1002/smll.201702737",
+      "openalex_url": "https://openalex.org/W2784970327",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2901150774",
+      "year": 2018,
+      "cited_by_count": 1047,
+      "title": "Silicon oxides: a promising family of anode materials for lithium-ion batteries",
+      "doi": "10.1039/c8cs00441b",
+      "openalex_url": "https://openalex.org/W2901150774",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2301871377",
+      "year": 2015,
+      "cited_by_count": 1042,
+      "title": "Electrode-Electrolyte Interface in Li-Ion Batteries: Current Understanding and New Insights",
+      "doi": "10.1021/acs.jpclett.5b01727",
+      "openalex_url": "https://openalex.org/W2301871377",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4304698197",
+      "year": 2022,
+      "cited_by_count": 994,
+      "title": "Fast charging of energy-dense lithium-ion batteries",
+      "doi": "10.1038/s41586-022-05281-0",
+      "openalex_url": "https://openalex.org/W4304698197",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2170022687",
+      "year": 2010,
+      "cited_by_count": 988,
+      "title": "A Critical Size of Silicon Nano-Anodes for Lithium Rechargeable Batteries",
+      "doi": "10.1002/anie.200906287",
+      "openalex_url": "https://openalex.org/W2170022687",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2888404514",
+      "year": 2018,
+      "cited_by_count": 974,
+      "title": "Exploring Chemical, Mechanical, and Electrical Functionalities of Binders for Advanced Energy-Storage Devices",
+      "doi": "10.1021/acs.chemrev.8b00241",
+      "openalex_url": "https://openalex.org/W2888404514",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2340971382",
+      "year": 2012,
+      "cited_by_count": 944,
+      "title": "Theory of SEI Formation in Rechargeable Batteries: Capacity Fade, Accelerated Aging and Lifetime Prediction",
+      "doi": "10.1149/2.044302jes",
+      "openalex_url": "https://openalex.org/W2340971382",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2924361956",
+      "year": 2019,
+      "cited_by_count": 862,
+      "title": "Integration of Graphite and Silicon Anodes for the Commercialization of High-Energy Lithium-Ion Batteries",
+      "doi": "10.1002/anie.201902085",
+      "openalex_url": "https://openalex.org/W2924361956",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2561730661",
+      "year": 2016,
+      "cited_by_count": 862,
+      "title": "Growth of conformal graphene cages on micrometre-sized silicon particles as stable battery anodes",
+      "doi": "10.1038/nenergy.2015.29",
+      "openalex_url": "https://openalex.org/W2561730661",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2510588512",
+      "year": 2016,
+      "cited_by_count": 775,
+      "title": "Scalable synthesis of silicon-nanolayer-embedded graphite for high-energy lithium-ion batteries",
+      "doi": "10.1038/nenergy.2016.113",
+      "openalex_url": "https://openalex.org/W2510588512",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2178891431",
+      "year": 2015,
+      "cited_by_count": 767,
+      "title": "Silicon as a potential anode material for Li-ion batteries: where size, geometry and structure matter",
+      "doi": "10.1039/c5nr05116a",
+      "openalex_url": "https://openalex.org/W2178891431",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2016730434",
+      "year": 2009,
+      "cited_by_count": 754,
+      "title": "Real-Time NMR Investigations of Structural Changes in Silicon Electrodes for Lithium-Ion Batteries",
+      "doi": "10.1021/ja8086278",
+      "openalex_url": "https://openalex.org/W2016730434",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1966277940",
+      "year": 2012,
+      "cited_by_count": 735,
+      "title": "Engineering Empty Space between Si Nanoparticles for Lithium-Ion Battery Anodes",
+      "doi": "10.1021/nl203967r",
+      "openalex_url": "https://openalex.org/W1966277940",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2015387690",
+      "year": 2013,
+      "cited_by_count": 723,
+      "title": "High-Capacity Anode Materials for Lithium-Ion Batteries: Choice of Elements and Structures for Active Particles",
+      "doi": "10.1002/ppsc.201300231",
+      "openalex_url": "https://openalex.org/W2015387690",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1982702179",
+      "year": 2015,
+      "cited_by_count": 695,
+      "title": "Improved Performance of the Silicon Anode for Li-Ion Batteries: Understanding the Surface Modification Mechanism of Fluoroethylene Carbonate as an Effective Electrolyte Additive",
+      "doi": "10.1021/acs.chemmater.5b00339",
+      "openalex_url": "https://openalex.org/W1982702179",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2066050686",
+      "year": 2009,
+      "cited_by_count": 646,
+      "title": "Surface chemistry and morphology of the solid electrolyte interphase on silicon nanowire lithium-ion battery anodes",
+      "doi": "10.1016/j.jpowsour.2009.01.007",
+      "openalex_url": "https://openalex.org/W2066050686",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2133594054",
+      "year": 2012,
+      "cited_by_count": 628,
+      "title": "Mussel-Inspired Adhesive Binders for High-Performance Silicon Nanoparticle Anodes in Lithium-Ion Batteries",
+      "doi": "10.1002/adma.201203981",
+      "openalex_url": "https://openalex.org/W2133594054",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4229014922",
+      "year": 2022,
+      "cited_by_count": 615,
+      "title": "Fast Charging Anode Materials for Lithium-Ion Batteries: Current Status and Perspectives",
+      "doi": "10.1002/adfm.202200796",
+      "openalex_url": "https://openalex.org/W4229014922",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1995165442",
+      "year": 2014,
+      "cited_by_count": 593,
+      "title": "Interpenetrated Gel Polymer Binder for High-Performance Silicon Anodes in Lithium-ion Batteries",
+      "doi": "10.1002/adfm.201401269",
+      "openalex_url": "https://openalex.org/W1995165442",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2051699520",
+      "year": 2013,
+      "cited_by_count": 587,
+      "title": "Silicon Solid Electrolyte Interphase (SEI) of Lithium Ion Battery Characterized by Microscopy and Spectroscopy",
+      "doi": "10.1021/jp404155y",
+      "openalex_url": "https://openalex.org/W2051699520",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2787808924",
+      "year": 2018,
+      "cited_by_count": 567,
+      "title": "The emerging era of supramolecular polymeric binders in silicon anodes",
+      "doi": "10.1039/c7cs00858a",
+      "openalex_url": "https://openalex.org/W2787808924",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2203169036",
+      "year": 2015,
+      "cited_by_count": 551,
+      "title": "Controlled Prelithiation of Silicon Monoxide for High Performance Lithium-Ion Rechargeable Full Cells",
+      "doi": "10.1021/acs.nanolett.5b03776",
+      "openalex_url": "https://openalex.org/W2203169036",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3012125219",
+      "year": 2020,
+      "cited_by_count": 549,
+      "title": "Hierarchical porous silicon structures with extraordinary mechanical strength as high-performance lithium-ion battery anodes",
+      "doi": "10.1038/s41467-020-15217-9",
+      "openalex_url": "https://openalex.org/W3012125219",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3023688594",
+      "year": 2020,
+      "cited_by_count": 521,
+      "title": "3D microstructure design of lithium-ion battery electrodes assisted by X-ray nano-computed tomography and modelling",
+      "doi": "10.1038/s41467-020-15811-x",
+      "openalex_url": "https://openalex.org/W3023688594",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2068939997",
+      "year": 2015,
+      "cited_by_count": 497,
+      "title": "Nonfilling Carbon Coating of Porous Silicon Micrometer-Sized Particles for High-Performance Lithium Battery Anodes",
+      "doi": "10.1021/nn505410q",
+      "openalex_url": "https://openalex.org/W2068939997",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2883131110",
+      "year": 2018,
+      "cited_by_count": 483,
+      "title": "Recent progress on silicon-based anode materials for practical lithium-ion battery applications",
+      "doi": "10.1016/j.ensm.2018.07.014",
+      "openalex_url": "https://openalex.org/W2883131110",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3188626832",
+      "year": 2021,
+      "cited_by_count": 482,
+      "title": "Lithium Plating Mechanism, Detection, and Mitigation in Lithium-Ion Batteries",
+      "doi": "10.1016/j.pecs.2021.100953",
+      "openalex_url": "https://openalex.org/W3188626832",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2950438942",
+      "year": 2019,
+      "cited_by_count": 481,
+      "title": "High areal capacity battery electrodes enabled by segregated nanotube networks",
+      "doi": "10.1038/s41560-019-0398-y",
+      "openalex_url": "https://openalex.org/W2950438942",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2911313159",
+      "year": 2019,
+      "cited_by_count": 414,
+      "title": "Nano/Microstructured Silicon-Graphite Composite Anode for High-Energy-Density Li-Ion Battery",
+      "doi": "10.1021/acsnano.9b00169",
+      "openalex_url": "https://openalex.org/W2911313159",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3015714700",
+      "year": 2020,
+      "cited_by_count": 406,
+      "title": "Silicon Anode with High Initial Coulombic Efficiency by Modulated Trifunctional Binder for High-Areal-Capacity Lithium-Ion Batteries",
+      "doi": "10.1002/aenm.201903110",
+      "openalex_url": "https://openalex.org/W3015714700",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2170943742",
+      "year": 2013,
+      "cited_by_count": 402,
+      "title": "Toward an Ideal Polymer Binder Design for High-Capacity Battery Anodes",
+      "doi": "10.1021/ja4054465",
+      "openalex_url": "https://openalex.org/W2170943742",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3184391242",
+      "year": 2021,
+      "cited_by_count": 383,
+      "title": "Progressive growth of the solid-electrolyte interphase towards the Si anode interior causes capacity fading",
+      "doi": "10.1038/s41565-021-00947-8",
+      "openalex_url": "https://openalex.org/W3184391242",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2908934295",
+      "year": 2019,
+      "cited_by_count": 367,
+      "title": "Solid Electrolyte Interphase on Native Oxide-Terminated Silicon Anodes for Li-Ion Batteries",
+      "doi": "10.1016/j.joule.2018.12.013",
+      "openalex_url": "https://openalex.org/W2908934295",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2851304407",
+      "year": 2018,
+      "cited_by_count": 355,
+      "title": "Understanding Fluoroethylene Carbonate and Vinylene Carbonate Based Electrolytes for Si Anodes in Lithium Ion Batteries with NMR Spectroscopy",
+      "doi": "10.1021/jacs.8b03408",
+      "openalex_url": "https://openalex.org/W2851304407",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2000304730",
+      "year": 2007,
+      "cited_by_count": 347,
+      "title": "On the binding mechanism of CMC in Si negative electrodes for Li-ion batteries",
+      "doi": "10.1016/j.elecom.2007.10.001",
+      "openalex_url": "https://openalex.org/W2000304730",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3191719568",
+      "year": 2021,
+      "cited_by_count": 337,
+      "title": "Electrolyte Design Enabling a High-Safety and High-Performance Si Anode with a Tailored Electrode-Electrolyte Interphase",
+      "doi": "10.1002/adma.202103178",
+      "openalex_url": "https://openalex.org/W3191719568",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3148462881",
+      "year": 2021,
+      "cited_by_count": 300,
+      "title": "Challenges and Recent Progress on Silicon-Based Anode Materials for Next-Generation Lithium-Ion Batteries",
+      "doi": "10.1002/sstr.202100009",
+      "openalex_url": "https://openalex.org/W3148462881",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4386225259",
+      "year": 2023,
+      "cited_by_count": 299,
+      "title": "Issues impeding the commercialization of laboratory innovations for energy-dense Si-containing lithium-ion batteries",
+      "doi": "10.1038/s41560-023-01333-5",
+      "openalex_url": "https://openalex.org/W4386225259",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4395082452",
+      "year": 2024,
+      "cited_by_count": 295,
+      "title": "Innovative Solutions for High-Performance Silicon Anodes in Lithium-Ion Batteries: Overcoming Challenges and Real-World Applications",
+      "doi": "10.1007/s40820-024-01388-3",
+      "openalex_url": "https://openalex.org/W4395082452",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2346234212",
+      "year": 2016,
+      "cited_by_count": 297,
+      "title": "Systematic Investigation of Binders for Silicon Anodes: Interactions of Binder with Silicon Particles and Electrolytes and Effects of Binders on Solid Electrolyte Interphase Formation",
+      "doi": "10.1021/acsami.6b03357",
+      "openalex_url": "https://openalex.org/W2346234212",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3146632696",
+      "year": 2021,
+      "cited_by_count": 273,
+      "title": "The Boundary of Lithium Plating in Graphite Electrode for Safe Lithium-Ion Batteries",
+      "doi": "10.1002/anie.202102593",
+      "openalex_url": "https://openalex.org/W3146632696",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2924740925",
+      "year": 2019,
+      "cited_by_count": 271,
+      "title": "Role of Polyacrylic Acid (PAA) Binder on the Solid Electrolyte Interphase in Silicon Anodes",
+      "doi": "10.1021/acs.chemmater.8b05020",
+      "openalex_url": "https://openalex.org/W2924740925",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2898767632",
+      "year": 2018,
+      "cited_by_count": 245,
+      "title": "Resolving the Discrepancy in Tortuosity Factor Estimation for Li-Ion Battery Electrodes through Micro-Macro Modeling and Experiment",
+      "doi": "10.1149/2.0731814jes",
+      "openalex_url": "https://openalex.org/W2898767632",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3100240229",
+      "year": 2020,
+      "cited_by_count": 217,
+      "title": "Microstructural Evolution of Battery Electrodes During Calendering",
+      "doi": "10.1016/j.joule.2020.10.010",
+      "openalex_url": "https://openalex.org/W3100240229",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2612843351",
+      "year": 2017,
+      "cited_by_count": 198,
+      "title": "Formation and Inhibition of Metallic Lithium Microstructures in Lithium Batteries Driven by Chemical Crossover",
+      "doi": "10.1021/acsnano.7b01494",
+      "openalex_url": "https://openalex.org/W2612843351",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3046379887",
+      "year": 2020,
+      "cited_by_count": 197,
+      "title": "Calendering-Compatible Macroporous Architecture for Silicon-Graphite Composite toward High-Energy Lithium-Ion Batteries",
+      "doi": "10.1002/adma.202003286",
+      "openalex_url": "https://openalex.org/W3046379887",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2972127671",
+      "year": 2019,
+      "cited_by_count": 193,
+      "title": "Drying of Lithium-Ion Battery Anodes for Use in High-Energy Cells: Influence of Electrode Thickness on Drying Time, Adhesion, and Crack Formation",
+      "doi": "10.1002/ente.201900722",
+      "openalex_url": "https://openalex.org/W2972127671",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4387119834",
+      "year": 2023,
+      "cited_by_count": 178,
+      "title": "Revealing the aging process of solid electrolyte interphase on SiOx anode",
+      "doi": "10.1038/s41467-023-41867-6",
+      "openalex_url": "https://openalex.org/W4387119834",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2609154998",
+      "year": 2017,
+      "cited_by_count": 183,
+      "title": "Design of porous Si/C-graphite electrodes with long cycle stability and controlled swelling",
+      "doi": "10.1039/c7ee00838d",
+      "openalex_url": "https://openalex.org/W2609154998",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3099202937",
+      "year": 2020,
+      "cited_by_count": 165,
+      "title": "Underpotential lithium plating on graphite anodes caused by temperature heterogeneity",
+      "doi": "10.1073/pnas.2009221117",
+      "openalex_url": "https://openalex.org/W3099202937",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2797321974",
+      "year": 2018,
+      "cited_by_count": 158,
+      "title": "Influence of the Binder on Lithium Ion Battery Electrode Tortuosity and Performance",
+      "doi": "10.1149/2.0971805jes",
+      "openalex_url": "https://openalex.org/W2797321974",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2525188174",
+      "year": 2016,
+      "cited_by_count": 156,
+      "title": "Quantifying microstructural dynamics and electrochemical activity of graphite and silicon-graphite lithium ion battery anodes",
+      "doi": "10.1038/ncomms12909",
+      "openalex_url": "https://openalex.org/W2525188174",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4402162113",
+      "year": 2024,
+      "cited_by_count": 150,
+      "title": "A comprehensive review of silicon anodes for high-energy lithium-ion batteries: Challenges, latest developments, and perspectives",
+      "doi": "10.1016/j.nxener.2024.100176",
+      "openalex_url": "https://openalex.org/W4402162113",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3209556830",
+      "year": 2021,
+      "cited_by_count": 139,
+      "title": "Deep learning-based segmentation of lithium-ion battery microstructures enhanced by artificially generated electrodes",
+      "doi": "10.1038/s41467-021-26480-9",
+      "openalex_url": "https://openalex.org/W3209556830",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2912356322",
+      "year": 2019,
+      "cited_by_count": 136,
+      "title": "Towards maximized volumetric capacity via pore-coordinated design for large-volume-change lithium-ion battery anodes",
+      "doi": "10.1038/s41467-018-08233-3",
+      "openalex_url": "https://openalex.org/W2912356322",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4399137604",
+      "year": 2024,
+      "cited_by_count": 130,
+      "title": "Multi-scale design of silicon/carbon composite anode materials for lithium-ion batteries: A review",
+      "doi": "10.1016/j.jechem.2024.05.029",
+      "openalex_url": "https://openalex.org/W4399137604",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2969727678",
+      "year": 2019,
+      "cited_by_count": 129,
+      "title": "Multiscale Buffering Engineering in Silicon-Carbon Anode for Ultrastable Li-Ion Storage",
+      "doi": "10.1021/acsnano.9b03355",
+      "openalex_url": "https://openalex.org/W2969727678",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2974249453",
+      "year": 2019,
+      "cited_by_count": 126,
+      "title": "Silicon-Core-Carbon-Shell Nanoparticles for Lithium-Ion Batteries: Rational Comparison between Amorphous and Graphitic Carbon Coatings",
+      "doi": "10.1021/acs.nanolett.9b02835",
+      "openalex_url": "https://openalex.org/W2974249453",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3165447490",
+      "year": 2021,
+      "cited_by_count": 116,
+      "title": "Transition Metal Dissolution and Degradation in NMC811-Graphite Electrochemical Cells",
+      "doi": "10.1149/1945-7111/ac0359",
+      "openalex_url": "https://openalex.org/W3165447490",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1988927474",
+      "year": 2014,
+      "cited_by_count": 103,
+      "title": "Three dimensional studies of particle failure in silicon based composite electrodes for lithium ion batteries",
+      "doi": "10.1016/j.jpowsour.2014.07.001",
+      "openalex_url": "https://openalex.org/W1988927474",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2767901249",
+      "year": 2017,
+      "cited_by_count": 98,
+      "title": "Operando Raman Spectroscopy and Synchrotron X-ray Diffraction of Lithiation/Delithiation in Silicon Nanoparticle Anodes",
+      "doi": "10.1021/acsnano.7b05796",
+      "openalex_url": "https://openalex.org/W2767901249",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2109618300",
+      "year": 2011,
+      "cited_by_count": 98,
+      "title": "Silicon-Based Negative Electrode for High-Capacity Lithium-Ion Batteries: SiO-Carbon Composite",
+      "doi": "10.1149/1.3551539",
+      "openalex_url": "https://openalex.org/W2109618300",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3211056763",
+      "year": 2021,
+      "cited_by_count": 90,
+      "title": "Comprehensive Insights into the Porosity of Lithium-Ion Battery Electrodes: A Comparative Study on Positive Electrodes Based on LiNi0.6Mn0.2Co0.2O2 (NMC622)",
+      "doi": "10.3390/batteries7040070",
+      "openalex_url": "https://openalex.org/W3211056763",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W3093570699",
+      "year": 2020,
+      "cited_by_count": 30,
+      "title": "Effect of Anode Porosity and Temperature on the Performance and Lithium Plating During Fast-Charging of Lithium-Ion Cells",
+      "doi": "10.1002/ente.202000666",
+      "openalex_url": "https://openalex.org/W3093570699",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2810189301",
+      "year": 2018,
+      "cited_by_count": 66,
+      "title": "Nanoscale Electrical Degradation of Silicon-Carbon Composite Anode Materials for Lithium-Ion Batteries",
+      "doi": "10.1021/acsami.8b07012",
+      "openalex_url": "https://openalex.org/W2810189301",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W1991455713",
+      "year": 2014,
+      "cited_by_count": 58,
+      "title": "Anode microstructures from high-energy and high-power lithium-ion cylindrical cells obtained by X-ray nano-tomography",
+      "doi": "10.1016/j.jpowsour.2014.07.070",
+      "openalex_url": "https://openalex.org/W1991455713",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4322625758",
+      "year": 2023,
+      "cited_by_count": 37,
+      "title": "CNT ink as an electrode additive for an effective hybrid conductive network in silicon microparticle/graphite anodes",
+      "doi": "10.1016/j.electacta.2023.142134",
+      "openalex_url": "https://openalex.org/W4322625758",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2533763008",
+      "year": 2016,
+      "cited_by_count": 39,
+      "title": "Enhancing cycling durability of Li-ion batteries with hierarchical structured silicon-graphene hybrid anodes",
+      "doi": "10.1039/c6cp06788c",
+      "openalex_url": "https://openalex.org/W2533763008",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W4391136799",
+      "year": 2024,
+      "cited_by_count": 24,
+      "title": "Spherical Graphite Anodes: Influence of Particle Size Distribution and Multilayer Structuring in Lithium-Ion Battery Cells",
+      "doi": "10.3390/batteries10020040",
+      "openalex_url": "https://openalex.org/W4391136799",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2460924711",
+      "year": 2016,
+      "cited_by_count": 681,
+      "title": "Magnetically aligned graphite electrodes for high-rate performance Li-ion batteries",
+      "doi": "10.1038/nenergy.2016.97",
+      "openalex_url": "https://openalex.org/W2460924711",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2087251714",
+      "year": 2012,
+      "cited_by_count": 146,
+      "title": "Slot-die processing of lithium-ion battery electrodes - Coating window characterization",
+      "doi": "10.1016/j.cep.2012.10.011",
+      "openalex_url": "https://openalex.org/W2087251714",
+      "tier": "core_top100"
+    },
+    {
+      "id": "W2036522059",
+      "year": 1999,
+      "cited_by_count": 120,
+      "title": "STM study on graphite/electrolyte interface in lithium-ion batteries: solid electrolyte interface formation in trifluoropropylene carbonate solution",
+      "doi": "10.1016/s0013-4686(99)00196-6",
+      "openalex_url": "https://openalex.org/W2036522059",
+      "tier": "supplementary"
+    },
+    {
+      "id": "W4412632057",
+      "year": 2025,
+      "cited_by_count": 0,
+      "title": "Ionic Liquid-Protected Edge Plane of Graphite to Overcome Initial Irreversible Capacity Loss for Improved Lithium-Ion Batteries",
+      "doi": "10.1155/er/8122951",
+      "openalex_url": "https://openalex.org/W4412632057",
+      "tier": "supplementary"
+    },
+    {
+      "id": "W4403903523",
+      "year": 2024,
+      "cited_by_count": 2,
+      "title": "Functional electrolyte: Design of corrosion inhibition additives to protect Cu current collectors in over-discharged state",
+      "doi": "10.1016/j.jpowsour.2024.235613",
+      "openalex_url": "https://openalex.org/W4403903523",
+      "tier": "supplementary"
+    },
+    {
+      "id": "W3008653137",
+      "year": 2020,
+      "cited_by_count": 105,
+      "title": "Towards Understanding of Cracking during Drying of Thick Aqueous-Processed LiNi0.8Mn0.1Co0.1O2 Cathodes",
+      "doi": "10.1021/acssuschemeng.9b06363",
+      "openalex_url": "https://openalex.org/W3008653137",
+      "tier": "supplementary"
+    },
+    {
+      "id": "W2517594727",
+      "year": 2016,
+      "cited_by_count": 20,
+      "title": "Self-healing of cracks formed in Silicon-Aluminum anodes electrochemically cycled at high lithiation rates",
+      "doi": "10.1016/j.jpowsour.2016.07.118",
+      "openalex_url": "https://openalex.org/W2517594727",
+      "tier": "supplementary"
+    },
+    {
+      "id": "W2232603545",
+      "year": 2015,
+      "cited_by_count": 101,
+      "title": "High Capacity Silicon Electrodes with Nafion as Binders for Lithium-Ion Batteries",
+      "doi": "10.1149/2.0261603jes",
+      "openalex_url": "https://openalex.org/W2232603545",
+      "tier": "supplementary"
+    }
+  ],
+  "change_log": [
+    {
+      "item": "A3",
+      "action": "corrected",
+      "field": "unfavorable_state",
+      "removed_or_old": "Dense angular micron-scale chunks with sharp corners (stress concentrators).",
+      "new": "Dense micrometre-scale Si particles (prone to pulverisation).",
+      "reason": "'Angular / sharp-corner stress concentrator' claim not found; micrometre-size pulverisation is supported."
+    },
+    {
+      "item": "A3",
+      "action": "corrected",
+      "field": "linked_properties_and_mechanism",
+      "removed_or_old": "Internal voids absorb part of the volume change; sharp, dense particles concentrate stress and fracture first.",
+      "new": "Internal voids and porosity absorb part of the volume change; dense micrometre-scale particles pulverise more readily.",
+      "reason": "Sharp-particle stress concentration not found in retrieved literature."
+    },
+    {
+      "item": "B1",
+      "action": "corrected",
+      "field": "favorable_state",
+      "removed_or_old": "D50 about 8–20 µm may be a useful example range for graphite anodes, but is not a universal optimum",
+      "new": "published spherical-graphite studies use x50 of roughly 11–18 µm (an example, not a universal optimum)",
+      "reason": "8–20 µm range not found; the retrieved spherical-graphite study (W4391136799) uses x50 = 11 and 18 µm."
+    },
+    {
+      "item": "B2",
+      "action": "corrected",
+      "field": "how_to_recognise_and_best_mode",
+      "removed_or_old": "thin shells (≲10 nm) are often not resolvable by SEM",
+      "new": "thin nanometre-scale shells are often not resolvable by SEM",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (≲10 nm threshold)"
+    },
+    {
+      "item": "B2",
+      "action": "corrected",
+      "field": "what_to_measure",
+      "removed_or_old": "shells below roughly 10 nm are often not reliably resolved",
+      "new": "very thin shells are often not reliably resolved",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (10 nm threshold)"
+    },
+    {
+      "item": "B2",
+      "action": "corrected",
+      "field": "favorable_state",
+      "removed_or_old": " A 5–20 nm thickness may be used as a system-specific example, not a universal SEM criterion.",
+      "new": "",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (5–20 nm example)"
+    },
+    {
+      "item": "B2",
+      "action": "corrected",
+      "field": "unfavorable_state",
+      "removed_or_old": "or very thick (>~30–50 nm) and dense",
+      "new": "or overly thick and dense",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (>30–50 nm threshold)"
+    },
+    {
+      "item": "B3",
+      "action": "corrected",
+      "field": "favorable_state",
+      "removed_or_old": "an initial void of roughly 2–3× the Si volume is an idealized design reference, not a universal optimum",
+      "new": "because fully lithiated Si expands by ~280–300%, a void of about 3× the Si volume would be needed for complete accommodation at full lithiation (less when Si utilisation is limited); this is an idealised design reference, not a universal optimum",
+      "reason": "'2–3×' not found; replaced by a value derived from the literature expansion figure (~300%)."
+    },
+    {
+      "item": "B4",
+      "action": "corrected",
+      "field": "how_to_recognise_and_best_mode",
+      "removed_or_old": "Carbon black: 30–100 nm spheres fused into chains; CNT: 10–50 nm fibres; graphene: crumpled sheets. These dimensions are approximate and material-dependent.",
+      "new": "Carbon black: spheres fused into chain-like aggregates; CNT: fibres; graphene: crumpled sheets.",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (size ranges)"
+    },
+    {
+      "item": "B4",
+      "action": "corrected",
+      "field": "unfavorable_state",
+      "removed_or_old": "Aggregates >~1 µm, CNT bundles",
+      "new": "Large aggregates, CNT bundles",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (>1 µm threshold)"
+    },
+    {
+      "item": "C1",
+      "action": "corrected",
+      "field": "linked_properties_and_mechanism",
+      "removed_or_old": "(e.g., PAA, CMC/SBR, alginate)",
+      "new": "(e.g., PAA, CMC, alginate)",
+      "reason": "SBR not found in retrieved Si-binder literature."
+    },
+    {
+      "item": "D2",
+      "action": "corrected",
+      "field": "favorable_state",
+      "removed_or_old": "Interconnected pores with a system-appropriate size distribution and low tortuosity; a 0.5–few µm example range is not universal.",
+      "new": "Interconnected pores with a system-appropriate size distribution and low tortuosity.",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (0.5–few µm)"
+    },
+    {
+      "item": "D5",
+      "action": "corrected",
+      "field": "favorable_state",
+      "removed_or_old": "Low variation; approximately 3–5% CV may be a useful manufacturing example, but the acceptable limit depends on coating method, loading, and cell design.",
+      "new": "Low variation; the acceptable limit depends on coating method, loading, and cell design.",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (3–5% CV)"
+    },
+    {
+      "item": "D5",
+      "action": "corrected",
+      "field": "evidence",
+      "removed_or_old": "High",
+      "new": "Medium",
+      "reason": "Evidence downgraded from High: only a coating-window study (W2087251714) was found; link to local current/plating not found."
+    },
+    {
+      "item": "D8",
+      "action": "corrected",
+      "field": "evidence",
+      "removed_or_old": "High",
+      "new": "Medium–High",
+      "reason": "Evidence downgraded from High: only indirect adhesion-loss evidence (W2972127671) found."
+    },
+    {
+      "item": "E2",
+      "action": "corrected",
+      "field": "favorable_state",
+      "removed_or_old": " graphite-only electrodes may show roughly 10% scale expansion under some conditions, but values vary.",
+      "new": "",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (graphite ~10%)"
+    },
+    {
+      "item": "E2",
+      "action": "corrected",
+      "field": "linked_properties_and_mechanism",
+      "removed_or_old": "(graphite ~10–13%, Si ~280–300%)",
+      "new": "(Si ~280–300%; porous Si designs report apparent particle expansion as low as ~40%)",
+      "reason": "Graphite 10–13% not found; added ~40% apparent expansion reported for hierarchical porous Si (W3012125219)."
+    },
+    {
+      "item": "E4",
+      "action": "corrected",
+      "field": "how_to_recognise_and_best_mode",
+      "removed_or_old": "Mossy, whisker or filament deposits (100 nm to µm diameter)",
+      "new": "Mossy, whisker or filament deposits",
+      "reason": "numeric/example detail not found in the retrieved OpenAlex literature (diameter range)"
+    },
+    {
+      "item": "F2",
+      "action": "corrected",
+      "field": "indicator_of_properties",
+      "removed_or_old": "safety",
+      "new": "cycle_life",
+      "reason": "The stated mechanism (SEI destabilisation, Li loss, faster fade) describes ageing, not safety; no retrieved work links anode metal deposits to safety."
+    },
+    {
+      "item": "F3",
+      "action": "corrected",
+      "field": "evidence",
+      "removed_or_old": "Medium",
+      "new": "Low–Medium",
+      "reason": "Evidence downgraded: only one low-citation work on Cu-collector corrosion in the over-discharged state (W4403903523)."
+    },
+    {
+      "item": "D6",
+      "action": "deleted",
+      "reason": "No work on coating surface defects/agglomerates/foreign particles causing short circuits was retrieved (query returned 0 works)."
+    },
+    {
+      "item": "F1",
+      "action": "deleted",
+      "reason": "No work on separator post-mortem condition in Si/C cells was retrieved (query returned 0 works)."
+    },
+    {
+      "item": "properties",
+      "action": "corrected",
+      "reason": "Removed deleted features D6/F1; moved F2 from safety to cycle_life; updated indicator lists."
+    },
+    {
+      "item": "1d_2d_si_nanowires_nanosheets_thin_films_on_carbon",
+      "action": "corrected",
+      "field": "main_trade_off",
+      "removed_or_old": "and high cost",
+      "new": "",
+      "reason": "Cost claim not found in retrieved literature."
+    }
+  ],
+  "deleted_items": [
+    {
+      "id": "D6",
+      "name": "Surface defects of the coating",
+      "category": "D. Electrode architecture (pores, packing, thickness)",
+      "reason": "No work on coating surface defects/agglomerates/foreign particles causing short circuits was retrieved (query returned 0 works).",
+      "original": {
+        "id": "D6",
+        "category": "D. Electrode architecture (pores, packing, thickness)",
+        "name": "Surface defects of the coating",
+        "how_to_recognise_and_best_mode": "Top view SE/ETD: pinholes, craters, scratches, protruding agglomerates, foreign particles.",
+        "what_to_measure": "Defect density (per cm²) and size distribution; protruding height vs coating thickness.",
+        "verify_with_text": "Optical inspection, EDS of foreign particles",
+        "verify_methods": [
+          "EDS",
+          "Optical microscopy/inspection"
+        ],
+        "favorable_state": "Low density of defects, with no defects large enough to damage the separator or create local electrical/chemical hot spots.",
+        "unfavorable_state": "Agglomerates larger than a fraction of the coating thickness (often ≳20–50 µm), pinholes, metal contaminants.",
+        "linked_properties_and_mechanism": "Local hot spots, separator damage and internal short circuits, manufacturing yield.",
+        "evidence": "Medium",
+        "indicator_of_properties": [
+          "safety",
+          "manufacturing_uniformity"
+        ]
+      }
+    },
+    {
+      "id": "F1",
+      "name": "Separator condition",
+      "category": "F. Cell-level features (post-mortem)",
+      "reason": "No work on separator post-mortem condition in Si/C cells was retrieved (query returned 0 works).",
+      "original": {
+        "id": "F1",
+        "category": "F. Cell-level features (post-mortem)",
+        "name": "Separator condition",
+        "how_to_recognise_and_best_mode": "Surface/cross-section of the cycled separator: clogged pores, embedded debris, local thinning or melting marks.",
+        "what_to_measure": "Surface pore area fraction, foreign-particle count and size, penetration depth.",
+        "verify_with_text": "Gurley number only as an auxiliary gas-permeability indicator; combine with wetting, impedance, permeability, or pore-structure measurements for ion transport.",
+        "verify_methods": [
+          "Gurley number",
+          "Electrolyte wetting/permeability"
+        ],
+        "favorable_state": "Open, clean pores and intact thickness, with adequate electrolyte wetting.",
+        "unfavorable_state": "Blocked pores, embedded Si/Li, punctures, or local thinning/melting.",
+        "linked_properties_and_mechanism": "Ion transport, safety, short-circuit risk.",
+        "evidence": "Medium",
+        "indicator_of_properties": [
+          "safety"
+        ]
+      }
+    }
+  ]
+}

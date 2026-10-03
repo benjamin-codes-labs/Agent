@@ -1,0 +1,9 @@
+pydantic~=2.9
+jinja2~=3.1
+anthropic~=0.69
+pillow~=11.0   # optional: only used to warn when a Step 5 PNG exceeds 1568 px
+modal~=1.0     # only needed to deploy sentinel/modal_app.py
+tifffile
+imagecodecs==2025.8.2
+scikit-image
+matplotlib==3.10.6
