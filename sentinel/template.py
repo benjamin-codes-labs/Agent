@@ -92,6 +92,9 @@ def template_validator_config(base: ValidatorConfig | None = None) -> ValidatorC
         require_low_confidence_hedge=base.require_low_confidence_hedge,
         citations_optional_without_pack=True,
         text_rules=base.text_rules,
+        max_words=base.max_words,
+        max_evidence_items=base.max_evidence_items,
+        max_caveats=base.max_caveats,
     )
 
 

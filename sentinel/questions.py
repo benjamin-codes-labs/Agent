@@ -3,13 +3,14 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import time
 from dataclasses import dataclass
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from .contract import Citation
-from .explainer import ClaudeExplainer, ExplainerConfig, ExplainerError
+from .explainer import ClaudeExplainer, ExplainerConfig, ExplainerError, report_activity
 from .knowledge import KnowledgePack
 from .prompts import ImageAsset, PROJECT_CONTEXT_RULES
 from .textrules import PLACEHOLDER, TextRuleConfig, scan_field
@@ -43,15 +44,32 @@ using only the supplied local reference records, measured facts, optional sample
 attached images. Do not make a new classification. If the question cannot be answered from
 these inputs, say precisely what is missing and set answerable=false. Do not fabricate a result.
 
-Give a professional, direct explanation in complete sentences, with depth appropriate to the
-question. For a requested sample review, cover the prediction and runner-up, model branches,
-measured supporting AND opposing features, supplied regions, acquisition confounding, validation
-limitations and uncertainty. A branch can favour the winning type while an individual feature
-pushes towards the runner-up. Do not suppress contrary evidence. The original confidence tier
-is an upstream label, not a guarantee of external validity or evidence of sample quality.
+Give a concise, characteristic-based explanation, not a facts inventory. Aim for 180-230 words
+and about five or six short points for a sample review; use fewer for a narrow question. The
+application checks a 280-word and six-point ceiling for normal CLI answers. Each paragraph
+object is one bullet point; the application supplies its marker. Prefer qualitative contrasts
+and a few indispensable numerical anchors instead of lists of means, z-scores or probabilities.
+
+For classification reviews, lead with the reported outcome, then give the strongest reasons:
+what characteristic is observed or measured, why it fits the predicted category, and why it
+fits another supplied category less well. Prefer two strong reasons over a catalogue of weak
+ones. Include a short 'Why not the alternatives' point addressing the runner-up and other
+categories where comparable profiles are supplied. If those profiles are missing or use
+incompatible segmentation, say the specific contrast cannot be established. A lower probability
+is not evidence that an image lacks a characteristic. A feature may favour the runner-up even
+when the overall classifier selects the winner; preserve that opposing evidence. Put the main
+confidence limitation in a short final point, combining related caveats without concealing them.
+Do not repeat the same measurements in the conclusion, evidence and comparison.
+
+Use all_batch_comparisons.json and SiC_SEM_reference_verified.json only where relevant and
+compatible. Keep supporting numerical values and reference quotations in citation metadata when
+they are not needed in the displayed text: a qualitative comparison can cite the source's exact
+measurement lines without displaying those numbers. Facts must still list exactly the numeric
+placeholders used. A reported High tier does not override acquisition confounding or establish
+external validity. Do not invent alternative-batch morphology or diagnose unseen image features.
 
 Return JSON only, without markdown fences, following the schema below. The paragraph texts
-will be displayed as plain prose. Every number in paragraph text must be a {context.SN.path}
+will be displayed as bullet points. Every number in paragraph text must be a {context.SN.path}
 placeholder from the fact table, never arithmetic, invented numbers or numeric words. For a
 literature range embedded in prose, use its whole-text fact placeholder. Batch names such as
 Batch_1 are identifiers, not measurements, and may be written as supplied. Use facts to support
@@ -63,13 +81,26 @@ For an answerable=false response, explain the missing information without unsupp
 
 Visual observations must list their attached detector in images. If no image is attached, do not
 claim direct visual inspection; say that any image-related interpretation uses supplied summaries.
-Image paths and region records in a sample JSON do not count as attachments. Do not add headings,
-bullets, JSON keys or raw fact IDs to paragraph prose. Do not conceal relevant source caveats.
+Image paths and region records in a sample JSON do not count as attachments. A short topic label
+such as 'Image quality:' is welcome; do not add leading bullet markers, standalone headings,
+JSON keys or raw fact IDs to paragraph text. Do not conceal relevant source caveats.
 """
 
 
-def validate_answer(answer: GroundedAnswer, pack: KnowledgePack, image_ids: set[str]) -> list[str]:
+def _display_text(text: str, pack: KnowledgePack) -> str:
+    return PLACEHOLDER.sub(lambda match: pack.context_facts[match.group(1).strip()].display
+                           if match.group(1).strip() in pack.context_facts else match.group(0), text)
+
+
+def validate_answer(answer: GroundedAnswer, pack: KnowledgePack, image_ids: set[str], *,
+                    max_words: int | None = None, max_points: int | None = None) -> list[str]:
     errors = []
+    word_count = sum(len(_display_text(paragraph.text, pack).split()) for paragraph in answer.paragraphs)
+    if max_words is not None and word_count > max_words:
+        errors.append(f"Shorten the answer from {word_count} words to at most {max_words} reader-facing words. "
+                      "Keep characteristic-based contrasts and essential limitations, not a statistics inventory.")
+    if max_points is not None and len(answer.paragraphs) > max_points:
+        errors.append(f"Shorten to at most {max_points} points by combining related findings; retain opposing evidence and warnings.")
     identifiers = tuple(fact.value for fact in pack.context_facts.values()
                         if isinstance(fact.value, str) and re.fullmatch(r"(?:Batch_|img_)[\w-]+", fact.value))
     rules = TextRuleConfig().with_extra(
@@ -98,13 +129,20 @@ def validate_answer(answer: GroundedAnswer, pack: KnowledgePack, image_ids: set[
 
 
 def answer_question(question: str, pack: KnowledgePack, images: Iterable[ImageAsset] = (), *,
-                    client=None, config: ExplainerConfig | None = None, max_retries: int = 2) -> QuestionOutcome:
+                    client=None, config: ExplainerConfig | None = None, max_retries: int = 2,
+                    full_context: bool = False, progress: Callable[[str], None] | None = None,
+                    max_words: int | None = None, max_points: int | None = None) -> QuestionOutcome:
+    started = time.monotonic()
     question = question.strip()
     if not question:
         raise ValueError("question must not be empty")
     if max_retries < 0:
         raise ValueError("max_retries must be non-negative")
-    pack = pack.select(question)
+    if any(limit is not None and limit < 1 for limit in (max_words, max_points)):
+        raise ValueError("answer length limits must be positive")
+    pack = pack.select(question, limit=12 if full_context else 6, compact=not full_context)
+    if progress:
+        progress(f"Prepared {len(pack.context_facts)} facts and {len(pack)} selected sources")
     assets = list(images)
     if len(assets) > 3 or len({asset.detector for asset in assets}) != len(assets):
         raise ValueError("attach at most one image per detector (BSE, ETD, InLens)")
@@ -124,12 +162,25 @@ def answer_question(question: str, pack: KnowledgePack, images: Iterable[ImageAs
     engine = ClaudeExplainer(client=client, config=config)
     attempts = []
     for attempt in range(max_retries + 1):
-        response = engine.client.messages.create(
-            model=engine.config.model, max_tokens=engine.config.max_tokens, system=system, messages=messages)
+        try:
+            with report_activity(progress, f"Generating AI answer (attempt {attempt + 1}/{max_retries + 1})"):
+                response = engine.client.messages.create(
+                    model=engine.config.model, max_tokens=engine.config.max_tokens,
+                    timeout=engine.config.timeout_seconds, system=system, messages=messages)
+        except ExplainerError:
+            raise
+        except Exception as exc:
+            status = getattr(exc, "status_code", None)
+            detail = type(exc).__name__ + (f", HTTP {status}" if status is not None else "")
+            raise ExplainerError(f"AI request failed ({detail}). No answer was generated. "
+                                 "Check the API credentials, model availability and connection.") from exc
         try:
             call, payload = engine._read_response(response)
             draft = GroundedAnswer.model_validate(payload)
-            errors = validate_answer(draft, pack, {asset.detector for asset in assets})
+            if progress:
+                progress("Validating answer facts, numbers and citations")
+            errors = validate_answer(draft, pack, {asset.detector for asset in assets},
+                                     max_words=max_words, max_points=max_points)
         except (ExplainerError, ValidationError) as exc:
             errors = [str(exc)]
             draft = None
@@ -137,8 +188,7 @@ def answer_question(question: str, pack: KnowledgePack, images: Iterable[ImageAs
         if not errors:
             answer = draft.model_copy(deep=True)
             for paragraph in answer.paragraphs:
-                paragraph.text = PLACEHOLDER.sub(lambda match: pack.context_facts[match.group(1).strip()].display,
-                                                paragraph.text)
+                paragraph.text = _display_text(paragraph.text, pack)
             cited = {citation.source for paragraph in draft.paragraphs for citation in paragraph.citations}
             used = {fid for paragraph in draft.paragraphs for fid in paragraph.facts}
             cited.update(fid.split(".")[1] for fid in used)
@@ -153,8 +203,17 @@ def answer_question(question: str, pack: KnowledgePack, images: Iterable[ImageAs
                 "prompt": "sha256:" + hashlib.sha256(system.encode()).hexdigest()[:16],
                 "attempts": attempt + 1, "attempt_log": attempts, "validator_passed": True,
                 "semantic_critic_ran": False,
+                "elapsed_seconds": round(time.monotonic() - started, 3),
+                "context_fact_count": len(pack.context_facts),
+                "request_timeout_seconds": engine.config.timeout_seconds,
+                "max_transport_retries": engine.config.max_transport_retries,
             }
+            if progress:
+                progress("Answer passed grounding checks")
             return QuestionOutcome(answer, draft, audit)
+        if progress:
+            progress(f"Attempt {attempt + 1} rejected by grounding checks; "
+                     + ("preparing a repair" if attempt < max_retries else "attempt limit reached"))
         if draft is not None:
             messages.append({"role": "assistant", "content": draft.model_dump_json()})
         messages.append({"role": "user", "content": "Correct the JSON grounding errors without inventing evidence:\n"

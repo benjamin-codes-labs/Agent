@@ -103,6 +103,6 @@ def api_key_hint(var: str = "ANTHROPIC_API_KEY") -> str:
         f"      cp .env.example .env    # then edit it\n"
         f"  or export it in your shell:\n"
         f"      export {var}=...\n"
-        f"  Without a key the workflow still runs and falls back to the "
-        f"template explanation."
+        f"  AI generation requires this credential. A fixed template is only "
+        f"available in workflows that allow template fallback; main.py does not."
     )

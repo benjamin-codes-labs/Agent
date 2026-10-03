@@ -13,9 +13,12 @@ handled so a refusal to call the tool never costs a retry.
 from __future__ import annotations
 
 import json
+import math
 import re
+from contextlib import contextmanager
 from dataclasses import dataclass, field
-from typing import Any, Iterable, Protocol
+from threading import Event, Thread
+from typing import Any, Callable, Iterable, Protocol
 
 from pydantic import ValidationError
 
@@ -31,6 +34,27 @@ from .prompts import (
 )
 
 FENCE = re.compile(r"```(?:json)?\s*(.*?)\s*```", re.DOTALL)
+
+
+@contextmanager
+def report_activity(progress: Callable[[str], None] | None, message: str, *, interval: float = 10.0):
+    if progress is None:
+        yield
+        return
+    progress(message)
+    stop = Event()
+
+    def heartbeat():
+        while not stop.wait(interval):
+            progress(message + " — still waiting for the provider")
+
+    thread = Thread(target=heartbeat, daemon=True)
+    thread.start()
+    try:
+        yield
+    finally:
+        stop.set()
+        thread.join()
 
 
 class ExplainerError(RuntimeError):
@@ -142,6 +166,10 @@ def parse_explanation(payload: dict[str, Any]) -> Explanation:
         "generator", "validator_passed", "critic_passed"
     }
     cleaned = {k: v for k, v in payload.items() if k in allowed}
+    for key in ("headline", "why_not_runner_up", "agreement"):
+        value = cleaned.get(key)
+        if isinstance(value, list) and value and all(isinstance(part, str) for part in value):
+            cleaned[key] = " ".join(part.strip() for part in value)
     for key in ("evidence", "caveats"):
         if cleaned.get(key) is None:
             cleaned[key] = []
@@ -165,6 +193,8 @@ class ExplainerConfig:
     #: tokens, and a response cut mid-JSON costs a whole retry for nothing.
     #: Output tokens are billed only as used, so the budget is generous.
     max_tokens: int = 8000
+    timeout_seconds: float = 90.0
+    max_transport_retries: int = 0
     #: Off by default, on the evidence of live runs. Because ``tool_choice``
     #: cannot be forced on this model, offering the tool is only a suggestion --
     #: and when the model took it, its arguments twice came back as pseudo-XML
@@ -178,6 +208,12 @@ class ExplainerConfig:
     force_tool: bool = False
     #: Left None deliberately: this model rejects non-default sampling params.
     temperature: float | None = None
+
+    def __post_init__(self):
+        if not math.isfinite(self.timeout_seconds) or self.timeout_seconds <= 0:
+            raise ValueError("request timeout must be positive and finite")
+        if self.max_transport_retries < 0:
+            raise ValueError("transport retries must be non-negative")
 
 
 class ClaudeExplainer:
@@ -206,7 +242,8 @@ class ClaudeExplainer:
             # export it and nobody is tempted to paste it into source.
             if not ensure_api_key():
                 raise ExplainerError(api_key_hint())
-            self._client = anthropic.Anthropic()
+            self._client = anthropic.Anthropic(timeout=self.config.timeout_seconds,
+                                               max_retries=self.config.max_transport_retries)
         return self._client
 
     # -- generation ------------------------------------------------------- #
@@ -228,11 +265,12 @@ class ClaudeExplainer:
         them.
         """
         messages = list(history or [])
-        messages.append(build_user_message(sheet, images, feedback=feedback))
+        messages.append(build_user_message(sheet, images, feedback=feedback, include_facts=not bool(history)))
 
         kwargs: dict[str, Any] = {
             "model": self.config.model,
             "max_tokens": self.config.max_tokens,
+            "timeout": self.config.timeout_seconds,
             "system": build_system_prompt(pack),
             "messages": messages,
         }

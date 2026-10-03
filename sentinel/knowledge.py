@@ -25,6 +25,7 @@ import re
 import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 
 from .facts import Fact
 
@@ -63,6 +64,7 @@ class Source:
     title: str
     body: str
     metadata: dict[str, str] = field(default_factory=dict)
+    fields: dict[str, Any] | None = field(default=None, repr=False)
 
     @property
     def url(self) -> str | None:
@@ -203,7 +205,7 @@ class KnowledgePack:
         batches = [record[key] for key in ("batch", "lot_a", "lot_b") if isinstance(record.get(key), str)]
         if batches:
             metadata["batches"] = ",".join(batches)
-        self.sources[sid] = Source(sid, title, body, metadata)
+        self.sources[sid] = Source(sid, title, body, metadata, dict(leaves))
         for key, value in leaves:
             if kind == "reference" and isinstance(value, str) and not re.search(r"\d", value):
                 continue
@@ -223,7 +225,8 @@ class KnowledgePack:
         pack._add_record("Supplied sample output (native upstream schema)", sample, "sample", origin)
         return pack
 
-    def select(self, query: str, *, limit: int = 12) -> "KnowledgePack":
+    def select(self, query: str, *, limit: int = 6, compact: bool = True,
+               batch_statistics: bool = True) -> "KnowledgePack":
         aliases = {"porosity": "pore", "binder": "CBD", "siox": "silicon", "crack": "fracture"}
         query = query + " " + " ".join(value for key, value in aliases.items() if key in query.lower())
         terms = set(re.findall(r"[a-z0-9]+", query.lower())) - {"the", "and", "for", "why", "how", "what", "with"}
@@ -232,7 +235,9 @@ class KnowledgePack:
             if source.metadata.get("kind") != "reference":
                 continue
             title = source.title.lower()
-            body = source.body.lower()
+            body = "\n".join(str(value) for key, value in source.fields.items()
+                             if not key.startswith("supporting_references.")) if source.fields else source.body
+            body = body.lower()
             score = sum(4 * (term in title) + (term in body) for term in terms if len(term) > 2)
             ranked.append((score, sid))
         wanted = {sid for _, sid in sorted(ranked, key=lambda item: (-item[0], int(item[1][1:])))[:limit]}
@@ -244,6 +249,8 @@ class KnowledgePack:
             if kind == "reference" and sid not in wanted:
                 continue
             if kind in {"batch", "comparison"}:
+                if not batch_statistics and source.metadata.get("batches"):
+                    continue
                 if detectors and source.metadata.get("detector") not in detectors:
                     continue
                 source_batches = set(source.metadata.get("batches", "").lower().split(",")) - {""}
@@ -252,8 +259,18 @@ class KnowledgePack:
                         continue
                     if len(batches) == 1 and not source_batches & batches:
                         continue
-            sources[sid] = source
-        facts = {fid: fact for fid, fact in self.context_facts.items() if fid.split(".")[1] in sources}
+            sources[sid] = _compact_source(source, query) if compact else source
+        facts = {}
+        for fid, fact in self.context_facts.items():
+            _, sid, key = fid.split(".", 2)
+            if sid not in sources:
+                continue
+            source = sources[sid]
+            if source.fields is not None and key not in source.fields:
+                continue
+            if compact and source.metadata.get("kind") != "sample" and isinstance(fact.value, str) and not re.search(r"\d", fact.value):
+                continue
+            facts[fid] = fact
         return KnowledgePack(sources, raw=self.raw, path=self.path, context_facts=facts)
 
     @classmethod
@@ -328,6 +345,9 @@ class KnowledgePack:
         if not self.sources:
             return "(The knowledge pack is empty. Make no materials-science claims.)"
         out: list[str] = []
+        if any(source.metadata.get("context_view") == "compact" for source in self.sources.values()):
+            out.append("Focused context: bibliography and unrequested auxiliary fields may be omitted. "
+                       "Do not infer that omitted measurements or references do not exist.")
         for sid in self.ids():
             source = self.sources[sid]
             header = f"### [{sid}] {source.title}"
@@ -339,6 +359,44 @@ class KnowledgePack:
             out.append(source.body)
             out.append("")
         return "\n".join(out)
+
+
+def _compact_source(source: Source, query: str) -> Source:
+    if source.fields is None or source.metadata.get("kind") == "sample":
+        return source
+    terms = set(re.findall(r"[a-z0-9]+", query.lower()))
+    bibliography = bool(terms & {"doi", "references", "papers", "bibliography", "publications"})
+    phases = set()
+    if terms & {"pore", "pores", "porosity"}:
+        phases.add("pore")
+    if "graphite" in terms:
+        phases.add("graphite")
+    if "bright" in terms:
+        phases.add("bright phase")
+    if re.search(r"\b(?:all|other) (?:phases|statistics|features)\b", query.lower()):
+        phases.clear()
+    phase_names = {key.rsplit(".", 1)[0]: value for key, value in source.fields.items()
+                   if key.startswith("phases.") and key.endswith(".phase")}
+    auxiliary = {"bits", "next", "variant_shifts", "interval90", "interval_width", "to_settle"}
+    if terms & {"uncertainty", "budget", "width", "sensitivity", "segmentation", "next", "more", "imaging"}:
+        auxiliary.clear()
+    fields = {}
+    for key, value in source.fields.items():
+        parts = key.split(".")
+        if parts[0] == "supporting_references" and not bibliography:
+            continue
+        if source.metadata.get("kind") in {"batch", "comparison"}:
+            if phases and len(parts) >= 3 and parts[0] == "phases":
+                phase = phase_names.get(".".join(parts[:2]), parts[1])
+                if phase not in phases:
+                    continue
+            omitted = set(parts) & auxiliary
+            if omitted and not any(set(re.findall(r"[a-z0-9]+", name)) <= terms for name in omitted):
+                continue
+        fields[key] = value
+    body = "\n".join(f"{key}: {value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)}"
+                     for key, value in fields.items())
+    return Source(source.id, source.title, body, {**source.metadata, "context_view": "compact"}, fields)
 
 
 def _record_leaves(value, prefix=""):

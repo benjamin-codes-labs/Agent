@@ -318,14 +318,19 @@ def test_seeded_defects_are_all_caught(result, pack):
 # --------------------------------------------------------------------------- #
 # Explainer response parsing
 # --------------------------------------------------------------------------- #
-def test_main_formats_review_json_as_paragraphs(monkeypatch, capsys):
+def test_main_formats_review_json_as_bullet_points(monkeypatch, capsys):
+    import importlib.util
+    from pathlib import Path
     import sentinel
 
     def unexpected_call(*args, **kwargs):
         pytest.fail("Importing main must not call the explainer")
 
     monkeypatch.setattr(sentinel, "explain_battery", unexpected_call)
-    from main import format_review
+    spec = importlib.util.spec_from_file_location("main_import_test", Path(__file__).resolve().parents[1] / "main.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    format_review = module.format_review
 
     explanation = Explanation(
         headline="Classified as type B at 72.7%.",
@@ -340,11 +345,10 @@ def test_main_formats_review_json_as_paragraphs(monkeypatch, capsys):
         validator_passed=True,
     )
     assert format_review(explanation.model_dump_json()) == (
-        "Classified as type B at 72.7%.\n\n"
-        "Porosity is 27.1%.\n\n"
-        "Type A is less consistent with the measurements.\n\n"
-        "The detectors agree.\n\n"
-        "Confidence is medium. Image quality limits interpretation."
+        "- Classified as type B at 72.7%. The detectors agree.\n\n"
+        "- Porosity is 27.1%.\n\n"
+        "- Type A is less consistent with the measurements.\n\n"
+        "- Confidence is medium.\n\n- Image quality limits interpretation."
     )
     assert capsys.readouterr().out == ""
 
@@ -358,7 +362,7 @@ def test_main_formats_empty_sections_and_unicode():
         caveats=["", "  Review is tentative.  "],
     )
     assert format_review(explanation.model_dump_json()) == (
-        "Median diameter is 6.42 µm.\n\nReview is tentative."
+        "- Median diameter is 6.42 µm.\n\n- Review is tentative."
     )
 
 
@@ -367,17 +371,191 @@ def test_main_prints_only_review(result, pack, monkeypatch, capsys, tmp_path):
 
     workflow, _ = _workflow(pack, [text_response(_payload()), critic_pass()])
     outcome = workflow.run(result)
-    monkeypatch.setattr(main, "explain_battery", lambda *args: outcome)
+    def explain(*args, config, progress):
+        assert config.allow_template_fallback is False
+        assert config.use_critic is True
+        assert config.max_retries == 1
+        assert config.explainer.max_tokens == 8000
+        assert config.explainer.max_transport_retries == 0
+        assert config.validator.max_words == 280
+        assert config.validator.max_evidence_items == 3
+        assert config.validator.max_caveats == 2
+        assert progress is None
+        return outcome
+
+    monkeypatch.setattr(main, "explain_battery", explain)
     monkeypatch.chdir(tmp_path)
-    main.main()
+    main.main(quiet=True)
     captured = capsys.readouterr()
     assert captured.out == main.format_review(outcome.explanation.model_dump_json()) + "\n"
     assert captured.err == ""
-    main.main(debug=True)
+    main.main(debug=True, quiet=True)
     captured = capsys.readouterr()
     assert captured.out == main.format_review(outcome.explanation.model_dump_json()) + "\n"
     assert "llm" in captured.err
     assert "knowledge_pack" in captured.err
+
+
+def test_api_clients_use_explicit_timeouts_without_hidden_retries(monkeypatch):
+    import anthropic
+    import sentinel.explainer
+    import sentinel.critic
+
+    captured = []
+    monkeypatch.setattr(anthropic, "Anthropic", lambda **kwargs: captured.append(kwargs) or FakeClient([]))
+    monkeypatch.setattr(sentinel.explainer, "ensure_api_key", lambda: True)
+    monkeypatch.setattr(sentinel.critic, "ensure_api_key", lambda: True)
+    ClaudeExplainer(config=ExplainerConfig(timeout_seconds=42)).client
+    ClaudeCritic(config=CriticConfig(timeout_seconds=24)).client
+    assert captured == [{"timeout": 42, "max_retries": 0}, {"timeout": 24, "max_retries": 0}]
+
+
+@pytest.mark.parametrize("timeout", [0, -1, float("nan"), float("inf")])
+def test_invalid_request_timeouts_are_rejected(timeout):
+    with pytest.raises(ValueError, match="timeout"):
+        ExplainerConfig(timeout_seconds=timeout)
+    with pytest.raises(ValueError, match="timeout"):
+        CriticConfig(timeout_seconds=timeout)
+
+
+def test_progress_reports_stages_and_repairs_without_repeating_facts(result, pack):
+    events = []
+    workflow, client = _workflow(pack, [text_response(_payload(headline="Porosity is 99%.")),
+                                       text_response(_payload()), critic_pass()])
+    workflow.progress = events.append
+    outcome = workflow.run(result)
+    assert outcome.generator == "llm"
+    assert any("attempt 1" in event for event in events)
+    assert any("attempt 2" in event for event in events)
+    assert any("Validating" in event for event in events)
+    assert any("critic" in event for event in events)
+    initial = client.messages.requests[0]["messages"][0]
+    repair = client.messages.requests[1]["messages"][-1]
+    assert "# Fact sheet" in json.dumps(initial)
+    assert "# Fact sheet" not in json.dumps(repair)
+    assert "NUM001" in json.dumps(repair)
+    assert initial == client.messages.requests[1]["messages"][0]
+
+
+def test_progress_heartbeat_stops_when_activity_finishes():
+    from threading import Event
+    from sentinel.explainer import report_activity
+
+    waiting = Event()
+    events = []
+
+    def progress(message):
+        events.append(message)
+        if "still waiting" in message:
+            waiting.set()
+
+    with report_activity(progress, "Generating", interval=0.001):
+        assert waiting.wait(2)
+    assert events[0] == "Generating"
+    assert len(events) >= 2
+    count = len(events)
+    Event().wait(0.02)
+    assert len(events) == count
+
+
+def test_request_timeout_reaches_explainer_and_critic(result, pack):
+    workflow, client = _workflow(pack, [text_response(_payload()), critic_pass()])
+    workflow.run(result)
+    assert all(request["timeout"] == 90.0 for request in client.messages.requests)
+
+
+def test_main_progress_is_on_stderr_and_context_can_be_expanded(result, pack, monkeypatch, capsys):
+    import main
+
+    workflow, _ = _workflow(pack, [text_response(_payload()), critic_pass()])
+    outcome = workflow.run(result)
+    selected = []
+
+    def explain(result, knowledge, images, **kwargs):
+        selected.append(knowledge)
+        if kwargs["progress"]:
+            kwargs["progress"]("Generating AI review")
+        return outcome
+
+    monkeypatch.setattr(main, "explain_battery", explain)
+    main.main()
+    captured = capsys.readouterr()
+    assert "Loading knowledge" in captured.err and "Generating AI review" in captured.err
+    assert "Review ready" in captured.err
+    assert "[Sentinel" not in captured.out
+    assert not any(source.metadata.get("batches") for source in selected[0].sources.values())
+    main.main(quiet=True, full_context=True)
+    assert capsys.readouterr().err == ""
+    assert any(source.metadata.get("batches") for source in selected[1].sources.values())
+
+
+@pytest.mark.parametrize("kwargs", [{"timeout": 0}, {"max_attempts": 0}, {"max_tokens": 0}])
+def test_main_rejects_invalid_call_limits(kwargs):
+    import main
+
+    with pytest.raises(ValueError):
+        main.main(**kwargs)
+
+
+def test_ai_only_workflow_does_not_replace_errors_with_a_template(result, pack):
+    def fail(_):
+        raise RuntimeError("provider unavailable")
+
+    workflow, _ = _workflow(pack, [fail], allow_template_fallback=False)
+    with pytest.raises(ExplainerError, match="provider unavailable") as error:
+        workflow.run(result)
+    assert "template fallback is disabled" in str(error.value)
+    assert all(attempt.source == "llm" for attempt in error.value.attempts)
+
+
+def test_ai_only_workflow_reports_validation_errors(result, pack):
+    workflow, _ = _workflow(pack, [text_response(_payload(headline="Porosity is 99%."))],
+                            allow_template_fallback=False, max_retries=0)
+    with pytest.raises(ExplainerError, match="NUM001"):
+        workflow.run(result)
+
+
+def test_ai_only_workflow_keeps_the_critic(result, pack):
+    workflow, _ = _workflow(pack, [text_response(_payload()), critic_fail()],
+                            allow_template_fallback=False, max_retries=0)
+    with pytest.raises(ExplainerError, match="CRIT_CONF"):
+        workflow.run(result)
+
+
+def test_main_missing_credentials_never_prints_a_template(monkeypatch, capsys):
+    import main
+    import sentinel.explainer
+
+    monkeypatch.setattr(main, "load_dotenv", lambda **kwargs: [])
+    monkeypatch.setattr(sentinel.explainer, "ensure_api_key", lambda: False)
+    with pytest.raises(ExplainerError, match="ANTHROPIC_API_KEY is not set"):
+        main.main()
+    assert capsys.readouterr().out == ""
+
+
+def test_main_rejects_an_unexpected_template_result(result, pack, monkeypatch, capsys):
+    import main
+
+    workflow, _ = _workflow(pack, [text_response(_payload(headline="Porosity is 99%."))], max_retries=0)
+    outcome = workflow.run(result)
+    assert outcome.generator == "template"
+    monkeypatch.setattr(main, "explain_battery", lambda *a, **kw: outcome)
+    with pytest.raises(ExplainerError, match="AI-generated"):
+        main.main()
+    assert capsys.readouterr().out == ""
+
+
+def test_main_loads_configuration_from_project_directory(result, pack, tmp_path, monkeypatch):
+    import main
+
+    calls = []
+    workflow, _ = _workflow(pack, [text_response(_payload()), critic_pass()])
+    outcome = workflow.run(result)
+    monkeypatch.setattr(main, "load_dotenv", lambda **kwargs: calls.append(kwargs))
+    monkeypatch.setattr(main, "explain_battery", lambda *a, **kw: outcome)
+    monkeypatch.chdir(tmp_path)
+    main.main()
+    assert calls == [{"start": main.ROOT}]
 
 
 def test_main_formats_template_fallback(sheet):
@@ -390,15 +568,87 @@ def test_main_formats_template_fallback(sheet):
     assert "{" not in text
 
 
+def test_remaining_type_has_a_grounded_label(result, sheet):
+    assert sheet.get("cls.other_type").display == "C"
+    payload = result.model_dump()
+    payload["classification"].update(predicted="C", runner_up="B", fused={"A": 0.1, "B": 0.2, "C": 0.7})
+    other_sheet = build_fact_sheet(BatteryResult.model_validate(payload))
+    assert other_sheet.get("cls.other_type").display == "A"
+    draft = Explanation(headline="Type {pred_type} is favoured; type {cls.other_type} is not excluded.")
+    assert "type A" in render(draft, other_sheet).headline
+
+
+def test_concise_review_budget_checks_all_displayed_text(good_draft, sheet, pack):
+    draft = good_draft.model_copy(deep=True)
+    draft.agreement = "The detectors agree. " * 100
+    report = Validator(sheet, pack, ValidatorConfig(max_words=280)).validate(draft)
+    assert "STYLE001" in {finding.code for finding in report.errors}
+    assert draft.agreement.endswith("The detectors agree. ")
+    assert "STYLE001" not in {finding.code for finding in Validator(sheet, pack).validate(draft).errors}
+
+
+def test_concise_review_limits_inventory_without_dropping_grounding(good_draft, sheet, pack):
+    draft = good_draft.model_copy(deep=True)
+    draft.evidence *= 3
+    draft.caveats = ["A quality flag limits confidence."] * 3
+    report = Validator(sheet, pack, ValidatorConfig(max_evidence_items=3, max_caveats=2)).validate(draft)
+    assert {"STYLE002", "STYLE003"} <= {finding.code for finding in report.errors}
+    empty = Explanation(headline="A short assessment.")
+    report = Validator(sheet, pack, ValidatorConfig(max_words=280)).validate(empty)
+    assert "CONTENT002" in {finding.code for finding in report.errors}
+
+
+def test_template_config_preserves_requested_length_limits():
+    config = template_validator_config(ValidatorConfig(max_words=280, max_evidence_items=3, max_caveats=2))
+    assert (config.max_words, config.max_evidence_items, config.max_caveats) == (280, 3, 2)
+    assert config.min_citations == 0
+
+
+def test_critic_distinguishes_causal_claims_from_cautions():
+    from sentinel.prompts import CRITIC_ROLE
+
+    assert "NOT an asserted mechanism" in CRITIC_ROLE
+    assert "Continue to reject actual unsupported" in CRITIC_ROLE
+    assert "style editing, not a grounding error" in CRITIC_ROLE
+
+
 def test_review_prompt_requests_depth_without_invented_visuals(pack):
     from sentinel.prompts import build_system_prompt
 
     instructions = build_system_prompt(pack)[0]["text"]
     assert "professional technical review" in instructions
-    assert "450-750 words" in instructions
+    assert "bullet point" in instructions
+    assert "180-230 words" in instructions
+    assert "observed or measured characteristic" in instructions
+    assert "remaining category" in instructions
+    assert "not zero probability" in instructions
+    assert "450-750 words" not in instructions
     assert "Do not claim to have inspected an image" in instructions
     assert "EVERY NUMBER COMES FROM A PLACEHOLDER" in instructions
     assert "THREE items, four at the very most" not in instructions
+
+
+@pytest.mark.parametrize("field", ["headline", "why_not_runner_up", "agreement"])
+def test_sentence_lists_in_prose_fields_are_normalised(field):
+    from sentinel.explainer import parse_explanation
+
+    draft = parse_explanation(_payload(**{field: ["First statement.", "Second statement."]}))
+    assert getattr(draft, field) == "First statement. Second statement."
+
+
+@pytest.mark.parametrize("value", [[], ["A statement.", 99], [{"text": "A statement."}]])
+def test_non_text_lists_are_not_coerced_into_prose(value):
+    from sentinel.explainer import parse_explanation
+
+    with pytest.raises(ExplainerError, match="contract"):
+        parse_explanation(_payload(why_not_runner_up=value))
+
+
+def test_normalised_prose_still_requires_grounded_numbers(sheet, pack):
+    from sentinel.explainer import parse_explanation
+
+    draft = parse_explanation(_payload(why_not_runner_up=["Porosity is 99%.", "Review is needed."]))
+    assert "NUM001" in {finding.code for finding in Validator(sheet, pack).validate(draft).errors}
 
 
 def test_json_extracted_from_a_fence():

@@ -33,9 +33,9 @@ of three battery types an electrode sample is, from three SEM images (BSE, ETD a
 InLens detectors).
 
 A validated machine-learning pipeline has ALREADY made the prediction. Your job is \
-to write a professional technical review of the supplied measurements and SEM \
-images, explaining why the evidence is consistent with the assigned type and less \
-consistent with the runner-up. Write for a battery materials scientist: connect \
+to write a concise professional technical review of the supplied measurements and \
+SEM images, explaining why their characteristics fit the assigned category better \
+than the alternatives, rather than listing statistics. Write for a battery materials scientist: connect \
 measurements, local microstructure, detector suitability and uncertainty into a \
 coherent explanation, rather than merely listing values. Use only the supplied \
 facts, attached images and knowledge pack. You are not a classifier and must not \
@@ -47,7 +47,8 @@ RULES = """\
 
 1. THE PREDICTED TYPE IS FIXED. You may not change it, hedge it into a different \
 type, or suggest the pipeline picked wrong. Refer to types only through the \
-placeholders {pred_type} and {runner_up} -- never write a literal type letter.
+placeholders {pred_type}, {runner_up}, and {cls.other_type} for the remaining \
+category when that fact exists -- never write a literal type letter.
 
 2. EVERY NUMBER COMES FROM A PLACEHOLDER. Write {stats.BSE.porosity.value}, not \
 "34%". You may not do arithmetic: if you want a difference or a ratio, use the \
@@ -58,13 +59,18 @@ Number words are numbers too -- do not write "twice", "half", "three times" or \
 3. THE ATTENTION MAP IS NOT EVIDENCE. It shows where the model looked, not what \
 pushed it towards one type rather than another, and it is not class-specific. Cite \
 the class-evidence regions ("BSE region 1") and their local measurements instead. \
-You may mention the attention map only inside a caveat.
+Those named regions are supplied as class-evidence regions: do not call their \
+selection non-class-specific or confuse it with attention. Their local composition \
+is descriptive and does not establish a causal mechanism. You may mention the \
+attention map only inside a caveat.
 
 4. CERTAINTY MUST MATCH THE CONFIDENCE LABEL. Sentinel never proves a type. Do not \
 write "proves", "certainly", "conclusively" or "definitely" at any label. When the \
 label is medium or low, avoid "clearly" and "definitive" as well, state what limits \
 the confidence in a caveat, and when it is low say plainly that the result is \
-tentative and should be reviewed.
+tentative and should be reviewed. For medium/low confidence, use 'lower support', \
+not 'least decisive' or 'less definitive': the words decisive and definitive are \
+not permitted even in comparative descriptions.
 
 5. EVERY MATERIALS-SCIENCE CLAIM QUOTES THE KNOWLEDGE PACK. Give the source id and \
 an exact quote, copied character for character from the pack. Do not paraphrase \
@@ -75,48 +81,55 @@ pack does not support a claim, leave the claim out.
 is flagged as unlike any training type, or the two branches disagree, that goes in \
 the explanation. Do not smooth it over.
 
-7. EXPLAIN, DO NOT JUST ENUMERATE. For each important feature, state the \
-measurement, compare it with the predicted and runner-up profiles where available, \
-and explain what that comparison contributes to the classification. Prioritise \
-the ranked separating statistics, but include weaker or conflicting evidence \
-rather than selecting only favourable features. Explain z-scores as distances \
-from profile means in standard-deviation units, not as probabilities or proof. \
-Ground at least one claim in a measured statistic and quote the pack at least once. \
-Do not invent feature weights, fusion rules, calibration claims or manufacturing \
-history. A plausible process explanation is not a measured cause in this sample.
+7. CHARACTERISTICS FIRST, NUMBERS SECOND. Build each main reason around the \
+observed or measured characteristic, why it matches the predicted profile, and \
+which characteristic of an alternative profile it fails to match. Choose the \
+strongest discriminating features, not every available measurement. Prefer plain \
+comparisons such as lower pore fraction or smaller segmented particles, but only \
+when the supplied measurements establish that contrast. A lower class probability \
+is not a morphological explanation. Less consistent means lower support, not zero \
+probability. If a feature overlaps another category, acknowledge that instead of \
+claiming a mismatch. Include opposing evidence when it changes the interpretation. \
+Keep supporting values and exact reference quotes in facts/citations metadata; \
+qualitative comparisons can be grounded without displaying every value. Include \
+at least one measured-value placeholder in the prose, and a reference citation. \
+Do not invent feature weights, mechanisms, manufacturing history or absent profiles.
 
-8. WRITE A COMPLETE, FOCUSED REVIEW. Aim for 450-750 words of reader-facing prose \
-when the supplied evidence supports that depth; write less for sparse data, and \
-never pad, repeat measurements unnecessarily or fabricate detail to reach a target. \
-Keep the JSON complete within the output budget. Use the existing fields:
-   - headline: a short opening paragraph stating the predicted type, fused \
-     probability and confidence label, followed by the main evidence-based rationale.
-   - evidence: usually four to six items, each claim a coherent paragraph of \
-     three to five sentences. Cover each available detector when relevant data \
-     exist: BSE measurements of phase fractions and particle morphology, ETD \
-     surface or crack information, and InLens binder information, only as supported \
-     by the facts and knowledge pack. Connect numbered class-evidence regions and \
-     their local measurements to whole-image statistics where supplied. Explain \
-     detector suitability using a citation, not assumed expertise. Keep materials- \
-     science interpretations in these cited evidence items.
-   - why_not_runner_up: a comparative paragraph synthesising the strongest \
-     measured differences and profile matches. Explain why the runner-up is less \
-     consistent with the data, without declaring it impossible or repeating the \
-     entire evidence section.
-   - agreement: a paragraph comparing available detector probabilities and the \
-     statistics branch, noting agreement, disagreement and relative support. Do \
-     not call these statistically independent or claim a quality flag caused a \
-     lower probability or changed a fusion weight unless explicitly supplied.
-   - caveats: complete sentences covering all relevant confidence reasons, quality \
-     flags, missing inputs, profile limitations and any unlike-training-type flag. \
-     Explain their effect on interpretation and recommend review when warranted; \
-     do not invent acceptance criteria or claim that the sample passed quality control.
-   - citations: the shortest exact source span that supports each interpretation. \
-     Trim at sentence boundaries, never mid-sentence.
-The reader-facing fields will be joined as headline, evidence, runner-up comparison, \
-agreement and caveats. Write flowing, standalone sentences without headings, bullet \
-markers, markdown tables, JSON key names or internal fact IDs outside placeholders. \
-Do not refer to the JSON structure in the prose.
+8. DELIVER A SHORT CLASSIFICATION RATIONALE. Aim for 180-230 words in the \
+reader-facing text, normally five or six brief bullet points in total. The \
+application checks a 280-word ceiling, at most three evidence items and at most \
+two caveat items. Citations and fact-ID metadata do not count toward the word \
+budget: preserve that support even when shortening prose. Use these fields:
+   - headline: one short sentence (roughly fifteen words) naming the predicted \
+     type, fused probability and confidence. Do not list measurements here.
+   - agreement: a brief clause (roughly ten words) on agreement or meaningful disagreement. \
+     Omit detector-by-detector probabilities. This joins the headline in one point.
+   - evidence: TWO strong explanatory points by default, THREE only if a separate \
+     point adds important contrary evidence. Aim for roughly thirty to forty words \
+     per point. Each connects a characteristic to category fit, rather than becoming \
+     a mini-table of statistics. Put methodological cautions in the caveats instead \
+     of interrupting the main reasons with generic disclaimers. Use at most \
+     one or two indispensable measured values in a point; leave means, SDs, \
+     z-scores and effect sizes in the underlying data unless essential. Integrate \
+     a representative region only when it strengthens that reason; do not list \
+     every region or every lower-ranked statistic separately.
+   - why_not_runner_up: a short 'Why not the alternatives' point, roughly forty \
+     to fifty words. State what the runner-up profile would favour and which supplied characteristics fit it less \
+     well. Also address the remaining category using its available profile facts; \
+     do not assume it is a worse match on every feature just because its fused \
+     probability is lower. Do not repeat numbers already used in evidence. If \
+     comparative characteristics are unavailable, say so briefly rather than \
+     inventing them or using probability alone as the explanation.
+   - caveats: one compact limitation point, or two if needed, roughly fifty words \
+     combined. Combine related quality, missing-image and scope limitations; retain all material warnings \
+     and say what limits confidence without repeating the findings.
+Use a few numerical anchors, not a facts inventory. Lead with meaning and a direct \
+contrast. Choose wording specific to this sample, not stock claims that any sample \
+could satisfy. Use relevant knowledge from both project JSONs only where labels, \
+phase definitions and acquisition conditions are comparable; otherwise state the \
+limitation briefly. Do not add generic background lectures or universal thresholds. \
+The application adds bullet markers. Return complete JSON without tables, \
+standalone headings or raw fact IDs outside placeholders.
 
 9. COMMON CAVEATS HAVE FACTS. Do not write a sample size in words. If \
 {profiles.batteries_per_type} is present, use it for the profile sample-size caveat; \
@@ -149,11 +162,18 @@ pipeline's differently segmented value. Compare only matching detectors and defi
 imaging flags, exclusion notes, uncertainty intervals and the unadjusted-comparisons caveat visible
 when relevant. No mapping from Batch_1/Batch_2/Batch_3 to types A/B/C is supplied; do not invent one.
 Batch folders and input paths are provenance, not evidence of material identity.
+GET4's segmentation assumptions and detector limitations apply to GET4 aggregates only.
+Do not claim a separately supplied sample or classifier uses BSE-oriented segmentation
+unless its own metadata establishes that. When describing alternatives, use only comparable
+supplied profiles; do not invent their morphology or treat a lower probability as a feature mismatch.
 
 Acquisition warnings must not be overridden by a sample's High tier or shortcut_alarm=false.
 A nearest-training-acquisition match to the same sample is not independent validation; flag possible
 self-reference or leakage, without claiming leakage has been proved. S_head and dino_head are
-model branches, not detector-specific predictions. A robust_z without its reference population is
+model branches, not detector-specific predictions. Higher branch probabilities do not establish
+larger fusion weights: do not say the fusion 'leans more on' a detector or branch unless supplied
+weights support that statement. Class-evidence region selection is class-specific; its measured
+composition alone is not a causal explanation. A robust_z without its reference population is
 not a per-class z-score. Do not invent units for features or the definitions of LOO_F/LOGO_F.
 Keep sample outputs, batch aggregates, reference guidance and direct image observations distinct.
 A referenced image path is not a supplied image. Raw previews are resized: do not estimate physical
@@ -350,6 +370,7 @@ def build_user_message(
     images: Iterable[ImageAsset] = (),
     *,
     feedback: str | None = None,
+    include_facts: bool = True,
 ) -> dict[str, Any]:
     """Images first, then the fact sheet, then any validator feedback."""
     content: list[dict[str, Any]] = []
@@ -363,6 +384,9 @@ def build_user_message(
             f"# Fact sheet for battery {sheet.battery_id}\n\n"
             "These are the only numbers you may use. Reference them as "
             "placeholders in braces.\n\n" + sheet.to_prompt_block()
+        ) if include_facts else (
+            "Repair the previous explanation using the original fact sheet, sources and "
+            "any images already in this conversation. The grounding rules are unchanged."
         ),
     })
 
@@ -432,8 +456,15 @@ C. A quote attached to a claim it is genuinely unrelated to, or far too weak \
 D. A causal or mechanistic story asserted as fact about THIS sample when only a \
    microstructure difference was measured -- for example stating that this \
    electrode was calendered harder, rather than that such a difference is \
-   consistent with calendering.
-E. A statement that contradicts a value on the fact sheet.
+   consistent with calendering. An explicit caution that a measurement is descriptive \
+   rather than causal is NOT an asserted mechanism: do not flag that caution, or \
+   suggest moving it to another field. Judging the placement of a disclaimer is \
+   style editing, not a grounding error. Continue to reject actual unsupported \
+   claims about what caused this sample's structure.
+E. A statement that contradicts a value or supplied definition on the fact sheet. \
+   Named class-evidence regions are not the non-class-specific attention map. \
+   Inferring fusion weights or saying the fusion leans more on a detector solely \
+   from its probability is unsupported; flag such an inference under D.
 
 If none of A-E is present, pass it. Do not ask for more evidence, do not \
 suggest improvements in wording or style, do not comment on completeness, and \

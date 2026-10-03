@@ -30,6 +30,7 @@ from typing import Iterable, Literal
 from .contract import Explanation
 from .facts import FactSheet
 from .knowledge import KnowledgePack
+from .renderer import Renderer
 from .textrules import (
     TextRuleConfig,
     find_region_mentions,
@@ -115,6 +116,9 @@ class ValidatorConfig:
     #: Citations may be dropped when the pack is empty (template/offline runs).
     citations_optional_without_pack: bool = True
     text_rules: TextRuleConfig = TextRuleConfig()
+    max_words: int | None = None
+    max_evidence_items: int | None = None
+    max_caveats: int | None = None
 
 
 class Validator:
@@ -158,7 +162,29 @@ class Validator:
         self._check_evidence_structure(explanation, report)
         self._check_citations(explanation, report)
         self._check_content_floor(explanation, report)
+        self._check_conciseness(explanation, report)
         return report
+
+    def _check_conciseness(self, explanation: Explanation, report: ValidationReport) -> None:
+        cfg = self.config
+        if cfg.max_words is not None:
+            renderer = Renderer(self.sheet, strict=False)
+            count = sum(len(renderer.text(text).split()) for _, text in explanation.text_fields())
+            if count > cfg.max_words:
+                report.findings.append(Finding(
+                    "STYLE001", "error", "explanation",
+                    f"{count} reader-facing words exceeds the concise limit of {cfg.max_words}",
+                    fix_hint="Shorten the prose, not the evidence metadata. Explain the strongest characteristic contrasts, "
+                             "avoid repeated numbers, and retain important opposing evidence and limitations.",
+                ))
+        for field, limit, code in (("evidence", cfg.max_evidence_items, "STYLE002"),
+                                    ("caveats", cfg.max_caveats, "STYLE003")):
+            if limit is not None and len(getattr(explanation, field)) > limit:
+                report.findings.append(Finding(
+                    code, "error", field, f"use at most {limit} {field} points in the concise review",
+                    fix_hint="Combine related findings and limitations rather than cataloguing every statistic; "
+                             "do not remove essential uncertainty, contrary evidence or citation support.",
+                ))
 
     # -- lexical + placeholder ------------------------------------------ #
     def _check_text_fields(self, explanation: Explanation, report: ValidationReport) -> None:

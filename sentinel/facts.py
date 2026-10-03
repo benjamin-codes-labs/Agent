@@ -186,7 +186,7 @@ class FactSheet(BaseModel):
                 continue
             lines.append("")
             lines.append(heading)
-            lines.extend(f"- {f.brief()}" for f in items)
+            lines.extend(f"- {f.id} = {f.display}" if kind == "context" else f"- {f.brief()}" for f in items)
 
         if self.separating_statistics:
             lines.append("")
@@ -240,6 +240,9 @@ class EvidenceBuilder:
 
     def _add_classification_facts(self, sheet: FactSheet, result: BatteryResult) -> None:
         cls = result.classification
+        other = next(t for t in TYPES if t not in {cls.predicted, cls.runner_up})
+        self._put(sheet, Fact(id="cls.other_type", kind="classification", value=other, display=other,
+                              label="remaining category, neither the predicted type nor the runner-up"))
         for t in TYPES:
             self._put(sheet, Fact(
                 id=f"cls.fused.{t}",

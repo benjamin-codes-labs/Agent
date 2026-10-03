@@ -44,7 +44,7 @@ image = (
 
 app = modal.App(APP_NAME)
 volume = modal.Volume.from_name(VOLUME_NAME, create_if_missing=True)
-anthropic_secret = modal.Secret.from_name("")
+anthropic_secret = modal.Secret.from_name("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")
 
 
 # --------------------------------------------------------------------------- #

@@ -89,13 +89,13 @@ def _grounded_payload(pack):
     }]}
 
 
-def test_answer_uses_checked_facts_and_plain_text(project_knowledge):
+def test_answer_uses_checked_facts_and_bullet_points(project_knowledge):
     from sentinel.questions import answer_question
     from main import format_answer
 
     client = FakeClient([text_response(_grounded_payload(project_knowledge))])
     outcome = answer_question("Compare BSE porosity.", project_knowledge, client=client)
-    assert format_answer(outcome.answer.model_dump_json()) == "The reported pore-fraction difference is -3.00 percentage points."
+    assert format_answer(outcome.answer.model_dump_json()) == "- The reported pore-fraction difference is -3.00 percentage points."
     request = client.messages.requests[0]
     assert "tool_choice" not in request and "temperature" not in request
     assert outcome.audit["validator_passed"] is True
@@ -171,6 +171,18 @@ def test_workflow_receives_batch_facts_before_validation(result, project_knowled
     assert "External context" in outcome.sheet.to_prompt_block()
 
 
+def test_context_fact_table_is_compact_without_dropping_facts(result, project_knowledge):
+    from sentinel import build_fact_sheet
+
+    sheet = build_fact_sheet(result)
+    sheet.facts.update(project_knowledge.context_facts)
+    text = sheet.to_prompt_block()
+    for fid, fact in project_knowledge.context_facts.items():
+        assert f"- {fid} = {fact.display}" in text
+        assert fact.note not in text
+        assert fact.note
+
+
 def test_question_selection_does_not_mix_detectors(project_knowledge):
     project_knowledge._add_record("ETD example", {"batch": "Batch_1", "phi": 0.9},
                                   "batch", "all_batch_comparisons.json#/detectors/etd/batches/Batch_1")
@@ -196,6 +208,71 @@ def test_answer_can_explain_missing_information(project_knowledge):
                              client=FakeClient([text_response(payload)])).answer
     assert not answer.answerable
     assert "do not include" in answer.paragraphs[0].text
+
+
+def test_question_provider_failure_is_explicit_and_never_templated(project_knowledge):
+    from sentinel.questions import answer_question
+
+    def unavailable(_):
+        raise RuntimeError("provider unavailable")
+
+    client = FakeClient([unavailable])
+    with pytest.raises(ExplainerError, match="No answer was generated"):
+        answer_question("Compare BSE porosity", project_knowledge, client=client)
+    assert len(client.messages.requests) == 1
+
+
+def test_answer_prompt_requests_adaptive_points_and_both_knowledge_sources(project_knowledge):
+    from sentinel.questions import answer_question
+
+    client = FakeClient([text_response(_grounded_payload(project_knowledge))])
+    answer_question("Review BSE porosity", project_knowledge, client=client)
+    request = client.messages.requests[0]
+    assert "bullet point" in request["system"]
+    assert "180-230 words" in request["system"]
+    assert "characteristic" in request["system"]
+    assert "runner-up" in request["system"]
+    context = request["messages"][0]["content"][-1]["text"]
+    assert "all_batch_comparisons.json" in context
+    assert "SiC_SEM_reference_verified.json" in context
+    assert "Grey levels need calibration" in context
+    assert "Imaging may explain" in context
+
+
+def test_concise_answer_retries_instead_of_truncating(project_knowledge):
+    from sentinel.questions import answer_question
+
+    payload = _grounded_payload(project_knowledge)
+    payload["paragraphs"][0]["text"] += " The reference needs careful interpretation." * 80
+    client = FakeClient([text_response(payload), text_response(_grounded_payload(project_knowledge))])
+    outcome = answer_question("Compare BSE porosity", project_knowledge, client=client, max_words=280, max_points=6)
+    assert outcome.audit["attempts"] == 2
+    assert len(outcome.answer.paragraphs) == 1
+    assert "Shorten" in client.messages.requests[1]["messages"][-1]["content"]
+
+
+def test_concise_answer_checks_rendered_words_and_point_count(project_knowledge):
+    from sentinel.questions import GroundedAnswer, validate_answer
+
+    project_knowledge._add_record("Long field", {"warning": "A long warning. " * 40}, "sample", "sample.json")
+    fid = next(fid for fid in project_knowledge.context_facts if fid.endswith(".warning"))
+    answer = GroundedAnswer(answerable=True, paragraphs=[{"text": "{" + fid + "}", "facts": [fid]}] * 7)
+    errors = validate_answer(answer, project_knowledge, set(), max_words=100, max_points=6)
+    assert any("words" in error for error in errors)
+    assert any("points" in error for error in errors)
+
+
+def test_bullet_formatting_preserves_multiline_and_negative_values():
+    from main import format_answer
+
+    answer = {"answerable": True, "paragraphs": [
+        {"text": "- Measured difference: -3.00 percentage points.\nInterpretation remains tentative."},
+        {"text": "-3.00 percentage points is not a relative percentage change."},
+    ]}
+    assert format_answer(json.dumps(answer)) == (
+        "- Measured difference: -3.00 percentage points.\n  Interpretation remains tentative.\n\n"
+        "- -3.00 percentage points is not a relative percentage change."
+    )
 
 
 def test_a_real_reference_quote_is_accepted(project_knowledge):
@@ -231,13 +308,72 @@ def test_invalid_sample_and_empty_question_fail_before_api(project_knowledge):
         project_knowledge.with_sample({"value": float("nan")})
 
 
+def test_compact_context_preserves_limits_and_requested_phase(project_knowledge):
+    project_knowledge._add_record("BSE phases", {
+        "batch": "Batch_1", "phase_labels_validated": False,
+        "phases": {"pore": {"phi": 0.3, "ci95": [0.2, 0.4], "bits": 8, "variant_shifts": [0.1]},
+                   "graphite": {"phi": 0.7}},
+        "caveats": ["Imaging may bias these fractions."],
+    }, "batch", "all_batch_comparisons.json#/detectors/bse/batches/Batch_1")
+    selected = project_knowledge.select("BSE pore fraction", compact=True)
+    text = selected.to_prompt_block()
+    assert "phases.pore.ci95.0" in text
+    assert "phases.graphite.phi" not in text
+    assert "variant_shifts" not in text
+    assert "Imaging may bias" in text
+    assert "phase_labels_validated: false" in text
+    assert "partially_confirmed" in text and "no full text read" in text
+    for fid, fact in selected.context_facts.items():
+        assert fact.value == project_knowledge.context_facts[fid].value
+    assert "supporting_references" not in text
+    assert "supporting_references" in project_knowledge.select("BSE references and DOI").to_prompt_block()
+
+
+def test_unmapped_review_keeps_batch_scope_not_unrelated_measurements(project_knowledge):
+    selected = project_knowledge.select("SEM review BSE", batch_statistics=False)
+    assert not any(source.metadata.get("batches") for source in selected.sources.values())
+    assert "Phase labels are unvalidated" in selected.to_prompt_block()
+    assert any("all_batch_comparisons.json" in source.metadata.get("origin", "") for source in selected.sources.values())
+
+
+def test_compaction_keeps_sample_acquisition_warnings_and_features(project_knowledge):
+    pack = project_knowledge.with_sample({
+        "sample_id": "img_x", "features_S": {"opposing_feature": {"value": 6, "push": -0.2}},
+        "acquisition": {"warning": "Imaging alone predicts batch."},
+    })
+    selected = pack.select("BSE pore fraction", compact=True)
+    assert "opposing_feature.push: -0.2" in selected.to_prompt_block()
+    assert "Imaging alone predicts batch." in selected.to_prompt_block()
+    assert all(fid in selected.context_facts for fid in pack.context_facts
+               if pack.sources[fid.split('.')[1]].metadata.get("kind") == "sample")
+
+
+def test_default_review_context_is_substantially_smaller(result):
+    from sentinel import build_fact_sheet
+    from sentinel.prompts import build_system_prompt, build_user_message
+
+    root = Path(__file__).resolve().parents[1]
+    pack = KnowledgePack.from_project(root)
+    query = "SEM classification review BSE ETD InLens " + " ".join(stat.name for stat in result.statistics)
+
+    def request_size(selected):
+        sheet = build_fact_sheet(result)
+        sheet.facts.update(selected.context_facts)
+        return len(json.dumps([build_system_prompt(selected), build_user_message(sheet)], ensure_ascii=False))
+
+    full = request_size(pack.select(query, limit=12, compact=False))
+    focused = request_size(pack.select(query, batch_statistics=False))
+    assert focused < full * 0.35
+    assert focused < 65_000
+
+
 def test_main_question_does_not_load_mock_classification(project_knowledge, tmp_path, monkeypatch, capsys):
     import main
     from sentinel.questions import answer_question
 
     monkeypatch.setattr(main.KnowledgePack, "from_project", lambda root: project_knowledge)
     client = FakeClient([text_response(_grounded_payload(project_knowledge))])
-    monkeypatch.setattr(main, "answer_question", lambda question, pack, images: answer_question(question, pack, images, client=client))
+    monkeypatch.setattr(main, "answer_question", lambda question, pack, images, **kwargs: answer_question(question, pack, images, client=client, **kwargs))
     monkeypatch.setattr(main, "explain_battery", lambda *a: pytest.fail("Q&A must not use the mock classifier"))
     monkeypatch.chdir(tmp_path)
     main.main(question="Compare BSE porosity")
@@ -254,10 +390,10 @@ def test_main_sample_defaults_to_review_question(project_knowledge, tmp_path, mo
     sample.write_text(json.dumps({"sample_id": "img_71vgq3fw", "predicted_batch": "Batch_3"}))
     monkeypatch.setattr(main.KnowledgePack, "from_project", lambda root: project_knowledge)
 
-    def answer(question, pack, images):
+    def answer(question, pack, images, **kwargs):
         assert "review" in question.lower()
         assert "img_71vgq3fw" in pack.to_prompt_block()
-        return answer_question(question, pack, images, client=FakeClient([text_response(_grounded_payload(pack))]))
+        return answer_question(question, pack, images, client=FakeClient([text_response(_grounded_payload(pack))]), **kwargs)
 
     monkeypatch.setattr(main, "answer_question", answer)
     main.main(sample=sample)

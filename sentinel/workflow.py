@@ -30,8 +30,9 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from dataclasses import dataclass, field
-from typing import Any, Iterable, Protocol
+from typing import Any, Callable, Iterable, Protocol
 
 from .contract import BatteryResult, Explanation, utc_now
 from .critic import ClaudeCritic, CriticConfig, CriticVerdict, NullCritic
@@ -43,6 +44,7 @@ from .explainer import (
     ModelCall,
     TruncatedResponse,
     assistant_echo,
+    report_activity,
 )
 from .facts import EvidenceBuilder, FactSheet
 from .knowledge import KnowledgePack
@@ -86,6 +88,18 @@ class AttemptRecord:
         if self.call:
             bits.append(self.call.cost_note())
         return " | ".join(bits)
+
+
+class GenerationFailed(ExplainerError):
+    def __init__(self, attempts: list[AttemptRecord]):
+        self.attempts = attempts
+        details = []
+        for attempt in attempts:
+            details.append(attempt.summary())
+            details.extend(finding.render() for finding in attempt.findings if finding.severity == "error")
+            if attempt.critic and not attempt.critic.passed:
+                details.append(attempt.critic.feedback())
+        super().__init__("No checked AI review was produced; template fallback is disabled.\n" + "\n".join(details))
 
 
 @dataclass
@@ -213,6 +227,7 @@ class WorkflowConfig:
     #: Consecutive attempts without lexicographic progress before giving up.
     patience: int = 2
     use_critic: bool = True
+    allow_template_fallback: bool = True
     validator: ValidatorConfig = field(default_factory=ValidatorConfig)
     explainer: ExplainerConfig = field(default_factory=ExplainerConfig)
     critic: CriticConfig = field(default_factory=CriticConfig)
@@ -234,7 +249,9 @@ class ExplainerWorkflow:
         explainer: ClaudeExplainer | None = None,
         critic: CriticProtocol | None = None,
         builder: EvidenceBuilder | None = None,
+        progress: Callable[[str], None] | None = None,
     ):
+        self.progress = progress
         self.pack = pack or KnowledgePack.empty()
         self.config = config or WorkflowConfig()
         self.builder = builder or EvidenceBuilder()
@@ -252,8 +269,11 @@ class ExplainerWorkflow:
         result: BatteryResult,
         images: Iterable[ImageAsset] = (),
     ) -> ExplainOutcome:
+        started = time.monotonic()
         sheet = self.builder.build(result)
         sheet.facts.update(self.pack.context_facts)
+        if self.progress:
+            self.progress(f"Prepared {len(sheet.facts)} facts and {len(self.pack)} selected sources")
         validator = Validator(sheet, self.pack, self.config.validator)
         images = list(images)
         attempts: list[AttemptRecord] = []
@@ -261,6 +281,8 @@ class ExplainerWorkflow:
         draft, report, critic = self._try_model(sheet, validator, images, attempts)
 
         if draft is None:
+            if not self.config.allow_template_fallback:
+                raise GenerationFailed(attempts)
             draft = TemplateExplainer().build(sheet)
             report = Validator(
                 sheet, self.pack, template_validator_config(self.config.validator)
@@ -300,7 +322,10 @@ class ExplainerWorkflow:
             draft=draft,
             sheet=sheet,
             attempts=attempts,
-            audit=self._audit(result, sheet, draft, attempts, report, critic),
+            audit={**self._audit(result, sheet, draft, attempts, report, critic),
+                   "elapsed_seconds": round(time.monotonic() - started, 3),
+                   "request_timeout_seconds": self.config.explainer.timeout_seconds,
+                   "max_transport_retries": self.config.explainer.max_transport_retries},
         )
 
     # ------------------------------------------------------------------ #
@@ -334,9 +359,10 @@ class ExplainerWorkflow:
             send_images = images if (attempt == 1 or self.config.images_on_retry) else []
             record = AttemptRecord(attempt=attempt, source="llm")
             try:
-                draft, call, sent = explainer.generate(
-                    sheet, self.pack, send_images, feedback=feedback, history=history
-                )
+                with report_activity(self.progress, f"Generating AI review (attempt {attempt}/{self.config.max_retries + 1})"):
+                    draft, call, sent = explainer.generate(
+                        sheet, self.pack, send_images, feedback=feedback, history=history
+                    )
                 record.call = call
             except TruncatedResponse as exc:
                 record.error = str(exc)
@@ -385,20 +411,28 @@ class ExplainerWorkflow:
                 log.warning("the explainer call failed on attempt %d: %s", attempt, exc)
                 break
 
+            if self.progress:
+                self.progress("Validating facts, numbers and citations")
             report = validator.validate(draft)
             record.findings = list(report.findings)
             record.progress = report.progress_key()
 
             critic: CriticVerdict | None = None
             if report.passed:
-                critic = self.critic.review(sheet, draft, self.pack)
+                with report_activity(self.progress, "Checking the review with the grounding critic"):
+                    critic = self.critic.review(sheet, draft, self.pack)
                 record.critic = critic
                 if critic.passed:
+                    if self.progress:
+                        self.progress("Grounding critic passed" if critic.ran else f"Critic skipped: {critic.skipped_reason}")
                     record.ok = True
                     attempts.append(record)
                     return draft, report, critic
 
             attempts.append(record)
+            if self.progress:
+                self.progress(f"Attempt {attempt} rejected by grounding checks; "
+                              + ("preparing a repair" if attempt <= self.config.max_retries else "attempt limit reached"))
 
             # -- loop guards ------------------------------------------- #
             signature = report.signature() + tuple(
@@ -512,9 +546,10 @@ def explain_battery(
     config: WorkflowConfig | None = None,
     explainer: ClaudeExplainer | None = None,
     critic: CriticProtocol | None = None,
+    progress: Callable[[str], None] | None = None,
 ) -> ExplainOutcome:
     """Explain one battery. The entry point Modal and the CLI both call."""
     workflow = ExplainerWorkflow(
-        pack, config, explainer=explainer, critic=critic
+        pack, config, explainer=explainer, critic=critic, progress=progress
     )
     return workflow.run(result, images)

@@ -17,6 +17,7 @@ the right setting if it turns out to be noisy on the day.
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -87,6 +88,8 @@ class CriticVerdict:
 class CriticConfig:
     model: str = "claude-haiku-4-5-20251001"
     max_tokens: int = 1200
+    timeout_seconds: float = 90.0
+    max_transport_retries: int = 0
     #: Left None deliberately. A live run returned
     #: "Messages.create() got an unexpected keyword argument 'temperature'",
     #: so the non-default-sampling restriction the proposal notes for Sonnet 5.5
@@ -97,6 +100,12 @@ class CriticConfig:
     blocking: bool = True
     #: Kinds the critic may block on. Narrow this if it proves noisy.
     blocking_kinds: tuple[str, ...] = ("A", "B", "C", "D", "E")
+
+    def __post_init__(self):
+        if not math.isfinite(self.timeout_seconds) or self.timeout_seconds <= 0:
+            raise ValueError("request timeout must be positive and finite")
+        if self.max_transport_retries < 0:
+            raise ValueError("transport retries must be non-negative")
 
 
 class ClaudeCritic:
@@ -110,7 +119,8 @@ class ClaudeCritic:
             import anthropic
 
             ensure_api_key()
-            self._client = anthropic.Anthropic()
+            self._client = anthropic.Anthropic(timeout=self.config.timeout_seconds,
+                                               max_retries=self.config.max_transport_retries)
         return self._client
 
     def review(
@@ -125,6 +135,7 @@ class ClaudeCritic:
         kwargs: dict[str, Any] = {
             "model": self.config.model,
             "max_tokens": self.config.max_tokens,
+            "timeout": self.config.timeout_seconds,
             "system": CRITIC_ROLE,
             "tools": [CRITIC_TOOL],
             "tool_choice": {"type": "tool", "name": CRITIC_TOOL["name"]},
