@@ -38,6 +38,7 @@ from .facts import EvidenceBuilder, Fact, FactSheet, build_fact_sheet
 from .knowledge import KnowledgePack, Source
 from .prompts import ImageAsset, collect_images
 from .questions import GroundedAnswer, QuestionOutcome, answer_question
+from .pipeline_facts import FactsDocument, FactsOutcome, FactsResponse, PipelineSample, explain_facts_document, parse_facts_document
 from .renderer import render
 from .template import TemplateExplainer, build_template_explanation
 from .textrules import TextRuleConfig
@@ -70,6 +71,10 @@ __all__ = [
     "Explanation",
     "Fact",
     "FactSheet",
+    "FactsDocument",
+    "FactsOutcome",
+    "FactsResponse",
+    "PipelineSample",
     "Finding",
     "GroundedAnswer",
     "ImageAsset",
@@ -98,6 +103,8 @@ __all__ = [
     "build_template_explanation",
     "collect_images",
     "explain_battery",
+    "explain_facts_document",
+    "parse_facts_document",
     "render",
     "run_tool_loop",
     "validate",

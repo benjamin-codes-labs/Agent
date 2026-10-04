@@ -1,0 +1,10 @@
+{
+  "gpu_torch_s": 0.448,
+  "cpu_onnx_s": 3.421,
+  "image_shape_halfres": [
+    1030,
+    3500
+  ],
+  "gpu_vs_cpu_label_agreement": 0.99989,
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU"
+}

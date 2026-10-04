@@ -1,0 +1,94 @@
+batch,sample_id,detector,path,width,height,mode,nm_per_px,rgb_mismatch_columns,sha256
+Batch_1,4ih2ggld,BSE,data/raw/Batch_1/img_4ih2ggld_BSE.tif,6996,2316,RGB,25.0001,,a7fa8987f58071205743249f0b089912c3cdab5289d48aa4dc21e5b73aa21b09
+Batch_1,4ih2ggld,ETD,data/raw/Batch_1/img_4ih2ggld_ETD.tif,6996,2316,RGB,25.0001,,297533fcdc52070bbf80c81ce61d6fa0b6956c8988310bc632926eef2cdcc2a1
+Batch_1,4ih2ggld,Inlens,data/raw/Batch_1/img_4ih2ggld_Inlens.tif,6996,2316,RGB,25.0001,,bcb9b0d7958dc1547db0915118f981d9cdc05ee8e7a63f1478693ed664b74dc1
+Batch_1,5n1q8atc,BSE,data/raw/Batch_1/img_5n1q8atc_BSE.tif,7000,2316,RGB,25.0001,,4b040a76c364ca75938060810d908518c31c8be58e634adab5db72ba9677dc9e
+Batch_1,5n1q8atc,ETD,data/raw/Batch_1/img_5n1q8atc_ETD.tif,7000,2316,RGB,25.0001,,3ea3c666893e311120dcbf0a505200d06c93ab684f6832a9732956fcac81977a
+Batch_1,5n1q8atc,Inlens,data/raw/Batch_1/img_5n1q8atc_Inlens.tif,7000,2316,RGB,25.0001,,75a2cd34be99d49774e1e38d94d876d62e12520f69bef03294e7c0741f064ef7
+Batch_1,f1vzngrs,BSE,data/raw/Batch_1/img_f1vzngrs_BSE.tif,7000,2148,RGB,24.9997,0,ae83f993b63bd5463501676b2666f79ef980d4571cffbb9b77c8e555c7313e8e
+Batch_1,f1vzngrs,ETD,data/raw/Batch_1/img_f1vzngrs_ETD.tif,7000,2148,RGB,24.9997,0,3ce882983d16c4710b0e87915241de47b4dee9762a3a3321b70187557dc4aa9f
+Batch_1,f1vzngrs,Inlens,data/raw/Batch_1/img_f1vzngrs_Inlens.tif,7000,2148,RGB,24.9997,0,d15fcdf666d15990c791d5bf15a8a1815bdfeaf74f19227aa5bace95620a9d8b
+Batch_1,ffwubibz,BSE,data/raw/Batch_1/img_ffwubibz_BSE.tif,7000,2080,RGB,25.0002,6999,73e0d186d84ec7518bdacfd542374dac379388644db09c53c39eed5d66942280
+Batch_1,ffwubibz,ETD,data/raw/Batch_1/img_ffwubibz_ETD.tif,7000,2080,RGB,25.0002,6999,30ee408fa65e8ac98038a15e67efd918790f914f4146b8f5f20e9addf472050a
+Batch_1,ffwubibz,Inlens,data/raw/Batch_1/img_ffwubibz_Inlens.tif,7000,2080,RGB,25.0002,6999,a43622998ad7fbec755a45ff05d6450a83141d0e61edcd43b2dce5693b50efa6
+Batch_1,fzrt2k6r,BSE,data/raw/Batch_1/img_fzrt2k6r_BSE.tif,7000,2156,RGB,25.0004,0 1,9fa0f4c9a5cb019fde2f081618788453afb96f86532d4b0ca0a83783edf1ec3a
+Batch_1,fzrt2k6r,ETD,data/raw/Batch_1/img_fzrt2k6r_ETD.tif,7000,2156,RGB,25.0004,0 1,35b29b950a2b1379650ca9ae813919500cc264f5c27d73f9384ed8e1df32d68a
+Batch_1,fzrt2k6r,Inlens,data/raw/Batch_1/img_fzrt2k6r_Inlens.tif,7000,2156,RGB,25.0004,0 1,53ce1e8d9e30a31e80414f511e016ac4c8aebad4decc697758889797b583df6e
+Batch_1,iv6g2oq0,BSE,data/raw/Batch_1/img_iv6g2oq0_BSE.tif,6960,1780,RGB,25.0004,,1d3a4a5dc4a518646c7f47e672f51e55e47b96a9e2196391de2e821b0d99f65f
+Batch_1,iv6g2oq0,ETD,data/raw/Batch_1/img_iv6g2oq0_ETD.tif,6960,1780,RGB,25.0004,,431ac0c2311878298f80d10434ba8ba62f1411ebc9c399eb8c2a0ae7934881fd
+Batch_1,iv6g2oq0,Inlens,data/raw/Batch_1/img_iv6g2oq0_Inlens.tif,6960,1780,RGB,25.0004,,035c9eb14f6df135fa5025fa344acb2f43844233038cfdd099ca19a162e88836
+Batch_1,uhdslk0o,BSE,data/raw/Batch_1/img_uhdslk0o_BSE.tif,7000,1880,RGB,24.9998,6999,dee7514f2b2453610fefe7158ea59f2e715fa2f39e3b9cf357625d238f2b113f
+Batch_1,uhdslk0o,ETD,data/raw/Batch_1/img_uhdslk0o_ETD.tif,7000,1880,RGB,24.9998,6999,95ead8f91b6e3a265a294b207c411a3e49f3a1191205e66aca32e742d700905f
+Batch_1,uhdslk0o,Inlens,data/raw/Batch_1/img_uhdslk0o_Inlens.tif,7000,1880,RGB,24.9998,6999,5016888d9f20c1f105a5edc3969ce0bfe6633ed2f57018247afa0c8c5ad06716
+Batch_2,3806gxp0,BSE,data/raw/Batch_2/img_3806gxp0_BSE.tif,7000,2048,RGB,24.9997,,806d025a34c813c44a6626c882c5358456304dd58d978aa474b42e55f7bfce20
+Batch_2,3806gxp0,ETD,data/raw/Batch_2/img_3806gxp0_ETD.tif,7000,2048,RGB,24.9997,,8d11855c77e82d59aac88cf847d4e2e5d6026c4128acfe504c659ae012eacc45
+Batch_2,3806gxp0,Inlens,data/raw/Batch_2/img_3806gxp0_Inlens.tif,7000,2048,RGB,24.9997,,446eee0eb9055c046e4d6617dd33b5565fc43ca570df60d802b9f614bcada518
+Batch_2,avn74qx1,BSE,data/raw/Batch_2/img_avn74qx1_BSE.tif,7000,2048,RGB,24.9997,6999,e1113d827cf083c93edd1e67765777398408899461f99e31130710833c2b35de
+Batch_2,avn74qx1,ETD,data/raw/Batch_2/img_avn74qx1_ETD.tif,7000,2048,RGB,24.9997,6999,b4156dced55a2a7998d7212deff27d213a5a4dced55ae940bd63b37b479074c6
+Batch_2,avn74qx1,Inlens,data/raw/Batch_2/img_avn74qx1_Inlens.tif,7000,2048,RGB,24.9997,6999,05af6d555e6d7efe1602f863edadedbc415a54d72da0acfa28c88e447e4ba310
+Batch_2,b3esycq1,BSE,data/raw/Batch_2/img_b3esycq1_BSE.tif,7000,2156,RGB,25.0004,,01e83352c90c1a77bf2e8d216651d2b1cb747257b22b4cbc2e8c7c4ccaa485d5
+Batch_2,b3esycq1,ETD,data/raw/Batch_2/img_b3esycq1_ETD.tif,7000,2156,RGB,25.0004,,d01394a58d801249909c8401349efdfda8b8b018c0d1b6349468335273048f77
+Batch_2,b3esycq1,Inlens,data/raw/Batch_2/img_b3esycq1_Inlens.tif,7000,2156,RGB,25.0004,,c078f946f4951d34fccfbd081f2f08250678d0b4c049bd2d4a3b4fb3c48b325b
+Batch_2,epqdaau9,BSE,data/raw/Batch_2/img_epqdaau9_BSE.tif,7000,2148,RGB,24.9997,,7e7bcdf0bdaf9d1eb3d148d514c21deb06ae4c634b979a3323c2147998ee00d2
+Batch_2,epqdaau9,ETD,data/raw/Batch_2/img_epqdaau9_ETD.tif,7000,2148,RGB,24.9997,,9a2876f3a36c3b5fbf453314d5390292364d30706b2a40c6925870ae692e2f37
+Batch_2,epqdaau9,Inlens,data/raw/Batch_2/img_epqdaau9_Inlens.tif,7000,2148,RGB,24.9997,,1fac9e7e5f0f568743b011b6e918654679f2b4ecf6f478ed34bea3b4df7a46d5
+Batch_2,i9jiqjwl,BSE,data/raw/Batch_2/img_i9jiqjwl_BSE.tif,7000,2272,RGB,25.0002,0,9636159933edf7b2f5bdf709c6472a3124e44ec710b80296283d9a8e65c96f60
+Batch_2,i9jiqjwl,ETD,data/raw/Batch_2/img_i9jiqjwl_ETD.tif,7000,2272,RGB,25.0002,0,bc959dfd434f532bd1fc8117703ce681e9e1c444037ef74ecb3f85ada65bfc35
+Batch_2,i9jiqjwl,Inlens,data/raw/Batch_2/img_i9jiqjwl_Inlens.tif,7000,2272,RGB,25.0002,0,233f18713c99f4ba109f17298fe1e37348e03fe47391948c0be2daa1fe27636b
+Batch_2,r17byphk,BSE,data/raw/Batch_2/img_r17byphk_BSE.tif,7000,2080,RGB,25.0002,,2071683d1b7591ef34e03aa2707081b923c51451ee7165323af93f253a904172
+Batch_2,r17byphk,ETD,data/raw/Batch_2/img_r17byphk_ETD.tif,7000,2080,RGB,25.0002,,8d808ef46b99b43fa9531f44254a35abc7f14c2f04db0f1379c6c5015136332f
+Batch_2,r17byphk,Inlens,data/raw/Batch_2/img_r17byphk_Inlens.tif,7000,2080,RGB,25.0002,,9a36c53fa4536c92775ca04d1556da3025a2baebd1c16b672e1fa5ffac306e6d
+Batch_2,rxax5ozo,BSE,data/raw/Batch_2/img_rxax5ozo_BSE.tif,7000,2068,RGB,24.9992,,e1cffb1b6a62f7aa6a10a48cc52a8ef18833929a858c5c6692e5c5bd7558f2c9
+Batch_2,rxax5ozo,Inlens,data/raw/Batch_2/img_rxax5ozo_Inlens.tif,7000,2068,RGB,24.9992,,1560ac370f768db7d11fc824d81dfbc2b750dc7eb11eba3f7cee5e521190dfe1
+Batch_2,rxax5ozo,SE,data/raw/Batch_2/img_rxax5ozo_SE.tif,7000,2068,RGB,24.9992,,a5f3d99b7c16c00e589865d31c8a8ee0d06cc9f7e97291c29f9f6ae0fefc459e
+Batch_3,0grcilhi,BSE,data/raw/Batch_3/img_0grcilhi_BSE.tif,7000,1904,RGB,25.0005,6998 6999,17b8f934fbb4f6904fcf12c7624c58f017f62b5633c856ad159bf6bd2cd9b95a
+Batch_3,0grcilhi,ETD,data/raw/Batch_3/img_0grcilhi_ETD.tif,7000,1904,RGB,25.0005,6998 6999,8b1083c09b5369ab2e964cec1e5f4eff61bdb5864d570772a854a9ba091ccb98
+Batch_3,0grcilhi,Inlens,data/raw/Batch_3/img_0grcilhi_Inlens.tif,7000,1904,RGB,25.0005,6998 6999,94eab6358b2110e804065e3fd4d3af80cfd2b57257c325c3cdcd776839bad89a
+Batch_3,71vgq3fw,BSE,data/raw/Batch_3/img_71vgq3fw_BSE.tif,7000,2060,RGB,25.0001,6998 6999,6e39035f9fec96c1b3728c7e4a482f9e3aa07802eb0afbb15c01deb01f1b7113
+Batch_3,71vgq3fw,ETD,data/raw/Batch_3/img_71vgq3fw_ETD.tif,7000,2060,RGB,25.0001,6998 6999,d33a99897dc39863f8385d22e8ee36cfd084f4666f74063a600629db85fb4341
+Batch_3,71vgq3fw,Inlens,data/raw/Batch_3/img_71vgq3fw_Inlens.tif,7000,2060,RGB,25.0001,6998 6999,f754984ce9e2a2506aaa5aa902692d9c6a4319de960becf8608984995828d6d5
+Batch_3,9luzk4jm,BSE,data/raw/Batch_3/img_9luzk4jm_BSE.tif,7000,2088,RGB,25.0003,,4017bd17628b2d29634e767a623cebd9ec6e5996cee2d3aaa9e7265fc58482a7
+Batch_3,9luzk4jm,ETD,data/raw/Batch_3/img_9luzk4jm_ETD.tif,7000,2088,RGB,25.0003,,2c45a0a4fc2f9df4af049d3b42a4f6ba366b48738f8389ef7d3f3c830b8fcc3f
+Batch_3,9luzk4jm,Inlens,data/raw/Batch_3/img_9luzk4jm_Inlens.tif,7000,2088,RGB,25.0003,,8b3980438c6e785b3e27fcd5b82f953134972084f4e3b43ab4fb733423249e36
+Batch_3,cfe5vt7s,BSE,data/raw/Batch_3/img_cfe5vt7s_BSE.tif,7000,2080,RGB,25.0002,,14f1a08a2d3eaf2b5687b0055b630e7a49eea96c093c260302938aa3e1640193
+Batch_3,cfe5vt7s,ETD,data/raw/Batch_3/img_cfe5vt7s_ETD.tif,7000,2080,RGB,25.0002,,3d81cc9bb94178d0a85909b6431a3ec3541946683c4f855cbd616f97a6b5c2e9
+Batch_3,cfe5vt7s,Inlens,data/raw/Batch_3/img_cfe5vt7s_Inlens.tif,7000,2080,RGB,25.0002,,b1d814fe9c3378d7a51df2b124450a5c1f535bdc5909ec2e57c71dfe4947cb0f
+Batch_3,hawkfj64,BSE,data/raw/Batch_3/img_hawkfj64_BSE.tif,7000,1904,RGB,25.0005,,7cc8fc9616c960e182c4b1de208909e8eed67c6a1b7454b2c7e0d34e4a569f34
+Batch_3,hawkfj64,ETD,data/raw/Batch_3/img_hawkfj64_ETD.tif,7000,1904,RGB,25.0005,,02b8b7e90833c6f7e9a68d68208f5689794544a1f669c745109aee4049c5fd46
+Batch_3,hawkfj64,Inlens,data/raw/Batch_3/img_hawkfj64_Inlens.tif,7000,1904,RGB,25.0005,,82703f194028c2ffa93a762b982af10210129d387465e88810735b52806cab41
+Batch_3,hzumfsms,BSE,data/raw/Batch_3/img_hzumfsms_BSE.tif,7000,2088,RGB,25.0003,,c06fe783ed9d03d847262839e62c99e76549b0c6a18b3d10045cab3b0e0873ef
+Batch_3,hzumfsms,ETD,data/raw/Batch_3/img_hzumfsms_ETD.tif,7000,2088,RGB,25.0003,,e61e908cadbd7d77fc8ce5ef85cfd2bf9828ca1d5e6816a9cc24d50bdbf11e40
+Batch_3,hzumfsms,Inlens,data/raw/Batch_3/img_hzumfsms_Inlens.tif,7000,2088,RGB,25.0003,,0005f037c8460f8609992da953b6dabea393a1f3544fdbea257f0b95564169a7
+Batch_3,kbdh4tri,BSE,data/raw/Batch_3/img_kbdh4tri_BSE.tif,7000,2060,RGB,25.0001,,9fa862772440db2644c55dceda66a4aa38830275f2e984775bf28b50d4f95573
+Batch_3,kbdh4tri,ETD,data/raw/Batch_3/img_kbdh4tri_ETD.tif,7000,2060,RGB,25.0001,,81f1f6b8bc71959ddd0f772ae615e3e7f2c6cac9656f5ea1b888dee16fd437d8
+Batch_3,kbdh4tri,Inlens,data/raw/Batch_3/img_kbdh4tri_Inlens.tif,7000,2060,RGB,25.0001,,1c0f1f5b217b548ae25b38fe307a3e1469dc4b0365943eb95a3f3f233c3f94a3
+Batch_3,mgxahqnk,BSE,data/raw/Batch_3/img_mgxahqnk_BSE.tif,7000,1904,RGB,25.0005,,e13bcd2ac2f815bfed7903c60e4c8b42bd42287496daf7290c3ae04f5a4bd528
+Batch_3,mgxahqnk,ETD,data/raw/Batch_3/img_mgxahqnk_ETD.tif,7000,1904,RGB,25.0005,,2c4eb0dfd48057e59701ff81ed48e900cab0fd5fc3cbc8e5010bef986e1d5191
+Batch_3,mgxahqnk,Inlens,data/raw/Batch_3/img_mgxahqnk_Inlens.tif,7000,1904,RGB,25.0005,,55ea0df3c2880409005a65edc30013404e8f2066fca453d81d2aebd896abee18
+Batch_3,pl8uabbv,BSE,data/raw/Batch_3/img_pl8uabbv_BSE.tif,7000,2272,RGB,25.0002,,9d2977711be2306806e1e2e496278a18832f8a9d09bc9fb1fbe15a4f0ad1ef34
+Batch_3,pl8uabbv,ETD,data/raw/Batch_3/img_pl8uabbv_ETD.tif,7000,2272,RGB,25.0002,,93d979453d58e946a56efe866c8443da4994ce8d3d7dcefdf63ef413e4703892
+Batch_3,pl8uabbv,Inlens,data/raw/Batch_3/img_pl8uabbv_Inlens.tif,7000,2272,RGB,25.0002,,a3fa1bce37994de14dd8706c3b276ec500f4a92de558ed0747df662529d03342
+Batch_3,ptg8lmto,BSE,data/raw/Batch_3/img_ptg8lmto_BSE.tif,7000,1612,RGB,24.9999,6999,fd390172b2dd51530e2dbc6825ffa7c41ad7c423ddb97a741c82f89d176a943d
+Batch_3,ptg8lmto,ETD,data/raw/Batch_3/img_ptg8lmto_ETD.tif,7000,1612,RGB,24.9999,6999,1db2585b7c73ecce0bc361e9bb070f60328f93788b9126b4ace7e27e4d11e130
+Batch_3,ptg8lmto,Inlens,data/raw/Batch_3/img_ptg8lmto_Inlens.tif,7000,1612,RGB,24.9999,6999,fa3945a1675f28667784b6b051860ad16254c9080fa69feee70da228b3dc33bf
+Batch_3,tuy3zymq,BSE,data/raw/Batch_3/img_tuy3zymq_BSE.tif,7000,2060,RGB,25.0001,,8bae4640c792d627325f1616056a80afc19fb834d4cad62f12897d2399c0529b
+Batch_3,tuy3zymq,ETD,data/raw/Batch_3/img_tuy3zymq_ETD.tif,7000,2060,RGB,25.0001,,19c4acd6037c3dac51905ecbf6a70558aa831257d998e5675ac9f6393440d0ff
+Batch_3,tuy3zymq,Inlens,data/raw/Batch_3/img_tuy3zymq_Inlens.tif,7000,2060,RGB,25.0001,,22413e6436c2319996134e8f439d85ba472ba530640b1d6f43694dd6b6bc765c
+Batch_3,ufdvpb81,BSE,data/raw/Batch_3/img_ufdvpb81_BSE.tif,7000,2088,RGB,25.0003,0 1 2 3,cef47de25c068b0f7ba255da3c28ccd9d100ad22069186bc5542c54aee8d2362
+Batch_3,ufdvpb81,ETD,data/raw/Batch_3/img_ufdvpb81_ETD.tif,7000,2088,RGB,25.0003,0 1 2 3,c9eda07cd9d2c0174227b1f6cec8eeb66ffe196d5092cf8b1d115805d5dd5b56
+Batch_3,ufdvpb81,Inlens,data/raw/Batch_3/img_ufdvpb81_Inlens.tif,7000,2088,RGB,25.0003,0 1 2 3,e95a8efcc6c997884159bbd9a83d24bdba1e7e71c3aa8591f2ab2e17b9777479
+Batch_3,utfgcjfa,BSE,data/raw/Batch_3/img_utfgcjfa_BSE.tif,6996,2068,RGB,24.9992,,4e62e17fbfa089f410ac8e4026c0878ae7f27c54d231a350dd958b40c96002dd
+Batch_3,utfgcjfa,Inlens,data/raw/Batch_3/img_utfgcjfa_Inlens.tif,6996,2068,RGB,24.9992,,7d2e91e4d10fae1e9e662298c154b3c816fce4e39a361b98a3027103a72a8aea
+Batch_3,utfgcjfa,SE,data/raw/Batch_3/img_utfgcjfa_SE.tif,6996,2068,RGB,24.9992,,7b825b9a460d336ddfba675633273f08698bd3ab78ec27337972d3a475359294
+Batch_3,vc2whyaq,BSE,data/raw/Batch_3/img_vc2whyaq_BSE.tif,7000,2068,RGB,24.9992,0,75e04a6c86abfdedd4d06ad83d017bc60def52b56f1bc520a4f59a65932c07ce
+Batch_3,vc2whyaq,Inlens,data/raw/Batch_3/img_vc2whyaq_Inlens.tif,7000,2068,RGB,24.9992,0,16947ec5802fe2e43843f67521eaf58d27c4e4cd1e3b988034d3527b55674971
+Batch_3,vc2whyaq,SE,data/raw/Batch_3/img_vc2whyaq_SE.tif,7000,2068,RGB,24.9992,0,bbfd6114c3e88b8c8c3eb6845f5488c00bcaff8c740a65679af4e7e31a40b877
+Batch_3,x77cy643,BSE,data/raw/Batch_3/img_x77cy643_BSE.tif,6996,2068,RGB,24.9992,,b05c4ac6ddc0eae01a98ff89c7171971625d062e95bccb1ba0f1a1971722a388
+Batch_3,x77cy643,Inlens,data/raw/Batch_3/img_x77cy643_Inlens.tif,6996,2068,RGB,24.9992,,a5a1596eb2444b35cae2af968ccd04a0f87857c31d04266a9c51325110230c08
+Batch_3,x77cy643,SE,data/raw/Batch_3/img_x77cy643_SE.tif,6996,2068,RGB,24.9992,,320d20ca81725704ec323cd63f8be595c50a921568de6109b20385ca024709f5
+Batch_3,x7u69zsw,BSE,data/raw/Batch_3/img_x7u69zsw_BSE.tif,7000,2060,RGB,25.0001,0,bfe4d2d302ccb04929f4ea92be03b76b93fb38421c13268007a6fff33166d954
+Batch_3,x7u69zsw,ETD,data/raw/Batch_3/img_x7u69zsw_ETD.tif,7000,2060,RGB,25.0001,0,0f586c012d8818d77021d47c3cfc08b3c69f41d4ad76fa7c799de10dae24740d
+Batch_3,x7u69zsw,Inlens,data/raw/Batch_3/img_x7u69zsw_Inlens.tif,7000,2060,RGB,25.0001,0,c68602fffa533afb3bd1f629b47722933b54f541c37d54630520981c825dbd30
+Batch_3,xgj4xftb,BSE,data/raw/Batch_3/img_xgj4xftb_BSE.tif,7000,1612,RGB,24.9999,0,f19ecf7f3a5eafdc60ebda36d54660c3aa7c595a17b9994f363fdfa293ae6c61
+Batch_3,xgj4xftb,ETD,data/raw/Batch_3/img_xgj4xftb_ETD.tif,7000,1612,RGB,24.9999,0,c8252dd9583a912d1c2b05608411e7366d786b1ae6ba0f007f0d86be8def4b6d
+Batch_3,xgj4xftb,Inlens,data/raw/Batch_3/img_xgj4xftb_Inlens.tif,7000,1612,RGB,24.9999,0,12a96727dbbfb944625b06d42cfcfc516d0b5781ca29944cde8069de59ed9be3

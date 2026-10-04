@@ -1,0 +1,182 @@
+{
+  "sample_id": "img_71vgq3fw",
+  "predicted_batch": "Batch_3",
+  "runner_up": "Batch_2",
+  "probabilities": {
+    "fused_F": {
+      "Batch_1": 0.069,
+      "Batch_2": 0.224,
+      "Batch_3": 0.707
+    },
+    "S_head": {
+      "Batch_1": 0.116,
+      "Batch_2": 0.4,
+      "Batch_3": 0.483
+    },
+    "dino_head": {
+      "Batch_1": 0.022,
+      "Batch_2": 0.047,
+      "Batch_3": 0.931
+    }
+  },
+  "features_S": {
+    "siox_frac": {
+      "value": 6.469,
+      "robust_z": 0.69,
+      "push_toward_winner_vs_runner_up": 0.166
+    },
+    "siox_ecd_aw": {
+      "value": 3.8472,
+      "robust_z": -0.11,
+      "push_toward_winner_vs_runner_up": 0.035
+    },
+    "pore_open_excess": {
+      "value": 6.4085,
+      "robust_z": 0.86,
+      "push_toward_winner_vs_runner_up": -0.264
+    },
+    "pore_all_frac": {
+      "value": 14.8466,
+      "robust_z": 0.0,
+      "push_toward_winner_vs_runner_up": 0.0
+    },
+    "pore_chord_aniso": {
+      "value": 1.0667,
+      "robust_z": 0.05,
+      "push_toward_winner_vs_runner_up": 0.04
+    }
+  },
+  "evidence": {
+    "phase_share_in_top10pct_evidence_pct": {
+      "pore": 14.6,
+      "graphite": 71.5,
+      "SiOx": 2.4,
+      "CBD": 11.4
+    },
+    "phase_share_whole_image_pct": {
+      "pore": 14.8,
+      "graphite": 67.2,
+      "SiOx": 6.5,
+      "CBD": 11.5
+    },
+    "top_regions": [
+      {
+        "bbox_um": [
+          4.9,
+          0.0,
+          9.8,
+          7.0
+        ],
+        "evidence_share": 0.004,
+        "local_phase_pct": {
+          "pore": 11.9,
+          "graphite": 79.4,
+          "SiOx": 0.5,
+          "CBD": 8.2
+        }
+      },
+      {
+        "bbox_um": [
+          0.0,
+          0.7,
+          4.9,
+          4.9
+        ],
+        "evidence_share": 0.003,
+        "local_phase_pct": {
+          "pore": 14.7,
+          "graphite": 40.3,
+          "SiOx": 0.9,
+          "CBD": 44.1
+        }
+      },
+      {
+        "bbox_um": [
+          121.1,
+          27.3,
+          125.3,
+          32.2
+        ],
+        "evidence_share": 0.003,
+        "local_phase_pct": {
+          "pore": 13.3,
+          "graphite": 44.6,
+          "SiOx": 0.3,
+          "CBD": 41.8
+        }
+      }
+    ],
+    "reconstruction_error": 3.8746783559417963e-14,
+    "shortcut_alarm": false
+  },
+  "inputs": {
+    "BSE": "data/raw/Batch_3/img_71vgq3fw_BSE.tif",
+    "Inlens": "data/raw/Batch_3/img_71vgq3fw_Inlens.tif",
+    "detectors_used": [
+      "BSE",
+      "Inlens"
+    ]
+  },
+  "validation_reference": {
+    "LOO_F": 0.588,
+    "LOGO_F": 0.465
+  },
+  "phase_fractions_pct": {
+    "pore": 14.85,
+    "graphite": 67.15,
+    "SiOx": 6.47,
+    "CBD": 11.53
+  },
+  "qc": {
+    "excluded_pct": 1.0,
+    "cu_foil_detected": false,
+    "manual_exclusion": false,
+    "detectors_used": [
+      "BSE",
+      "Inlens"
+    ]
+  },
+  "acquisition": {
+    "probes": {
+      "height_px": 2060.0,
+      "width_px": 7000.0,
+      "bse_p1": 23.0,
+      "bse_p50": 62.0,
+      "bse_p99": 118.0,
+      "inlens_p1": 18.0,
+      "inlens_p50": 44.0,
+      "inlens_p99": 193.0,
+      "bse_noise_sigma": 7.338,
+      "inlens_sharpness": 32.752,
+      "inlens_banding_power": 1.764,
+      "excluded_frac": 0.01,
+      "bse_file_mb": 19.433
+    },
+    "nearest_training_acquisition": {
+      "sample_id": "71vgq3fw",
+      "batch": "Batch_3",
+      "height_group": "h2060",
+      "distance_z": 0.0
+    },
+    "novel_acquisition": false,
+    "warning": "acquisition properties alone predict batch at 0.68 balanced accuracy in training; a prediction that matches the nearest-acquisition batch may reflect imaging session, not material"
+  },
+  "novelty": {
+    "unusual_features_abs_robust_z_ge_3": [],
+    "novel_acquisition": false
+  },
+  "confidence": {
+    "tier": "High",
+    "reasons": [
+      "top probability >= 0.7 and margin >= 0.3, no alarms"
+    ]
+  },
+  "timings_s": {
+    "read_preprocess_s": 1.53,
+    "segmentation_s": 1.19,
+    "features_s": 2.61,
+    "dino_s": 1.18,
+    "classify_explain_s": 1.69,
+    "total_s": 12.73
+  }
+}

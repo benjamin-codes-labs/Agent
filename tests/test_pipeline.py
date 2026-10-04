@@ -374,7 +374,7 @@ def test_main_prints_only_review(result, pack, monkeypatch, capsys, tmp_path):
     def explain(*args, config, progress):
         assert config.allow_template_fallback is False
         assert config.use_critic is True
-        assert config.max_retries == 1
+        assert config.max_retries == 2  # three attempts by default
         assert config.explainer.max_tokens == 8000
         assert config.explainer.max_transport_retries == 0
         assert config.validator.max_words == 280
@@ -385,11 +385,11 @@ def test_main_prints_only_review(result, pack, monkeypatch, capsys, tmp_path):
 
     monkeypatch.setattr(main, "explain_battery", explain)
     monkeypatch.chdir(tmp_path)
-    main.main(quiet=True)
+    main.main(quiet=True, legacy_result=result)
     captured = capsys.readouterr()
     assert captured.out == main.format_review(outcome.explanation.model_dump_json()) + "\n"
     assert captured.err == ""
-    main.main(debug=True, quiet=True)
+    main.main(debug=True, quiet=True, legacy_result=result)
     captured = capsys.readouterr()
     assert captured.out == main.format_review(outcome.explanation.model_dump_json()) + "\n"
     assert "llm" in captured.err
@@ -478,13 +478,13 @@ def test_main_progress_is_on_stderr_and_context_can_be_expanded(result, pack, mo
         return outcome
 
     monkeypatch.setattr(main, "explain_battery", explain)
-    main.main()
+    main.main(quiet=False, legacy_result=result)          # progress is opt-in now
     captured = capsys.readouterr()
     assert "Loading knowledge" in captured.err and "Generating AI review" in captured.err
     assert "Review ready" in captured.err
     assert "[Sentinel" not in captured.out
     assert not any(source.metadata.get("batches") for source in selected[0].sources.values())
-    main.main(quiet=True, full_context=True)
+    main.main(quiet=True, full_context=True, legacy_result=result)
     assert capsys.readouterr().err == ""
     assert any(source.metadata.get("batches") for source in selected[1].sources.values())
 
@@ -522,14 +522,14 @@ def test_ai_only_workflow_keeps_the_critic(result, pack):
         workflow.run(result)
 
 
-def test_main_missing_credentials_never_prints_a_template(monkeypatch, capsys):
+def test_main_missing_credentials_never_prints_a_template(result, monkeypatch, capsys):
     import main
     import sentinel.explainer
 
     monkeypatch.setattr(main, "load_dotenv", lambda **kwargs: [])
     monkeypatch.setattr(sentinel.explainer, "ensure_api_key", lambda: False)
     with pytest.raises(ExplainerError, match="ANTHROPIC_API_KEY is not set"):
-        main.main()
+        main.main(legacy_result=result)
     assert capsys.readouterr().out == ""
 
 
@@ -541,7 +541,7 @@ def test_main_rejects_an_unexpected_template_result(result, pack, monkeypatch, c
     assert outcome.generator == "template"
     monkeypatch.setattr(main, "explain_battery", lambda *a, **kw: outcome)
     with pytest.raises(ExplainerError, match="AI-generated"):
-        main.main()
+        main.main(legacy_result=result)
     assert capsys.readouterr().out == ""
 
 
@@ -554,7 +554,7 @@ def test_main_loads_configuration_from_project_directory(result, pack, tmp_path,
     monkeypatch.setattr(main, "load_dotenv", lambda **kwargs: calls.append(kwargs))
     monkeypatch.setattr(main, "explain_battery", lambda *a, **kw: outcome)
     monkeypatch.chdir(tmp_path)
-    main.main()
+    main.main(legacy_result=result)
     assert calls == [{"start": main.ROOT}]
 
 

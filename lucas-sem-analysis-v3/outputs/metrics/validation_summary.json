@@ -1,0 +1,282 @@
+{
+  "gates_pass": true,
+  "gate_details": [
+    "  ok   ranking: f1vzngrs among 3 least porous",
+    "  ok   ranking: hzumfsms & 0grcilhi among 5 most porous",
+    "  ok   ranking: 5n1q8atc & 4ih2ggld among 3 highest SiOx",
+    "  ok   ranking: avn74qx1, hawkfj64, r17byphk among 6 lowest SiOx"
+  ],
+  "spearman": {
+    "pore_model_vs_thr": 0.75,
+    "pore_model_vs_vis": 0.413,
+    "siox_model_vs_thr": 0.965,
+    "siox_model_vs_vis": 0.869
+  },
+  "siox_mean_abs_diff_vs_thr_pp": 0.13,
+  "samples_pore_below_thr": [],
+  "pore_between_thr_and_vis": 13,
+  "stability_sd_pp": {
+    "pore": {
+      "mean": 0.16,
+      "max": 0.31
+    },
+    "graphite": {
+      "mean": 0.22,
+      "max": 0.72
+    },
+    "SiOx": {
+      "mean": 0.01,
+      "max": 0.08
+    },
+    "CBD": {
+      "mean": 0.25,
+      "max": 0.7
+    }
+  },
+  "student_vs_teacher": {
+    "held_out": [
+      "4ih2ggld",
+      "iv6g2oq0",
+      "b3esycq1",
+      "epqdaau9",
+      "ufdvpb81",
+      "71vgq3fw"
+    ],
+    "agreement_all_px": 0.9096,
+    "agreement_confident_px": 0.9613,
+    "confusion_rows_teacher_cols_student": [
+      [
+        3200760,
+        382830,
+        3256,
+        324544
+      ],
+      [
+        170953,
+        12699949,
+        1274,
+        359966
+      ],
+      [
+        4232,
+        23965,
+        1528992,
+        104909
+      ],
+      [
+        144150,
+        426954,
+        15603,
+        2316838
+      ]
+    ],
+    "max_abs_fraction_diff_pp": {
+      "pore": 5.46,
+      "graphite": 3.41,
+      "SiOx": 2.32,
+      "CBD": 2.0
+    }
+  },
+  "ai_points_uniform": {
+    "n_points": 240,
+    "n_decided": 240,
+    "n_uncertain": 0,
+    "accuracy": 0.817,
+    "accuracy_ci95": [
+      0.763,
+      0.861
+    ],
+    "confusion_rows_ai_cols_model": {
+      "labels": [
+        "pore",
+        "graphite",
+        "SiOx",
+        "CBD"
+      ],
+      "matrix": [
+        [
+          33,
+          7,
+          0,
+          7
+        ],
+        [
+          4,
+          135,
+          0,
+          2
+        ],
+        [
+          0,
+          2,
+          12,
+          5
+        ],
+        [
+          6,
+          11,
+          0,
+          16
+        ]
+      ]
+    },
+    "accuracy_high_confidence_only": {
+      "n": 113,
+      "accuracy": 1.0,
+      "ci95": [
+        0.967,
+        1.0
+      ]
+    },
+    "phase_fractions_ai_points_pct": {
+      "pore": [
+        19.6,
+        15.1,
+        25.1
+      ],
+      "graphite": [
+        58.8,
+        52.4,
+        64.8
+      ],
+      "SiOx": [
+        7.9,
+        5.1,
+        12.0
+      ],
+      "CBD": [
+        13.8,
+        10.0,
+        18.7
+      ]
+    },
+    "phase_fractions_model_at_points_pct": {
+      "pore": 17.9,
+      "graphite": 64.6,
+      "SiOx": 5.0,
+      "CBD": 12.5
+    }
+  },
+  "ai_points_stratified": {
+    "n_points": 120,
+    "n_decided": 118,
+    "n_uncertain": 2,
+    "accuracy": 0.763,
+    "accuracy_ci95": [
+      0.678,
+      0.83
+    ],
+    "confusion_rows_ai_cols_model": {
+      "labels": [
+        "pore",
+        "graphite",
+        "SiOx",
+        "CBD"
+      ],
+      "matrix": [
+        [
+          22,
+          0,
+          1,
+          6
+        ],
+        [
+          2,
+          29,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          27,
+          1
+        ],
+        [
+          8,
+          6,
+          0,
+          12
+        ]
+      ]
+    },
+    "accuracy_high_confidence_only": {
+      "n": 41,
+      "accuracy": 0.976,
+      "ci95": [
+        0.874,
+        0.996
+      ]
+    },
+    "precision_by_model_class": {
+      "pore": {
+        "n": 32,
+        "precision": 0.688,
+        "ci95": [
+          0.514,
+          0.82
+        ]
+      },
+      "graphite": {
+        "n": 35,
+        "precision": 0.829,
+        "ci95": [
+          0.673,
+          0.919
+        ]
+      },
+      "SiOx": {
+        "n": 28,
+        "precision": 0.964,
+        "ci95": [
+          0.823,
+          0.994
+        ]
+      },
+      "CBD": {
+        "n": 23,
+        "precision": 0.522,
+        "ci95": [
+          0.33,
+          0.708
+        ]
+      }
+    }
+  },
+  "ai_superpixels_held_out": {
+    "n": 141,
+    "agreement": 0.844,
+    "ci95": [
+      0.775,
+      0.895
+    ],
+    "recall_by_ai_class": {
+      "pore": [
+        0.727,
+        33
+      ],
+      "graphite": [
+        0.909,
+        77
+      ],
+      "SiOx": [
+        0.923,
+        13
+      ],
+      "CBD": [
+        0.722,
+        18
+      ]
+    }
+  },
+  "inference_timing": {
+    "gpu_torch_s": 0.312,
+    "cpu_onnx_s": 1.464,
+    "image_shape_halfres": [
+      1030,
+      3500
+    ],
+    "gpu_vs_cpu_label_agreement": 0.99988,
+    "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU"
+  }
+}

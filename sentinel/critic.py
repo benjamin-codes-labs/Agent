@@ -221,8 +221,21 @@ class ClaudeCritic:
         # Two separate questions, deliberately: did the critic object, and is it
         # allowed to stop delivery? Its own boolean is not trusted over its own
         # findings, so a "passed: true" alongside problems still counts as an
-        # objection.
-        passed = True if not self.config.blocking else (declared_pass and not blocking)
+        # objection (declared_pass records that).
+        #
+        # Delivery is blocked only by a blocking finding, or by a rejection that
+        # gives no finding at all. This used to read `declared_pass and not
+        # blocking`, and declared_pass is False whenever ANY finding exists -- so
+        # a finding of a non-blocking kind still failed the run, and
+        # blocking_kinds never actually made a kind non-blocking.
+        if not self.config.blocking:
+            passed = True
+        elif blocking:
+            passed = False
+        elif findings:
+            passed = True              # only advisory kinds objected: ship, but record it
+        else:
+            passed = declared_pass     # an unexplained "passed: false" still blocks
         return CriticVerdict(
             passed=passed,
             findings=findings,

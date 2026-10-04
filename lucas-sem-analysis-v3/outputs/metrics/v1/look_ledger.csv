@@ -1,0 +1,7 @@
+utc,code_hash,config,kind,balanced_accuracy,detail
+2026-10-03T16:39:48+00:00,2f94f1ea87a5,S,LOO,0.415,"{""Batch_1"": ""4/7"", ""Batch_2"": ""1/7"", ""Batch_3"": ""9/17""}"
+2026-10-03T16:39:48+00:00,2f94f1ea87a5,F,LOO,0.588,"{""Batch_1"": ""5/7"", ""Batch_2"": ""2/7"", ""Batch_3"": ""13/17""}"
+2026-10-03T16:48:21+00:00,41d7d36b05ae,K_exploratory,LOO,0.493,"{""Batch_1"": ""3/7"", ""Batch_2"": ""2/7"", ""Batch_3"": ""13/17""}"
+2026-10-03T17:16:17+00:00,9c853eb2175f,F+C_exploratory,LOO,0.541,"{""Batch_1"": ""4/7"", ""Batch_2"": ""2/7"", ""Batch_3"": ""13/17""}"
+2026-10-03T17:25:18+00:00,d40d7f2c5ab1,two_step_all_kpis_exploratory,LOO,0.636,"{""Batch_1"": ""4/7"", ""Batch_2"": ""4/7"", ""Batch_3"": ""13/17""}"
+2026-10-03T17:26:10+00:00,d40d7f2c5ab1,two_step_non_session_kpis_exploratory,LOO,0.588,"{""Batch_1"": ""4/7"", ""Batch_2"": ""3/7"", ""Batch_3"": ""13/17""}"

@@ -1,0 +1,4 @@
+features,n_features,SiOx_mean_abs_err_vs_thr,samples_pore_below_thr,gates,mean_pore_pct,mean_graphite_pct,mean_SiOx_pct,mean_CBD_pct,minutes
+bse,27,0.71,0,FAIL,16.73,62.6,6.48,14.19,2.6
+bse_inlens,54,0.78,0,FAIL,16.27,64.41,6.55,12.77,2.7
+all,81,0.82,0,PASS,15.8,65.14,6.59,12.47,3.4

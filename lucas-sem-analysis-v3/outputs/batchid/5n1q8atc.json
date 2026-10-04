@@ -1,0 +1,1086 @@
+{
+  "summary_sentences": [
+    "Answer: Batch_1 (Medium confidence); the imaging side (fingerprint) picked Batch_1 and the material side (segmentation + DINOv2) Batch_1.",
+    "Reasons: unusual feature values: siox_frac, siox_ecd_aw.",
+    "Track record of Medium-confidence answers: 12/14 right (86%) in nested leave-one-location-out tests.",
+    "Composition: pore 11.1 %, carbon (graphite + binder) 74.4 %, SiOx 14.5 % (binder alone 17.3 %, experimental).",
+    "Strongest imaging-fingerprint cue (ETD/SE image): median grey level is higher than typical (robust z +1.0).",
+    "Strongest texture cue (BSE tiles): grey-level contrast between neighbours (glcm_contrast_d4_y) is higher than typical (z +1.7).",
+    "Material-range check (GET4 95 % error bars): pore 11.1 % [9.8, 12.4] fits the range of no batch; carbon 74.5 % [69.5, 79.4] fits the range of Batch_1, Batch_2, Batch_3; SiOx 14.4 % [9.9, 18.9] fits the range of Batch_1.",
+    "DINOv2 evidence map: 49 % of the evidence for Batch_1 (over Batch_2) lies on graphite, which covers 57 % of the image.",
+    "DINOv2 evidence map: 60 % of the evidence against Batch_1 (for Batch_2) lies on graphite.",
+    "In the DINOv2 evidence map alone, 56 % of all evidence points toward Batch_1 (the DINOv2 head is only one part of the material side).",
+    "Binder is depleted in the bottom-left of the image (8 % vs 17 % overall).",
+    "Batch_1 and Batch_2 are statistically indistinguishable in this dataset; treat any Batch_1-vs-Batch_2 call as low-certainty."
+  ],
+  "field_guide": "Read `decision` first: it is the final answer (a batch, 'Batch_1 or Batch_2', 'unsure (leaning X)', a known location, or refused), with its confidence tier and track record. `known_location_check` says whether the image is a training image or shows a known location. The decision combines two sides: the imaging side (`fingerprint_model`) and the material side (`material_model`: segmentation features + DINOv2 texture); `material_range_rule` can settle a Batch_1-or-Batch_2 split. `texture_model` (tile texture) is reported for information only: it lowered held-out accuracy, so it does not vote. The individual models' picks are NOT the final answer. `phases` is the composition. `material_model.map_text` describes the segmentation and evidence maps in words. `forced_mode` is the always-answer variant and `decision_v2` the previous rule, for comparison. All numbers are measured; only `summary_sentences` is generated text, filled in from these numbers.",
+  "sample_id": "5n1q8atc",
+  "true_batch": "Batch_1",
+  "decision": {
+    "answer": "Batch_1",
+    "answer_type": "specific",
+    "confidence": "Medium",
+    "leaning": "Batch_1",
+    "imaging_side_pick": "Batch_1",
+    "material_side_pick": "Batch_1",
+    "sides_agree": true,
+    "prediction_set": [
+      "Batch_1"
+    ],
+    "average_calibrated_probabilities": {
+      "Batch_1": 0.73,
+      "Batch_2": 0.164,
+      "Batch_3": 0.105
+    },
+    "high_tier_threshold": 0.621,
+    "reasons": [
+      "unusual feature values: siox_frac, siox_ecd_aw"
+    ],
+    "track_record": {
+      "LOO": {
+        "this_confidence_tier": {
+          "correct": "12/14",
+          "accuracy": 0.857,
+          "ci95": [
+            0.601,
+            0.96
+          ]
+        },
+        "this_answer_type": {
+          "correct": "19/23",
+          "accuracy": 0.826,
+          "ci95": [
+            0.629,
+            0.93
+          ]
+        },
+        "overall": {
+          "coverage": "26/31 (84%)",
+          "right_when_answering": {
+            "correct": "22/26",
+            "accuracy": 0.846,
+            "ci95": [
+              0.665,
+              0.939
+            ]
+          }
+        }
+      },
+      "LOGO_session": {
+        "this_confidence_tier": {
+          "correct": "15/16",
+          "accuracy": 0.938,
+          "ci95": [
+            0.717,
+            0.989
+          ]
+        },
+        "this_answer_type": {
+          "correct": "15/17",
+          "accuracy": 0.882,
+          "ci95": [
+            0.657,
+            0.967
+          ]
+        },
+        "overall": {
+          "coverage": "23/31 (74%)",
+          "right_when_answering": {
+            "correct": "21/23",
+            "accuracy": 0.913,
+            "ci95": [
+              0.732,
+              0.976
+            ]
+          }
+        }
+      }
+    },
+    "basis": "nested leave-one-location-out: models, calibration and thresholds chosen without this location"
+  },
+  "phases": {
+    "four_class_pct": {
+      "pore": 11.14,
+      "graphite": 57.04,
+      "SiOx": 14.5,
+      "CBD": 17.32
+    },
+    "three_class_pct": {
+      "pore": 11.14,
+      "carbon (graphite + binder)": 74.36,
+      "SiOx": 14.5
+    },
+    "reliability": "pore / carbon / SiOx are reliable (87 % agreement with an independent annotator); the graphite-vs-binder split is experimental (binder precision ~50 %)"
+  },
+  "known_location_check": {
+    "status": "training location",
+    "note": "this is one of the 31 reference locations; to demo it as a new image use `predict --holdout`"
+  },
+  "material_range_rule": {
+    "answer": "Batch_1",
+    "votes": [
+      "Batch_1"
+    ],
+    "phases": [
+      {
+        "phase": "pore",
+        "pct": 11.12,
+        "ci95": [
+          9.79,
+          12.45
+        ],
+        "fits_ranges_of": [],
+        "ranges": {
+          "Batch_1": [
+            13.75,
+            17.39
+          ],
+          "Batch_2": [
+            13.76,
+            23.57
+          ],
+          "Batch_3": [
+            15.14,
+            23.04
+          ]
+        }
+      },
+      {
+        "phase": "carbon",
+        "pct": 74.46,
+        "ci95": [
+          69.54,
+          79.37
+        ],
+        "fits_ranges_of": [
+          "Batch_1",
+          "Batch_2",
+          "Batch_3"
+        ],
+        "ranges": {
+          "Batch_1": [
+            74.91,
+            81.28
+          ],
+          "Batch_2": [
+            70.85,
+            80.14
+          ],
+          "Batch_3": [
+            71.63,
+            79.73
+          ]
+        }
+      },
+      {
+        "phase": "SiOx",
+        "pct": 14.42,
+        "ci95": [
+          9.93,
+          18.92
+        ],
+        "fits_ranges_of": [
+          "Batch_1"
+        ],
+        "ranges": {
+          "Batch_1": [
+            4.72,
+            10.34
+          ],
+          "Batch_2": [
+            4.2,
+            8.05
+          ],
+          "Batch_3": [
+            4.28,
+            8.31
+          ]
+        }
+      }
+    ],
+    "material_error_bars": "GET4 (teammate), 95 % = 1.96 x SE"
+  },
+  "fingerprint_model": {
+    "probabilities_leave_one_out": {
+      "Batch_1": 0.9117,
+      "Batch_2": 0.0868,
+      "Batch_3": 0.0016
+    },
+    "per_view_leave_one_out": {
+      "bse": {
+        "Batch_1": 0.927,
+        "Batch_2": 0.0717,
+        "Batch_3": 0.0013
+      },
+      "inlens": {
+        "Batch_1": 0.8715,
+        "Batch_2": 0.1262,
+        "Batch_3": 0.0023
+      },
+      "se2": {
+        "Batch_1": 0.9366,
+        "Batch_2": 0.0623,
+        "Batch_3": 0.0011
+      }
+    },
+    "predicted_batch_leave_one_out": "Batch_1",
+    "top_measurements": [
+      {
+        "view": "ETD/SE",
+        "measurement": "se2_p50",
+        "meaning": "median grey level",
+        "robust_z": 1.01,
+        "direction": "high",
+        "push_toward_winner": 2.269
+      },
+      {
+        "view": "Inlens",
+        "measurement": "inlens_clip_low",
+        "meaning": "share of pixels clipped to black",
+        "robust_z": 1.56,
+        "direction": "high",
+        "push_toward_winner": 2.176
+      },
+      {
+        "view": "ETD/SE",
+        "measurement": "se2_p99",
+        "meaning": "white level",
+        "robust_z": 3.0,
+        "direction": "high",
+        "push_toward_winner": -1.896
+      },
+      {
+        "view": "ETD/SE",
+        "measurement": "se2_col_pattern_sd",
+        "meaning": "vertical stripe strength in the noise (often ion-milling curtaining)",
+        "robust_z": 1.69,
+        "direction": "high",
+        "push_toward_winner": 1.742
+      },
+      {
+        "view": "BSE",
+        "measurement": "bse_ac_along_line",
+        "meaning": "how smeared the noise is along the scan direction",
+        "robust_z": 1.69,
+        "direction": "high",
+        "push_toward_winner": 1.2
+      }
+    ],
+    "calibration": {
+      "claimed": 0.912,
+      "in_leave_one_out_tests_at_this_level": "4/6 right",
+      "note": "the fingerprint model's raw probabilities are over-confident; use this empirical rate"
+    },
+    "note": "probabilities are leave-one-location-out (honest); top_measurements come from the model trained on all 31"
+  },
+  "texture_model": {
+    "what_this_is": "tile texture model: 12.8 um tiles, local binary patterns + co-occurrence texture + power spectrum, logistic regression per detector view, averaged over tiles",
+    "used_in_decision": false,
+    "why_not_used": "in nested leave-one-out it lowered accuracy when answering from 85 % to 80 %, so it is shown for information only",
+    "calibrated_probabilities": {
+      "Batch_1": 0.675,
+      "Batch_2": 0.208,
+      "Batch_3": 0.117
+    },
+    "per_view_raw": {
+      "BSE": {
+        "Batch_1": 0.822,
+        "Batch_2": 0.135,
+        "Batch_3": 0.043
+      },
+      "Inlens": {
+        "Batch_1": 0.654,
+        "Batch_2": 0.152,
+        "Batch_3": 0.194
+      },
+      "SE2": {
+        "Batch_1": 0.784,
+        "Batch_2": 0.174,
+        "Batch_3": 0.042
+      }
+    },
+    "n_tiles": {
+      "BSE": 51,
+      "Inlens": 51,
+      "SE2": 51
+    },
+    "top_features": [
+      {
+        "feature": "glcm_contrast_d4_y",
+        "meaning": "grey-level contrast between neighbours",
+        "mean_z": 1.71,
+        "push_toward_winner": 1.163
+      },
+      {
+        "feature": "glcm_contrast_d4_x",
+        "meaning": "grey-level contrast between neighbours",
+        "mean_z": 1.86,
+        "push_toward_winner": 0.775
+      },
+      {
+        "feature": "glcm_contrast_d1_y",
+        "meaning": "grey-level contrast between neighbours",
+        "mean_z": 1.47,
+        "push_toward_winner": 0.514
+      }
+    ],
+    "note": "probabilities are nested leave-one-out (honest); top_features come from the model trained on all 31"
+  },
+  "material_model": {
+    "predicted_batch": "Batch_1",
+    "runner_up": "Batch_2",
+    "probabilities": {
+      "fused_F": {
+        "Batch_1": 0.945,
+        "Batch_2": 0.031,
+        "Batch_3": 0.024
+      },
+      "S_head": {
+        "Batch_1": 0.988,
+        "Batch_2": 0.01,
+        "Batch_3": 0.002
+      },
+      "dino_head": {
+        "Batch_1": 0.902,
+        "Batch_2": 0.052,
+        "Batch_3": 0.046
+      }
+    },
+    "confidence": {
+      "tier": "Low",
+      "reasons": [
+        "unusual feature values (|robust z| >= 3): siox_frac, siox_ecd_aw"
+      ]
+    },
+    "features_S": {
+      "siox_frac": {
+        "value": 14.502,
+        "robust_z": 3.0,
+        "push_toward_winner_vs_runner_up": 1.373
+      },
+      "siox_ecd_aw": {
+        "value": 5.4846,
+        "robust_z": 3.0,
+        "push_toward_winner_vs_runner_up": 0.624
+      },
+      "pore_open_excess": {
+        "value": 4.9048,
+        "robust_z": -1.96,
+        "push_toward_winner_vs_runner_up": 1.875
+      },
+      "pore_all_frac": {
+        "value": 11.1373,
+        "robust_z": -2.33,
+        "push_toward_winner_vs_runner_up": 2.573
+      },
+      "pore_chord_aniso": {
+        "value": 0.9412,
+        "robust_z": -2.87,
+        "push_toward_winner_vs_runner_up": -0.708
+      }
+    },
+    "evidence": {
+      "phase_share_in_top10pct_evidence_pct": {
+        "pore": 5.7,
+        "graphite": 49.5,
+        "SiOx": 24.5,
+        "CBD": 20.4
+      },
+      "phase_share_whole_image_pct": {
+        "pore": 11.1,
+        "graphite": 57.1,
+        "SiOx": 14.4,
+        "CBD": 17.4
+      },
+      "top_regions": [
+        {
+          "bbox_um": [
+            28.0,
+            33.6,
+            36.4,
+            43.4
+          ],
+          "evidence_share": 0.014,
+          "local_phase_pct": {
+            "pore": 7.3,
+            "graphite": 21.1,
+            "SiOx": 57.4,
+            "CBD": 14.2
+          }
+        },
+        {
+          "bbox_um": [
+            137.9,
+            25.9,
+            151.2,
+            37.1
+          ],
+          "evidence_share": 0.013,
+          "local_phase_pct": {
+            "pore": 4.6,
+            "graphite": 57.9,
+            "SiOx": 3.9,
+            "CBD": 33.6
+          }
+        },
+        {
+          "bbox_um": [
+            114.8,
+            29.4,
+            127.4,
+            36.4
+          ],
+          "evidence_share": 0.011,
+          "local_phase_pct": {
+            "pore": 6.0,
+            "graphite": 66.1,
+            "SiOx": 10.2,
+            "CBD": 17.7
+          }
+        }
+      ],
+      "reconstruction_error": 2.8754776337791554e-13,
+      "shortcut_alarm": false
+    },
+    "map_text": {
+      "evidence_by_phase": {
+        "positive": {
+          "pore": {
+            "share_pct": 10.1,
+            "enrichment_vs_area": 0.91
+          },
+          "graphite": {
+            "share_pct": 49.4,
+            "enrichment_vs_area": 0.86
+          },
+          "SiOx": {
+            "share_pct": 18.6,
+            "enrichment_vs_area": 1.29
+          },
+          "CBD": {
+            "share_pct": 21.3,
+            "enrichment_vs_area": 1.23
+          }
+        },
+        "negative": {
+          "pore": {
+            "share_pct": 9.4,
+            "enrichment_vs_area": 0.85
+          },
+          "graphite": {
+            "share_pct": 60.0,
+            "enrichment_vs_area": 1.05
+          },
+          "SiOx": {
+            "share_pct": 20.8,
+            "enrichment_vs_area": 1.44
+          },
+          "CBD": {
+            "share_pct": 8.0,
+            "enrichment_vs_area": 0.46
+          }
+        },
+        "area_pct": {
+          "pore": 11.1,
+          "graphite": 57.1,
+          "SiOx": 14.4,
+          "CBD": 17.4
+        },
+        "positive_share_of_total_evidence_pct": 56.2
+      },
+      "evidence_by_region": {
+        "positive": {
+          "top-left": {
+            "share_pct": 13.3,
+            "area_pct": 10.5,
+            "enrichment": 1.26
+          },
+          "top-centre": {
+            "share_pct": 10.6,
+            "area_pct": 11.0,
+            "enrichment": 0.96
+          },
+          "top-right": {
+            "share_pct": 13.0,
+            "area_pct": 11.1,
+            "enrichment": 1.17
+          },
+          "middle-left": {
+            "share_pct": 13.6,
+            "area_pct": 11.0,
+            "enrichment": 1.24
+          },
+          "middle-centre": {
+            "share_pct": 10.5,
+            "area_pct": 11.0,
+            "enrichment": 0.96
+          },
+          "middle-right": {
+            "share_pct": 12.9,
+            "area_pct": 11.1,
+            "enrichment": 1.16
+          },
+          "bottom-left": {
+            "share_pct": 9.5,
+            "area_pct": 11.4,
+            "enrichment": 0.84
+          },
+          "bottom-centre": {
+            "share_pct": 8.9,
+            "area_pct": 11.4,
+            "enrichment": 0.78
+          },
+          "bottom-right": {
+            "share_pct": 7.8,
+            "area_pct": 11.5,
+            "enrichment": 0.67
+          }
+        },
+        "negative": {
+          "top-left": {
+            "share_pct": 9.6,
+            "area_pct": 10.5,
+            "enrichment": 0.91
+          },
+          "top-centre": {
+            "share_pct": 10.6,
+            "area_pct": 11.0,
+            "enrichment": 0.96
+          },
+          "top-right": {
+            "share_pct": 11.3,
+            "area_pct": 11.1,
+            "enrichment": 1.02
+          },
+          "middle-left": {
+            "share_pct": 10.0,
+            "area_pct": 11.0,
+            "enrichment": 0.91
+          },
+          "middle-centre": {
+            "share_pct": 11.3,
+            "area_pct": 11.0,
+            "enrichment": 1.03
+          },
+          "middle-right": {
+            "share_pct": 10.8,
+            "area_pct": 11.1,
+            "enrichment": 0.97
+          },
+          "bottom-left": {
+            "share_pct": 12.7,
+            "area_pct": 11.4,
+            "enrichment": 1.12
+          },
+          "bottom-centre": {
+            "share_pct": 10.6,
+            "area_pct": 11.4,
+            "enrichment": 0.93
+          },
+          "bottom-right": {
+            "share_pct": 13.1,
+            "area_pct": 11.5,
+            "enrichment": 1.14
+          }
+        }
+      },
+      "spatial": {
+        "grid_3x3_pct": {
+          "top-left": {
+            "pore": 10.3,
+            "graphite": 57.4,
+            "SiOx": 6.9,
+            "CBD": 25.4
+          },
+          "top-centre": {
+            "pore": 11.5,
+            "graphite": 53.8,
+            "SiOx": 14.8,
+            "CBD": 19.9
+          },
+          "top-right": {
+            "pore": 6.4,
+            "graphite": 53.7,
+            "SiOx": 18.7,
+            "CBD": 21.3
+          },
+          "middle-left": {
+            "pore": 9.7,
+            "graphite": 50.9,
+            "SiOx": 20.7,
+            "CBD": 18.7
+          },
+          "middle-centre": {
+            "pore": 10.4,
+            "graphite": 59.9,
+            "SiOx": 9.6,
+            "CBD": 20.2
+          },
+          "middle-right": {
+            "pore": 8.1,
+            "graphite": 60.9,
+            "SiOx": 9.5,
+            "CBD": 21.4
+          },
+          "bottom-left": {
+            "pore": 16.0,
+            "graphite": 65.7,
+            "SiOx": 10.4,
+            "CBD": 7.9
+          },
+          "bottom-centre": {
+            "pore": 12.1,
+            "graphite": 59.3,
+            "SiOx": 20.0,
+            "CBD": 8.5
+          },
+          "bottom-right": {
+            "pore": 15.8,
+            "graphite": 51.7,
+            "SiOx": 19.6,
+            "CBD": 12.8
+          }
+        },
+        "notable_regions": [
+          {
+            "region": "bottom-left",
+            "phase": "CBD",
+            "region_pct": 7.9,
+            "image_pct": 17.3,
+            "direction": "depleted"
+          },
+          {
+            "region": "bottom-centre",
+            "phase": "CBD",
+            "region_pct": 8.5,
+            "image_pct": 17.3,
+            "direction": "depleted"
+          },
+          {
+            "region": "top-left",
+            "phase": "CBD",
+            "region_pct": 25.4,
+            "image_pct": 17.3,
+            "direction": "enriched"
+          },
+          {
+            "region": "top-left",
+            "phase": "SiOx",
+            "region_pct": 6.9,
+            "image_pct": 14.5,
+            "direction": "depleted"
+          },
+          {
+            "region": "middle-left",
+            "phase": "SiOx",
+            "region_pct": 20.7,
+            "image_pct": 14.5,
+            "direction": "enriched"
+          },
+          {
+            "region": "bottom-centre",
+            "phase": "SiOx",
+            "region_pct": 20.0,
+            "image_pct": 14.5,
+            "direction": "enriched"
+          }
+        ],
+        "top_to_bottom_pct": {
+          "top": {
+            "pore": 9.4,
+            "graphite": 54.9,
+            "SiOx": 13.5,
+            "CBD": 22.1
+          },
+          "middle": {
+            "pore": 9.4,
+            "graphite": 57.2,
+            "SiOx": 13.3,
+            "CBD": 20.1
+          },
+          "bottom": {
+            "pore": 14.6,
+            "graphite": 58.9,
+            "SiOx": 16.7,
+            "CBD": 9.7
+          }
+        },
+        "image_mean_pct": {
+          "pore": 11.1,
+          "graphite": 57.0,
+          "SiOx": 14.5,
+          "CBD": 17.3
+        }
+      },
+      "objects": {
+        "largest_pores": [
+          {
+            "area_um2": 89.82,
+            "length_um": 45.17,
+            "width_um": 9.01,
+            "orientation": "horizontal",
+            "location": "bottom-left",
+            "centre_um": [
+              44.1,
+              52.7
+            ]
+          },
+          {
+            "area_um2": 31.79,
+            "length_um": 14.54,
+            "width_um": 6.81,
+            "orientation": "horizontal",
+            "location": "bottom-right",
+            "centre_um": [
+              125.9,
+              44.0
+            ]
+          },
+          {
+            "area_um2": 29.97,
+            "length_um": 15.93,
+            "width_um": 4.74,
+            "orientation": "horizontal",
+            "location": "bottom-centre",
+            "centre_um": [
+              84.4,
+              54.8
+            ]
+          }
+        ],
+        "largest_SiOx_particles": [
+          {
+            "area_um2": 150.3,
+            "diameter_um": 13.83,
+            "location": "bottom-centre",
+            "centre_um": [
+              111.6,
+              51.7
+            ]
+          },
+          {
+            "area_um2": 102.8,
+            "diameter_um": 11.44,
+            "location": "bottom-right",
+            "centre_um": [
+              157.9,
+              43.2
+            ]
+          },
+          {
+            "area_um2": 100.95,
+            "diameter_um": 11.34,
+            "location": "top-right",
+            "centre_um": [
+              126.8,
+              9.3
+            ]
+          }
+        ],
+        "SiOx_particle_count": 219,
+        "SiOx_clark_evans": 1.02,
+        "SiOx_arrangement": "roughly random",
+        "SiOx_count_by_region": {
+          "top-left": 24,
+          "top-centre": 27,
+          "top-right": 28,
+          "middle-right": 24,
+          "middle-left": 24,
+          "middle-centre": 23,
+          "bottom-right": 29,
+          "bottom-left": 18,
+          "bottom-centre": 22
+        }
+      },
+      "evidence_regions": {
+        "positive": [
+          {
+            "location": "middle-right",
+            "share_of_evidence_pct": 0.8,
+            "bbox_um": [
+              144.9,
+              25.9,
+              151.2,
+              32.9
+            ],
+            "local_phase_pct": {
+              "pore": 1.3,
+              "graphite": 59.4,
+              "SiOx": 1.5,
+              "CBD": 37.8
+            },
+            "dominant_phase": "graphite"
+          },
+          {
+            "location": "middle-centre",
+            "share_of_evidence_pct": 0.5,
+            "bbox_um": [
+              77.7,
+              25.9,
+              82.6,
+              31.5
+            ],
+            "local_phase_pct": {
+              "pore": 3.3,
+              "graphite": 72.9,
+              "SiOx": 0.0,
+              "CBD": 23.8
+            },
+            "dominant_phase": "graphite"
+          },
+          {
+            "location": "top-centre",
+            "share_of_evidence_pct": 0.4,
+            "bbox_um": [
+              70.7,
+              0.0,
+              75.6,
+              5.6
+            ],
+            "local_phase_pct": {
+              "pore": 9.0,
+              "graphite": 51.0,
+              "SiOx": 15.0,
+              "CBD": 24.9
+            },
+            "dominant_phase": "graphite"
+          }
+        ],
+        "negative": [
+          {
+            "location": "bottom-right",
+            "share_of_evidence_pct": 0.6,
+            "bbox_um": [
+              169.4,
+              37.1,
+              173.6,
+              41.3
+            ],
+            "local_phase_pct": {
+              "pore": 7.7,
+              "graphite": 80.1,
+              "SiOx": 0.0,
+              "CBD": 12.3
+            },
+            "dominant_phase": "graphite"
+          },
+          {
+            "location": "top-centre",
+            "share_of_evidence_pct": 0.5,
+            "bbox_um": [
+              63.7,
+              16.1,
+              67.2,
+              20.3
+            ],
+            "local_phase_pct": {
+              "pore": 8.4,
+              "graphite": 91.6,
+              "SiOx": 0.0,
+              "CBD": 0.0
+            },
+            "dominant_phase": "graphite"
+          },
+          {
+            "location": "bottom-right",
+            "share_of_evidence_pct": 0.4,
+            "bbox_um": [
+              131.6,
+              51.8,
+              137.2,
+              55.3
+            ],
+            "local_phase_pct": {
+              "pore": 6.9,
+              "graphite": 79.4,
+              "SiOx": 0.0,
+              "CBD": 13.7
+            },
+            "dominant_phase": "graphite"
+          }
+        ]
+      },
+      "sentences": [
+        "DINOv2 evidence map: 49 % of the evidence for Batch_1 (over Batch_2) lies on graphite, which covers 57 % of the image.",
+        "DINOv2 evidence map: 60 % of the evidence against Batch_1 (for Batch_2) lies on graphite.",
+        "In the DINOv2 evidence map alone, 56 % of all evidence points toward Batch_1 (the DINOv2 head is only one part of the material side).",
+        "Binder is depleted in the bottom-left of the image (8 % vs 17 % overall).",
+        "Binder is depleted in the bottom-centre of the image (8 % vs 17 % overall).",
+        "Binder is enriched in the top-left of the image (25 % vs 17 % overall).",
+        "Pores change through the thickness: 9 % in the top third vs 15 % in the bottom third.",
+        "Binder changes through the thickness: 22 % in the top third vs 10 % in the bottom third.",
+        "The largest pore (89.8 um^2, 45.2 x 9.0 um, horizontal) is in the bottom-left.",
+        "The largest SiOx particle (13.8 um across) is in the bottom-centre.",
+        "The 219 SiOx particles are roughly random (Clark-Evans index 1.02)."
+      ],
+      "notes": "Image vertical = through-thickness direction of the electrode; locations use a 3 x 3 grid (top/middle/bottom x left/centre/right). Evidence = the batch model's DINO-head contribution map (winner minus runner-up)."
+    },
+    "validation_reference": {
+      "LOO_F": 0.608,
+      "LOO_S": 0.482,
+      "LOGO_F": 0.56,
+      "nuisance_only_LOO": 0.675,
+      "permutation": {
+        "S": {
+          "observed": 0.482,
+          "null_mean": 0.325,
+          "null_p95": 0.518,
+          "null_p99": 0.566,
+          "p_value": 0.0896,
+          "n_permutations": 200
+        },
+        "F": {
+          "observed": 0.608,
+          "null_mean": 0.33,
+          "null_p95": 0.502,
+          "null_p99": 0.547,
+          "p_value": 0.005,
+          "n_permutations": 200
+        }
+      }
+    },
+    "loo_prediction": {
+      "true": "Batch_1",
+      "pred_S": "Batch_1",
+      "pred_F": "Batch_1",
+      "p_F": [
+        0.749,
+        0.063,
+        0.188
+      ]
+    },
+    "note": "training sample: the probabilities above come from a model that saw it; the honest prediction is loo_prediction",
+    "features_half_split_sd": {
+      "siox_frac": 4.02621,
+      "siox_ecd_aw": 1.03379,
+      "pore_open_excess": 0.12712,
+      "pore_all_frac": 1.5604,
+      "pore_chord_aniso": 0.08579
+    },
+    "what_this_is": "material model: 5 segmentation features (S head) + DINOv2 texture head, fused"
+  },
+  "qc": {
+    "excluded_pct": 1.31,
+    "cu_foil_detected": false,
+    "manual_exclusion": true,
+    "detectors_used": [
+      "BSE",
+      "Inlens"
+    ]
+  },
+  "acquisition": {
+    "probes": {
+      "height_px": 2316.0,
+      "width_px": 7000.0,
+      "bse_p1": 0.0,
+      "bse_p50": 59.0,
+      "bse_p99": 119.0,
+      "inlens_p1": 0.0,
+      "inlens_p50": 91.0,
+      "inlens_p99": 255.0,
+      "bse_noise_sigma": 11.53,
+      "inlens_sharpness": 84.035,
+      "inlens_banding_power": 1.85,
+      "excluded_frac": 0.013,
+      "bse_file_mb": 23.227
+    },
+    "nearest_training_acquisition": {
+      "sample_id": "4ih2ggld",
+      "batch": "Batch_1",
+      "height_group": "h2316",
+      "distance_z": 1.38
+    },
+    "novel_acquisition": false,
+    "warning": "acquisition properties alone predict batch at 0.68 balanced accuracy in training; a prediction that matches the nearest-acquisition batch may reflect imaging session, not material"
+  },
+  "novelty": {
+    "unusual_features_abs_robust_z_ge_3": [
+      "siox_frac",
+      "siox_ecd_aw"
+    ],
+    "novel_acquisition": false
+  },
+  "decision_v2": {
+    "answer": "Batch_1",
+    "answer_type": "specific",
+    "confidence": "Medium",
+    "fingerprint_pick": "Batch_1",
+    "material_model_pick": "Batch_1",
+    "models_agree": true,
+    "prediction_set": [
+      "Batch_1"
+    ],
+    "average_probabilities": {
+      "Batch_1": 0.831,
+      "Batch_2": 0.075,
+      "Batch_3": 0.095
+    },
+    "reasons": [
+      "unusual feature values: siox_frac, siox_ecd_aw"
+    ],
+    "track_record_for_this_answer_type": {
+      "correct": "19/23",
+      "accuracy": 0.826,
+      "ci95": [
+        0.629,
+        0.93
+      ]
+    },
+    "track_record_overall": {
+      "coverage": "26/31 (84%)",
+      "accuracy_when_answering": {
+        "correct": "22/26",
+        "accuracy": 0.846,
+        "ci95": [
+          0.665,
+          0.939
+        ]
+      }
+    }
+  },
+  "forced_mode": {
+    "answer": "Batch_1",
+    "route": "fingerprint: not Batch_3; GET4 material-range rule"
+  },
+  "frontend_compat_note": "loo_prediction / confidence / validation_reference below are copies of material_model fields for the team frontend; they are NOT the answer - read decision",
+  "loo_prediction": {
+    "true": "Batch_1",
+    "pred_S": "Batch_1",
+    "pred_F": "Batch_1",
+    "p_F": [
+      0.749,
+      0.063,
+      0.188
+    ]
+  },
+  "confidence": {
+    "tier": "Low",
+    "reasons": [
+      "unusual feature values (|robust z| >= 3): siox_frac, siox_ecd_aw"
+    ]
+  },
+  "validation_reference": {
+    "LOO_F": 0.608,
+    "LOO_S": 0.482,
+    "LOGO_F": 0.56,
+    "nuisance_only_LOO": 0.675,
+    "permutation": {
+      "S": {
+        "observed": 0.482,
+        "null_mean": 0.325,
+        "null_p95": 0.518,
+        "null_p99": 0.566,
+        "p_value": 0.0896,
+        "n_permutations": 200
+      },
+      "F": {
+        "observed": 0.608,
+        "null_mean": 0.33,
+        "null_p95": 0.502,
+        "null_p99": 0.547,
+        "p_value": 0.005,
+        "n_permutations": 200
+      }
+    }
+  }
+}

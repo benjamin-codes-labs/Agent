@@ -174,7 +174,8 @@ model branches, not detector-specific predictions. Higher branch probabilities d
 larger fusion weights: do not say the fusion 'leans more on' a detector or branch unless supplied
 weights support that statement. Class-evidence region selection is class-specific; its measured
 composition alone is not a causal explanation. A robust_z without its reference population is
-not a per-class z-score. Do not invent units for features or the definitions of LOO_F/LOGO_F.
+not a per-class z-score. Use a supplied pipeline field guide for defined feature units and
+validation metrics; otherwise do not invent units or definitions for LOO_F/LOGO_F.
 Keep sample outputs, batch aggregates, reference guidance and direct image observations distinct.
 A referenced image path is not a supplied image. Raw previews are resized: do not estimate physical
 sizes or phase fractions from them. Do not claim to see features in unattached images.

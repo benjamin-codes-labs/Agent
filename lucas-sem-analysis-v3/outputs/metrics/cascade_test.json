@@ -1,0 +1,82 @@
+{
+  "reference": {
+    "balanced_accuracy": 0.608,
+    "recall": {
+      "Batch_1": "5/7",
+      "Batch_2": "2/7",
+      "Batch_3": "14/17"
+    },
+    "confusion_rows_true": [
+      [
+        5,
+        2,
+        0
+      ],
+      [
+        3,
+        2,
+        2
+      ],
+      [
+        0,
+        3,
+        14
+      ]
+    ]
+  },
+  "fixed": {
+    "balanced_accuracy": 0.56,
+    "recall": {
+      "Batch_1": "3/7",
+      "Batch_2": "3/7",
+      "Batch_3": "14/17"
+    },
+    "confusion_rows_true": [
+      [
+        3,
+        4,
+        0
+      ],
+      [
+        2,
+        3,
+        2
+      ],
+      [
+        0,
+        3,
+        14
+      ]
+    ]
+  },
+  "nested": {
+    "balanced_accuracy": 0.608,
+    "recall": {
+      "Batch_1": "5/7",
+      "Batch_2": "2/7",
+      "Batch_3": "14/17"
+    },
+    "confusion_rows_true": [
+      [
+        5,
+        2,
+        0
+      ],
+      [
+        3,
+        2,
+        2
+      ],
+      [
+        0,
+        3,
+        14
+      ]
+    ]
+  },
+  "nested_step2_head_choices": {
+    "F": 20,
+    "D": 7,
+    "S": 4
+  }
+}

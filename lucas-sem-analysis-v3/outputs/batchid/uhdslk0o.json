@@ -1,0 +1,1097 @@
+{
+  "summary_sentences": [
+    "Answer: Batch_1 (Medium confidence); the imaging side (fingerprint) picked Batch_1 and the material side (segmentation + DINOv2) Batch_1.",
+    "Reasons: unusual feature values: siox_ecd_aw; the fingerprint model's detector views disagree; agreement, but the average calibrated probability 0.65 is below the 90%-accuracy level 0.71.",
+    "Track record of Medium-confidence answers: 12/14 right (86%) in nested leave-one-location-out tests.",
+    "Composition: pore 15.1 %, carbon (graphite + binder) 78.8 %, SiOx 6.1 % (binder alone 14.9 %, experimental).",
+    "Strongest imaging-fingerprint cue (ETD/SE image): how strongly one horizontal banding rhythm dominates (scan lines) is higher than typical (robust z +2.0).",
+    "Strongest texture cue (BSE tiles): grey-level contrast between neighbours (glcm_contrast_d4_y) is higher than typical (z +0.8).",
+    "Material-range check (GET4 95 % error bars): pore 15.2 % [12.6, 17.7] fits the range of Batch_1, Batch_2, Batch_3; carbon 78.7 % [75.2, 82.2] fits the range of Batch_1, Batch_2, Batch_3; SiOx 6.1 % [3.8, 8.5] fits the range of Batch_1, Batch_2, Batch_3.",
+    "DINOv2 evidence map: 50 % of the evidence for Batch_1 (over Batch_2) lies on graphite, which covers 64 % of the image.",
+    "DINOv2 evidence for the prediction is concentrated on SiOx (1.9x its share of the image) and binder (1.3x its share of the image).",
+    "DINOv2 evidence map: 64 % of the evidence against Batch_1 (for Batch_2) lies on graphite.",
+    "In the DINOv2 evidence map alone, 51 % of all evidence points toward Batch_1 (the DINOv2 head is only one part of the material side).",
+    "Batch_1 and Batch_2 are statistically indistinguishable in this dataset; treat any Batch_1-vs-Batch_2 call as low-certainty."
+  ],
+  "field_guide": "Read `decision` first: it is the final answer (a batch, 'Batch_1 or Batch_2', 'unsure (leaning X)', a known location, or refused), with its confidence tier and track record. `known_location_check` says whether the image is a training image or shows a known location. The decision combines two sides: the imaging side (`fingerprint_model`) and the material side (`material_model`: segmentation features + DINOv2 texture); `material_range_rule` can settle a Batch_1-or-Batch_2 split. `texture_model` (tile texture) is reported for information only: it lowered held-out accuracy, so it does not vote. The individual models' picks are NOT the final answer. `phases` is the composition. `material_model.map_text` describes the segmentation and evidence maps in words. `forced_mode` is the always-answer variant and `decision_v2` the previous rule, for comparison. All numbers are measured; only `summary_sentences` is generated text, filled in from these numbers.",
+  "sample_id": "uhdslk0o",
+  "true_batch": "Batch_1",
+  "decision": {
+    "answer": "Batch_1",
+    "answer_type": "specific",
+    "confidence": "Medium",
+    "leaning": "Batch_1",
+    "imaging_side_pick": "Batch_1",
+    "material_side_pick": "Batch_1",
+    "sides_agree": true,
+    "prediction_set": [
+      "Batch_1",
+      "Batch_2"
+    ],
+    "average_calibrated_probabilities": {
+      "Batch_1": 0.645,
+      "Batch_2": 0.321,
+      "Batch_3": 0.034
+    },
+    "high_tier_threshold": 0.707,
+    "reasons": [
+      "unusual feature values: siox_ecd_aw",
+      "the fingerprint model's detector views disagree",
+      "agreement, but the average calibrated probability 0.65 is below the 90%-accuracy level 0.71"
+    ],
+    "track_record": {
+      "LOO": {
+        "this_confidence_tier": {
+          "correct": "12/14",
+          "accuracy": 0.857,
+          "ci95": [
+            0.601,
+            0.96
+          ]
+        },
+        "this_answer_type": {
+          "correct": "19/23",
+          "accuracy": 0.826,
+          "ci95": [
+            0.629,
+            0.93
+          ]
+        },
+        "overall": {
+          "coverage": "26/31 (84%)",
+          "right_when_answering": {
+            "correct": "22/26",
+            "accuracy": 0.846,
+            "ci95": [
+              0.665,
+              0.939
+            ]
+          }
+        }
+      },
+      "LOGO_session": {
+        "this_confidence_tier": {
+          "correct": "15/16",
+          "accuracy": 0.938,
+          "ci95": [
+            0.717,
+            0.989
+          ]
+        },
+        "this_answer_type": {
+          "correct": "15/17",
+          "accuracy": 0.882,
+          "ci95": [
+            0.657,
+            0.967
+          ]
+        },
+        "overall": {
+          "coverage": "23/31 (74%)",
+          "right_when_answering": {
+            "correct": "21/23",
+            "accuracy": 0.913,
+            "ci95": [
+              0.732,
+              0.976
+            ]
+          }
+        }
+      }
+    },
+    "basis": "nested leave-one-location-out: models, calibration and thresholds chosen without this location"
+  },
+  "phases": {
+    "four_class_pct": {
+      "pore": 15.1,
+      "graphite": 63.9,
+      "SiOx": 6.1,
+      "CBD": 14.9
+    },
+    "three_class_pct": {
+      "pore": 15.1,
+      "carbon (graphite + binder)": 78.8,
+      "SiOx": 6.1
+    },
+    "reliability": "pore / carbon / SiOx are reliable (87 % agreement with an independent annotator); the graphite-vs-binder split is experimental (binder precision ~50 %)"
+  },
+  "known_location_check": {
+    "status": "training location",
+    "note": "this is one of the 31 reference locations; to demo it as a new image use `predict --holdout`"
+  },
+  "material_range_rule": {
+    "answer": null,
+    "votes": [],
+    "phases": [
+      {
+        "phase": "pore",
+        "pct": 15.15,
+        "ci95": [
+          12.58,
+          17.72
+        ],
+        "fits_ranges_of": [
+          "Batch_1",
+          "Batch_2",
+          "Batch_3"
+        ],
+        "ranges": {
+          "Batch_1": [
+            11.12,
+            17.39
+          ],
+          "Batch_2": [
+            13.76,
+            23.57
+          ],
+          "Batch_3": [
+            15.14,
+            23.04
+          ]
+        }
+      },
+      {
+        "phase": "carbon",
+        "pct": 78.73,
+        "ci95": [
+          75.24,
+          82.22
+        ],
+        "fits_ranges_of": [
+          "Batch_1",
+          "Batch_2",
+          "Batch_3"
+        ],
+        "ranges": {
+          "Batch_1": [
+            74.46,
+            81.28
+          ],
+          "Batch_2": [
+            70.85,
+            80.14
+          ],
+          "Batch_3": [
+            71.63,
+            79.73
+          ]
+        }
+      },
+      {
+        "phase": "SiOx",
+        "pct": 6.12,
+        "ci95": [
+          3.75,
+          8.49
+        ],
+        "fits_ranges_of": [
+          "Batch_1",
+          "Batch_2",
+          "Batch_3"
+        ],
+        "ranges": {
+          "Batch_1": [
+            4.72,
+            14.42
+          ],
+          "Batch_2": [
+            4.2,
+            8.05
+          ],
+          "Batch_3": [
+            4.28,
+            8.31
+          ]
+        }
+      }
+    ],
+    "material_error_bars": "GET4 (teammate), 95 % = 1.96 x SE"
+  },
+  "fingerprint_model": {
+    "probabilities_leave_one_out": {
+      "Batch_1": 0.7748,
+      "Batch_2": 0.225,
+      "Batch_3": 0.0002
+    },
+    "per_view_leave_one_out": {
+      "bse": {
+        "Batch_1": 0.9728,
+        "Batch_2": 0.0272,
+        "Batch_3": 0.0
+      },
+      "inlens": {
+        "Batch_1": 0.3579,
+        "Batch_2": 0.6415,
+        "Batch_3": 0.0006
+      },
+      "se2": {
+        "Batch_1": 0.9937,
+        "Batch_2": 0.0063,
+        "Batch_3": 0.0
+      }
+    },
+    "predicted_batch_leave_one_out": "Batch_1",
+    "top_measurements": [
+      {
+        "view": "ETD/SE",
+        "measurement": "se2_banding_peak_share",
+        "meaning": "how strongly one horizontal banding rhythm dominates (scan lines)",
+        "robust_z": 1.97,
+        "direction": "high",
+        "push_toward_winner": 3.32
+      },
+      {
+        "view": "BSE",
+        "measurement": "bse_col_pattern_sd",
+        "meaning": "vertical stripe strength in the noise (often ion-milling curtaining)",
+        "robust_z": 1.89,
+        "direction": "high",
+        "push_toward_winner": 2.706
+      },
+      {
+        "view": "Inlens",
+        "measurement": "inlens_col_pattern_sd",
+        "meaning": "vertical stripe strength in the noise (often ion-milling curtaining)",
+        "robust_z": 1.83,
+        "direction": "high",
+        "push_toward_winner": 2.0
+      },
+      {
+        "view": "ETD/SE",
+        "measurement": "se2_p50",
+        "meaning": "median grey level",
+        "robust_z": 0.84,
+        "direction": "high",
+        "push_toward_winner": 1.891
+      },
+      {
+        "view": "ETD/SE",
+        "measurement": "se2_col_pattern_sd",
+        "meaning": "vertical stripe strength in the noise (often ion-milling curtaining)",
+        "robust_z": 1.55,
+        "direction": "high",
+        "push_toward_winner": 1.595
+      }
+    ],
+    "calibration": {
+      "claimed": 0.775,
+      "in_leave_one_out_tests_at_this_level": "8/12 right",
+      "note": "the fingerprint model's raw probabilities are over-confident; use this empirical rate"
+    },
+    "note": "probabilities are leave-one-location-out (honest); top_measurements come from the model trained on all 31"
+  },
+  "texture_model": {
+    "what_this_is": "tile texture model: 12.8 um tiles, local binary patterns + co-occurrence texture + power spectrum, logistic regression per detector view, averaged over tiles",
+    "used_in_decision": false,
+    "why_not_used": "in nested leave-one-out it lowered accuracy when answering from 85 % to 80 %, so it is shown for information only",
+    "calibrated_probabilities": {
+      "Batch_1": 0.464,
+      "Batch_2": 0.428,
+      "Batch_3": 0.107
+    },
+    "per_view_raw": {
+      "BSE": {
+        "Batch_1": 0.572,
+        "Batch_2": 0.375,
+        "Batch_3": 0.053
+      },
+      "Inlens": {
+        "Batch_1": 0.406,
+        "Batch_2": 0.493,
+        "Batch_3": 0.101
+      },
+      "SE2": {
+        "Batch_1": 0.474,
+        "Batch_2": 0.441,
+        "Batch_3": 0.084
+      }
+    },
+    "n_tiles": {
+      "BSE": 39,
+      "Inlens": 39,
+      "SE2": 39
+    },
+    "top_features": [
+      {
+        "feature": "glcm_contrast_d4_y",
+        "meaning": "grey-level contrast between neighbours",
+        "mean_z": 0.79,
+        "push_toward_winner": 0.535
+      },
+      {
+        "feature": "lbp_r3_6",
+        "meaning": "fine local texture pattern frequency",
+        "mean_z": -0.55,
+        "push_toward_winner": 0.325
+      },
+      {
+        "feature": "glcm_contrast_d4_x",
+        "meaning": "grey-level contrast between neighbours",
+        "mean_z": 0.76,
+        "push_toward_winner": 0.319
+      }
+    ],
+    "note": "probabilities are nested leave-one-out (honest); top_features come from the model trained on all 31"
+  },
+  "material_model": {
+    "predicted_batch": "Batch_1",
+    "runner_up": "Batch_2",
+    "probabilities": {
+      "fused_F": {
+        "Batch_1": 0.674,
+        "Batch_2": 0.266,
+        "Batch_3": 0.06
+      },
+      "S_head": {
+        "Batch_1": 0.73,
+        "Batch_2": 0.201,
+        "Batch_3": 0.07
+      },
+      "dino_head": {
+        "Batch_1": 0.619,
+        "Batch_2": 0.332,
+        "Batch_3": 0.05
+      }
+    },
+    "confidence": {
+      "tier": "Low",
+      "reasons": [
+        "unusual feature values (|robust z| >= 3): siox_ecd_aw"
+      ]
+    },
+    "features_S": {
+      "siox_frac": {
+        "value": 6.0996,
+        "robust_z": 0.4,
+        "push_toward_winner_vs_runner_up": 0.182
+      },
+      "siox_ecd_aw": {
+        "value": 4.6959,
+        "robust_z": 3.0,
+        "push_toward_winner_vs_runner_up": 0.624
+      },
+      "pore_open_excess": {
+        "value": 6.5587,
+        "robust_z": -0.78,
+        "push_toward_winner_vs_runner_up": 0.749
+      },
+      "pore_all_frac": {
+        "value": 15.0999,
+        "robust_z": -0.83,
+        "push_toward_winner_vs_runner_up": 0.922
+      },
+      "pore_chord_aniso": {
+        "value": 1.0556,
+        "robust_z": -0.16,
+        "push_toward_winner_vs_runner_up": -0.04
+      }
+    },
+    "evidence": {
+      "phase_share_in_top10pct_evidence_pct": {
+        "pore": 13.4,
+        "graphite": 46.4,
+        "SiOx": 19.7,
+        "CBD": 20.4
+      },
+      "phase_share_whole_image_pct": {
+        "pore": 15.1,
+        "graphite": 63.9,
+        "SiOx": 6.1,
+        "CBD": 14.9
+      },
+      "top_regions": [
+        {
+          "bbox_um": [
+            72.8,
+            0.0,
+            79.1,
+            7.0
+          ],
+          "evidence_share": 0.015,
+          "local_phase_pct": {
+            "pore": 8.4,
+            "graphite": 36.9,
+            "SiOx": 8.7,
+            "CBD": 46.0
+          }
+        },
+        {
+          "bbox_um": [
+            11.2,
+            2.1,
+            16.8,
+            11.9
+          ],
+          "evidence_share": 0.015,
+          "local_phase_pct": {
+            "pore": 11.1,
+            "graphite": 34.1,
+            "SiOx": 3.0,
+            "CBD": 51.7
+          }
+        },
+        {
+          "bbox_um": [
+            0.7,
+            0.7,
+            11.9,
+            6.3
+          ],
+          "evidence_share": 0.014,
+          "local_phase_pct": {
+            "pore": 14.3,
+            "graphite": 49.1,
+            "SiOx": 0.0,
+            "CBD": 36.5
+          }
+        }
+      ],
+      "reconstruction_error": 4.085620730620576e-14,
+      "shortcut_alarm": false
+    },
+    "map_text": {
+      "evidence_by_phase": {
+        "positive": {
+          "pore": {
+            "share_pct": 16.9,
+            "enrichment_vs_area": 1.12
+          },
+          "graphite": {
+            "share_pct": 50.5,
+            "enrichment_vs_area": 0.79
+          },
+          "SiOx": {
+            "share_pct": 11.9,
+            "enrichment_vs_area": 1.95
+          },
+          "CBD": {
+            "share_pct": 19.5,
+            "enrichment_vs_area": 1.31
+          }
+        },
+        "negative": {
+          "pore": {
+            "share_pct": 12.5,
+            "enrichment_vs_area": 0.83
+          },
+          "graphite": {
+            "share_pct": 64.1,
+            "enrichment_vs_area": 1.0
+          },
+          "SiOx": {
+            "share_pct": 12.5,
+            "enrichment_vs_area": 2.05
+          },
+          "CBD": {
+            "share_pct": 8.8,
+            "enrichment_vs_area": 0.59
+          }
+        },
+        "area_pct": {
+          "pore": 15.1,
+          "graphite": 63.9,
+          "SiOx": 6.1,
+          "CBD": 14.9
+        },
+        "positive_share_of_total_evidence_pct": 51.3
+      },
+      "evidence_by_region": {
+        "positive": {
+          "top-left": {
+            "share_pct": 14.6,
+            "area_pct": 10.9,
+            "enrichment": 1.34
+          },
+          "top-centre": {
+            "share_pct": 14.7,
+            "area_pct": 10.9,
+            "enrichment": 1.35
+          },
+          "top-right": {
+            "share_pct": 14.8,
+            "area_pct": 11.0,
+            "enrichment": 1.34
+          },
+          "middle-left": {
+            "share_pct": 9.1,
+            "area_pct": 10.9,
+            "enrichment": 0.84
+          },
+          "middle-centre": {
+            "share_pct": 10.7,
+            "area_pct": 10.9,
+            "enrichment": 0.98
+          },
+          "middle-right": {
+            "share_pct": 10.2,
+            "area_pct": 11.0,
+            "enrichment": 0.92
+          },
+          "bottom-left": {
+            "share_pct": 8.5,
+            "area_pct": 11.4,
+            "enrichment": 0.75
+          },
+          "bottom-centre": {
+            "share_pct": 8.6,
+            "area_pct": 11.4,
+            "enrichment": 0.76
+          },
+          "bottom-right": {
+            "share_pct": 8.7,
+            "area_pct": 11.5,
+            "enrichment": 0.76
+          }
+        },
+        "negative": {
+          "top-left": {
+            "share_pct": 10.6,
+            "area_pct": 10.9,
+            "enrichment": 0.97
+          },
+          "top-centre": {
+            "share_pct": 9.5,
+            "area_pct": 10.9,
+            "enrichment": 0.87
+          },
+          "top-right": {
+            "share_pct": 11.3,
+            "area_pct": 11.0,
+            "enrichment": 1.02
+          },
+          "middle-left": {
+            "share_pct": 9.0,
+            "area_pct": 10.9,
+            "enrichment": 0.82
+          },
+          "middle-centre": {
+            "share_pct": 11.3,
+            "area_pct": 10.9,
+            "enrichment": 1.04
+          },
+          "middle-right": {
+            "share_pct": 10.9,
+            "area_pct": 11.0,
+            "enrichment": 0.99
+          },
+          "bottom-left": {
+            "share_pct": 13.7,
+            "area_pct": 11.4,
+            "enrichment": 1.2
+          },
+          "bottom-centre": {
+            "share_pct": 12.1,
+            "area_pct": 11.4,
+            "enrichment": 1.06
+          },
+          "bottom-right": {
+            "share_pct": 11.6,
+            "area_pct": 11.5,
+            "enrichment": 1.01
+          }
+        }
+      },
+      "spatial": {
+        "grid_3x3_pct": {
+          "top-left": {
+            "pore": 13.2,
+            "graphite": 64.0,
+            "SiOx": 1.2,
+            "CBD": 21.6
+          },
+          "top-centre": {
+            "pore": 12.5,
+            "graphite": 66.0,
+            "SiOx": 2.9,
+            "CBD": 18.6
+          },
+          "top-right": {
+            "pore": 15.5,
+            "graphite": 58.6,
+            "SiOx": 9.3,
+            "CBD": 16.7
+          },
+          "middle-left": {
+            "pore": 14.9,
+            "graphite": 59.1,
+            "SiOx": 4.8,
+            "CBD": 21.2
+          },
+          "middle-centre": {
+            "pore": 25.2,
+            "graphite": 54.8,
+            "SiOx": 6.7,
+            "CBD": 13.3
+          },
+          "middle-right": {
+            "pore": 13.3,
+            "graphite": 65.7,
+            "SiOx": 9.8,
+            "CBD": 11.2
+          },
+          "bottom-left": {
+            "pore": 14.8,
+            "graphite": 64.1,
+            "SiOx": 7.8,
+            "CBD": 13.3
+          },
+          "bottom-centre": {
+            "pore": 14.4,
+            "graphite": 68.5,
+            "SiOx": 6.7,
+            "CBD": 10.4
+          },
+          "bottom-right": {
+            "pore": 12.1,
+            "graphite": 74.4,
+            "SiOx": 5.8,
+            "CBD": 7.7
+          }
+        },
+        "notable_regions": [
+          {
+            "region": "middle-centre",
+            "phase": "pore",
+            "region_pct": 25.2,
+            "image_pct": 15.1,
+            "direction": "enriched"
+          },
+          {
+            "region": "bottom-right",
+            "phase": "CBD",
+            "region_pct": 7.7,
+            "image_pct": 14.9,
+            "direction": "depleted"
+          },
+          {
+            "region": "top-left",
+            "phase": "CBD",
+            "region_pct": 21.6,
+            "image_pct": 14.9,
+            "direction": "enriched"
+          },
+          {
+            "region": "middle-left",
+            "phase": "CBD",
+            "region_pct": 21.2,
+            "image_pct": 14.9,
+            "direction": "enriched"
+          },
+          {
+            "region": "top-left",
+            "phase": "SiOx",
+            "region_pct": 1.2,
+            "image_pct": 6.1,
+            "direction": "depleted"
+          },
+          {
+            "region": "bottom-centre",
+            "phase": "CBD",
+            "region_pct": 10.4,
+            "image_pct": 14.9,
+            "direction": "depleted"
+          }
+        ],
+        "top_to_bottom_pct": {
+          "top": {
+            "pore": 13.7,
+            "graphite": 62.9,
+            "SiOx": 4.5,
+            "CBD": 19.0
+          },
+          "middle": {
+            "pore": 17.8,
+            "graphite": 59.9,
+            "SiOx": 7.1,
+            "CBD": 15.2
+          },
+          "bottom": {
+            "pore": 13.8,
+            "graphite": 69.0,
+            "SiOx": 6.7,
+            "CBD": 10.5
+          }
+        },
+        "image_mean_pct": {
+          "pore": 15.1,
+          "graphite": 63.9,
+          "SiOx": 6.1,
+          "CBD": 14.9
+        }
+      },
+      "objects": {
+        "largest_pores": [
+          {
+            "area_um2": 131.54,
+            "length_um": 35.53,
+            "width_um": 9.03,
+            "orientation": "horizontal",
+            "location": "middle-centre",
+            "centre_um": [
+              92.2,
+              25.8
+            ]
+          },
+          {
+            "area_um2": 75.5,
+            "length_um": 17.44,
+            "width_um": 13.06,
+            "orientation": "horizontal",
+            "location": "middle-left",
+            "centre_um": [
+              19.6,
+              16.8
+            ]
+          },
+          {
+            "area_um2": 70.3,
+            "length_um": 41.75,
+            "width_um": 6.5,
+            "orientation": "diagonal",
+            "location": "middle-centre",
+            "centre_um": [
+              64.9,
+              27.5
+            ]
+          }
+        ],
+        "largest_SiOx_particles": [
+          {
+            "area_um2": 39.32,
+            "diameter_um": 7.08,
+            "location": "middle-right",
+            "centre_um": [
+              132.4,
+              18.6
+            ]
+          },
+          {
+            "area_um2": 39.29,
+            "diameter_um": 7.07,
+            "location": "bottom-centre",
+            "centre_um": [
+              62.7,
+              43.2
+            ]
+          },
+          {
+            "area_um2": 36.3,
+            "diameter_um": 6.8,
+            "location": "bottom-left",
+            "centre_um": [
+              55.0,
+              40.5
+            ]
+          }
+        ],
+        "SiOx_particle_count": 81,
+        "SiOx_clark_evans": 1.01,
+        "SiOx_arrangement": "roughly random",
+        "SiOx_count_by_region": {
+          "top-centre": 13,
+          "top-right": 14,
+          "top-left": 8,
+          "middle-right": 8,
+          "middle-left": 11,
+          "middle-centre": 6,
+          "bottom-right": 6,
+          "bottom-left": 8,
+          "bottom-centre": 7
+        }
+      },
+      "evidence_regions": {
+        "positive": [
+          {
+            "location": "top-centre",
+            "share_of_evidence_pct": 1.3,
+            "bbox_um": [
+              72.8,
+              0.0,
+              79.1,
+              6.3
+            ],
+            "local_phase_pct": {
+              "pore": 9.1,
+              "graphite": 31.8,
+              "SiOx": 9.7,
+              "CBD": 49.4
+            },
+            "dominant_phase": "CBD"
+          },
+          {
+            "location": "top-left",
+            "share_of_evidence_pct": 1.3,
+            "bbox_um": [
+              11.2,
+              2.1,
+              16.8,
+              9.8
+            ],
+            "local_phase_pct": {
+              "pore": 13.2,
+              "graphite": 23.0,
+              "SiOx": 3.8,
+              "CBD": 60.0
+            },
+            "dominant_phase": "CBD"
+          },
+          {
+            "location": "middle-right",
+            "share_of_evidence_pct": 1.2,
+            "bbox_um": [
+              130.2,
+              15.4,
+              135.1,
+              22.4
+            ],
+            "local_phase_pct": {
+              "pore": 4.3,
+              "graphite": 1.3,
+              "SiOx": 90.9,
+              "CBD": 3.5
+            },
+            "dominant_phase": "SiOx"
+          }
+        ],
+        "negative": [
+          {
+            "location": "top-right",
+            "share_of_evidence_pct": 0.6,
+            "bbox_um": [
+              170.1,
+              4.9,
+              174.3,
+              9.8
+            ],
+            "local_phase_pct": {
+              "pore": 0.0,
+              "graphite": 91.7,
+              "SiOx": 0.0,
+              "CBD": 8.3
+            },
+            "dominant_phase": "graphite"
+          },
+          {
+            "location": "middle-left",
+            "share_of_evidence_pct": 0.6,
+            "bbox_um": [
+              38.5,
+              23.8,
+              42.0,
+              28.7
+            ],
+            "local_phase_pct": {
+              "pore": 0.0,
+              "graphite": 87.3,
+              "SiOx": 0.0,
+              "CBD": 12.7
+            },
+            "dominant_phase": "graphite"
+          },
+          {
+            "location": "top-right",
+            "share_of_evidence_pct": 0.5,
+            "bbox_um": [
+              168.7,
+              11.2,
+              172.2,
+              14.7
+            ],
+            "local_phase_pct": {
+              "pore": 0.0,
+              "graphite": 99.8,
+              "SiOx": 0.0,
+              "CBD": 0.2
+            },
+            "dominant_phase": "graphite"
+          }
+        ]
+      },
+      "sentences": [
+        "DINOv2 evidence map: 50 % of the evidence for Batch_1 (over Batch_2) lies on graphite, which covers 64 % of the image.",
+        "DINOv2 evidence for the prediction is concentrated on SiOx (1.9x its share of the image) and binder (1.3x its share of the image).",
+        "DINOv2 evidence map: 64 % of the evidence against Batch_1 (for Batch_2) lies on graphite.",
+        "In the DINOv2 evidence map alone, 51 % of all evidence points toward Batch_1 (the DINOv2 head is only one part of the material side).",
+        "Pores are enriched in the middle-centre of the image (25 % vs 15 % overall).",
+        "Binder is depleted in the bottom-right of the image (8 % vs 15 % overall).",
+        "Binder is enriched in the top-left of the image (22 % vs 15 % overall).",
+        "SiOx changes through the thickness: 4 % in the top third vs 7 % in the bottom third.",
+        "Binder changes through the thickness: 19 % in the top third vs 10 % in the bottom third.",
+        "The largest pore (131.5 um^2, 35.5 x 9.0 um, horizontal) is in the middle-centre.",
+        "The largest SiOx particle (7.1 um across) is in the middle-right.",
+        "The 81 SiOx particles are roughly random (Clark-Evans index 1.01).",
+        "DINOv2 evidence for Batch_1 is concentrated in the top-centre of the image (15 % of it, in 11 % of the area)."
+      ],
+      "notes": "Image vertical = through-thickness direction of the electrode; locations use a 3 x 3 grid (top/middle/bottom x left/centre/right). Evidence = the batch model's DINO-head contribution map (winner minus runner-up)."
+    },
+    "validation_reference": {
+      "LOO_F": 0.608,
+      "LOO_S": 0.482,
+      "LOGO_F": 0.56,
+      "nuisance_only_LOO": 0.675,
+      "permutation": {
+        "S": {
+          "observed": 0.482,
+          "null_mean": 0.325,
+          "null_p95": 0.518,
+          "null_p99": 0.566,
+          "p_value": 0.0896,
+          "n_permutations": 200
+        },
+        "F": {
+          "observed": 0.608,
+          "null_mean": 0.33,
+          "null_p95": 0.502,
+          "null_p99": 0.547,
+          "p_value": 0.005,
+          "n_permutations": 200
+        }
+      }
+    },
+    "loo_prediction": {
+      "true": "Batch_1",
+      "pred_S": "Batch_1",
+      "pred_F": "Batch_1",
+      "p_F": [
+        0.535,
+        0.375,
+        0.09
+      ]
+    },
+    "note": "training sample: the probabilities above come from a model that saw it; the honest prediction is loo_prediction",
+    "features_half_split_sd": {
+      "siox_frac": 0.05271,
+      "siox_ecd_aw": 0.03392,
+      "pore_open_excess": 0.53678,
+      "pore_all_frac": 0.55173,
+      "pore_chord_aniso": 0.08319
+    },
+    "what_this_is": "material model: 5 segmentation features (S head) + DINOv2 texture head, fused"
+  },
+  "qc": {
+    "excluded_pct": 1.08,
+    "cu_foil_detected": false,
+    "manual_exclusion": false,
+    "detectors_used": [
+      "BSE",
+      "Inlens"
+    ]
+  },
+  "acquisition": {
+    "probes": {
+      "height_px": 1880.0,
+      "width_px": 7000.0,
+      "bse_p1": 0.0,
+      "bse_p50": 60.0,
+      "bse_p99": 133.0,
+      "inlens_p1": 2.0,
+      "inlens_p50": 128.0,
+      "inlens_p99": 255.0,
+      "bse_noise_sigma": 10.482,
+      "inlens_sharpness": 65.678,
+      "inlens_banding_power": 2.558,
+      "excluded_frac": 0.011,
+      "bse_file_mb": 18.728
+    },
+    "nearest_training_acquisition": {
+      "sample_id": "cfe5vt7s",
+      "batch": "Batch_3",
+      "height_group": "h2080",
+      "distance_z": 1.97
+    },
+    "novel_acquisition": false,
+    "warning": "acquisition properties alone predict batch at 0.68 balanced accuracy in training; a prediction that matches the nearest-acquisition batch may reflect imaging session, not material"
+  },
+  "novelty": {
+    "unusual_features_abs_robust_z_ge_3": [
+      "siox_ecd_aw"
+    ],
+    "novel_acquisition": false
+  },
+  "decision_v2": {
+    "answer": "Batch_1",
+    "answer_type": "specific",
+    "confidence": "Medium",
+    "fingerprint_pick": "Batch_1",
+    "material_model_pick": "Batch_1",
+    "models_agree": true,
+    "prediction_set": [
+      "Batch_1",
+      "Batch_2"
+    ],
+    "average_probabilities": {
+      "Batch_1": 0.655,
+      "Batch_2": 0.3,
+      "Batch_3": 0.045
+    },
+    "reasons": [
+      "unusual feature values: siox_ecd_aw",
+      "the three detector views of the fingerprint model disagree",
+      "agreement but modest confidence (fingerprint 0.77, material model 0.54)"
+    ],
+    "track_record_for_this_answer_type": {
+      "correct": "19/23",
+      "accuracy": 0.826,
+      "ci95": [
+        0.629,
+        0.93
+      ]
+    },
+    "track_record_overall": {
+      "coverage": "26/31 (84%)",
+      "accuracy_when_answering": {
+        "correct": "22/26",
+        "accuracy": 0.846,
+        "ci95": [
+          0.665,
+          0.939
+        ]
+      }
+    }
+  },
+  "forced_mode": {
+    "answer": "Batch_1",
+    "route": "fingerprint: not Batch_3; Batch_1-vs-Batch_2 fingerprint specialist"
+  },
+  "frontend_compat_note": "loo_prediction / confidence / validation_reference below are copies of material_model fields for the team frontend; they are NOT the answer - read decision",
+  "loo_prediction": {
+    "true": "Batch_1",
+    "pred_S": "Batch_1",
+    "pred_F": "Batch_1",
+    "p_F": [
+      0.535,
+      0.375,
+      0.09
+    ]
+  },
+  "confidence": {
+    "tier": "Low",
+    "reasons": [
+      "unusual feature values (|robust z| >= 3): siox_ecd_aw"
+    ]
+  },
+  "validation_reference": {
+    "LOO_F": 0.608,
+    "LOO_S": 0.482,
+    "LOGO_F": 0.56,
+    "nuisance_only_LOO": 0.675,
+    "permutation": {
+      "S": {
+        "observed": 0.482,
+        "null_mean": 0.325,
+        "null_p95": 0.518,
+        "null_p99": 0.566,
+        "p_value": 0.0896,
+        "n_permutations": 200
+      },
+      "F": {
+        "observed": 0.608,
+        "null_mean": 0.33,
+        "null_p95": 0.502,
+        "null_p99": 0.547,
+        "p_value": 0.005,
+        "n_permutations": 200
+      }
+    }
+  }
+}

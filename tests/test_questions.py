@@ -382,19 +382,26 @@ def test_main_question_does_not_load_mock_classification(project_knowledge, tmp_
     assert "BAT-07" not in output and "paragraphs" not in output
 
 
-def test_main_sample_defaults_to_review_question(project_knowledge, tmp_path, monkeypatch, capsys):
+def test_main_sample_alias_uses_whole_file_narration(project_knowledge, tmp_path, monkeypatch, capsys):
     import main
-    from sentinel.questions import answer_question
+    from sentinel.pipeline_facts import explain_facts_document, parse_facts_document, prepare_facts_context
+    from .test_facts_document import _payload
+    from .conftest import comparison_payload, critic_pass
 
     sample = tmp_path / "sample.json"
-    sample.write_text(json.dumps({"sample_id": "img_71vgq3fw", "predicted_batch": "Batch_3"}))
+    sample.write_bytes((Path(__file__).resolve().parents[1] / "examples" / "facts.json").read_bytes())
+    original = sample.read_bytes()
     monkeypatch.setattr(main.KnowledgePack, "from_project", lambda root: project_knowledge)
 
-    def answer(question, pack, images, **kwargs):
-        assert "review" in question.lower()
-        assert "img_71vgq3fw" in pack.to_prompt_block()
-        return answer_question(question, pack, images, client=FakeClient([text_response(_grounded_payload(pack))]), **kwargs)
+    def explain(document, pack, **kwargs):
+        context = prepare_facts_context(parse_facts_document(document), pack, baselines=kwargs.get("baselines"))
+        assert "img_71vgq3fw" in document
+        return explain_facts_document(document, pack,
+            client=FakeClient([text_response(comparison_payload(context)), critic_pass()]), **kwargs)
 
-    monkeypatch.setattr(main, "answer_question", answer)
-    main.main(sample=sample)
-    assert "-3.00 percentage points" in capsys.readouterr().out
+    monkeypatch.setattr(main, "explain_facts_document", explain)
+    values = main.main(sample=sample)
+    assert json.loads(capsys.readouterr().out) == values
+    assert list(values) == ["img_71vgq3fw"] and isinstance(values["img_71vgq3fw"], str)
+    assert values["img_71vgq3fw"].startswith("- ")
+    assert sample.read_bytes() == original

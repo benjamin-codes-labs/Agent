@@ -1,0 +1,162 @@
+{
+  "dino_head": "T (texton histogram)",
+  "S": {
+    "name": "segmentation head only",
+    "LOO": {
+      "balanced_accuracy": 0.482,
+      "recall": {
+        "Batch_1": "5/7",
+        "Batch_2": "1/7",
+        "Batch_3": "10/17"
+      },
+      "confusion_rows_true": [
+        [
+          5,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          10
+        ]
+      ]
+    },
+    "LOGO_session": {
+      "balanced_accuracy": 0.482,
+      "recall": {
+        "Batch_1": "5/7",
+        "Batch_2": "1/7",
+        "Batch_3": "10/17"
+      },
+      "confusion_rows_true": [
+        [
+          5,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          10
+        ]
+      ]
+    }
+  },
+  "D": {
+    "name": "DINO head only",
+    "LOO": {
+      "balanced_accuracy": 0.616,
+      "recall": {
+        "Batch_1": "3/7",
+        "Batch_2": "5/7",
+        "Batch_3": "12/17"
+      },
+      "confusion_rows_true": [
+        [
+          3,
+          3,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          0,
+          5,
+          12
+        ]
+      ]
+    },
+    "LOGO_session": {
+      "balanced_accuracy": 0.541,
+      "recall": {
+        "Batch_1": "2/7",
+        "Batch_2": "4/7",
+        "Batch_3": "13/17"
+      },
+      "confusion_rows_true": [
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          0,
+          4,
+          13
+        ]
+      ]
+    }
+  },
+  "F": {
+    "name": "fused S + D",
+    "LOO": {
+      "balanced_accuracy": 0.608,
+      "recall": {
+        "Batch_1": "5/7",
+        "Batch_2": "2/7",
+        "Batch_3": "14/17"
+      },
+      "confusion_rows_true": [
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          0,
+          3,
+          14
+        ]
+      ]
+    },
+    "LOGO_session": {
+      "balanced_accuracy": 0.56,
+      "recall": {
+        "Batch_1": "5/7",
+        "Batch_2": "1/7",
+        "Batch_3": "14/17"
+      },
+      "confusion_rows_true": [
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          14
+        ]
+      ]
+    }
+  }
+}

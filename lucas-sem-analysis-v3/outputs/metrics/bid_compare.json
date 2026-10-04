@@ -1,0 +1,174 @@
+{
+  "A": {
+    "name": "A: original (segmentation + DINO)",
+    "LOO": {
+      "balanced_accuracy": 0.608,
+      "recall": {
+        "Batch_1": "5/7",
+        "Batch_2": "2/7",
+        "Batch_3": "14/17"
+      },
+      "confusion_rows_true": [
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          0,
+          3,
+          14
+        ]
+      ]
+    },
+    "LOGO_session": {
+      "balanced_accuracy": 0.56,
+      "recall": {
+        "Batch_1": "5/7",
+        "Batch_2": "1/7",
+        "Batch_3": "14/17"
+      },
+      "confusion_rows_true": [
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          14
+        ]
+      ]
+    },
+    "permutation": {
+      "null_mean": 0.334,
+      "null_p95": 0.529,
+      "null_p99": 0.566,
+      "p_value": 0.005,
+      "n": 200
+    }
+  },
+  "B": {
+    "name": "B: original + brightness/contrast head",
+    "LOO": {
+      "balanced_accuracy": 0.588,
+      "recall": {
+        "Batch_1": "4/7",
+        "Batch_2": "3/7",
+        "Batch_3": "13/17"
+      },
+      "confusion_rows_true": [
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          13
+        ]
+      ]
+    },
+    "LOGO_session": {
+      "balanced_accuracy": 0.521,
+      "recall": {
+        "Batch_1": "4/7",
+        "Batch_2": "2/7",
+        "Batch_3": "12/17"
+      },
+      "confusion_rows_true": [
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          12
+        ]
+      ]
+    },
+    "permutation": {
+      "null_mean": 0.325,
+      "null_p95": 0.499,
+      "null_p99": 0.605,
+      "p_value": 0.0199,
+      "n": 200
+    }
+  },
+  "C_alone": {
+    "LOO": {
+      "balanced_accuracy": 0.653,
+      "recall": {
+        "Batch_1": "5/7",
+        "Batch_2": "5/7",
+        "Batch_3": "9/17"
+      },
+      "confusion_rows_true": [
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          3,
+          5,
+          9
+        ]
+      ]
+    },
+    "LOGO_session": {
+      "balanced_accuracy": 0.518,
+      "recall": {
+        "Batch_1": "3/7",
+        "Batch_2": "5/7",
+        "Batch_3": "7/17"
+      },
+      "confusion_rows_true": [
+        [
+          3,
+          4,
+          0
+        ],
+        [
+          1,
+          5,
+          1
+        ],
+        [
+          3,
+          7,
+          7
+        ]
+      ]
+    }
+  }
+}

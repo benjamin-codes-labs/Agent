@@ -1,0 +1,11 @@
+{
+  "_comment": "Visually confirmed regions to exclude, as [y0, y1, x0, x1] boxes in half-resolution (50 nm/px) pixel coordinates. Cu foil and the 8-px (full-res) border are excluded automatically in src/preprocess.py.",
+  "i9jiqjwl": {
+    "reason": "unpolished electrode top surface visible along the top edge (Inlens: blurred, bubbly relief instead of polished particle faces)",
+    "boxes_halfres": [[0, 32, 420, 3500], [0, 60, 420, 560], [0, 46, 1550, 1860], [0, 40, 3200, 3500]]
+  },
+  "5n1q8atc": {
+    "reason": "rough, unpolished patch in the top-left corner (dense bright curly relief in Inlens, no flat particle faces)",
+    "boxes_halfres": [[0, 125, 0, 135]]
+  }
+}

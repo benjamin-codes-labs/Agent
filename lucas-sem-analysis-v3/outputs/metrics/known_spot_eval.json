@@ -1,0 +1,42 @@
+{
+  "threshold_sd": 15.0,
+  "margin": 2.0,
+  "n_images": 93,
+  "crop": "random 50 % x 50 % crop of each image",
+  "with_margin_rule": {
+    "crop_cross_detector": "71/93 found",
+    "crop_same_image": "86/93 found",
+    "negative_full": "0/93 false matches",
+    "negative_crop": "0/93 false matches"
+  },
+  "full_cross_detector": {
+    "min": 30.0,
+    "median": 174.4,
+    "max": 218.7,
+    "found_at_threshold": "93/93"
+  },
+  "crop_cross_detector": {
+    "min": 8.7,
+    "median": 52.5,
+    "max": 138.5,
+    "found_at_threshold": "82/93"
+  },
+  "crop_same_image": {
+    "min": 11.0,
+    "median": 103.9,
+    "max": 255.1,
+    "found_at_threshold": "91/93"
+  },
+  "negative_full": {
+    "min": 8.4,
+    "median": 9.8,
+    "max": 14.7,
+    "false_matches_at_threshold": "0/93"
+  },
+  "negative_crop": {
+    "min": 11.1,
+    "median": 12.9,
+    "max": 22.0,
+    "false_matches_at_threshold": "12/93"
+  }
+}

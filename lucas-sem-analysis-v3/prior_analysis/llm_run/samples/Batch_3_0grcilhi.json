@@ -1,0 +1,180 @@
+{
+  "batch": "Batch_3",
+  "sample_id": "0grcilhi",
+  "detectors": [
+    "BSE",
+    "ETD",
+    "Inlens"
+  ],
+  "metrics": {
+    "field_of_view_um": [
+      175.0,
+      47.6
+    ],
+    "bse_thresholds": [
+      39,
+      82
+    ],
+    "pore_area_pct": 14.9,
+    "bright_raw_area_pct": 7.2,
+    "bright_particle_area_pct": 4.7,
+    "bright_particle_count": 46,
+    "bright_particle_eq_diam_um_median": 2.59,
+    "bright_particle_eq_diam_um_p90": 5.07,
+    "bright_particles_per_1000um2": 5.52
+  },
+  "analysis": {
+    "material_system": "Calendered Li-ion negative electrode (anode). Graphite dominates, with a minor population (~5% of section area, ~6-7% of the solid) of angular, higher-Z particles. These are most plausibly a Si-based additive (SiOx or a Si/C composite), as used in commercial graphite/SiOx blends. Evidence: (1) The majority phase has a low, uniform BSE signal (carbon), lenticular/platelet flake shapes 8-30 um long, curved internal lamellae, frayed edges and strong flat-lying alignment, which points to graphite (high confidence; natural vs synthetic graphite cannot be determined). (2) The minority phase is clearly brighter in BSE (higher mean Z than carbon), sharp-edged and conchoidally fractured, 1-9 um, with no lamellar texture. This is consistent with milled SiOx (medium confidence; EDS is needed to confirm Si). (3) A lacy, Inlens-bright carbon-binder domain fills the interstices. (4) No Cu current collector or coating surface is in the field, and the pores are not resin-filled. Whether the electrode is pristine or cycled cannot be determined.",
+    "phases": [
+      {
+        "name": "Graphite (active material, majority)",
+        "identification_evidence": "Low, uniform BSE signal consistent with carbon. Platelet/lenticular flakes with curved internal lamellae and frayed, serrated edges typical of graphite basal-plane structure. Strong flat-lying alignment from calendering. Makes up the vast majority of the solid, as expected for an anode.",
+        "appearance_by_detector": "BSE: uniform mid-dark grey, featureless polished faces with a few dark internal slits. Inlens: dark grey faces with bright curved internal lines (lamellae/cracks), straight diagonal scratches and bright rims. ETD: mid-grey flat faces covered by fine parallel diagonal striations (curtaining/polish marks).",
+        "estimated_area_percent": 65,
+        "typical_size_um": 15,
+        "morphology": "Flat lenticular/platelet flakes. Long axis ~8-30 um (largest ~30 x 18 um in the centre), thickness ~4-12 um, aspect ratio ~2-5. Jagged/serrated edges and some straight fracture faces. Mostly dense, with occasional internal slits and sub-um voids.",
+        "confidence": "high"
+      },
+      {
+        "name": "Higher-Z angular particles (likely SiOx or Si/C additive)",
+        "identification_evidence": "Distinctly brighter than graphite in BSE, so higher mean atomic number than carbon. Angular, sharp-edged, conchoidally fractured shapes (triangles, polygons, slivers) of 1-9 um, characteristic of milled SiOx in graphite blends. No lamellar texture in SE images. Identity cannot be confirmed without EDS.",
+        "appearance_by_detector": "BSE: light grey, some with a fine mottled/granular texture. Inlens: medium grey (lighter than graphite) with fine speckle and bright edges, no internal lamellae. ETD: slightly lighter and smoother than graphite, with the same preparation striations.",
+        "estimated_area_percent": 5,
+        "typical_size_um": 3,
+        "morphology": "Angular fragments, eq. diameter mostly 1.5-7 um, aspect ratio 1-4. Isolated in interstitial pockets between flakes, often cupped by curved flakes or wrapped in CBD; a few are bordered by a ~1 um grey shell. Some show a fine mottled internal texture (possible nanostructure or a Si/C sub-population); others look homogeneous. No clear cracking except one possibly split sliver.",
+        "confidence": "medium"
+      },
+      {
+        "name": "Carbon-binder domain (carbon black + polymer binder)",
+        "identification_evidence": "Fine, nanoporous, lacy material in interstices and along particle boundaries. Very bright in Inlens because of its fine structure. Barely distinguishable from graphite in BSE, as it is also carbon-based.",
+        "appearance_by_detector": "BSE: grey, slightly textured, at a level similar to graphite and not separable. Inlens: bright white lacy webs, films and pockets. ETD: rough granular texture with mild 3D shading.",
+        "estimated_area_percent": 6,
+        "typical_size_um": 1.5,
+        "morphology": "Thin films (<0.5 um) on flake edges, bridges across narrow gaps, and 1-5 um pockets at flake junctions and around the Si-based particles. Locally nodular or agglomerated.",
+        "confidence": "medium"
+      },
+      {
+        "name": "Pores (open, not resin-filled)",
+        "identification_evidence": "Black in BSE where deep. Elsewhere, 3D subsurface surfaces visible below the section plane in ETD/Inlens show that the pores are empty rather than resin-filled.",
+        "appearance_by_detector": "BSE: black slits/voids, or mid-grey textured where subsurface surfaces are visible. Inlens: dark voids framed by bright edges, with lacy subsurface CBD. ETD: dark shadows and rounded 3D surfaces at depth.",
+        "estimated_area_percent": 24,
+        "typical_size_um": 2,
+        "morphology": "Flake-parallel slit pores (0.2-2 um wide, up to ~15 um long) plus irregular interstitial voids of 2-10 um. The larger voids are concentrated in the lower half.",
+        "confidence": "medium"
+      }
+    ],
+    "porosity": {
+      "estimated_percent": 24,
+      "character": "Strongly anisotropic. Dominated by flake-parallel slit/lenticular pores (~0.2-2 um wide, up to ~15 um long) between stacked graphite flakes. Irregular interstitial voids (2-10 um) occur at flake junctions and around the Si-based particles. The largest voids lie in the lower half: bottom-centre, below the central flake, and the lower-right quadrant. Subsurface surfaces visible through many pores show that the network is open and interconnected in 3D. In-plane (horizontal) connectivity looks much better than through-thickness, implying high through-plane tortuosity.",
+      "threshold_estimate_agreement": "disagrees",
+      "comment": "Visual estimate ~24% (plausible range 20-28%): ~15% fully dark voids plus ~9% of area where empty pores reveal grey subsurface material. The 14.9% threshold essentially counts only the black, deep voids. Because the pores are not resin-filled, open pores showing particle/CBD surfaces beneath the polish plane fall into the middle (solid) class, so porosity is biased low by roughly 5-12 points. A small opposite bias from shadowed edges is minor. This is a single 175 x 48 um window inside the coating, so it may not represent the full thickness."
+    },
+    "binder_carbon_network": "Not separable from graphite in BSE (both are carbon); best seen in Inlens as bright, lacy, nanoporous material. It forms thin films (<0.5 um) along flake edges, bridges across narrow gaps, and fills 1-5 um pockets at flake junctions. It preferentially surrounds and anchors the Si-based particles, which usually sit in CBD-filled interstices. Coverage of flake faces in face-to-face contact is sparse: many long inter-flake slit gaps show no bridging CBD. The network is reasonably continuous through the interstices but locally richer or nodular in the upper-centre and lower-right (possible agglomerate at x~105-116 um, y~32-39 um). Estimated at ~5-7% of area. Inlens edge brightening and CBD seen on subsurface surfaces exaggerate its apparent extent, so this figure is uncertain.",
+    "particle_packing_and_alignment": "Graphite flakes are densely stacked in a brick-wall/shingled arrangement. Most long axes lie within ~0-30 deg of horizontal; a minority are tilted 40-90 deg, e.g. the large tilted flake at x~7-20 um and a cluster of upright flakes at x~65-85 um. Contacts are mainly face-to-face along long edges, often separated by thin slit gaps or CBD films rather than in intimate contact. Si-based particles fill triangular interstices, are cupped by curved flakes, and are mostly isolated from each other. This preferred orientation is the classic calendering texture, so the vertical (y) direction is most likely through-thickness (medium-high confidence). Neither current collector nor free surface is visible, so the window lies within the coating bulk and coating thickness or gradients cannot be assessed.",
+    "heterogeneity": {
+      "score_1_to_5": 3,
+      "description": "Graphite morphology is similar across the field, but packing varies. The centre and left are densely stacked large flakes. The upper-centre (x~80-105 um, y~0-10 um) and lower-right (x~115-145 um, y~25-40 um) are looser, with more open pores, visible subsurface material and CBD-rich texture. Graphite sizes range widely (~5-30 um), and alignment is locally disrupted by upright flakes around x~65-85 um. Si-based particles are unevenly spread: most frequent in the left third (especially its lower half) and the upper half of the centre/right, and sparse in the lower-centre and lower-right."
+    },
+    "defects_and_damage": [
+      {
+        "type": "intra-particle crack (basal-plane delamination)",
+        "description": "The large central graphite flake (~30 x 18 um) contains an elongated internal slit (~4 um open, dark in BSE). It continues as a ~15 um bright crack line in Inlens, parallel to the flake long axis. A few other flakes show similar open slits.",
+        "location": "centre, x~83-98 um, y~28-30 um",
+        "severity": "minor"
+      },
+      {
+        "type": "fine internal cracking / lamellar relief in graphite",
+        "description": "Many flakes show bright curved lines in Inlens that follow the internal layer curvature. These are mostly not resolved as open gaps in BSE, so they are sub-100 nm cracks, lamella boundaries or polishing relief. They could indicate calendering damage, but this cannot be confirmed.",
+        "location": "throughout; most visible in the large flakes of the centre and left",
+        "severity": "minor"
+      },
+      {
+        "type": "intra-particle voids",
+        "description": "Isolated sub-um to ~1 um pores inside graphite flakes, e.g. in the large tilted left flake and in a large upper-right flake.",
+        "location": "left (x~14 um, y~17 um), upper right (x~158 um, y~8 um), centre-right (x~115-118 um, y~19-23 um)",
+        "severity": "minor"
+      },
+      {
+        "type": "inter-flake slit gaps / possible debonding",
+        "description": "Long, thin (<=1-2 um) gaps between stacked flakes, up to ~15 um long, often without bridging CBD. They could be genuine calendered porosity or partial opening/debonding during preparation; either way they reduce local contact.",
+        "location": "widespread, e.g. upper-left-centre (x~48-62 um, y~6-10 um) and right-centre (x~141-154 um, y~14-19 um)",
+        "severity": "moderate"
+      },
+      {
+        "type": "large interstitial voids / loose packing",
+        "description": "Several 5-11 um voids and loosely packed zones where subsurface material is visible, e.g. an ~11 x 5 um void at the bottom-centre and a ~7 um void below the central flake. The lower-right quadrant is generally looser.",
+        "location": "bottom-centre (x~62-74 um, y~39-44 um), below central flake (x~92-100 um, y~32-38 um), lower-right (x~118-140 um, y~26-38 um)",
+        "severity": "moderate"
+      },
+      {
+        "type": "edge fraying of graphite",
+        "description": "Serrated, saw-tooth flake edges with thin lifted lamellae. This may be real exfoliation from processing or roughening by ion milling; the two cannot be separated here.",
+        "location": "throughout; clearest in the upper-centre (x~78-100 um, y~6-16 um)",
+        "severity": "minor"
+      },
+      {
+        "type": "possible fractured Si-based particle",
+        "description": "Two parallel elongated bright slivers, each with a grey rim, may be one particle split along its length or two separate fragments (low confidence). Other Si-based particles show no visible cracks.",
+        "location": "upper centre, x~78-84 um, y~6-17 um",
+        "severity": "minor"
+      },
+      {
+        "type": "possible CBD agglomerate / nodular region",
+        "description": "Nodular, wrinkled material, bright in Inlens and with 3D shading in ETD. It is ambiguous between a CBD-rich agglomerate and CBD-coated subsurface particle surfaces seen through an open pore.",
+        "location": "x~105-116 um, y~32-39 um",
+        "severity": "minor"
+      }
+    ],
+    "imaging_artifacts": [
+      {
+        "type": "unfilled pores / subsurface see-through",
+        "description": "Pores are not resin-infiltrated, so rounded particle and CBD surfaces below the polish plane are visible: 3D shading in ETD, lacy bright texture in Inlens, mid-grey texture in BSE. This is most pronounced in the lower-right quadrant, upper-centre and bottom-centre. These regions appear grey rather than black in BSE.",
+        "impact_on_analysis": "significant"
+      },
+      {
+        "type": "curtaining / polishing striations",
+        "description": "Fine parallel diagonal streaks with a single consistent orientation cover all polished graphite faces in ETD, and straight diagonal scratch lines cross particle boundaries in Inlens. These are preparation marks (ion-beam curtaining or mechanical scratches), not microstructure.",
+        "impact_on_analysis": "minor"
+      },
+      {
+        "type": "edge brightening / possible charging (Inlens)",
+        "description": "Very bright rims on almost every particle edge and on the binder phase, partly from the edge effect and partly from possible charging of the polymer binder. This exaggerates the CBD extent and boundary widths.",
+        "impact_on_analysis": "minor"
+      },
+      {
+        "type": "BSE edge rims and noise",
+        "description": "The BSE signal is low, with visible shot noise at 25 nm/px. Serrated flake edges and tilted subsurface facets appear slightly brighter and leak into the bright class (bright_raw 7.2% vs 4.7% after filtering). There is no BSE contrast between graphite and CBD.",
+        "impact_on_analysis": "minor"
+      },
+      {
+        "type": "scan-line streaks",
+        "description": "Faint horizontal lines in the Inlens image (e.g. near y~6-7 um and y~32-33 um, crossing the central flake), likely from scan or beam instability.",
+        "impact_on_analysis": "negligible"
+      }
+    ],
+    "detector_insights": {
+      "BSE": "The only detector with compositional contrast: the higher-Z angular particles are clearly lighter than carbon, so this is the right channel for counting and sizing the Si-based phase (some show a mottled internal texture). Graphite and CBD are indistinguishable. Subsurface surfaces in unfilled pores appear mid-grey like solid, so BSE alone underestimates porosity. The image is dark, low in dynamic range and noisy at 25 nm/px, with slightly bright serrated edge rims.",
+      "Inlens": "Most sensitive to the CBD and fine features. CBD appears as bright, lacy, nanoporous webs and pockets in interstices and around the Si-based particles. It reveals curved internal lamellae/cracks in graphite (e.g. the ~15 um crack line in the central flake) and straight diagonal polishing scratches. Si-based particles look medium grey with fine speckle and no lamellae, supporting a distinct phase. Strong edge brightening, possible binder charging and faint horizontal scan lines mean it should not be thresholded directly for area fractions.",
+      "ETD_or_SE": "Topographic channel. It separates the flat polished plane (covered by uniform diagonal curtaining/polishing striations) from 3D-shaded subsurface surfaces (rounded particle and CBD nodules) inside pores. This shows the pores are open and not resin-filled, which is the key evidence for correcting the BSE pore fraction. Si-based particles appear slightly lighter and smoother than graphite. It carries little compositional information, and deep pores are shadowed."
+    },
+    "threshold_metrics_assessment": "pore_area_pct 14.9%: biased LOW. Pores are not resin-filled, so open pores showing grey subsurface particles/CBD are classed as solid; true section porosity is ~20-28%. bright_raw_area_pct 7.2%: biased HIGH as a measure of the Si-based phase, because it includes bright serrated flake edges, tilted subsurface facets and noise. bright_particle_area_pct 4.7%: trustworthy; a visual sum of the bright particles gives ~4-5%. bright_particle_count 46 (5.5 per 1000 um2): plausible against a visual count of ~40-50. It may include a few particles seen below the plane inside pores and excludes fragments <2 um2. Median eq. diameter 2.6 um and p90 5.1 um: consistent with visual sizes (largest ~6-7 um eq. diameter, ~8-11 um long). Note that 2D section diameters underestimate 3D particle size. The middle class lumps graphite, CBD and subsurface material, so neither graphite size nor CBD fraction can be derived from this threshold.",
+    "notable_features": [
+      "Strong calendering texture: graphite flakes lie flat with long axes mostly within ~30 deg of horizontal, implying a vertical through-thickness direction and high through-plane tortuosity.",
+      "Bimodal solid: large graphite flakes (8-30 um) plus small angular BSE-bright particles (1-9 um, ~46 counted) sitting in interstitial pockets between flakes.",
+      "Several bright particles are cupped by curved flakes or bordered by a ~1 um grey shell, e.g. at x~104-110 um, y~11-16 um; carbon coating, CBD and SEI cannot be distinguished.",
+      "Some bright particles show a fine mottled internal texture, which may be nanostructure (e.g. a Si/C sub-population) or simply noise.",
+      "Long internal basal-plane crack in the large central flake (x~83-98 um, y~28-30 um).",
+      "A local cluster of steeply tilted/upright flakes at x~65-85 um disrupts the alignment.",
+      "Pores are open (no resin), with 3D subsurface surfaces visible through them.",
+      "No current collector or coating surface in view, so coating thickness and through-thickness gradients cannot be assessed.",
+      "Cycling state cannot be determined; the Si-based particles look intact and angular, without obvious swelling cracks or thick SEI shells."
+    ],
+    "summary": "This is a calendered graphite-based Li-ion anode in which large (8-30 um), strongly horizontally aligned graphite flakes make up most of the solid, together with a minor (~5% area) population of angular, BSE-bright 1-9 um particles that are most plausibly a Si-based additive such as SiOx (EDS needed to confirm). The carbon-binder domain is visible mainly in Inlens as bright lacy material filling interstices and wrapping the Si-based particles. Porosity consists of flake-parallel slit pores plus larger interstitial voids, with moderate packing heterogeneity (looser upper-centre and lower-right regions). Because the pores are not resin-filled, subsurface material appears grey in BSE and the automatic 14.9% pore fraction underestimates the true section porosity (~20-28%); the bright-particle metrics (4.7%, 46 particles, median ~2.6 um) agree with visual inspection, whereas bright_raw (7.2%) is inflated by edge rims. The main artefacts are see-through open pores, curtaining/polishing striations and Inlens edge brightening; damage is limited to internal basal-plane cracks, frayed flake edges and inter-flake slit gaps."
+  },
+  "usage": {
+    "model": "claude-opus-5-5",
+    "input_tokens": 19734,
+    "output_tokens": 48442,
+    "cost_usd": 1.0478
+  }
+}

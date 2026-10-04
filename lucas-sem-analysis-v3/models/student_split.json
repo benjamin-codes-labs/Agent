@@ -1,0 +1,37 @@
+{
+  "train": [
+    "5n1q8atc",
+    "f1vzngrs",
+    "ffwubibz",
+    "fzrt2k6r",
+    "uhdslk0o",
+    "3806gxp0",
+    "avn74qx1",
+    "i9jiqjwl",
+    "r17byphk",
+    "rxax5ozo",
+    "0grcilhi",
+    "9luzk4jm",
+    "cfe5vt7s",
+    "hawkfj64",
+    "hzumfsms",
+    "kbdh4tri",
+    "mgxahqnk",
+    "pl8uabbv",
+    "ptg8lmto",
+    "tuy3zymq",
+    "utfgcjfa",
+    "vc2whyaq",
+    "x77cy643",
+    "x7u69zsw",
+    "xgj4xftb"
+  ],
+  "held_out": [
+    "4ih2ggld",
+    "iv6g2oq0",
+    "b3esycq1",
+    "epqdaau9",
+    "ufdvpb81",
+    "71vgq3fw"
+  ]
+}

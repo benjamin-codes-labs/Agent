@@ -1,0 +1,18 @@
+{
+  "S": {
+    "observed": 0.415,
+    "null_mean": 0.331,
+    "null_p95": 0.49,
+    "null_p99": 0.585,
+    "p_value": 0.199,
+    "n_permutations": 200
+  },
+  "F": {
+    "observed": 0.588,
+    "null_mean": 0.326,
+    "null_p95": 0.482,
+    "null_p99": 0.549,
+    "p_value": 0.01,
+    "n_permutations": 200
+  }
+}

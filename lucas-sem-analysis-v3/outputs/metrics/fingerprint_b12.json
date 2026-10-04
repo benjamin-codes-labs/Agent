@@ -1,0 +1,359 @@
+{
+  "n_samples": 14,
+  "n_features": 51,
+  "classifiers": {
+    "all": {
+      "LOO_correct": "9/14",
+      "LOO_balanced": 0.643,
+      "LOGO_correct": "8/14",
+      "LOGO_balanced": 0.571,
+      "perm_p": 0.2054,
+      "null_p95": 0.786,
+      "features_chosen": {}
+    },
+    "top3": {
+      "LOO_correct": "9/14",
+      "LOO_balanced": 0.643,
+      "LOGO_correct": "8/14",
+      "LOGO_balanced": 0.571,
+      "perm_p": 0.2779,
+      "null_p95": 0.786,
+      "features_chosen": {
+        "se2_col_pattern_sd": 14,
+        "se2_banding_peak_share": 14,
+        "inlens_hf_power_y": 4,
+        "bse_p50": 3,
+        "bse_col_pattern_sd": 3
+      }
+    },
+    "stump": {
+      "LOO_correct": "4/14",
+      "LOO_balanced": 0.286,
+      "LOGO_correct": "4/14",
+      "LOGO_balanced": 0.286,
+      "perm_p": 0.8206,
+      "null_p95": 0.857,
+      "features_chosen": {
+        "se2_col_pattern_sd": 7,
+        "se2_banding_peak_share": 4,
+        "bse_p50": 1,
+        "inlens_hf_power_y": 1,
+        "bse_banding_period_px": 1
+      }
+    }
+  },
+  "explanation": [
+    {
+      "feature": "se2_col_pattern_sd",
+      "detector": "ETD/SE",
+      "meaning": "faint vertical stripes: column-to-column brightness differences in the noise",
+      "times_selected": 21,
+      "B1_values": [
+        0.17357,
+        0.17575,
+        0.16763,
+        0.15359,
+        0.16096,
+        0.14769,
+        0.17339
+      ],
+      "B2_values": [
+        0.14142,
+        0.15563,
+        0.13954,
+        0.15055,
+        0.16256,
+        0.1391,
+        0.14195
+      ],
+      "cliffs_delta_B1_vs_B2": 0.76,
+      "mw_p": 0.0175,
+      "same_session_pairs": [
+        {
+          "session": "h2148",
+          "B1": 0.16763,
+          "B2": 0.15055,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        },
+        {
+          "session": "h2156",
+          "B1": 0.16096,
+          "B2": 0.13954,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        },
+        {
+          "session": "h2080",
+          "B1": 0.15359,
+          "B2": 0.1391,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        }
+      ],
+      "spearman_with_material_all31": {
+        "pore": -0.53,
+        "graphite": -0.02,
+        "SiOx": -0.01,
+        "CBD": 0.27
+      }
+    },
+    {
+      "feature": "se2_banding_peak_share",
+      "detector": "ETD/SE",
+      "meaning": "how strongly one repeating horizontal banding period dominates (scan-line rhythm)",
+      "times_selected": 18,
+      "B1_values": [
+        0.10856,
+        0.10573,
+        0.1357,
+        0.20118,
+        0.0901,
+        0.0822,
+        0.14985
+      ],
+      "B2_values": [
+        0.08101,
+        0.07863,
+        0.10819,
+        0.04622,
+        0.05771,
+        0.06969,
+        0.10827
+      ],
+      "cliffs_delta_B1_vs_B2": 0.76,
+      "mw_p": 0.0175,
+      "same_session_pairs": [
+        {
+          "session": "h2148",
+          "B1": 0.1357,
+          "B2": 0.04622,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        },
+        {
+          "session": "h2156",
+          "B1": 0.0901,
+          "B2": 0.10819,
+          "B1_minus_B2_sign_matches_batch_difference": false
+        },
+        {
+          "session": "h2080",
+          "B1": 0.20118,
+          "B2": 0.06969,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        }
+      ],
+      "spearman_with_material_all31": {
+        "pore": -0.31,
+        "graphite": -0.03,
+        "SiOx": 0.2,
+        "CBD": 0.2
+      }
+    },
+    {
+      "feature": "inlens_hf_power_y",
+      "detector": "Inlens",
+      "meaning": "fine-grain noise energy across scan lines",
+      "times_selected": 5,
+      "B1_values": [
+        0.13661,
+        0.13424,
+        0.13847,
+        0.138,
+        0.14275,
+        0.13843,
+        0.13872
+      ],
+      "B2_values": [
+        0.13857,
+        0.14348,
+        0.13895,
+        0.13694,
+        0.1446,
+        0.13899,
+        0.13921
+      ],
+      "cliffs_delta_B1_vs_B2": -0.59,
+      "mw_p": 0.0728,
+      "same_session_pairs": [
+        {
+          "session": "h2148",
+          "B1": 0.13847,
+          "B2": 0.13694,
+          "B1_minus_B2_sign_matches_batch_difference": false
+        },
+        {
+          "session": "h2156",
+          "B1": 0.14275,
+          "B2": 0.13895,
+          "B1_minus_B2_sign_matches_batch_difference": false
+        },
+        {
+          "session": "h2080",
+          "B1": 0.138,
+          "B2": 0.13899,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        }
+      ],
+      "spearman_with_material_all31": {
+        "pore": 0.04,
+        "graphite": -0.17,
+        "SiOx": -0.12,
+        "CBD": 0.29
+      }
+    },
+    {
+      "feature": "bse_p50",
+      "detector": "BSE",
+      "meaning": "median grey level (brightness setting)",
+      "times_selected": 4,
+      "B1_values": [
+        57.0,
+        59.0,
+        52.0,
+        59.0,
+        62.0,
+        57.0,
+        60.0
+      ],
+      "B2_values": [
+        49.0,
+        49.0,
+        62.0,
+        52.0,
+        56.0,
+        56.0,
+        55.0
+      ],
+      "cliffs_delta_B1_vs_B2": 0.59,
+      "mw_p": 0.0717,
+      "same_session_pairs": [
+        {
+          "session": "h2148",
+          "B1": 52.0,
+          "B2": 52.0,
+          "B1_minus_B2_sign_matches_batch_difference": false
+        },
+        {
+          "session": "h2156",
+          "B1": 62.0,
+          "B2": 62.0,
+          "B1_minus_B2_sign_matches_batch_difference": false
+        },
+        {
+          "session": "h2080",
+          "B1": 59.0,
+          "B2": 56.0,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        }
+      ],
+      "spearman_with_material_all31": {
+        "pore": -0.13,
+        "graphite": 0.16,
+        "SiOx": 0.38,
+        "CBD": -0.17
+      }
+    },
+    {
+      "feature": "bse_col_pattern_sd",
+      "detector": "BSE",
+      "meaning": "faint vertical stripes: column-to-column brightness differences in the noise",
+      "times_selected": 3,
+      "B1_values": [
+        0.21815,
+        0.2183,
+        0.23291,
+        0.22702,
+        0.22726,
+        0.22087,
+        0.24999
+      ],
+      "B2_values": [
+        0.20382,
+        0.22953,
+        0.20786,
+        0.21211,
+        0.22914,
+        0.1942,
+        0.19416
+      ],
+      "cliffs_delta_B1_vs_B2": 0.59,
+      "mw_p": 0.0728,
+      "same_session_pairs": [
+        {
+          "session": "h2148",
+          "B1": 0.23291,
+          "B2": 0.21211,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        },
+        {
+          "session": "h2156",
+          "B1": 0.22726,
+          "B2": 0.20786,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        },
+        {
+          "session": "h2080",
+          "B1": 0.22702,
+          "B2": 0.1942,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        }
+      ],
+      "spearman_with_material_all31": {
+        "pore": -0.49,
+        "graphite": 0.18,
+        "SiOx": -0.1,
+        "CBD": 0.08
+      }
+    },
+    {
+      "feature": "se2_distinct_levels",
+      "detector": "ETD/SE",
+      "meaning": "how many grey levels are used (dynamic range)",
+      "times_selected": 2,
+      "B1_values": [
+        199.0,
+        198.0,
+        233.0,
+        231.0,
+        244.0,
+        219.0,
+        229.0
+      ],
+      "B2_values": [
+        184.0,
+        197.0,
+        207.0,
+        219.0,
+        210.0,
+        224.0,
+        203.0
+      ],
+      "cliffs_delta_B1_vs_B2": 0.53,
+      "mw_p": 0.1098,
+      "same_session_pairs": [
+        {
+          "session": "h2148",
+          "B1": 233.0,
+          "B2": 219.0,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        },
+        {
+          "session": "h2156",
+          "B1": 244.0,
+          "B2": 207.0,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        },
+        {
+          "session": "h2080",
+          "B1": 231.0,
+          "B2": 224.0,
+          "B1_minus_B2_sign_matches_batch_difference": true
+        }
+      ],
+      "spearman_with_material_all31": {
+        "pore": -0.32,
+        "graphite": 0.15,
+        "SiOx": 0.22,
+        "CBD": 0.15
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "observed_balanced_accuracy": 0.798,
+  "n_permutations": 1000,
+  "null_mean": 0.321,
+  "null_p95": 0.521,
+  "null_p99": 0.597,
+  "p_value": 0.001
+}

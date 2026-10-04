@@ -1,0 +1,275 @@
+{
+  "points": {
+    "uniform": {
+      "n_dropped_overlapping_round2_training": 2,
+      "v1": {
+        "n": 238,
+        "accuracy": 0.819,
+        "ci95": [
+          0.765,
+          0.863
+        ],
+        "per_class": {
+          "pore": {
+            "recall": 0.652,
+            "n_ai": 46,
+            "precision": 0.789,
+            "n_model": 38
+          },
+          "graphite": {
+            "recall": 0.957,
+            "n_ai": 141,
+            "precision": 0.877,
+            "n_model": 154
+          },
+          "SiOx": {
+            "recall": 0.632,
+            "n_ai": 19,
+            "precision": 1.0,
+            "n_model": 12
+          },
+          "CBD": {
+            "recall": 0.562,
+            "n_ai": 32,
+            "precision": 0.529,
+            "n_model": 34
+          }
+        }
+      },
+      "v2": {
+        "n": 238,
+        "accuracy": 0.815,
+        "ci95": [
+          0.761,
+          0.859
+        ],
+        "per_class": {
+          "pore": {
+            "recall": 0.696,
+            "n_ai": 46,
+            "precision": 0.762,
+            "n_model": 42
+          },
+          "graphite": {
+            "recall": 0.957,
+            "n_ai": 141,
+            "precision": 0.871,
+            "n_model": 155
+          },
+          "SiOx": {
+            "recall": 0.632,
+            "n_ai": 19,
+            "precision": 1.0,
+            "n_model": 12
+          },
+          "CBD": {
+            "recall": 0.469,
+            "n_ai": 32,
+            "precision": 0.517,
+            "n_model": 29
+          }
+        }
+      }
+    },
+    "stratified": {
+      "n_dropped_overlapping_round2_training": 1,
+      "v1": {
+        "n": 117,
+        "accuracy": 0.744,
+        "ci95": [
+          0.658,
+          0.814
+        ],
+        "per_class": {
+          "pore": {
+            "recall": 0.714,
+            "n_ai": 28,
+            "precision": 0.741,
+            "n_model": 27
+          },
+          "graphite": {
+            "recall": 0.743,
+            "n_ai": 35,
+            "precision": 0.765,
+            "n_model": 34
+          },
+          "SiOx": {
+            "recall": 0.964,
+            "n_ai": 28,
+            "precision": 0.964,
+            "n_model": 28
+          },
+          "CBD": {
+            "recall": 0.538,
+            "n_ai": 26,
+            "precision": 0.5,
+            "n_model": 28
+          }
+        }
+      },
+      "v2": {
+        "n": 117,
+        "accuracy": 0.761,
+        "ci95": [
+          0.676,
+          0.829
+        ],
+        "per_class": {
+          "pore": {
+            "recall": 0.75,
+            "n_ai": 28,
+            "precision": 0.677,
+            "n_model": 31
+          },
+          "graphite": {
+            "recall": 0.829,
+            "n_ai": 35,
+            "precision": 0.829,
+            "n_model": 35
+          },
+          "SiOx": {
+            "recall": 0.964,
+            "n_ai": 28,
+            "precision": 0.964,
+            "n_model": 28
+          },
+          "CBD": {
+            "recall": 0.462,
+            "n_ai": 26,
+            "precision": 0.522,
+            "n_model": 23
+          }
+        }
+      }
+    }
+  },
+  "held_out_superpixels": {
+    "round1_val": {
+      "v1": {
+        "n": 141,
+        "agreement": 0.837,
+        "ci95": [
+          0.767,
+          0.889
+        ]
+      },
+      "v2": {
+        "n": 141,
+        "agreement": 0.844,
+        "ci95": [
+          0.775,
+          0.895
+        ]
+      }
+    },
+    "round2_val_uncertain_regions": {
+      "v1": {
+        "n": 97,
+        "agreement": 0.639,
+        "ci95": [
+          0.54,
+          0.728
+        ]
+      },
+      "v2": {
+        "n": 97,
+        "agreement": 0.701,
+        "ci95": [
+          0.604,
+          0.783
+        ]
+      }
+    }
+  },
+  "pixel_agreement_v1_v2": 0.9283,
+  "confusion_rows_v1_cols_v2_fraction": [
+    [
+      0.1415,
+      0.0017,
+      0.0001,
+      0.0051
+    ],
+    [
+      0.0166,
+      0.5921,
+      0.0001,
+      0.0162
+    ],
+    [
+      0.0001,
+      0.0002,
+      0.0626,
+      0.0009
+    ],
+    [
+      0.0142,
+      0.0162,
+      0.0009,
+      0.1315
+    ]
+  ],
+  "phase_fractions_by_batch": {
+    "v1": {
+      "Batch_1": {
+        "pore": 12.19,
+        "graphite": 64.88,
+        "SiOx": 7.92,
+        "CBD": 15.01
+      },
+      "Batch_2": {
+        "pore": 15.48,
+        "graphite": 62.88,
+        "SiOx": 5.68,
+        "CBD": 15.97
+      },
+      "Batch_3": {
+        "pore": 15.72,
+        "graphite": 61.31,
+        "SiOx": 5.88,
+        "CBD": 17.08
+      }
+    },
+    "v2": {
+      "Batch_1": {
+        "pore": 14.35,
+        "graphite": 63.1,
+        "SiOx": 7.89,
+        "CBD": 14.67
+      },
+      "Batch_2": {
+        "pore": 17.82,
+        "graphite": 61.88,
+        "SiOx": 5.72,
+        "CBD": 14.58
+      },
+      "Batch_3": {
+        "pore": 18.24,
+        "graphite": 59.79,
+        "SiOx": 5.89,
+        "CBD": 16.07
+      }
+    }
+  },
+  "batch_id": {
+    "v1": {
+      "LOO_S": 0.415,
+      "LOO_F": 0.588,
+      "LOGO_F": 0.465,
+      "nuisance_only_LOO": 0.675,
+      "perm_p_F": 0.01,
+      "two_step_LOO": 0.636,
+      "two_step_LOGO": 0.56,
+      "two_step_B1vB2_p": 0.1644
+    },
+    "v2": {
+      "LOO_S": 0.482,
+      "LOO_F": 0.608,
+      "LOGO_F": 0.56,
+      "nuisance_only_LOO": 0.675,
+      "perm_p_F": 0.005,
+      "two_step_LOO": 0.703,
+      "two_step_LOGO": 0.703,
+      "two_step_B1vB2_p": 0.082
+    }
+  }
+}

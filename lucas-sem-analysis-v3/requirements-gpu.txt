@@ -1,0 +1,9 @@
+# Student U-Net training / GPU inference. RTX 50-series (Blackwell) needs the CUDA 12.8 build.
+# Install torch FIRST from the PyTorch index, then the rest with --no-deps so pip does not replace torch
+# with the CPU build from PyPI:
+#   pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
+#   pip install --no-deps -r requirements-gpu.txt
+segmentation-models-pytorch==0.5.0
+timm==1.0.30
+huggingface-hub
+safetensors

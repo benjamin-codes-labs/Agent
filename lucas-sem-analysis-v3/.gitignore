@@ -1,0 +1,36 @@
+# secrets
+.env
+
+# raw and derived data (large) - see README for where to get / how to rebuild them
+data/raw/
+data/processed/
+data/nnUNet_raw/
+outputs/segmentation/
+outputs/predict/
+outputs/*.log
+models/*.pt
+models/*.onnx
+models/*.onnx.data
+models/*.txt
+release/
+prior_analysis/llm_run/previews/
+prior_analysis/llm_run/*.log
+
+# python
+__pycache__/
+*.pyc
+models/*.pkl
+outputs/batchid/*.jpg
+
+# local copy prepared for pushing
+lucas-github-push-1/
+London-AI-x-Science-Hackathon/
+models/v1/
+wechat-send-v1/
+wechat-send-v1.zip
+wechat-send-v2/
+wechat-send-v2.zip
+outputs/demo_new_image/
+outputs/referee_*
+wechat-send-v3/
+wechat-send-v3.zip

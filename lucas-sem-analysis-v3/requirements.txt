@@ -1,0 +1,10 @@
+# Python 3.14 (tested). CPU parts of the pipeline + ONNX inference.
+numpy==2.4.6
+scipy==1.17.1
+scikit-image==0.26.0
+pillow==12.2.0
+lightgbm==4.7.0
+onnx==1.23.1
+onnxruntime==1.30.0
+anthropic==1.11.0          # only for the AI-annotation stages (src.ai_labels, src.ai_validate)
+python-dotenv==1.2.4

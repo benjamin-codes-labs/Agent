@@ -208,6 +208,12 @@ class ExplainerConfig:
     force_tool: bool = False
     #: Left None deliberately: this model rejects non-default sampling params.
     temperature: float | None = None
+    #: Thinking effort: "low" | "medium" | "high" | "xhigh" | "max", or None to
+    #: send nothing. Sonnet 5.5 otherwise runs adaptive thinking at "high", and
+    #: that thinking happens before any output. The facts are computed in code
+    #: and the model only narrates them, so "medium" is the default; try "low"
+    #: for more speed and watch for extra validation retries.
+    effort: str | None = "medium"
 
     def __post_init__(self):
         if not math.isfinite(self.timeout_seconds) or self.timeout_seconds <= 0:
@@ -280,6 +286,8 @@ class ClaudeExplainer:
                 kwargs["tool_choice"] = {"type": "tool", "name": EXPLAINER_TOOL["name"]}
         if self.config.temperature is not None:
             kwargs["temperature"] = self.config.temperature
+        if self.config.effort:
+            kwargs["output_config"] = {"effort": self.config.effort}
 
         response = self.client.messages.create(**kwargs)
         call, payload = self._read_response(response)

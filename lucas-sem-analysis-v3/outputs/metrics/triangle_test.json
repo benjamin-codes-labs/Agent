@@ -1,0 +1,57 @@
+{
+  "cost_usd_batch": 11.25,
+  "Batch_1-Batch_2": {
+    "correct": "8/30",
+    "rate": 0.267,
+    "ci95": [
+      0.142,
+      0.444
+    ],
+    "p_vs_chance_1_3": 0.8332,
+    "medium_high_confidence_only": {
+      "correct": "7/23",
+      "rate": 0.304,
+      "ci95": [
+        0.156,
+        0.509
+      ],
+      "p_vs_chance_1_3": 0.69
+    }
+  },
+  "Batch_1-Batch_3": {
+    "correct": "10/30",
+    "rate": 0.333,
+    "ci95": [
+      0.192,
+      0.512
+    ],
+    "p_vs_chance_1_3": 0.5683,
+    "medium_high_confidence_only": {
+      "correct": "5/21",
+      "rate": 0.238,
+      "ci95": [
+        0.106,
+        0.451
+      ],
+      "p_vs_chance_1_3": 0.8788
+    }
+  },
+  "Batch_2-Batch_3": {
+    "correct": "15/30",
+    "rate": 0.5,
+    "ci95": [
+      0.332,
+      0.668
+    ],
+    "p_vs_chance_1_3": 0.0435,
+    "medium_high_confidence_only": {
+      "correct": "11/19",
+      "rate": 0.579,
+      "ci95": [
+        0.363,
+        0.769
+      ],
+      "p_vs_chance_1_3": 0.0241
+    }
+  }
+}

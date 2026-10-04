@@ -1,0 +1,993 @@
+item,batch,sample_id,superpixel,cy,cx,kind,seed_class,split,request,student_class,student_conf,ai_label,confidence,reason
+x7u69zsw_803,Batch_3,x7u69zsw,803,133,1470,active_uncertain_other,,train,r2req0047,graphite,0.768,CBD,low,Inlens-bright neck band between particles; graphite-grey BSE; likely binder domain
+r17byphk_2460,Batch_2,r17byphk,2460,418,2467,active_uncertain_pore_cbd,,train,r2req0047,CBD,0.748,graphite,low,"Flat-faced fragment with sharp edges; BSE grey matches graphite, not bright"
+ffwubibz_2042,Batch_1,ffwubibz,2042,319,3238,active_random_pore_cbd,,val,r2req0047,CBD,0.946,graphite,low,Uniform graphite-grey BSE and flat ETD face beside SiOx particle
+ffwubibz_5704,Batch_1,ffwubibz,5704,869,1233,active_uncertain_other,,train,r2req0047,graphite,0.804,CBD,low,Inlens-lighter lens filling gap along crack; BSE same grey as graphite
+f1vzngrs_3888,Batch_1,f1vzngrs,3888,635,432,active_uncertain_other,,train,r2req0047,graphite,0.739,pore,low,BSE-bright rim along pore edge with smooth ETD shading; sloped wall
+0grcilhi_5479,Batch_3,0grcilhi,5479,870,453,active_uncertain_pore_cbd,,train,r2req0047,CBD,0.77,pore,low,"Textured, ETD-darker surface below bright particle edge; pore wall or floor"
+uhdslk0o_3061,Batch_1,uhdslk0o,3061,497,2959,active_uncertain_other,,train,r2req0047,graphite,0.82,CBD,low,Pocket with small pores and bright Inlens specks; spongy texture
+ffwubibz_4560,Batch_1,ffwubibz,4560,695,253,active_uncertain_pore_cbd,,val,r2req0047,CBD,0.707,graphite,low,Uniform flat face at bottom edge of large particle in all detectors
+71vgq3fw_1512,Batch_3,71vgq3fw,1512,224,3150,active_uncertain_pore_cbd,,val,r2req0047,graphite,0.708,graphite,medium,"Graphite-grey BSE, dark Inlens like neighbouring graphite, flat polished face"
+pl8uabbv_1727,Batch_3,pl8uabbv,1727,284,3394,active_random_pore_cbd,,train,r2req0047,pore,0.951,mixed,medium,Outline spans graphite face above edge and black open pore below
+x77cy643_5243,Batch_3,x77cy643,5243,888,1955,active_uncertain_pore_cbd,,train,r2req0027,CBD,0.766,pore,medium,SE shows dark shadow; grey textured floor ringed by bright Inlens edges
+iv6g2oq0_1427,Batch_1,iv6g2oq0,1427,242,384,active_uncertain_other,,train,r2req0027,graphite,0.794,graphite,medium,Uniform grey polished face continuous with adjacent graphite particle in all detectors
+vc2whyaq_3808,Batch_3,vc2whyaq,3808,595,2627,active_uncertain_pore_cbd,,train,r2req0027,CBD,0.755,CBD,low,Slightly darker BSE patch at edge of lacy Inlens network between particles
+f1vzngrs_2745,Batch_1,f1vzngrs,2745,466,3049,active_uncertain_pore_cbd,,train,r2req0027,CBD,0.742,CBD,low,"Thin grey ribbon between pores beside SiOx; smooth, ambiguous texture"
+kbdh4tri_5937,Batch_3,kbdh4tri,5937,914,768,active_uncertain_pore_cbd,,val,r2req0027,graphite,0.769,CBD,medium,"Grey mottled material in inter-particle pocket, bright Inlens rims, not shadowed in SE"
+tuy3zymq_5026,Batch_3,tuy3zymq,5026,797,1412,active_random_pore_cbd,,train,r2req0027,CBD,0.825,CBD,low,Heterogeneous grey textured region between particles with lacy Inlens edges
+3806gxp0_4996,Batch_2,3806gxp0,4996,803,196,active_random_pore_cbd,,train,r2req0027,CBD,0.88,graphite,low,"Narrow strip beside SiOx; dark Inlens, grey BSE/SE resembling graphite face"
+ufdvpb81_6212,Batch_3,ufdvpb81,6212,874,3005,active_uncertain_other,,train,r2req0027,graphite,0.795,pore,medium,Strong SE shading gradient; sloping floor below polished plane in wedge gap
+cfe5vt7s_3072,Batch_3,cfe5vt7s,3072,521,2119,active_random_pore_cbd,,train,r2req0027,pore,0.988,pore,high,Black in all three detectors; deep gap beside SiOx particle
+ufdvpb81_2187,Batch_3,ufdvpb81,2187,338,3173,active_uncertain_pore_cbd,,train,r2req0027,CBD,0.769,CBD,medium,"Darker textured band between graphite particles, nanopores visible in SE"
+mgxahqnk_3704,Batch_3,mgxahqnk,3704,608,1890,active_uncertain_pore_cbd,,train,r2req0030,CBD,0.789,SiOx,medium,"Bright BSE, angular flat-faced particle beside pore; brighter than nearby graphite."
+avn74qx1_3280,Batch_2,avn74qx1,3280,507,3081,active_uncertain_pore_cbd,,train,r2req0030,graphite,0.742,graphite,low,Flat uniform grey in BSE and ETD; borders a CBD/pore chain.
+hzumfsms_4872,Batch_3,hzumfsms,4872,727,1820,active_uncertain_pore_cbd,,train,r2req0030,graphite,0.788,CBD,low,Fine material at particle neck with pore slit; could be mixed.
+kbdh4tri_838,Batch_3,kbdh4tri,838,137,2510,active_uncertain_pore_cbd,,train,r2req0030,graphite,0.752,CBD,low,"Mottled pocket between particles, distinct from adjacent graphite in Inlens."
+fzrt2k6r_6143,Batch_1,fzrt2k6r,6143,982,137,active_uncertain_pore_cbd,,train,r2req0030,CBD,0.77,graphite,low,"Uniform graphite-grey BSE, flat in ETD; next to porous SiOx particle."
+r17byphk_1899,Batch_2,r17byphk,1899,337,2234,active_uncertain_other,,val,r2req0030,graphite,0.824,graphite,low,"Flat face, graphite-grey BSE, dark Inlens like adjacent graphite particle."
+avn74qx1_3468,Batch_2,avn74qx1,3468,537,1798,active_uncertain_pore_cbd,,train,r2req0030,CBD,0.743,CBD,medium,"Graphite-grey BSE, nanopores in ETD, bright mottled Inlens suggest spongy CBD."
+fzrt2k6r_3270,Batch_1,fzrt2k6r,3270,518,3380,active_uncertain_pore_cbd,,train,r2req0030,CBD,0.771,graphite,medium,"Uniform BSE grey, flat ETD with curtaining streaks; graphite face."
+fzrt2k6r_4486,Batch_1,fzrt2k6r,4486,732,382,active_uncertain_other,,val,r2req0030,graphite,0.821,graphite,low,Folded lamellae of spherical graphite near particle edge; 3D relief adds doubt.
+ufdvpb81_6163,Batch_3,ufdvpb81,6163,871,2221,active_random_pore_cbd,,train,r2req0030,CBD,0.882,CBD,low,"Darker textured band between SiOx and particle, with small pores."
+9luzk4jm_4564,Batch_3,9luzk4jm,4564,712,3418,active_random_pore_cbd,,train,r2req0087,pore,0.945,mixed,medium,Upper part is bright SiOx face; lower part is black open pore.
+b3esycq1_5147,Batch_2,b3esycq1,5147,811,2475,active_random_pore_cbd,,train,r2req0087,pore,0.937,CBD,low,Spongy textured material in pocket beside recessed pore floor; could be pore.
+ufdvpb81_4345,Batch_3,ufdvpb81,4345,624,3134,active_random_pore_cbd,,val,r2req0087,pore,0.994,pore,medium,Shaded material below plane beside bright graphite edge; dark in ETD.
+x77cy643_4541,Batch_3,x77cy643,4541,782,641,active_uncertain_pore_cbd,,train,r2req0087,graphite,0.784,graphite,medium,Uniform flat BSE grey; lamellar bright streaks in Inlens within large particle.
+ptg8lmto_2570,Batch_3,ptg8lmto,2570,387,2122,active_uncertain_other,,train,r2req0087,graphite,0.843,CBD,low,"Irregular region at particle neck; mottled, lighter Inlens than adjacent graphite."
+fzrt2k6r_2881,Batch_1,fzrt2k6r,2881,461,1671,active_uncertain_other,,train,r2req0087,graphite,0.713,graphite,medium,Uniform grey polished face at the edge of a large graphite particle.
+b3esycq1_1097,Batch_2,b3esycq1,1097,169,313,active_uncertain_pore_cbd,,train,r2req0087,CBD,0.708,graphite,low,"Uniform BSE grey along particle edge; bright Inlens edge band, pore nearby."
+cfe5vt7s_2681,Batch_3,cfe5vt7s,2681,454,2735,active_uncertain_pore_cbd,,train,r2req0087,pore,0.783,pore,medium,Gap darker than graphite in BSE and shadowed in ETD; open pore.
+avn74qx1_1381,Batch_2,avn74qx1,1381,220,757,active_uncertain_pore_cbd,,train,r2req0087,CBD,0.706,CBD,medium,"Very bright Inlens, only slightly lighter BSE, spongy band with nanopores."
+vc2whyaq_1182,Batch_3,vc2whyaq,1182,190,194,active_uncertain_other,,val,r2req0087,graphite,0.82,graphite,low,"Flat medium BSE grey, darkish Inlens, little texture; CBD possible."
+ptg8lmto_2992,Batch_3,ptg8lmto,2992,449,2731,active_uncertain_pore_cbd,,train,r2req0059,graphite,0.822,CBD,medium,"Spongy, nanoporous textured pocket between particles; bright Inlens blobs, dark ETD holes."
+4ih2ggld_6288,Batch_1,4ih2ggld,6288,1043,3280,active_uncertain_other,,train,r2req0059,graphite,0.772,mixed,low,Bright BSE SiOx-like blob plus dark Inlens pore/CBD area; heterogeneous.
+x77cy643_4021,Batch_3,x77cy643,4021,683,2926,active_uncertain_other,,train,r2req0059,graphite,0.802,graphite,medium,"Uniform BSE grey flat face beside particle boundary, no texture."
+x77cy643_2274,Batch_3,x77cy643,2274,379,2166,active_random_pore_cbd,,train,r2req0059,CBD,0.974,SiOx,high,"Inside bright BSE angular particle, mottled, non-lamellar; Inlens charging."
+xgj4xftb_531,Batch_3,xgj4xftb,531,101,3091,active_uncertain_pore_cbd,,val,r2req0059,pore,0.794,pore,medium,"Out-of-focus particle below polished plane, 3D shading in ETD."
+ptg8lmto_2358,Batch_3,ptg8lmto,2358,354,340,active_uncertain_pore_cbd,,val,r2req0059,graphite,0.815,pore,low,"Sloped, shaded depression beside deep crevice; no flat polished face."
+epqdaau9_5915,Batch_2,epqdaau9,5915,945,1855,active_uncertain_other,,val,r2req0059,graphite,0.759,CBD,medium,"Textured inter-particle band beside pores; lacy Inlens, same carbon grey."
+ffwubibz_911,Batch_1,ffwubibz,911,162,2719,active_uncertain_other,,train,r2req0059,graphite,0.815,mixed,medium,Contains black pore gap plus textured CBD and graphite edge.
+5n1q8atc_6575,Batch_1,5n1q8atc,6575,1068,1018,active_uncertain_pore_cbd,,train,r2req0059,pore,0.748,pore,medium,Dark smooth gap above SiOx in all detectors; no lacy texture.
+x77cy643_3889,Batch_3,x77cy643,3889,663,3048,active_uncertain_other,,train,r2req0059,graphite,0.756,graphite,medium,Uniform grey flat polished face near particle boundary.
+hzumfsms_2047,Batch_3,hzumfsms,2047,300,82,active_uncertain_other,,train,r2req0090,graphite,0.798,mixed,low,Black pore sliver plus graphite-grey triangle in roughly equal proportions.
+x7u69zsw_898,Batch_3,x7u69zsw,898,152,743,active_uncertain_other,,train,r2req0090,graphite,0.777,SiOx,medium,"Brighter than graphite in BSE, mottled non-lamellar particle; bright in ETD, not recessed."
+b3esycq1_5820,Batch_2,b3esycq1,5820,910,933,active_uncertain_pore_cbd,,val,r2req0090,graphite,0.746,pore,low,"Grey in BSE but shaded dark in ETD, continuous with pore; Inlens conflicting."
+hawkfj64_1595,Batch_3,hawkfj64,1595,266,3186,active_uncertain_pore_cbd,,train,r2req0090,graphite,0.717,pore,medium,"Within wide inter-particle gap; dark ETD, bright Inlens edges; likely pore floor."
+x7u69zsw_1238,Batch_3,x7u69zsw,1238,204,228,active_uncertain_pore_cbd,,val,r2req0090,graphite,0.78,CBD,low,Light textured neck film between graphite particles; thin dark crack partly inside.
+epqdaau9_1973,Batch_2,epqdaau9,1973,358,620,active_random_pore_cbd,,train,r2req0090,pore,0.938,pore,medium,Mostly black void; smaller spongy CBD portion at lower right.
+rxax5ozo_5669,Batch_2,rxax5ozo,5669,900,1362,active_uncertain_other,,train,r2req0090,graphite,0.813,CBD,medium,Graphite-grey film rim around bright SiOx particle; in polished plane in SE.
+epqdaau9_2341,Batch_2,epqdaau9,2341,401,2764,active_random_pore_cbd,,val,r2req0090,pore,0.981,pore,high,Black in BSE and ETD; open pore between particles.
+tuy3zymq_3202,Batch_3,tuy3zymq,3202,524,1241,active_uncertain_pore_cbd,,val,r2req0090,pore,0.782,SiOx,medium,Edge of bright mottled SiOx particle; light in BSE and ETD.
+b3esycq1_5038,Batch_2,b3esycq1,5038,794,398,active_uncertain_pore_cbd,,train,r2req0090,pore,0.73,pore,medium,"Grey BSE but dark, out-of-focus ETD below adjacent pore; recessed floor."
+r17byphk_3455,Batch_2,r17byphk,3455,576,2009,active_uncertain_pore_cbd,,train,r2req0033,graphite,0.7,pore,low,Grey strip in inter-particle gap linking dark pores; bright Inlens edge alongside.
+hawkfj64_4666,Batch_3,hawkfj64,4666,744,1092,active_uncertain_other,,train,r2req0033,graphite,0.826,graphite,low,"Thin straight sliver beside crack; graphite-grey BSE, not dark like crack."
+x77cy643_2224,Batch_3,x77cy643,2224,370,385,active_uncertain_pore_cbd,,train,r2req0033,pore,0.777,pore,high,"Blurred out-of-focus floor; diffuse Inlens glow, dark shaded ETD."
+ptg8lmto_1579,Batch_3,ptg8lmto,1579,238,1289,active_uncertain_pore_cbd,,val,r2req0033,CBD,0.781,pore,medium,"Recessed gap continuing from black pore; dark in ETD, grey floor in BSE."
+tuy3zymq_2937,Batch_3,tuy3zymq,2937,477,3301,active_uncertain_pore_cbd,,train,r2req0033,graphite,0.716,CBD,low,"Mottled pocket at pore tip; textured bright Inlens, graphite-grey BSE."
+4ih2ggld_3504,Batch_1,4ih2ggld,3504,594,1085,active_random_pore_cbd,,train,r2req0033,pore,0.942,pore,high,"Dark in BSE and Inlens, black in ETD; open pore region."
+kbdh4tri_5041,Batch_3,kbdh4tri,5041,769,1532,active_uncertain_other,,val,r2req0033,graphite,0.757,graphite,low,"Small flat fragment; graphite-grey BSE, dark Inlens like graphite particles."
+3806gxp0_6035,Batch_2,3806gxp0,6035,937,3046,active_uncertain_pore_cbd,,train,r2req0033,graphite,0.707,graphite,low,Flat graphite-grey in BSE and ETD; Inlens darkness likely channelling contrast.
+4ih2ggld_5115,Batch_1,4ih2ggld,5115,853,2631,active_uncertain_pore_cbd,,train,r2req0033,CBD,0.704,pore,medium,Deep shadow in ETD; unfocused grey floor in BSE and Inlens.
+f1vzngrs_682,Batch_1,f1vzngrs,682,120,3152,active_uncertain_pore_cbd,,train,r2req0033,CBD,0.679,pore,low,"Narrow neck gap between particles; smooth, edge-ringed, no polished face."
+i9jiqjwl_474,Batch_2,i9jiqjwl,474,109,2991,active_uncertain_pore_cbd,,val,r2req0062,CBD,0.756,graphite,low,"Lamellar grey material continuous with layered graphite particle, between dark gaps; near-plane BSE."
+b3esycq1_2056,Batch_2,b3esycq1,2056,320,2394,active_uncertain_pore_cbd,,train,r2req0062,CBD,0.758,graphite,low,"Uniform graphite-grey BSE beside bright SiOx; smooth Inlens, ETD facets suggest some relief."
+vc2whyaq_2969,Batch_3,vc2whyaq,2969,475,2446,active_uncertain_pore_cbd,,train,r2req0062,graphite,0.776,CBD,low,Finely textured spongy material in pocket at particle edge; sharper than pore floor.
+cfe5vt7s_5606,Batch_3,cfe5vt7s,5606,903,3169,active_uncertain_pore_cbd,,val,r2req0062,pore,0.767,graphite,low,Mostly smooth grey strip; smaller part is shadowed recess below crack in ETD.
+3806gxp0_1804,Batch_2,3806gxp0,1804,300,2146,active_uncertain_pore_cbd,,train,r2req0062,graphite,0.712,graphite,medium,"Flat uniform grey in all detectors, just inside particle edge above pore."
+hzumfsms_3811,Batch_3,hzumfsms,3811,585,1911,active_uncertain_other,,train,r2req0062,graphite,0.78,graphite,low,"Thin strip along graphite particle edge; uniform BSE grey, bright edge in Inlens."
+xgj4xftb_2199,Batch_3,xgj4xftb,2199,360,223,active_uncertain_other,,train,r2req0062,graphite,0.883,graphite,high,"Flat, uniform grey polished face in BSE and ETD; dark uniform Inlens."
+cfe5vt7s_1729,Batch_3,cfe5vt7s,1729,307,1136,active_uncertain_pore_cbd,,train,r2req0062,pore,0.708,pore,high,"Black elongated gap in BSE and ETD between particles, bright Inlens rim."
+71vgq3fw_1137,Batch_3,71vgq3fw,1137,175,1989,active_uncertain_pore_cbd,,train,r2req0062,graphite,0.756,CBD,medium,"Lacy bright Inlens network, spongy mid-grey BSE in pocket between SiOx particles."
+pl8uabbv_981,Batch_3,pl8uabbv,981,161,2530,active_uncertain_pore_cbd,,train,r2req0062,graphite,0.77,graphite,medium,"Smooth uniform grey below boundary line; flat face, few bright spots only."
+9luzk4jm_1149,Batch_3,9luzk4jm,1149,170,141,active_uncertain_other,,train,r2req0061,graphite,0.824,graphite,medium,"Smooth, uniform grey polished face of a small particle; BSE grey matches graphite."
+b3esycq1_6019,Batch_2,b3esycq1,6019,942,852,active_random_pore_cbd,,train,r2req0061,pore,0.841,pore,high,"Elongated gap between particles, dark in BSE, black in ETD."
+rxax5ozo_5494,Batch_2,rxax5ozo,5494,872,1375,active_uncertain_pore_cbd,,train,r2req0061,graphite,0.757,CBD,medium,"Grey film rimming SiOx particle, bright textured Inlens, carbon-level BSE."
+tuy3zymq_5445,Batch_3,tuy3zymq,5445,862,3334,active_uncertain_other,,train,r2req0061,graphite,0.662,CBD,medium,"Pocket at particle junction; bright Inlens, graphite-grey BSE, small nanopore."
+ptg8lmto_4854,Batch_3,ptg8lmto,4854,713,556,active_random_pore_cbd,,train,r2req0061,pore,0.984,pore,medium,"Black in ETD, dark BSE, blurred floor ringed by bright Inlens edges."
+iv6g2oq0_4076,Batch_1,iv6g2oq0,4076,644,728,active_uncertain_other,,train,r2req0061,graphite,0.758,pore,low,"Sloped crack wall: bright Inlens band, ETD edge highlight, adjacent shadowed wedge."
+3806gxp0_3273,Batch_2,3806gxp0,3273,516,1049,active_uncertain_other,,train,r2req0061,graphite,0.765,graphite,high,"Flat, uniform grey face inside a large particle, consistent across detectors."
+4ih2ggld_2512,Batch_1,4ih2ggld,2512,423,2254,active_uncertain_other,,train,r2req0061,graphite,0.724,graphite,low,Flat grey material between pores resembles adjacent graphite; small dark spot.
+iv6g2oq0_1222,Batch_1,iv6g2oq0,1222,202,21,active_random_pore_cbd,,train,r2req0061,pore,0.996,pore,medium,Dark in all three detectors; gap between particles at left edge.
+xgj4xftb_3747,Batch_3,xgj4xftb,3747,605,3052,active_uncertain_other,,val,r2req0061,graphite,0.878,CBD,low,Nanoporous gap filling at particle neck; lighter blob may be SiOx.
+hzumfsms_3794,Batch_3,hzumfsms,3794,572,1442,active_uncertain_other,,train,r2req0031,graphite,0.809,graphite,medium,Flat polished graphite face near particle edge; curtaining streaks continue through outline.
+ufdvpb81_1464,Batch_3,ufdvpb81,1464,228,1173,active_uncertain_other,,train,r2req0031,graphite,0.761,CBD,low,"Neck tip of CBD wedge between particles; graphite-grey BSE, fairly smooth Inlens."
+71vgq3fw_3245,Batch_3,71vgq3fw,3245,478,3203,active_uncertain_other,,train,r2req0031,graphite,0.793,SiOx,medium,Very bright BSE blobs fill most of outline; non-lamellar fragments.
+r17byphk_2951,Batch_2,r17byphk,2951,480,2005,active_uncertain_pore_cbd,,train,r2req0031,pore,0.778,CBD,low,Grey carbon layer coating bright SiOx core; fine cellular Inlens texture.
+uhdslk0o_3194,Batch_1,uhdslk0o,3194,519,1862,active_random_pore_cbd,,train,r2req0031,pore,0.938,pore,medium,"Lumpy 3D-shaded material inside open pore, below polished plane."
+9luzk4jm_5403,Batch_3,9luzk4jm,5403,818,1874,active_uncertain_pore_cbd,,train,r2req0031,CBD,0.706,CBD,medium,Lacy bright Inlens network between graphite particles; graphite-grey BSE.
+utfgcjfa_1557,Batch_3,utfgcjfa,1557,261,1096,active_random_pore_cbd,,train,r2req0031,pore,0.949,pore,low,Smoky dark-grey sloped region beside deep pore; no clear polished face.
+r17byphk_3772,Batch_2,r17byphk,3772,599,3015,active_uncertain_pore_cbd,,train,r2req0031,graphite,0.768,graphite,medium,"Rim of rounded graphite particle; uniform BSE grey, flat in ETD."
+3806gxp0_3224,Batch_2,3806gxp0,3224,512,1392,active_uncertain_pore_cbd,,train,r2req0031,pore,0.704,graphite,low,"Thin strip at graphite interparticle boundary; uniform BSE, possibly thin CBD."
+pl8uabbv_4566,Batch_3,pl8uabbv,4566,743,2167,active_random_pore_cbd,,train,r2req0031,CBD,0.942,mixed,low,Upper part graphite face; lower part CBD plus small pore.
+f1vzngrs_989,Batch_1,f1vzngrs,989,190,2916,active_uncertain_other,,train,r2req0079,graphite,0.768,CBD,medium,Mottled nanotextured pocket between graphite particles with tiny bright SiOx dots
+x77cy643_3310,Batch_3,x77cy643,3310,561,2078,active_uncertain_pore_cbd,,val,r2req0079,CBD,0.758,graphite,low,Flat uniform face in BSE and SE; bright Inlens likely channelling contrast
+b3esycq1_671,Batch_2,b3esycq1,671,110,1413,active_uncertain_pore_cbd,,train,r2req0079,graphite,0.735,graphite,low,"Grey polished face at pore end; could be subsurface, ambiguous"
+rxax5ozo_4094,Batch_2,rxax5ozo,4094,657,566,active_uncertain_other,,train,r2req0079,graphite,0.848,graphite,medium,Within large flat graphite particle near its edge; uniform BSE grey
+vc2whyaq_3869,Batch_3,vc2whyaq,3869,604,3178,active_uncertain_pore_cbd,,train,r2req0079,graphite,0.674,CBD,low,Finely textured strip between cracks within CBD-rich network beside particle
+ffwubibz_3615,Batch_1,ffwubibz,3615,569,2909,active_uncertain_pore_cbd,,train,r2req0079,graphite,0.785,CBD,low,Mottled nanoporous pocket with small pore and SiOx bits; top part ambiguous
+hawkfj64_1552,Batch_3,hawkfj64,1552,258,751,active_uncertain_pore_cbd,,train,r2req0079,graphite,0.765,graphite,low,Flat uniform grey face beside elongated particle; no lacy texture
+hawkfj64_4479,Batch_3,hawkfj64,4479,728,912,active_uncertain_pore_cbd,,train,r2req0079,pore,0.781,CBD,low,"Bright mottled Inlens band wrapping particle; BSE only mildly brighter, not SiOx"
+ffwubibz_4642,Batch_1,ffwubibz,4642,708,304,active_uncertain_other,,val,r2req0079,graphite,0.811,graphite,medium,Flat grey in BSE and ETD inside rounded particle; dark Inlens likely channelling
+5n1q8atc_5958,Batch_1,5n1q8atc,5958,986,3147,active_random_pore_cbd,,train,r2req0079,pore,0.831,pore,medium,"Black in Inlens along SiOx-graphite interface; grey floor in BSE/ETD, open gap"
+3806gxp0_5374,Batch_2,3806gxp0,5374,856,20,active_uncertain_other,,train,r2req0028,graphite,0.801,CBD,medium,"Finely speckled, bright in ETD, beside lacy CBD; graphite-grey BSE between particles."
+iv6g2oq0_2849,Batch_1,iv6g2oq0,2849,457,686,active_uncertain_pore_cbd,,train,r2req0028,pore,0.746,pore,medium,Dark cavity at particle junction with visible floor; bright rims in Inlens/ETD.
+utfgcjfa_3382,Batch_3,utfgcjfa,3382,553,1884,active_uncertain_other,,train,r2req0028,graphite,0.838,graphite,low,Uniform BSE grey particle face with lamellar Inlens streaks; SE slightly shadowed.
+ptg8lmto_3700,Batch_3,ptg8lmto,3700,548,1571,active_uncertain_pore_cbd,,train,r2req0028,pore,0.818,pore,low,"Particle inside pore, darker in BSE/ETD than polished faces; likely below plane."
+mgxahqnk_2611,Batch_3,mgxahqnk,2611,459,16,active_random_pore_cbd,,val,r2req0028,CBD,0.959,graphite,low,Mostly flat uniform grey particle face; bright CBD band only at right edge.
+uhdslk0o_2491,Batch_1,uhdslk0o,2491,404,654,active_uncertain_pore_cbd,,train,r2req0028,pore,0.769,pore,medium,"Inside elongated cavity in graphite; shaded floor below plane, bright rims."
+9luzk4jm_2610,Batch_3,9luzk4jm,2610,411,491,active_uncertain_other,,train,r2req0028,graphite,0.723,graphite,low,Graphite edge and sliver around thin crack; crack is minority of region.
+tuy3zymq_4561,Batch_3,tuy3zymq,4561,720,1457,active_uncertain_other,,train,r2req0028,graphite,0.767,pore,low,"Recessed region beside particle, soft BSE, darker ETD with shadow strip."
+rxax5ozo_2349,Batch_2,rxax5ozo,2349,383,2887,active_random_pore_cbd,,train,r2req0028,pore,0.888,CBD,low,"Thin film-like band along particle edge, lighter BSE, distinct Inlens contrast."
+3806gxp0_3154,Batch_2,3806gxp0,3154,493,1069,active_uncertain_pore_cbd,,train,r2req0028,graphite,0.699,graphite,medium,Uniform flat grey face of large graphite particle below textured CBD band.
+fzrt2k6r_3562,Batch_1,fzrt2k6r,3562,582,1662,active_random_pore_cbd,,val,r2req0077,pore,0.983,pore,high,"Gap between particles; black in ETD and Inlens, dark in BSE."
+9luzk4jm_4548,Batch_3,9luzk4jm,4548,691,2925,active_uncertain_other,,train,r2req0077,graphite,0.796,CBD,low,Bright textured Inlens band along particle edge; BSE grey like graphite.
+5n1q8atc_2354,Batch_1,5n1q8atc,2354,411,425,active_random_pore_cbd,,train,r2req0077,CBD,0.934,graphite,medium,"Mostly flat graphite face with curtaining, beside SiOx; includes thin boundary crack."
+r17byphk_3601,Batch_2,r17byphk,3601,581,2194,active_uncertain_pore_cbd,,train,r2req0077,pore,0.791,pore,medium,"Dark shadowed in ETD, grey floor in BSE, ringed by bright Inlens edges."
+pl8uabbv_788,Batch_3,pl8uabbv,788,136,1399,active_uncertain_pore_cbd,,train,r2req0077,CBD,0.739,pore,low,Recessed dark pocket in ETD below large pore; grey floor in BSE.
+uhdslk0o_3884,Batch_1,uhdslk0o,3884,626,101,active_uncertain_pore_cbd,,train,r2req0077,CBD,0.797,CBD,low,"Graphite-grey film wrapping bright SiOx particle, with thin crack beneath."
+cfe5vt7s_1362,Batch_3,cfe5vt7s,1362,253,1416,active_uncertain_pore_cbd,,train,r2req0077,CBD,0.775,graphite,low,"Flat uniform grey in BSE and ETD; Inlens dark, not lacy."
+epqdaau9_1523,Batch_2,epqdaau9,1523,266,253,active_uncertain_pore_cbd,,train,r2req0077,CBD,0.716,graphite,medium,Sliver inside graphite at channelling boundary; uniform BSE and ETD grey.
+vc2whyaq_3653,Batch_3,vc2whyaq,3653,580,229,active_uncertain_pore_cbd,,train,r2req0077,graphite,0.771,graphite,medium,Flat polished grey face continuous with graphite; lamellar bright streaks in Inlens.
+rxax5ozo_5993,Batch_2,rxax5ozo,5993,946,614,active_random_pore_cbd,,val,r2req0077,pore,0.934,pore,high,"Black in BSE, Inlens and SE; open gap between particles."
+mgxahqnk_1084,Batch_3,mgxahqnk,1084,188,64,active_uncertain_pore_cbd,,train,r2req0065,graphite,0.749,CBD,medium,Finely textured strip at particle neck connecting two pores; brighter Inlens than graphite.
+rxax5ozo_3342,Batch_2,rxax5ozo,3342,539,135,active_random_pore_cbd,,train,r2req0065,CBD,0.971,CBD,medium,Bright textured Inlens band between graphite edge and pore; graphite-grey BSE.
+71vgq3fw_3239,Batch_3,71vgq3fw,3239,479,535,active_uncertain_pore_cbd,,train,r2req0065,graphite,0.737,pore,low,Dark shadowed hole in ETD and BSE within CBD band; some CBD rim.
+tuy3zymq_640,Batch_3,tuy3zymq,640,105,3193,active_uncertain_pore_cbd,,val,r2req0065,graphite,0.763,graphite,medium,Uniform BSE grey inside large particle; bright Inlens streak likely internal crack.
+mgxahqnk_4411,Batch_3,mgxahqnk,4411,730,410,active_uncertain_pore_cbd,,train,r2req0065,pore,0.784,CBD,low,"Pocket between particles; bright finely textured Inlens, recessed shading in ETD."
+b3esycq1_654,Batch_2,b3esycq1,654,101,2483,active_random_pore_cbd,,train,r2req0065,pore,0.996,pore,high,Black in all three detectors; deep open pore.
+avn74qx1_1554,Batch_2,avn74qx1,1554,248,1265,active_uncertain_other,,val,r2req0065,graphite,0.815,graphite,medium,Flat uniform grey; streaks continuous with adjacent large graphite particle.
+epqdaau9_418,Batch_2,epqdaau9,418,86,1954,active_random_pore_cbd,,val,r2req0065,pore,0.903,pore,low,"Narrow dark gap plus out-of-focus, ETD-shaded pore floor material."
+r17byphk_804,Batch_2,r17byphk,804,140,2770,active_uncertain_pore_cbd,,val,r2req0065,pore,0.738,graphite,low,"Smooth carbon-grey BSE beside bright SiOx; flat, no lacy texture."
+iv6g2oq0_4154,Batch_1,iv6g2oq0,4154,642,864,active_uncertain_pore_cbd,,train,r2req0065,pore,0.707,CBD,low,Grey material at junction of crack and pore chain; likely neck CBD.
+tuy3zymq_4604,Batch_3,tuy3zymq,4604,714,968,active_uncertain_pore_cbd,,train,r2req0008,graphite,0.739,pore,low,"Thin slit between graphite and upper material; dark in Inlens, black gap in ETD."
+pl8uabbv_1536,Batch_3,pl8uabbv,1536,243,388,active_uncertain_pore_cbd,,train,r2req0008,CBD,0.708,CBD,low,Bright rim on particle's lower edge; bubbly Inlens texture suggests CBD film.
+pl8uabbv_2844,Batch_3,pl8uabbv,2844,467,1523,active_uncertain_pore_cbd,,train,r2req0008,graphite,0.773,pore,low,"Recess at graphite edge with 3D shading, dark hole, bright Inlens rim."
+0grcilhi_2702,Batch_3,0grcilhi,2702,446,3040,active_uncertain_pore_cbd,,train,r2req0008,pore,0.773,graphite,low,"Smooth patch with graphite-like Inlens tone; surroundings ambiguous, possibly pore floor."
+cfe5vt7s_476,Batch_3,cfe5vt7s,476,83,2824,active_uncertain_pore_cbd,,val,r2req0008,graphite,0.778,CBD,low,"Light band above deep pore, light in Inlens unlike graphite; likely CBD."
+5n1q8atc_5367,Batch_1,5n1q8atc,5367,882,1936,active_uncertain_pore_cbd,,val,r2req0008,graphite,0.657,pore,medium,"Inter-particle gap black in Inlens, grey floor in BSE/ETD: open pore."
+fzrt2k6r_721,Batch_1,fzrt2k6r,721,128,755,active_random_pore_cbd,,train,r2req0008,CBD,0.887,CBD,low,"Pocket at particle junction, graphite-grey BSE, bright Inlens spots, small slit."
+i9jiqjwl_5654,Batch_2,i9jiqjwl,5654,911,2080,active_random_pore_cbd,,train,r2req0008,CBD,0.883,SiOx,medium,Elongated particle bright in BSE like neighbouring SiOx; tail includes other material.
+cfe5vt7s_1659,Batch_3,cfe5vt7s,1659,303,1254,active_uncertain_pore_cbd,,train,r2req0008,graphite,0.778,graphite,medium,"Flat uniform grey in BSE/ETD, dark Inlens like adjacent graphite; tiny pore."
+cfe5vt7s_1577,Batch_3,cfe5vt7s,1577,280,2256,active_uncertain_pore_cbd,,train,r2req0008,pore,0.758,pore,medium,"Blurry grey in BSE, dark and shadowed in ETD next to deep pore."
+fzrt2k6r_4463,Batch_1,fzrt2k6r,4463,723,19,active_uncertain_other,,train,r2req0081,graphite,0.792,pore,low,Thin ribbon at pore tip following narrow dark crack between particles
+hzumfsms_5090,Batch_3,hzumfsms,5090,745,3005,active_uncertain_pore_cbd,,train,r2req0081,CBD,0.78,graphite,low,"Uniform graphite-grey flake band in BSE; smooth in Inlens, no lacy texture"
+5n1q8atc_2865,Batch_1,5n1q8atc,2865,488,1394,active_uncertain_pore_cbd,,train,r2req0081,CBD,0.745,pore,medium,"Pocket beside graphite edge, shadowed dark in ETD; grey unfilled pore floor"
+f1vzngrs_5277,Batch_1,f1vzngrs,5277,842,1919,active_uncertain_pore_cbd,,train,r2req0081,CBD,0.747,graphite,low,Mostly flat graphite face around a small dark crack slit
+x77cy643_777,Batch_3,x77cy643,777,125,800,active_uncertain_pore_cbd,,train,r2req0081,graphite,0.752,CBD,medium,"Mottled nanoporous band between graphite particles, brighter in Inlens, graphite-grey BSE"
+avn74qx1_4774,Batch_2,avn74qx1,4774,749,2114,active_uncertain_other,,train,r2req0081,graphite,0.793,CBD,medium,Granular spongy film along graphite edge bordering open pore
+5n1q8atc_2889,Batch_1,5n1q8atc,2889,490,1062,active_uncertain_pore_cbd,,val,r2req0081,CBD,0.724,CBD,low,"Arch within porous lacy pocket between particles, rimming small pore"
+9luzk4jm_4607,Batch_3,9luzk4jm,4607,707,2153,active_random_pore_cbd,,val,r2req0081,CBD,0.896,graphite,medium,Flat uniform grey continuous with adjacent graphite; small hole minor
+vc2whyaq_1822,Batch_3,vc2whyaq,1822,286,1172,active_random_pore_cbd,,val,r2req0081,pore,0.926,pore,medium,Mostly black crack in all detectors; small grey wall lobe
+utfgcjfa_4878,Batch_3,utfgcjfa,4878,806,1302,active_random_pore_cbd,,val,r2req0081,CBD,0.945,graphite,low,Bright SiOx blob is minority; majority flat graphite-grey surface
+iv6g2oq0_1975,Batch_1,iv6g2oq0,1975,331,765,active_uncertain_other,,train,r2req0005,graphite,0.81,CBD,medium,"Pocket between particles with small nodules; finely textured, graphite-grey BSE."
+x77cy643_3980,Batch_3,x77cy643,3980,683,711,active_random_pore_cbd,,train,r2req0005,pore,0.971,pore,high,Black in Inlens and SE; blurry dark grey floor in BSE.
+tuy3zymq_6020,Batch_3,tuy3zymq,6020,949,1376,active_uncertain_pore_cbd,,val,r2req0005,CBD,0.767,SiOx,low,Bright BSE and mottled Inlens like adjacent SiOx; borders pore below.
+iv6g2oq0_2004,Batch_1,iv6g2oq0,2004,330,1747,active_random_pore_cbd,,train,r2req0005,pore,0.899,pore,high,"Dark in all detectors, black in ETD; smooth out-of-plane floor."
+avn74qx1_1729,Batch_2,avn74qx1,1729,269,2649,active_random_pore_cbd,,train,r2req0005,pore,0.994,pore,medium,"Black in ETD, dark BSE; recessed region above flat graphite edge."
+uhdslk0o_3724,Batch_1,uhdslk0o,3724,601,2082,active_uncertain_other,,val,r2req0005,graphite,0.741,pore,medium,3D-shaded faceted surfaces in ETD/Inlens; no flat polished face.
+mgxahqnk_3943,Batch_3,mgxahqnk,3943,657,880,active_random_pore_cbd,,train,r2req0005,CBD,0.986,pore,medium,"Inside cavity; strong ETD ridge/shadow shading, bright Inlens edge; below plane."
+hzumfsms_3739,Batch_3,hzumfsms,3739,546,3196,active_uncertain_pore_cbd,,train,r2req0005,pore,0.761,pore,low,"Smooth domed, shaded surface below plane at graphite edge; thin strip."
+mgxahqnk_2782,Batch_3,mgxahqnk,2782,495,2665,active_random_pore_cbd,,val,r2req0005,CBD,0.848,pore,low,"ETD darker with gradient shadow, bright Inlens rim; possibly CBD pocket."
+ufdvpb81_6544,Batch_3,ufdvpb81,6544,922,2105,active_uncertain_other,,train,r2req0005,graphite,0.768,graphite,low,"Curtaining streaks in ETD, uniform Inlens; flake-like band; BSE slightly bright."
+uhdslk0o_1622,Batch_1,uhdslk0o,1622,273,2403,active_uncertain_other,,train,r2req0089,graphite,0.837,graphite,low,Smooth grey band at pore edge matches adjacent graphite; possibly sloped wall.
+fzrt2k6r_3049,Batch_1,fzrt2k6r,3049,501,2135,active_random_pore_cbd,,train,r2req0089,CBD,0.967,SiOx,medium,Bright mottled BSE particle dominates outline; small pore included.
+utfgcjfa_3761,Batch_3,utfgcjfa,3761,624,312,active_random_pore_cbd,,train,r2req0089,pore,0.949,pore,medium,"Below particle edge; 3D-shaded, out-of-focus pore floor in Inlens and SE."
+r17byphk_6012,Batch_2,r17byphk,6012,926,621,active_uncertain_pore_cbd,,val,r2req0089,graphite,0.699,graphite,medium,Uniform flat grey matching lower graphite particle in all detectors.
+vc2whyaq_4246,Batch_3,vc2whyaq,4246,666,840,active_uncertain_pore_cbd,,train,r2req0089,CBD,0.76,CBD,low,Textured material with bright Inlens rims at particle junction; maybe small SiOx bit.
+x77cy643_1178,Batch_3,x77cy643,1178,187,426,active_random_pore_cbd,,train,r2req0089,pore,0.901,pore,low,"Dark region atop black pore, bright Inlens rims; no clear polished face."
+4ih2ggld_4295,Batch_1,4ih2ggld,4295,719,3118,active_uncertain_pore_cbd,,train,r2req0089,graphite,0.712,pore,high,Dark in all detectors; shadowed recess below particle edge.
+mgxahqnk_1190,Batch_3,mgxahqnk,1190,204,274,active_uncertain_other,,train,r2req0089,graphite,0.835,pore,medium,"Shallow elongated pit: shaded floor, bright Inlens, dark deep end in ETD."
+x7u69zsw_2491,Batch_3,x7u69zsw,2491,408,3118,active_random_pore_cbd,,train,r2req0089,pore,0.936,pore,high,Mostly black interior in all detectors with bright Inlens rims.
+5n1q8atc_3698,Batch_1,5n1q8atc,3698,616,1803,active_random_pore_cbd,,train,r2req0089,pore,0.934,pore,medium,"Darker than graphite in BSE, black in Inlens; unfilled pocket between particles."
+kbdh4tri_4262,Batch_3,kbdh4tri,4262,669,3268,active_random_pore_cbd,,train,r2req0080,pore,0.927,CBD,low,"Grey BSE film along SiOx edge, brighter Inlens than graphite; small black pore portion"
+pl8uabbv_3009,Batch_3,pl8uabbv,3009,485,2816,active_random_pore_cbd,,train,r2req0080,CBD,0.923,CBD,low,"Lacy grey strands with holes, very bright Inlens; some open pore included"
+rxax5ozo_4774,Batch_2,rxax5ozo,4774,744,2148,active_uncertain_pore_cbd,,train,r2req0080,graphite,0.767,pore,medium,"Rounded particle below plane: fuzzy BSE, dome-like 3D shading in ETD"
+3806gxp0_1157,Batch_2,3806gxp0,1157,212,879,active_random_pore_cbd,,train,r2req0080,CBD,0.899,graphite,medium,"Flat grey BSE, dark Inlens matching adjacent lamellar graphite; SiOx excluded"
+0grcilhi_2509,Batch_3,0grcilhi,2509,414,1027,active_uncertain_pore_cbd,,train,r2req0080,CBD,0.712,pore,medium,"Particle surface sits in deep cavity; ETD gradient shading, out-of-focus look"
+hzumfsms_6082,Batch_3,hzumfsms,6082,912,276,active_uncertain_pore_cbd,,train,r2req0080,graphite,0.69,graphite,low,"Smooth grey BSE, dark Inlens like graphite, between particle edge and pore"
+mgxahqnk_2281,Batch_3,mgxahqnk,2281,381,2485,active_uncertain_pore_cbd,,train,r2req0080,graphite,0.78,graphite,medium,"Uniform flat grey in BSE and ETD, dark Inlens; inside graphite band"
+vc2whyaq_2519,Batch_3,vc2whyaq,2519,401,2245,active_random_pore_cbd,,train,r2req0080,pore,0.996,pore,high,Dark in BSE and ETD; open gap between two particles
+avn74qx1_1693,Batch_2,avn74qx1,1693,266,669,active_random_pore_cbd,,train,r2req0080,pore,0.984,pore,low,"Grey floor within pore channel, darker shaded ETD, bright Inlens rim; likely recessed"
+f1vzngrs_4362,Batch_1,f1vzngrs,4362,701,1332,active_uncertain_pore_cbd,,val,r2req0080,CBD,0.671,CBD,low,Graphite-grey BSE at particle junction near pores; brighter Inlens patch
+ffwubibz_1369,Batch_1,ffwubibz,1369,215,1369,active_uncertain_other,,train,r2req0019,graphite,0.795,graphite,medium,Flat uniform grey inside large graphite particle; boundary only at right edge.
+f1vzngrs_625,Batch_1,f1vzngrs,625,117,707,active_random_pore_cbd,,train,r2req0019,pore,0.81,pore,low,"Shadowed in ETD, grey in BSE, smooth floor; open pocket beside SiOx."
+xgj4xftb_4379,Batch_3,xgj4xftb,4379,707,1491,active_uncertain_pore_cbd,,train,r2req0019,graphite,0.796,pore,low,"Faceted 3D surfaces below polished plane, bright Inlens edges, no flat face."
+3806gxp0_676,Batch_2,3806gxp0,676,124,1214,active_random_pore_cbd,,train,r2req0019,CBD,0.91,CBD,medium,"Spongy grey material between SiOx particles, bright Inlens, some embedded pores."
+pl8uabbv_3703,Batch_3,pl8uabbv,3703,600,3270,active_uncertain_other,,train,r2req0019,graphite,0.792,CBD,low,"Rounded holey lump at graphite edge, mottled Inlens; possibly graphite fragment."
+pl8uabbv_5344,Batch_3,pl8uabbv,5344,856,2757,active_uncertain_other,,val,r2req0019,graphite,0.768,graphite,medium,Uniform polished grey sliver at graphite junction beneath pore.
+r17byphk_4868,Batch_2,r17byphk,4868,753,949,active_uncertain_pore_cbd,,val,r2req0019,CBD,0.758,pore,medium,"Black shadow in ETD, grey BSE floor, bright Inlens rim: open pore."
+hawkfj64_5106,Batch_3,hawkfj64,5106,825,71,active_random_pore_cbd,,train,r2req0019,pore,0.99,pore,medium,Thin strip along dark crack edge; dark in BSE and ETD.
+iv6g2oq0_3337,Batch_1,iv6g2oq0,3337,531,3007,active_uncertain_pore_cbd,,train,r2req0019,pore,0.719,CBD,medium,"Mottled nanoporous band between SiOx and graphite, few small pores."
+iv6g2oq0_1081,Batch_1,iv6g2oq0,1081,177,168,active_uncertain_pore_cbd,,train,r2req0019,graphite,0.737,pore,low,Bright arc on blurred below-plane surface inside large open pore region.
+ptg8lmto_1884,Batch_3,ptg8lmto,1884,281,2004,active_random_pore_cbd,,train,r2req0029,CBD,0.942,CBD,low,"Film-like band along graphite edge, bright in Inlens/ETD, slightly lighter BSE."
+3806gxp0_3550,Batch_2,3806gxp0,3550,561,973,active_uncertain_pore_cbd,,val,r2req0029,pore,0.737,pore,high,"Elongated slit, dark in BSE and black in ETD, inside graphite particle."
+9luzk4jm_5296,Batch_3,9luzk4jm,5296,811,1568,active_uncertain_pore_cbd,,train,r2req0029,CBD,0.769,pore,medium,"Lens-shaped gap between particles: black in ETD, grey floor in BSE."
+ffwubibz_787,Batch_1,ffwubibz,787,136,1199,active_uncertain_pore_cbd,,train,r2req0029,graphite,0.781,CBD,low,Patchy BSE and lacy bright Inlens network at particle edge beside pores.
+cfe5vt7s_1027,Batch_3,cfe5vt7s,1027,206,3038,active_random_pore_cbd,,train,r2req0029,CBD,0.989,CBD,low,"Inlens-bright, BSE-lighter elongated pocket in graphite; likely CBD-filled crack."
+r17byphk_5404,Batch_2,r17byphk,5404,834,3219,active_uncertain_other,,train,r2req0029,graphite,0.824,graphite,low,"Uniform grey BSE, smooth Inlens/ETD; particle face just above gap."
+cfe5vt7s_3935,Batch_3,cfe5vt7s,3935,659,2537,active_random_pore_cbd,,train,r2req0029,pore,0.985,pore,high,Black in all three detectors; deep open pore.
+hzumfsms_6192,Batch_3,hzumfsms,6192,919,164,active_uncertain_pore_cbd,,train,r2req0029,CBD,0.652,CBD,low,"Thin strip along graphite surface, very bright in ETD/Inlens; likely CBD film."
+hzumfsms_946,Batch_3,hzumfsms,946,148,2162,active_random_pore_cbd,,train,r2req0029,pore,0.995,pore,medium,"Dark, soft BSE and shadowed ETD; foamy floor below polished plane."
+kbdh4tri_1042,Batch_3,kbdh4tri,1042,167,2007,active_uncertain_pore_cbd,,train,r2req0029,graphite,0.745,CBD,low,Inlens-bright band at particle neck with thin dark slit; CBD likely dominant.
+kbdh4tri_6144,Batch_3,kbdh4tri,6144,946,3119,active_uncertain_pore_cbd,,train,r2req0060,graphite,0.759,pore,low,Dark ETD/BSE recess along crack; grey Inlens floor; some CBD rims.
+rxax5ozo_2508,Batch_2,rxax5ozo,2508,425,641,active_random_pore_cbd,,train,r2req0060,CBD,0.921,pore,low,Black pore in all detectors dominates; small grey fragment and crack below.
+mgxahqnk_4591,Batch_3,mgxahqnk,4591,754,2659,active_uncertain_other,,train,r2req0060,graphite,0.85,CBD,low,Graphite-grey BSE pocket between SiOx particles; speckled bright Inlens suggests CBD.
+xgj4xftb_4104,Batch_3,xgj4xftb,4104,661,1417,active_uncertain_pore_cbd,,train,r2req0060,CBD,0.774,CBD,medium,Inside lacy bright Inlens network band between particles; graphite-grey BSE.
+r17byphk_2052,Batch_2,r17byphk,2052,358,334,active_uncertain_pore_cbd,,train,r2req0060,graphite,0.752,graphite,low,Thin bright rim at graphite particle edge bordering large pore.
+utfgcjfa_1341,Batch_3,utfgcjfa,1341,226,3077,active_random_pore_cbd,,train,r2req0060,CBD,0.888,pore,low,"Smooth 3D-shaded SE surface, grey BSE, shadows; material below polished plane."
+kbdh4tri_1291,Batch_3,kbdh4tri,1291,205,50,active_uncertain_other,,train,r2req0060,graphite,0.781,CBD,medium,"Lacy textured Inlens network, slightly lighter BSE, in-plane pocket between particles."
+ptg8lmto_3285,Batch_3,ptg8lmto,3285,480,3429,active_random_pore_cbd,,train,r2req0060,pore,0.953,pore,low,"Black pocket at graphite edge in all detectors, thin grey rims included."
+mgxahqnk_4162,Batch_3,mgxahqnk,4162,690,2759,active_random_pore_cbd,,val,r2req0060,CBD,0.901,pore,low,Elongated black ETD pocket within lacy CBD; roughly half pore.
+avn74qx1_1467,Batch_2,avn74qx1,1467,232,3187,active_random_pore_cbd,,train,r2req0060,pore,0.992,pore,medium,"Dark channel between particles, black in ETD; particle edge only at left."
+hawkfj64_3273,Batch_3,hawkfj64,3273,531,1593,active_uncertain_pore_cbd,,val,r2req0070,graphite,0.791,CBD,low,"Thin film between SiOx and graphite with lighter, mottled Inlens texture."
+hawkfj64_3521,Batch_3,hawkfj64,3521,577,2040,active_uncertain_other,,train,r2req0070,graphite,0.796,graphite,low,"Flat, uniform carbon-grey face in BSE and ETD without shadows; complex surroundings."
+epqdaau9_1359,Batch_2,epqdaau9,1359,251,1800,active_uncertain_pore_cbd,,train,r2req0070,CBD,0.736,CBD,low,"Bright Inlens band, slightly brighter in BSE, at particle neck beside pore."
+ufdvpb81_781,Batch_3,ufdvpb81,781,126,3393,active_uncertain_pore_cbd,,val,r2req0070,graphite,0.741,graphite,medium,"Inside large particle; uniform BSE, ETD streaks; dark Inlens likely channelling."
+ffwubibz_3090,Batch_1,ffwubibz,3090,476,74,active_uncertain_other,,train,r2req0070,graphite,0.775,graphite,low,"Smooth medium-grey face at carbon BSE level, no shadow; bright Inlens rim."
+cfe5vt7s_4779,Batch_3,cfe5vt7s,4779,777,3337,active_random_pore_cbd,,train,r2req0070,CBD,0.93,pore,low,"Small pit: dark centre in BSE and ETD, ringed by bright Inlens."
+iv6g2oq0_4211,Batch_1,iv6g2oq0,4211,651,870,active_uncertain_pore_cbd,,train,r2req0070,graphite,0.753,graphite,low,Smooth grey face near particle junction; no lacy texture or shadows.
+rxax5ozo_1664,Batch_2,rxax5ozo,1664,261,2318,active_uncertain_pore_cbd,,val,r2req0070,graphite,0.72,graphite,low,Grey flat face in BSE and SE; dark Inlens probably channelling contrast.
+hzumfsms_639,Batch_3,hzumfsms,639,100,2106,active_uncertain_pore_cbd,,train,r2req0070,pore,0.745,pore,low,ETD shadow below bright graphite edge; grey BSE suggests shallow pore floor.
+f1vzngrs_4789,Batch_1,f1vzngrs,4789,781,2226,active_random_pore_cbd,,train,r2req0070,pore,0.949,pore,medium,"Most of outline lies in pore, black in ETD; lower tail on graphite."
+kbdh4tri_1948,Batch_3,kbdh4tri,1948,305,1636,active_uncertain_other,,train,r2req0009,graphite,0.794,graphite,medium,"Uniform grey flat face, dark Inlens; thin crack occupies small fraction."
+ffwubibz_1132,Batch_1,ffwubibz,1132,184,1799,active_uncertain_pore_cbd,,train,r2req0009,CBD,0.773,graphite,high,Flat uniform BSE face with lamellar streaks inside large flake particle.
+pl8uabbv_1211,Batch_3,pl8uabbv,1211,211,3258,active_random_pore_cbd,,train,r2req0009,pore,0.957,pore,high,"Dark in BSE and ETD between particles, bright Inlens rim edge."
+pl8uabbv_2332,Batch_3,pl8uabbv,2332,368,576,active_random_pore_cbd,,val,r2req0009,pore,0.995,pore,medium,Lower end of dark pore between two particles; dark BSE and ETD.
+cfe5vt7s_3585,Batch_3,cfe5vt7s,3585,604,358,active_uncertain_pore_cbd,,train,r2req0009,graphite,0.775,graphite,low,"Smooth medium-grey face, not BSE-bright, no lacy texture."
+tuy3zymq_4800,Batch_3,tuy3zymq,4800,758,3366,active_random_pore_cbd,,train,r2req0009,pore,0.92,pore,low,"Gap between particles; shaded, non-planar surface, darker in ETD than faces."
+pl8uabbv_3730,Batch_3,pl8uabbv,3730,603,554,active_uncertain_pore_cbd,,train,r2req0009,CBD,0.709,graphite,low,Medium BSE grey like adjacent graphite particle tip; not bright like SiOx.
+b3esycq1_6102,Batch_2,b3esycq1,6102,959,2691,active_uncertain_other,,train,r2req0009,SiOx,0.737,pore,low,"Strong 3D shading in ETD, mottled BSE, no clear flat polished face."
+9luzk4jm_4186,Batch_3,9luzk4jm,4186,638,893,active_uncertain_other,,train,r2req0009,graphite,0.716,CBD,low,"Small pocket at particle junction, lacy bright Inlens network, graphite-grey BSE."
+5n1q8atc_3517,Batch_1,5n1q8atc,3517,584,288,active_uncertain_other,,train,r2req0009,graphite,0.802,SiOx,medium,"Small patch clearly brighter than surrounding graphite in BSE; angular, non-lamellar."
+mgxahqnk_3872,Batch_3,mgxahqnk,3872,630,1901,active_uncertain_pore_cbd,,train,r2req0007,pore,0.784,SiOx,low,Lighter BSE particle with saturated Inlens charging; outline within its lower part.
+kbdh4tri_745,Batch_3,kbdh4tri,745,112,2539,active_uncertain_pore_cbd,,train,r2req0007,graphite,0.722,pore,low,Hazy sub-surface shapes ringed by bright Inlens edges; no flat polished face.
+b3esycq1_858,Batch_2,b3esycq1,858,135,2284,active_random_pore_cbd,,train,r2req0007,CBD,0.979,SiOx,medium,"Lighter BSE and saturated Inlens, matching nearby SiOx particles."
+ufdvpb81_1349,Batch_3,ufdvpb81,1349,211,167,active_uncertain_other,,train,r2req0007,graphite,0.792,pore,low,Thin sliver on sloped pore wall; bright Inlens band along pore edge.
+iv6g2oq0_4848,Batch_1,iv6g2oq0,4848,743,1841,active_uncertain_pore_cbd,,train,r2req0007,graphite,0.741,graphite,low,Flat uniform BSE/ETD grey like graphite; dark Inlens likely channelling contrast.
+rxax5ozo_2268,Batch_2,rxax5ozo,2268,371,2553,active_uncertain_pore_cbd,,val,r2req0007,graphite,0.784,graphite,medium,"Flat polished face, BSE grey matches graphite; Inlens brightness likely charging."
+r17byphk_5214,Batch_2,r17byphk,5214,815,3206,active_uncertain_other,,val,r2req0007,graphite,0.808,graphite,low,Mostly flat graphite grey; small bright-edged inclusion is minority of outline.
+kbdh4tri_2913,Batch_3,kbdh4tri,2913,443,2336,active_random_pore_cbd,,train,r2req0007,pore,0.94,pore,low,"Smooth grey floor lacking curtaining, ETD shading, beside deep black pore."
+fzrt2k6r_2913,Batch_1,fzrt2k6r,2913,472,1705,active_random_pore_cbd,,train,r2req0007,pore,0.996,pore,high,Sliver between black deep pore and blurred out-of-focus pore floor.
+avn74qx1_2122,Batch_2,avn74qx1,2122,335,359,active_uncertain_pore_cbd,,val,r2req0007,pore,0.728,pore,low,"Hazy lighter BSE, bright Inlens rims, ETD shading suggest pore floor."
+hawkfj64_2959,Batch_3,hawkfj64,2959,480,2320,active_random_pore_cbd,,train,r2req0084,CBD,0.966,pore,low,"Smooth, blurred subsurface material with ETD shadow and bright Inlens; no polished face."
+9luzk4jm_886,Batch_3,9luzk4jm,886,141,3428,active_random_pore_cbd,,train,r2req0084,pore,0.967,pore,high,"Darker than graphite in BSE, dark in ETD, mottled pore floor in Inlens."
+uhdslk0o_2436,Batch_1,uhdslk0o,2436,403,543,active_random_pore_cbd,,train,r2req0084,CBD,0.991,CBD,low,Grey strip between particles beside bright graphite edge; likely binder film.
+r17byphk_3699,Batch_2,r17byphk,3699,589,2208,active_uncertain_pore_cbd,,train,r2req0084,CBD,0.763,pore,medium,"Dark recess in ETD, textured floor, bright Inlens rim around it."
+uhdslk0o_4960,Batch_1,uhdslk0o,4960,790,2740,active_uncertain_pore_cbd,,train,r2req0084,CBD,0.791,CBD,low,Irregular pocket at particle junction with bright Inlens specks and small pore.
+epqdaau9_4024,Batch_2,epqdaau9,4024,667,1167,active_random_pore_cbd,,val,r2req0084,pore,0.895,pore,high,Black cavity in BSE and ETD with recessed floor material.
+ufdvpb81_957,Batch_3,ufdvpb81,957,153,907,active_uncertain_pore_cbd,,train,r2req0084,pore,0.754,pore,low,"Shadowed, recessed corner next to dark wedge pore; dark in ETD."
+71vgq3fw_4919,Batch_3,71vgq3fw,4919,733,263,active_uncertain_pore_cbd,,train,r2req0084,CBD,0.704,pore,medium,"Blurred band below plane, dark in ETD, veined Inlens pore floor."
+f1vzngrs_3557,Batch_1,f1vzngrs,3557,593,824,active_uncertain_pore_cbd,,train,r2req0084,CBD,0.742,graphite,medium,"Uniform flat grey face in all detectors, right of bright edge."
+vc2whyaq_3084,Batch_3,vc2whyaq,3084,490,3296,active_uncertain_pore_cbd,,train,r2req0084,graphite,0.757,graphite,low,"Edge band of polished graphite particle; uniform BSE grey, bright SE edge."
+r17byphk_4897,Batch_2,r17byphk,4897,755,2474,active_random_pore_cbd,,train,r2req0042,pore,0.954,pore,high,Black in all three detectors; open crack between graphite particles.
+i9jiqjwl_6231,Batch_2,i9jiqjwl,6231,971,1384,active_uncertain_pore_cbd,,train,r2req0042,graphite,0.731,graphite,low,"Edge band of graphite particle beside pore; bright from edge effect, not lacy."
+0grcilhi_1433,Batch_3,0grcilhi,1433,237,3452,active_uncertain_pore_cbd,,train,r2req0042,pore,0.72,CBD,low,"Graphite-grey textured film around SiOx particle, with small dark nanopores."
+hzumfsms_3971,Batch_3,hzumfsms,3971,605,2045,active_random_pore_cbd,,train,r2req0042,CBD,0.917,graphite,low,Mostly flat uniform grey particle face; lower part contains CBD and pores.
+i9jiqjwl_1444,Batch_2,i9jiqjwl,1444,267,2163,active_uncertain_pore_cbd,,train,r2req0042,graphite,0.755,graphite,medium,Flat uniform grey in BSE and ETD; dark Inlens patch likely channelling.
+ptg8lmto_1349,Batch_3,ptg8lmto,1349,205,108,active_uncertain_other,,train,r2req0042,graphite,0.867,graphite,medium,"Uniform flat grey face next to small pore, above SiOx particle."
+mgxahqnk_4978,Batch_3,mgxahqnk,4978,823,1366,active_uncertain_pore_cbd,,train,r2req0042,pore,0.744,pore,low,"Blurry, 3D-shaded material below polished plane; no flat face; Inlens charging."
+f1vzngrs_5786,Batch_1,f1vzngrs,5786,910,2426,active_uncertain_other,,train,r2req0042,SiOx,0.749,graphite,low,"Bright rim along graphite particle edge; smooth, not lacy; likely edge effect."
+x7u69zsw_4849,Batch_3,x7u69zsw,4849,779,1305,active_random_pore_cbd,,train,r2req0042,pore,0.862,CBD,low,Lacy bright Inlens texture in pocket at particle junction; partly shadowed.
+ptg8lmto_1259,Batch_3,ptg8lmto,1259,222,1769,active_uncertain_other,,train,r2req0042,graphite,0.871,pore,medium,"Recessed region: ETD 3D shading, dark Inlens interior with bright rims."
+5n1q8atc_3621,Batch_1,5n1q8atc,3621,595,2982,active_uncertain_other,,train,r2req0051,graphite,0.795,graphite,low,Flat BSE/ETD grey matching graphite; uniform dark Inlens likely orientation contrast.
+x7u69zsw_3629,Batch_3,x7u69zsw,3629,582,2028,active_uncertain_pore_cbd,,train,r2req0051,graphite,0.707,CBD,medium,In-plane grey BSE at pore neck; textured lighter Inlens unlike black graphite.
+epqdaau9_1355,Batch_2,epqdaau9,1355,250,1824,active_uncertain_pore_cbd,,val,r2req0051,CBD,0.703,graphite,low,Smooth graphite-grey in all detectors; small dark pore wedge is minority.
+vc2whyaq_4136,Batch_3,vc2whyaq,4136,651,467,active_uncertain_other,,val,r2req0051,graphite,0.839,CBD,medium,Wedge between particles; lighter textured Inlens matches adjacent lacy CBD.
+hawkfj64_1693,Batch_3,hawkfj64,1693,289,3327,active_uncertain_pore_cbd,,train,r2req0051,CBD,0.762,CBD,medium,"Lighter-grey BSE film lining particle edge, bright Inlens, in polished plane."
+utfgcjfa_992,Batch_3,utfgcjfa,992,178,986,active_uncertain_other,,val,r2req0051,graphite,0.821,CBD,low,"Graphite-grey lens-shaped film on SiOx edge, bounded by crack; ambiguous."
+vc2whyaq_4497,Batch_3,vc2whyaq,4497,722,1920,active_uncertain_other,,train,r2req0051,graphite,0.831,graphite,medium,"Curved lamellar bands, graphite BSE grey, flat in SE."
+ufdvpb81_1504,Batch_3,ufdvpb81,1504,247,995,active_random_pore_cbd,,train,r2req0051,CBD,0.964,pore,low,Black deep pore plus shadowed gap dominate; grey material on left minority.
+avn74qx1_873,Batch_2,avn74qx1,873,137,2558,active_random_pore_cbd,,train,r2req0051,CBD,0.804,CBD,medium,"Light Inlens band conformal to particle top edge, distinct from dark particle."
+fzrt2k6r_5368,Batch_1,fzrt2k6r,5368,864,2377,active_uncertain_pore_cbd,,train,r2req0051,pore,0.754,pore,medium,Darker BSE and shadowed ETD below particle edge; open pore floor.
+utfgcjfa_1464,Batch_3,utfgcjfa,1464,236,2948,active_uncertain_pore_cbd,,train,r2req0098,CBD,0.755,graphite,medium,"Thin strip on flat particle face, just above bright SE edge into pore."
+f1vzngrs_5908,Batch_1,f1vzngrs,5908,932,525,active_uncertain_pore_cbd,,train,r2req0098,CBD,0.74,CBD,low,"Lighter pocket between flakes; dimmer than true SiOx, matches CBD rims. Not lacy."
+x7u69zsw_1547,Batch_3,x7u69zsw,1547,246,1616,active_uncertain_pore_cbd,,train,r2req0098,pore,0.677,CBD,low,"Spotty film on graphite tip: Inlens beads, ETD nanopores, not dark face."
+mgxahqnk_3884,Batch_3,mgxahqnk,3884,634,2742,active_uncertain_pore_cbd,,train,r2req0098,CBD,0.768,CBD,medium,Spongy textured neck region below SiOx with bright Inlens edges around.
+iv6g2oq0_1561,Batch_1,iv6g2oq0,1561,267,788,active_uncertain_pore_cbd,,train,r2req0098,graphite,0.758,graphite,medium,"Uniform BSE grey with lamellar streaks, just inside bright particle edge."
+xgj4xftb_4194,Batch_3,xgj4xftb,4194,700,2234,active_uncertain_other,,train,r2req0098,graphite,0.863,graphite,high,"Flat uniform grey in BSE/ETD, dark in Inlens like other graphite faces."
+3806gxp0_5500,Batch_2,3806gxp0,5500,869,828,active_uncertain_other,,train,r2req0098,graphite,0.815,graphite,medium,Mostly flat uniform matrix; only upper corner touches bright CBD band.
+uhdslk0o_453,Batch_1,uhdslk0o,453,84,909,active_uncertain_pore_cbd,,val,r2req0098,CBD,0.796,pore,medium,"Pore tip: shadowed dark in ETD, grey floor in BSE, bright Inlens."
+mgxahqnk_3569,Batch_3,mgxahqnk,3569,587,1282,active_random_pore_cbd,,train,r2req0098,pore,0.993,pore,high,"Inside inter-particle channel: black in ETD, dark grey floor in BSE."
+ffwubibz_3859,Batch_1,ffwubibz,3859,606,947,active_uncertain_pore_cbd,,train,r2req0098,graphite,0.771,graphite,low,Flat grey face beside rounded below-plane bump; boundary ambiguous.
+b3esycq1_5402,Batch_2,b3esycq1,5402,854,670,active_uncertain_other,,val,r2req0039,graphite,0.802,pore,medium,Thin strip inside black elongated pore along its right edge; dark in all detectors.
+x7u69zsw_4437,Batch_3,x7u69zsw,4437,712,365,active_random_pore_cbd,,train,r2req0039,pore,0.96,pore,medium,Left lobe black in all detectors; small grey tail at graphite boundary.
+i9jiqjwl_1197,Batch_2,i9jiqjwl,1197,226,683,active_uncertain_other,,train,r2req0039,graphite,0.779,graphite,low,Uniform flat grey matching adjacent large graphite particle; not bright lacy in Inlens.
+xgj4xftb_877,Batch_3,xgj4xftb,877,159,1265,active_uncertain_pore_cbd,,train,r2req0039,CBD,0.808,graphite,low,"Strip along graphite left edge; grey BSE, dark Inlens like graphite, beside pore."
+x7u69zsw_3372,Batch_3,x7u69zsw,3372,547,139,active_uncertain_other,,train,r2req0039,graphite,0.812,CBD,low,"Thin conformal film on graphite surface; graphite-grey BSE, brighter Inlens, links CBD pocket."
+x77cy643_1415,Batch_3,x77cy643,1415,235,2049,active_uncertain_pore_cbd,,train,r2req0039,CBD,0.765,CBD,low,"Band along graphite edge facing pore; bright Inlens, BSE graphite-grey; possibly sloping wall."
+3806gxp0_4120,Batch_2,3806gxp0,4120,643,2299,active_uncertain_pore_cbd,,train,r2req0039,graphite,0.701,CBD,low,"Lacy bright Inlens texture in pocket between particles; mid-grey BSE, not shadowed in ETD."
+5n1q8atc_5449,Batch_1,5n1q8atc,5449,905,2525,active_random_pore_cbd,,train,r2req0039,pore,0.888,pore,low,Mostly extends into shadowed pore floor; lower-left includes graphite edge.
+f1vzngrs_6200,Batch_1,f1vzngrs,6200,969,3067,active_random_pore_cbd,,train,r2req0039,pore,0.896,graphite,medium,"Grey BSE, dark Inlens like graphite, beside SiOx; not bright lacy CBD."
+ffwubibz_3236,Batch_1,ffwubibz,3236,503,1009,active_uncertain_pore_cbd,,train,r2req0039,graphite,0.786,pore,low,Dark/shadowed in ETD at junction of cracks; grey BSE suggests pore floor.
+x7u69zsw_5693,Batch_3,x7u69zsw,5693,901,1971,active_uncertain_other,,train,r2req0093,graphite,0.752,CBD,low,"Rounded lump at particle neck, graphite-grey BSE, bright Inlens; could be pore-floor material."
+utfgcjfa_4357,Batch_3,utfgcjfa,4357,710,1113,active_uncertain_pore_cbd,,val,r2req0093,graphite,0.754,CBD,medium,Mottled textured material between particles above graphite edge; no flat lamellar face.
+hzumfsms_2005,Batch_3,hzumfsms,2005,298,297,active_uncertain_pore_cbd,,val,r2req0093,graphite,0.765,pore,medium,"Gap between particles; smooth out-of-focus grey, dark shaded in ETD, bright Inlens rims."
+uhdslk0o_5373,Batch_1,uhdslk0o,5373,842,839,active_random_pore_cbd,,val,r2req0093,CBD,0.931,CBD,low,"Thin film on graphite surface facing pore; moderately brighter, cracked off; ambiguous."
+cfe5vt7s_2368,Batch_3,cfe5vt7s,2368,401,2273,active_uncertain_pore_cbd,,train,r2req0093,CBD,0.739,pore,medium,"Recessed gap between particles; dark in ETD, grey pore-floor in BSE."
+b3esycq1_2945,Batch_2,b3esycq1,2945,457,2145,active_uncertain_pore_cbd,,train,r2req0093,CBD,0.759,pore,high,"Black in BSE and ETD, bright Inlens edges; clear open pore."
+5n1q8atc_6253,Batch_1,5n1q8atc,6253,1025,3475,active_uncertain_pore_cbd,,val,r2req0093,graphite,0.745,pore,low,"3D-shaded, crumpled out-of-plane surface beside dark pore; no flat polished face."
+xgj4xftb_2482,Batch_3,xgj4xftb,2482,410,575,active_uncertain_pore_cbd,,train,r2req0093,graphite,0.8,graphite,low,"Strip within lamellar graphite particle along crack; flat in ETD, graphite-grey BSE."
+i9jiqjwl_1016,Batch_2,i9jiqjwl,1016,194,219,active_uncertain_other,,train,r2req0093,graphite,0.772,graphite,medium,"Inside flat polished particle; dark Inlens is channelling contrast, uniform BSE/ETD."
+9luzk4jm_5756,Batch_3,9luzk4jm,5756,868,136,active_random_pore_cbd,,train,r2req0093,CBD,0.865,CBD,low,"Textured lump in inter-particle band pocket, graphite-grey BSE, bright Inlens."
+i9jiqjwl_3896,Batch_2,i9jiqjwl,3896,624,684,active_random_pore_cbd,,train,r2req0034,pore,0.967,pore,medium,Mostly black void in all detectors; smaller grey material portion at lower left.
+xgj4xftb_769,Batch_3,xgj4xftb,769,122,2096,active_uncertain_pore_cbd,,train,r2req0034,pore,0.778,CBD,medium,Bright lacy Inlens network and mottled mid-grey BSE between SiOx particles.
+i9jiqjwl_6637,Batch_2,i9jiqjwl,6637,1021,2114,active_uncertain_pore_cbd,,val,r2req0034,graphite,0.747,pore,low,"Darker shadowed ETD recess beside graphite flake; grey floor, no clear face."
+ptg8lmto_2559,Batch_3,ptg8lmto,2559,384,2747,active_uncertain_other,,train,r2req0034,graphite,0.871,graphite,medium,Flat uniform grey with curtaining; part of large graphite above SiOx edge.
+fzrt2k6r_4774,Batch_1,fzrt2k6r,4774,770,3430,active_uncertain_pore_cbd,,train,r2req0034,CBD,0.759,graphite,low,"Smooth flat band in all detectors, graphite-grey BSE, not lacy texture."
+hawkfj64_3264,Batch_3,hawkfj64,3264,535,1574,active_uncertain_other,,train,r2req0034,graphite,0.867,CBD,low,"Finely speckled neck material between SiOx, pore and graphite."
+hawkfj64_3575,Batch_3,hawkfj64,3575,587,355,active_uncertain_pore_cbd,,train,r2req0034,graphite,0.808,pore,medium,Dark shadowed cavity in ETD; BSE shows grey pore floor.
+5n1q8atc_3894,Batch_1,5n1q8atc,3894,646,2320,active_uncertain_other,,train,r2req0034,graphite,0.79,CBD,medium,Lacy nanoporous texture with small holes at particle junction.
+pl8uabbv_3705,Batch_3,pl8uabbv,3705,631,662,active_uncertain_other,,train,r2req0034,graphite,0.837,CBD,medium,Spongy network with many small pores between graphite particles.
+utfgcjfa_4542,Batch_3,utfgcjfa,4542,733,314,active_uncertain_other,,train,r2req0034,graphite,0.788,pore,medium,"Recessed 3D cauliflower-like floor, dark in SE, no polished face."
+epqdaau9_5499,Batch_2,epqdaau9,5499,884,3393,active_random_pore_cbd,,train,r2req0067,CBD,0.916,pore,low,"Open basal crack: dark in BSE/ETD, bright Inlens walls, void at right."
+mgxahqnk_4392,Batch_3,mgxahqnk,4392,720,650,active_uncertain_pore_cbd,,train,r2req0067,CBD,0.709,pore,low,"Recessed neck region: grey BSE, shadowed ETD, no lacy Inlens texture."
+pl8uabbv_4272,Batch_3,pl8uabbv,4272,691,2831,active_uncertain_other,,train,r2req0067,graphite,0.831,graphite,medium,Uniform flat BSE grey within graphite particle; cracks only at edges.
+kbdh4tri_3305,Batch_3,kbdh4tri,3305,507,1023,active_uncertain_other,,train,r2req0067,graphite,0.744,pore,low,"Small void along crack in graphite: dark spot, bright Inlens, shading."
+3806gxp0_4142,Batch_2,3806gxp0,4142,658,2743,active_uncertain_pore_cbd,,train,r2req0067,CBD,0.741,CBD,low,"Heterogeneous nanoporous material in gap between particles, bright Inlens flecks."
+uhdslk0o_5453,Batch_1,uhdslk0o,5453,852,840,active_uncertain_other,,train,r2req0067,graphite,0.835,graphite,low,"Uniform grey strip at graphite particle top edge, below textured pore wall."
+mgxahqnk_5115,Batch_3,mgxahqnk,5115,849,162,active_random_pore_cbd,,val,r2req0067,CBD,0.975,graphite,medium,Flat graphite face above bright pore wall; dark Inlens like particle.
+0grcilhi_5353,Batch_3,0grcilhi,5353,862,1960,active_uncertain_pore_cbd,,train,r2req0067,graphite,0.751,graphite,low,Smooth band along graphite edge; lighter but not SiOx-bright in BSE.
+iv6g2oq0_1761,Batch_1,iv6g2oq0,1761,294,2072,active_random_pore_cbd,,val,r2req0067,pore,0.95,pore,medium,"Dark pocket at particle junction; black ETD shadow, dark BSE notch."
+rxax5ozo_2920,Batch_2,rxax5ozo,2920,480,452,active_uncertain_pore_cbd,,train,r2req0067,pore,0.745,pore,medium,"BSE grey floor, dark ETD shadow, bright Inlens edges: open pore."
+hzumfsms_1222,Batch_3,hzumfsms,1222,179,3296,active_uncertain_pore_cbd,,val,r2req0025,graphite,0.759,pore,low,"Grey BSE, but ETD shows a darker, smoothly shaded sloping surface; likely pore floor."
+9luzk4jm_5111,Batch_3,9luzk4jm,5111,783,2956,active_uncertain_other,,train,r2req0025,graphite,0.798,CBD,medium,"Bright Inlens strip along graphite edge, continuous with porous CBD below."
+rxax5ozo_1411,Batch_2,rxax5ozo,1411,220,2255,active_uncertain_other,,train,r2req0025,graphite,0.843,graphite,low,"Uniform grey carbon band beside SiOx core; smooth, layered, in polished plane."
+i9jiqjwl_5560,Batch_2,i9jiqjwl,5560,865,14,active_uncertain_other,,train,r2req0025,graphite,0.751,graphite,medium,Uniform BSE grey with curtaining; only a small CBD branch at corner.
+mgxahqnk_4432,Batch_3,mgxahqnk,4432,729,651,active_uncertain_other,,train,r2req0025,graphite,0.826,graphite,low,Smooth uniform dark-grey carbon face between SiOx particles; no lacy texture.
+r17byphk_3688,Batch_2,r17byphk,3688,593,78,active_uncertain_other,,val,r2req0025,graphite,0.813,graphite,medium,Mostly flat uniform graphite face; small pore pocket on left side.
+9luzk4jm_4042,Batch_3,9luzk4jm,4042,627,2522,active_uncertain_pore_cbd,,train,r2req0025,graphite,0.754,CBD,low,"Elongated region at particle neck, textured, slightly darker than adjacent graphite."
+ufdvpb81_5106,Batch_3,ufdvpb81,5106,731,1301,active_uncertain_pore_cbd,,train,r2req0025,CBD,0.77,graphite,medium,Flat uniform grey rim around pore notch; only one small hole.
+epqdaau9_1919,Batch_2,epqdaau9,1919,347,1458,active_uncertain_other,,train,r2req0025,graphite,0.733,CBD,low,"Lighter BSE/Inlens film following particle edge, contains small pores."
+kbdh4tri_2901,Batch_3,kbdh4tri,2901,442,3336,active_uncertain_other,,train,r2req0025,graphite,0.746,pore,medium,"Black in ETD, grey BSE, lacy Inlens floor: open pore below plane."
+ufdvpb81_1916,Batch_3,ufdvpb81,1916,304,1383,active_random_pore_cbd,,train,r2req0037,pore,0.976,pore,high,Black in all three detectors; gap between graphite particles.
+hawkfj64_1593,Batch_3,hawkfj64,1593,272,2697,active_uncertain_pore_cbd,,val,r2req0037,pore,0.785,pore,low,Shadowed sliver beside dark gap at particle edge; dark in ETD.
+fzrt2k6r_2592,Batch_1,fzrt2k6r,2592,414,2225,active_uncertain_other,,train,r2req0037,graphite,0.8,CBD,medium,Bright lumpy Inlens texture at particle neck; graphite-grey in BSE.
+0grcilhi_4805,Batch_3,0grcilhi,4805,764,1178,active_random_pore_cbd,,train,r2req0037,pore,0.995,pore,high,"Uniformly black in BSE, Inlens and ETD beneath graphite particle."
+iv6g2oq0_951,Batch_1,iv6g2oq0,951,148,2332,active_uncertain_other,,train,r2req0037,graphite,0.807,graphite,low,Flat uniform BSE grey like host graphite; Inlens brightness likely channelling.
+cfe5vt7s_4592,Batch_3,cfe5vt7s,4592,753,3035,active_uncertain_pore_cbd,,train,r2req0037,graphite,0.775,graphite,low,Mostly smooth graphite-grey material; small black pore slit is a minority.
+71vgq3fw_3524,Batch_3,71vgq3fw,3524,530,1560,active_uncertain_pore_cbd,,train,r2req0037,CBD,0.755,CBD,low,"Grey pocket bridging SiOx particles, darker than SiOx; likely binder filling."
+3806gxp0_1663,Batch_2,3806gxp0,1663,285,1048,active_uncertain_pore_cbd,,val,r2req0037,graphite,0.734,graphite,medium,Polished graphite face with small pores; pores occupy minority of region.
+epqdaau9_454,Batch_2,epqdaau9,454,82,3156,active_uncertain_other,,val,r2req0037,graphite,0.79,pore,medium,Dark recessed pocket in Inlens with bright rim; slightly darker BSE.
+uhdslk0o_3734,Batch_1,uhdslk0o,3734,608,1015,active_uncertain_pore_cbd,,val,r2req0037,graphite,0.729,pore,medium,"Shallow pore floor next to deep pore; ETD shading, bright Inlens rim."
+x7u69zsw_5670,Batch_3,x7u69zsw,5670,892,2168,active_random_pore_cbd,,train,r2req0071,pore,0.996,pore,high,Dark elongated pore channel in all three detectors; partly visible floor.
+x77cy643_2382,Batch_3,x77cy643,2382,413,1420,active_random_pore_cbd,,train,r2req0071,CBD,0.953,SiOx,low,Lower corner of bright BSE SiOx particle; small hole and CBD included.
+r17byphk_5441,Batch_2,r17byphk,5441,848,1459,active_uncertain_other,,train,r2req0071,graphite,0.816,CBD,low,Finely textured grey band between graphite particles with small dark pores.
+i9jiqjwl_2205,Batch_2,i9jiqjwl,2205,381,1849,active_random_pore_cbd,,train,r2req0071,pore,0.987,pore,high,"Black in BSE, Inlens and ETD; deep open pore."
+4ih2ggld_4952,Batch_1,4ih2ggld,4952,826,420,active_uncertain_pore_cbd,,train,r2req0071,SiOx,0.758,graphite,low,"Flat uniform face, graphite-grey BSE, dark uniform Inlens; edge above pore."
+x7u69zsw_1658,Batch_3,x7u69zsw,1658,274,3491,active_uncertain_pore_cbd,,train,r2req0071,graphite,0.763,graphite,low,Uniform flat grey face matching graphite in BSE and ETD at particle tip.
+avn74qx1_3093,Batch_2,avn74qx1,3093,482,2856,active_uncertain_other,,train,r2req0071,graphite,0.804,graphite,low,Uniform graphite-grey face between interparticle gap and pore; no lacy texture.
+b3esycq1_6318,Batch_2,b3esycq1,6318,984,1792,active_random_pore_cbd,,train,r2req0071,pore,0.961,pore,high,"Dark BSE, black ETD and Inlens; open pore beside SiOx particle."
+ufdvpb81_1718,Batch_3,ufdvpb81,1718,278,631,active_uncertain_pore_cbd,,train,r2req0071,CBD,0.74,pore,low,"Recessed pocket at particle junction: darker ETD, bright Inlens rim, grey BSE."
+71vgq3fw_4692,Batch_3,71vgq3fw,4692,692,3357,active_uncertain_other,,train,r2req0071,graphite,0.794,pore,low,"Soft grey surface at pore bottom, bright Inlens rim; likely pore floor."
+x7u69zsw_3545,Batch_3,x7u69zsw,3545,576,635,active_uncertain_pore_cbd,,train,r2req0083,pore,0.761,pore,low,"Gap under particle: ETD shadowing, bright Inlens rim, grey BSE floor."
+x7u69zsw_2385,Batch_3,x7u69zsw,2385,409,1224,active_uncertain_other,,val,r2req0083,graphite,0.806,pore,medium,"Sloped, shaded wall beside black pore; gradient in ETD, no flat polished face."
+ufdvpb81_4663,Batch_3,ufdvpb81,4663,671,3115,active_uncertain_pore_cbd,,train,r2req0083,graphite,0.761,CBD,low,"Textured, streaky Inlens band between particles; graphite-grey BSE, adjacent CBD."
+71vgq3fw_5424,Batch_3,71vgq3fw,5424,800,514,active_uncertain_other,,val,r2req0083,graphite,0.732,graphite,high,"Flat uniform grey face of flake particle; dark Inlens, smooth ETD."
+hawkfj64_1259,Batch_3,hawkfj64,1259,209,2770,active_uncertain_pore_cbd,,train,r2req0083,SiOx,0.738,SiOx,low,"Smooth non-lamellar particle brighter than graphite in BSE, bright Inlens."
+5n1q8atc_5078,Batch_1,5n1q8atc,5078,835,1869,active_uncertain_pore_cbd,,train,r2req0083,graphite,0.696,CBD,low,"Grey material with dark nanopores at SiOx–graphite neck; ETD grey, not deep."
+mgxahqnk_4775,Batch_3,mgxahqnk,4775,781,3295,active_uncertain_pore_cbd,,train,r2req0083,pore,0.696,CBD,medium,Bright textured Inlens film between particles; lighter BSE line along surface.
+i9jiqjwl_2141,Batch_2,i9jiqjwl,2141,370,2168,active_uncertain_other,,train,r2req0083,graphite,0.773,CBD,low,"Mottled, bright-edged Inlens material in pocket at crack end, small pores."
+3806gxp0_5745,Batch_2,3806gxp0,5745,897,3176,active_uncertain_pore_cbd,,train,r2req0083,graphite,0.62,graphite,low,Flat uniform BSE and ETD face; only Inlens brighter near pore edge.
+0grcilhi_2057,Batch_3,0grcilhi,2057,347,1161,active_random_pore_cbd,,val,r2req0083,pore,0.962,pore,high,Black in BSE and ETD beneath particle overhang; dark Inlens.
+cfe5vt7s_5899,Batch_3,cfe5vt7s,5899,954,1692,active_random_pore_cbd,,val,r2req0012,pore,0.958,pore,high,"Black in BSE and ETD, dark Inlens; open pore with shaded floor."
+5n1q8atc_4977,Batch_1,5n1q8atc,4977,820,595,active_uncertain_pore_cbd,,train,r2req0012,graphite,0.749,graphite,medium,"Uniform grey, flat in BSE/ETD; part of lamellar graphite, no SiOx speckle."
+3806gxp0_5795,Batch_2,3806gxp0,5795,903,3179,active_uncertain_other,,train,r2req0012,graphite,0.768,graphite,medium,Flat uniform grey in BSE and ETD; Inlens band likely channelling contrast.
+tuy3zymq_2514,Batch_3,tuy3zymq,2514,404,1413,active_random_pore_cbd,,train,r2req0012,pore,0.898,pore,medium,Black lobe plus ETD-shadowed grey floor; unfilled pore between particles.
+fzrt2k6r_3749,Batch_1,fzrt2k6r,3749,604,1991,active_uncertain_pore_cbd,,val,r2req0012,graphite,0.734,CBD,low,"Grey carbon band wrapping SiOx corner; film/coating, not bright, not lamellar."
+fzrt2k6r_4158,Batch_1,fzrt2k6r,4158,676,3219,active_uncertain_pore_cbd,,train,r2req0012,CBD,0.709,graphite,medium,"Inside lamellar particle; same BSE grey, flat ETD; dark Inlens is channelling."
+f1vzngrs_4073,Batch_1,f1vzngrs,4073,662,311,active_uncertain_pore_cbd,,train,r2req0012,graphite,0.706,CBD,low,Small pocket with nanopores at particle edge; bright Inlens rims; ambiguous.
+rxax5ozo_3133,Batch_2,rxax5ozo,3133,513,65,active_random_pore_cbd,,val,r2req0012,CBD,0.945,CBD,medium,"Light textured film along particle edge, bright Inlens like adjacent CBD."
+71vgq3fw_3241,Batch_3,71vgq3fw,3241,482,1789,active_random_pore_cbd,,train,r2req0012,CBD,0.892,graphite,medium,"Flat grey BSE/ETD, dark Inlens like neighbouring graphite particles."
+ptg8lmto_2291,Batch_3,ptg8lmto,2291,336,329,active_uncertain_other,,train,r2req0012,graphite,0.878,pore,low,"Hazy BSE, strong ETD shading into shadow; CBD seen below polished plane."
+kbdh4tri_5335,Batch_3,kbdh4tri,5335,813,454,active_uncertain_pore_cbd,,train,r2req0049,graphite,0.529,CBD,low,"Grey, finely textured neck between SiOx particles with small dark pores."
+5n1q8atc_5724,Batch_1,5n1q8atc,5724,960,2064,active_uncertain_other,,train,r2req0049,graphite,0.792,CBD,low,"Narrow mottled strip between graphite and SiOx; slightly darker, textured, not lamellar."
+x77cy643_4226,Batch_3,x77cy643,4226,724,560,active_uncertain_pore_cbd,,train,r2req0049,graphite,0.744,pore,low,"Lumpy 3D-shaded particle inside pore; no flat polished face, modest BSE brightness."
+x77cy643_4038,Batch_3,x77cy643,4038,684,2029,active_uncertain_pore_cbd,,train,r2req0049,graphite,0.739,graphite,medium,Edge of flat uniform-grey graphite particle; small bump same BSE grey.
+3806gxp0_3575,Batch_2,3806gxp0,3575,568,86,active_uncertain_other,,val,r2req0049,graphite,0.775,graphite,medium,Uniform grey graphite face beside pore channel; only edge rim included.
+rxax5ozo_1889,Batch_2,rxax5ozo,1889,308,1464,active_uncertain_pore_cbd,,train,r2req0049,graphite,0.789,CBD,medium,"Mottled, speckled pocket between two graphite particles, textured in Inlens."
+0grcilhi_2361,Batch_3,0grcilhi,2361,394,1814,active_uncertain_pore_cbd,,train,r2req0049,pore,0.775,pore,low,"Crevice tip between graphites; dark in BSE/ETD, bright Inlens rims, some CBD."
+4ih2ggld_4467,Batch_1,4ih2ggld,4467,750,2864,active_uncertain_pore_cbd,,val,r2req0049,pore,0.759,CBD,low,Grey neck between SiOx and graphite with small dark nanopores in Inlens.
+iv6g2oq0_5107,Batch_1,iv6g2oq0,5107,787,925,active_uncertain_other,,train,r2req0049,graphite,0.751,pore,low,"Recessed, shadowed crescent beside dome particle, continuous with crack and pore floor."
+uhdslk0o_2602,Batch_1,uhdslk0o,2602,424,318,active_uncertain_pore_cbd,,train,r2req0049,CBD,0.734,CBD,low,"Grey textured junction between SiOx, pore and graphite; not flat uniform."
+x7u69zsw_1299,Batch_3,x7u69zsw,1299,213,3472,active_uncertain_other,,train,r2req0024,graphite,0.805,pore,low,"Teardrop void inside graphite with dark core, bright Inlens rim, visible floor."
+iv6g2oq0_2220,Batch_1,iv6g2oq0,2220,369,1025,active_random_pore_cbd,,train,r2req0024,pore,0.845,CBD,low,Grey material at particle neck above graphite edge; bright textured Inlens.
+r17byphk_2145,Batch_2,r17byphk,2145,373,3476,active_random_pore_cbd,,train,r2req0024,CBD,0.909,pore,medium,"Inside open crack; black in ETD, grey pore floor in BSE."
+rxax5ozo_497,Batch_2,rxax5ozo,497,84,3455,active_uncertain_other,,train,r2req0024,graphite,0.833,CBD,medium,Mottled spongy pocket between graphite and SiOx particles; nanoporous in Inlens.
+ufdvpb81_5626,Batch_3,ufdvpb81,5626,824,3220,active_random_pore_cbd,,train,r2req0024,CBD,0.914,mixed,low,"Large outline spans SiOx particle, graphite, CBD and crack pores."
+3806gxp0_3062,Batch_2,3806gxp0,3062,491,1107,active_random_pore_cbd,,train,r2req0024,CBD,0.876,CBD,low,"Grey in BSE, very bright patchy Inlens, at plane beside pore."
+i9jiqjwl_4325,Batch_2,i9jiqjwl,4325,688,592,active_random_pore_cbd,,train,r2req0024,CBD,0.919,CBD,low,"Grey pocket at graphite–SiOx junction; not bright, likely binder-rich neck."
+tuy3zymq_4207,Batch_3,tuy3zymq,4207,680,1013,active_random_pore_cbd,,train,r2req0024,CBD,0.942,CBD,low,Thin grey sliver at SiOx neck with bright edges; likely binder film.
+3806gxp0_5648,Batch_2,3806gxp0,5648,879,3275,active_uncertain_pore_cbd,,train,r2req0024,graphite,0.716,CBD,medium,"Thin bright Inlens film on graphite edge, continuous with textured CBD."
+ffwubibz_4093,Batch_1,ffwubibz,4093,633,469,active_random_pore_cbd,,train,r2req0024,pore,0.99,pore,high,"Inside large open pore; black in ETD, blurred 3D floor in BSE."
+cfe5vt7s_4565,Batch_3,cfe5vt7s,4565,742,2018,active_uncertain_other,,train,r2req0076,graphite,0.748,pore,low,"Recessed corner below particle edge; shadowed in ETD, next to dark pockets."
+x7u69zsw_3777,Batch_3,x7u69zsw,3777,605,2116,active_uncertain_pore_cbd,,val,r2req0076,graphite,0.761,CBD,low,"Pocket at crack end between particles; mottled texture, lacy bright Inlens edges."
+9luzk4jm_6261,Batch_3,9luzk4jm,6261,940,1086,active_uncertain_other,,train,r2req0076,graphite,0.773,pore,low,Tapering end of crack; black spot and darker shadowed floor.
+rxax5ozo_5490,Batch_2,rxax5ozo,5490,867,1760,active_uncertain_pore_cbd,,train,r2req0076,pore,0.787,graphite,low,"Smooth grey band between particles, flat in BSE and Inlens, not lacy."
+x7u69zsw_661,Batch_3,x7u69zsw,661,118,2289,active_random_pore_cbd,,train,r2req0076,pore,0.943,pore,low,"Beside flake end; dark in ETD, with a 3D-shaded lobe on the floor."
+4ih2ggld_1710,Batch_1,4ih2ggld,1710,308,1472,active_random_pore_cbd,,train,r2req0076,CBD,0.938,graphite,medium,"Flat grey face with curtaining, continuous with graphite beside bright SiOx."
+b3esycq1_3959,Batch_2,b3esycq1,3959,619,53,active_random_pore_cbd,,train,r2req0076,pore,0.976,pore,high,Black in all three detectors.
+b3esycq1_3736,Batch_2,b3esycq1,3736,579,678,active_uncertain_pore_cbd,,train,r2req0076,CBD,0.676,graphite,low,Uniform grey matching particle in BSE/ETD; Inlens brightness likely edge effect.
+utfgcjfa_1593,Batch_3,utfgcjfa,1593,268,826,active_uncertain_pore_cbd,,val,r2req0076,graphite,0.753,graphite,medium,Flat uniform grey in BSE/SE; dark Inlens like adjacent graphite.
+0grcilhi_4736,Batch_3,0grcilhi,4736,754,1322,active_uncertain_pore_cbd,,val,r2req0076,pore,0.739,graphite,low,Grey polished surface beside tube-shaped pore; not shadowed in ETD.
+utfgcjfa_772,Batch_3,utfgcjfa,772,149,1902,active_uncertain_pore_cbd,,train,r2req0045,graphite,0.74,CBD,low,In CBD seam between graphite particles; Inlens dark core is ambiguous.
+utfgcjfa_4653,Batch_3,utfgcjfa,4653,753,1535,active_uncertain_pore_cbd,,train,r2req0045,graphite,0.765,pore,medium,Blurred grey material inside cavity; 3D-shaded blob in SE; below plane.
+0grcilhi_5186,Batch_3,0grcilhi,5186,829,1392,active_random_pore_cbd,,val,r2req0045,pore,0.978,pore,high,"Sloped surface below particle edge: darker BSE, dark ETD, out-of-plane Inlens."
+ffwubibz_3040,Batch_1,ffwubibz,3040,464,72,active_uncertain_pore_cbd,,train,r2req0045,pore,0.613,pore,low,"Soft, unpolished-looking pocket ringed by bright Inlens edges; possibly pore floor."
+f1vzngrs_2384,Batch_1,f1vzngrs,2384,425,196,active_uncertain_other,,train,r2req0045,graphite,0.759,CBD,medium,Elongated seam at particle neck joining lacy CBD region; nanopores visible.
+i9jiqjwl_6174,Batch_2,i9jiqjwl,6174,944,669,active_uncertain_other,,train,r2req0045,SiOx,0.782,SiOx,low,"Brighter, mottled, non-lamellar region in BSE; flat in ETD; only moderately bright."
+5n1q8atc_6327,Batch_1,5n1q8atc,6327,1033,3018,active_uncertain_pore_cbd,,train,r2req0045,pore,0.743,pore,low,Dark Inlens pocket between CBD struts; grey BSE floor suggests open pore.
+f1vzngrs_5924,Batch_1,f1vzngrs,5924,928,3002,active_uncertain_pore_cbd,,train,r2req0045,CBD,0.715,CBD,medium,"Thin grey film wrapping bright SiOx, separated from graphite by gap."
+vc2whyaq_5029,Batch_3,vc2whyaq,5029,795,1404,active_uncertain_pore_cbd,,val,r2req0045,pore,0.762,CBD,low,Bright textured Inlens material at pocket edge beside cavity; graphite-grey BSE.
+3806gxp0_3519,Batch_2,3806gxp0,3519,566,948,active_uncertain_other,,train,r2req0045,graphite,0.815,graphite,medium,Flat uniform grey face of lamellar graphite particle with basal crack.
+utfgcjfa_828,Batch_3,utfgcjfa,828,156,1240,active_uncertain_pore_cbd,,train,r2req0088,CBD,0.775,graphite,low,"Mostly smooth flake face, graphite BSE grey; some lacy CBD at left edge."
+5n1q8atc_1375,Batch_1,5n1q8atc,1375,242,200,active_uncertain_other,,val,r2req0088,graphite,0.783,CBD,medium,"Spongy nanoporous pocket between graphite flakes; BSE grey like graphite, not SiOx-bright."
+r17byphk_2307,Batch_2,r17byphk,2307,405,2560,active_uncertain_pore_cbd,,train,r2req0088,CBD,0.79,CBD,medium,Finely textured nanoporous band filling neck between two graphite particles; no strong shadows.
+utfgcjfa_5342,Batch_3,utfgcjfa,5342,872,799,active_uncertain_pore_cbd,,train,r2req0088,CBD,0.712,CBD,low,"Textured, slightly darker patch with nanopores near SiOx particle; ambiguous boundary."
+cfe5vt7s_2362,Batch_3,cfe5vt7s,2362,406,3443,active_uncertain_other,,train,r2req0088,graphite,0.841,CBD,low,"Bubbly textured material at pore edge; partly overlaps pore, mostly flat."
+epqdaau9_2976,Batch_2,epqdaau9,2976,507,2030,active_random_pore_cbd,,val,r2req0088,pore,0.937,pore,medium,"Unpolished, 3D-shaded surface with ETD highlights and shadows, surrounded by gaps."
+71vgq3fw_3953,Batch_3,71vgq3fw,3953,582,697,active_uncertain_pore_cbd,,train,r2req0088,pore,0.683,pore,medium,"Dark in Inlens, shadowed in ETD beside SiOx corner; grey BSE floor."
+ffwubibz_4103,Batch_1,ffwubibz,4103,633,2312,active_uncertain_pore_cbd,,train,r2req0088,CBD,0.766,CBD,low,"Grey mottled matrix beneath bright SiOx fines cluster, above crack."
+pl8uabbv_2555,Batch_3,pl8uabbv,2555,415,78,active_uncertain_other,,train,r2req0088,graphite,0.825,graphite,low,"Fairly flat uniform grey face, edge-brightened in ETD; lumpy surroundings ambiguous."
+b3esycq1_4025,Batch_2,b3esycq1,4025,627,2217,active_uncertain_pore_cbd,,train,r2req0088,graphite,0.759,CBD,low,"Small pocket at boundary junction, bright Inlens ring, contains nanopore."
+x77cy643_4000,Batch_3,x77cy643,4000,673,1136,active_uncertain_pore_cbd,,train,r2req0036,CBD,0.766,graphite,low,Flat uniform BSE and SE grey; small pores only at outline edge.
+x77cy643_713,Batch_3,x77cy643,713,126,70,active_uncertain_other,,train,r2req0036,graphite,0.813,CBD,low,Textured pocket around small bright SiOx fragment; SiOx is the minority.
+tuy3zymq_5911,Batch_3,tuy3zymq,5911,935,1334,active_uncertain_pore_cbd,,train,r2req0036,CBD,0.775,SiOx,low,"Brighter in BSE than adjacent graphite, mottled, bright Inlens rim."
+b3esycq1_4189,Batch_2,b3esycq1,4189,655,1171,active_uncertain_pore_cbd,,train,r2req0036,CBD,0.76,pore,medium,"Shallow pore tip: ETD shadowing, smooth bright Inlens, continuous with pore."
+rxax5ozo_4257,Batch_2,rxax5ozo,4257,719,1995,active_random_pore_cbd,,train,r2req0036,CBD,0.934,CBD,low,Lacy textured carbon material dominates; bright SiOx fragments are the minority.
+ffwubibz_1390,Batch_1,ffwubibz,1390,227,3409,active_random_pore_cbd,,train,r2req0036,CBD,0.916,graphite,low,Mostly flat uniform grey in all detectors; few nanopores in lower lobe.
+x7u69zsw_5310,Batch_3,x7u69zsw,5310,844,782,active_uncertain_pore_cbd,,train,r2req0036,pore,0.696,pore,low,Top of ETD-shadowed gap between particles; no clear polished face.
+ptg8lmto_1302,Batch_3,ptg8lmto,1302,205,1789,active_uncertain_other,,train,r2req0036,graphite,0.852,graphite,low,"Grey polished face below crack edge, lamellar texture; bright Inlens edge."
+x7u69zsw_2413,Batch_3,x7u69zsw,2413,405,1219,active_uncertain_pore_cbd,,val,r2req0036,CBD,0.766,pore,medium,"Smooth gradient wall next to black pore, shadowed in ETD, no flat face."
+ufdvpb81_5898,Batch_3,ufdvpb81,5898,843,3350,active_random_pore_cbd,,train,r2req0036,pore,0.973,pore,low,Upper part is black crack in all detectors; lower part grey material.
+mgxahqnk_4850,Batch_3,mgxahqnk,4850,795,966,active_uncertain_pore_cbd,,train,r2req0003,graphite,0.762,pore,medium,"Dark in ETD, grey floor in BSE; extension of large pore above."
+ufdvpb81_6512,Batch_3,ufdvpb81,6512,921,1465,active_uncertain_other,,train,r2req0003,graphite,0.76,pore,low,Darker blurry BSE/Inlens patch beside slit pore; likely shallow pore floor.
+4ih2ggld_6214,Batch_1,4ih2ggld,6214,1039,924,active_uncertain_pore_cbd,,train,r2req0003,pore,0.75,pore,low,Strip between big pore and SiOx; dark mottled Inlens suggests pore wall.
+kbdh4tri_5989,Batch_3,kbdh4tri,5989,918,2292,active_uncertain_pore_cbd,,train,r2req0003,CBD,0.754,graphite,low,"Graphite-grey BSE band beside SiOx; ETD flat grey, not pore-dark."
+hawkfj64_1354,Batch_3,hawkfj64,1354,223,1840,active_uncertain_pore_cbd,,train,r2req0003,pore,0.719,SiOx,low,Lower part of light mottled particle; bright Inlens network; ETD shading ambiguous.
+71vgq3fw_4125,Batch_3,71vgq3fw,4125,614,1968,active_random_pore_cbd,,train,r2req0003,pore,0.912,pore,medium,"Dark pocket at particle junction, black in BSE and ETD; CBD rim."
+9luzk4jm_5761,Batch_3,9luzk4jm,5761,862,1964,active_uncertain_pore_cbd,,train,r2req0003,graphite,0.735,CBD,low,Thin film along graphite surface bridging particles; bright in Inlens.
+pl8uabbv_3791,Batch_3,pl8uabbv,3791,616,3321,active_random_pore_cbd,,val,r2req0003,pore,0.982,pore,high,Black in BSE and ETD within large open pore.
+tuy3zymq_1361,Batch_3,tuy3zymq,1361,230,1259,active_uncertain_pore_cbd,,val,r2req0003,CBD,0.766,pore,medium,"Recessed, shaded in ETD, bright Inlens rims, blurry BSE floor."
+3806gxp0_5708,Batch_2,3806gxp0,5708,890,3176,active_uncertain_pore_cbd,,train,r2req0003,graphite,0.711,graphite,low,Smooth graphite-grey in BSE and ETD below pore edge; Inlens halo.
+hzumfsms_1891,Batch_3,hzumfsms,1891,277,302,active_random_pore_cbd,,val,r2req0021,pore,0.841,pore,medium,"Recessed gap between particles: dark ETD, soft grey BSE, no polished face."
+avn74qx1_5690,Batch_2,avn74qx1,5690,879,3015,active_uncertain_other,,val,r2req0021,graphite,0.803,CBD,low,Branched textured neck region with small pores between particles; CBD-like.
+rxax5ozo_574,Batch_2,rxax5ozo,574,92,2983,active_uncertain_pore_cbd,,train,r2req0021,pore,0.728,pore,medium,"Sub-surface floor below particle ledge; dark ETD, 3D-shaded bright Inlens."
+xgj4xftb_2087,Batch_3,xgj4xftb,2087,355,2361,active_random_pore_cbd,,train,r2req0021,pore,0.951,pore,medium,Dark gap between bright particles in all detectors; uniform large superpixel.
+ptg8lmto_4467,Batch_3,ptg8lmto,4467,660,850,active_uncertain_pore_cbd,,train,r2req0021,pore,0.815,CBD,medium,"Bright lacy Inlens channel between graphite particles, with small pores."
+tuy3zymq_4264,Batch_3,tuy3zymq,4264,666,1634,active_uncertain_pore_cbd,,val,r2req0021,CBD,0.747,CBD,low,Lighter surface band on graphite edge; brighter Inlens than graphite interior.
+mgxahqnk_4801,Batch_3,mgxahqnk,4801,794,1891,active_uncertain_pore_cbd,,train,r2req0021,CBD,0.721,CBD,medium,Pocket filled with bright bubbly Inlens network; light textured BSE.
+71vgq3fw_4531,Batch_3,71vgq3fw,4531,667,2336,active_uncertain_pore_cbd,,train,r2req0021,graphite,0.765,pore,low,Narrow shadowed gap between particles; darker than polished faces in ETD.
+9luzk4jm_2436,Batch_3,9luzk4jm,2436,389,914,active_uncertain_pore_cbd,,train,r2req0021,CBD,0.786,CBD,low,Graphite-grey sliver hugging SiOx edge beside pore; likely binder film.
+epqdaau9_1020,Batch_2,epqdaau9,1020,179,3178,active_uncertain_pore_cbd,,train,r2req0021,CBD,0.709,CBD,low,"CBD-graphite interface; bright Inlens rim, partly shadowed in ETD."
+uhdslk0o_3564,Batch_1,uhdslk0o,3564,596,2186,active_uncertain_pore_cbd,,train,r2req0044,graphite,0.79,CBD,low,Grey in-plane patch with small holes at particle neck; mottled BSE texture
+ufdvpb81_3363,Batch_3,ufdvpb81,3363,499,1412,active_random_pore_cbd,,train,r2req0044,pore,0.976,pore,medium,"Dark shadowed in ETD, black core in BSE; recessed gap between particles"
+vc2whyaq_2673,Batch_3,vc2whyaq,2673,430,648,active_uncertain_other,,train,r2req0044,graphite,0.795,CBD,low,Lighter granular Inlens patch at particle edge; bright SE; graphite-grey BSE
+9luzk4jm_4796,Batch_3,9luzk4jm,4796,736,1773,active_uncertain_pore_cbd,,train,r2req0044,CBD,0.77,CBD,low,Thin strip under spongy bright Inlens layer along graphite edge
+iv6g2oq0_992,Batch_1,iv6g2oq0,992,177,121,active_random_pore_cbd,,train,r2req0044,pore,0.929,pore,medium,"Black in all detectors plus shadowed, recessed floor in ETD"
+hzumfsms_4890,Batch_3,hzumfsms,4890,733,1283,active_uncertain_pore_cbd,,train,r2req0044,pore,0.783,pore,medium,"Out-of-focus surface below the plane, dark in ETD, rounded Inlens rims"
+b3esycq1_491,Batch_2,b3esycq1,491,82,2707,active_uncertain_other,,train,r2req0044,graphite,0.788,graphite,medium,Uniform flat BSE grey continuous with graphite; Inlens tone likely channelling
+x7u69zsw_5707,Batch_3,x7u69zsw,5707,909,1901,active_uncertain_other,,train,r2req0044,graphite,0.745,CBD,low,"Pocket at particle neck, textured, not bright enough for SiOx"
+epqdaau9_2677,Batch_2,epqdaau9,2677,450,1237,active_uncertain_pore_cbd,,train,r2req0044,graphite,0.74,CBD,low,"Within distinct band lining pore, lighter in Inlens; could be graphite"
+uhdslk0o_3479,Batch_1,uhdslk0o,3479,572,401,active_uncertain_pore_cbd,,train,r2req0044,CBD,0.796,CBD,medium,"Lacy, mottled texture between particles in Inlens and ETD"
+kbdh4tri_2618,Batch_3,kbdh4tri,2618,400,3015,active_uncertain_pore_cbd,,train,r2req0014,CBD,0.769,CBD,low,"Lacy bright Inlens texture, mottled BSE; could also be pore floor"
+ufdvpb81_2577,Batch_3,ufdvpb81,2577,380,959,active_uncertain_pore_cbd,,train,r2req0014,CBD,0.768,CBD,low,Spongy grey material in pocket between SiOx and graphite particles
+f1vzngrs_4368,Batch_1,f1vzngrs,4368,701,786,active_uncertain_pore_cbd,,train,r2req0014,CBD,0.742,CBD,low,Thin film along graphite edge and particle neck beside SiOx
+x77cy643_1172,Batch_3,x77cy643,1172,187,484,active_uncertain_pore_cbd,,train,r2req0014,pore,0.771,CBD,medium,"Graphite-grey BSE, bright Inlens within lacy network; ETD not shadowed"
+5n1q8atc_5810,Batch_1,5n1q8atc,5810,959,1197,active_uncertain_pore_cbd,,train,r2req0014,graphite,0.734,CBD,medium,Spongy nanoporous graphite-grey material at neck beside SiOx particle
+rxax5ozo_934,Batch_2,rxax5ozo,934,155,1482,active_uncertain_other,,train,r2req0014,graphite,0.817,graphite,low,"Uniform graphite grey, featureless in all detectors; flat polished face"
+uhdslk0o_2031,Batch_1,uhdslk0o,2031,328,1260,active_uncertain_pore_cbd,,train,r2req0014,CBD,0.795,pore,medium,"Recessed particle surface within pore; ETD shading gradient, bright Inlens"
+epqdaau9_570,Batch_2,epqdaau9,570,101,1948,active_uncertain_pore_cbd,,train,r2req0014,pore,0.74,pore,medium,"Blurry bright Inlens, dark ETD shading; floor of open pore"
+x7u69zsw_5319,Batch_3,x7u69zsw,5319,863,439,active_random_pore_cbd,,val,r2req0014,pore,0.911,pore,high,Grey BSE but black ETD and bright Inlens: open pore floor
+5n1q8atc_4103,Batch_1,5n1q8atc,4103,680,3056,active_random_pore_cbd,,val,r2req0014,pore,0.856,pore,high,"Inside open pore: grey floor in BSE, dark ETD, bright Inlens edges"
+kbdh4tri_4269,Batch_3,kbdh4tri,4269,644,2860,active_random_pore_cbd,,train,r2req0074,CBD,0.946,graphite,low,"Smooth graphite-grey band above SiOx; dark smooth Inlens, no lacy texture"
+utfgcjfa_3123,Batch_3,utfgcjfa,3123,514,1013,active_uncertain_pore_cbd,,val,r2req0074,graphite,0.757,graphite,low,"Smooth medium-grey particle tip, darker than SiOx; ETD brightness likely edge effect"
+vc2whyaq_3746,Batch_3,vc2whyaq,3746,588,2936,active_uncertain_pore_cbd,,train,r2req0074,pore,0.777,CBD,medium,Granular bright Inlens texture at CBD band junction beside pore
+rxax5ozo_956,Batch_2,rxax5ozo,956,154,1131,active_uncertain_pore_cbd,,val,r2req0074,CBD,0.797,CBD,low,Mottled nodular graphite-grey material above pore; textured in Inlens
+9luzk4jm_1445,Batch_3,9luzk4jm,1445,223,2391,active_uncertain_pore_cbd,,train,r2req0074,CBD,0.667,graphite,low,Lamellar diagonal streak within large particle; uniform graphite-grey BSE
+f1vzngrs_5259,Batch_1,f1vzngrs,5259,828,2568,active_uncertain_pore_cbd,,train,r2req0074,CBD,0.73,graphite,medium,Uniform grey sliver beside basal-plane crack inside large graphite particle
+r17byphk_2200,Batch_2,r17byphk,2200,375,2294,active_uncertain_pore_cbd,,val,r2req0074,pore,0.781,CBD,medium,"Lumpy, bright-Inlens material along graphite particle edge above pore"
+ptg8lmto_2987,Batch_3,ptg8lmto,2987,440,2885,active_uncertain_pore_cbd,,train,r2req0074,CBD,0.731,CBD,low,Textured grey interparticle material with a small pore inside
+hzumfsms_2871,Batch_3,hzumfsms,2871,434,1505,active_uncertain_other,,val,r2req0074,graphite,0.817,graphite,medium,"Smooth uniform grey thin flake in all detectors, beside pore"
+4ih2ggld_6260,Batch_1,4ih2ggld,6260,1028,1201,active_uncertain_pore_cbd,,train,r2req0074,pore,0.751,pore,low,"Darker recessed pocket with black hole; bright Inlens rim, no polished face"
+ufdvpb81_2143,Batch_3,ufdvpb81,2143,333,3184,active_uncertain_pore_cbd,,train,r2req0018,CBD,0.758,CBD,medium,"Spongy, nanoporous neck material between graphite particles; in-plane grey in ETD, not shadowed."
+epqdaau9_3094,Batch_2,epqdaau9,3094,525,331,active_uncertain_pore_cbd,,val,r2req0018,CBD,0.724,graphite,low,"Flat polished face with curved lamellar Inlens bands; BSE grey, far below SiOx brightness."
+hzumfsms_5731,Batch_3,hzumfsms,5731,849,3421,active_uncertain_pore_cbd,,train,r2req0018,CBD,0.787,graphite,medium,Thin flat uniform-grey sliver of graphite particle beside basal crack; CBD lies above.
+mgxahqnk_1602,Batch_3,mgxahqnk,1602,297,1641,active_random_pore_cbd,,train,r2req0018,CBD,0.962,CBD,low,Grey textured material between two pores; bright irregular Inlens edges; some shadowing.
+x7u69zsw_1696,Batch_3,x7u69zsw,1696,278,2699,active_uncertain_pore_cbd,,train,r2req0018,graphite,0.766,pore,low,"Recessed interparticle region: dark in ETD, dimmer BSE, lacy floor below plane."
+f1vzngrs_6206,Batch_1,f1vzngrs,6206,972,158,active_random_pore_cbd,,train,r2req0018,pore,0.82,graphite,low,Uniform grey graphite edge adjacent to gap; no SiOx brightness or spongy texture.
+avn74qx1_4930,Batch_2,avn74qx1,4930,781,763,active_random_pore_cbd,,train,r2req0018,pore,0.966,pore,medium,Mostly rounded out-of-focus particle below polished plane inside pore; 3D shading.
+pl8uabbv_530,Batch_3,pl8uabbv,530,94,294,active_random_pore_cbd,,train,r2req0018,CBD,0.902,CBD,low,"Mid-grey BSE pocket at SiOx-graphite neck, bright Inlens; small dark pore inside."
+r17byphk_3555,Batch_2,r17byphk,3555,581,2021,active_uncertain_pore_cbd,,train,r2req0018,graphite,0.787,pore,medium,"Dark Inlens band, dimmer BSE grey, bright ETD step edge: open pore floor."
+iv6g2oq0_1730,Batch_1,iv6g2oq0,1730,284,2293,active_random_pore_cbd,,train,r2req0018,CBD,0.85,CBD,medium,Textured interparticle band with bright Inlens streaks and nanopores between graphite particles.
+cfe5vt7s_1562,Batch_3,cfe5vt7s,1562,282,3073,active_uncertain_pore_cbd,,train,r2req0063,graphite,0.772,graphite,medium,Flat uniform grey particle face at edge; bright Inlens rim only on border.
+vc2whyaq_1488,Batch_3,vc2whyaq,1488,234,3154,active_random_pore_cbd,,train,r2req0063,CBD,0.995,pore,low,"Small cavity: black in SE, darker BSE, bright Inlens rim fills outline."
+9luzk4jm_5189,Batch_3,9luzk4jm,5189,806,1846,active_uncertain_pore_cbd,,train,r2req0063,graphite,0.782,CBD,low,"Thin jagged band along particle edge, lacy Inlens texture continuous with CBD."
+hawkfj64_4693,Batch_3,hawkfj64,4693,766,1105,active_random_pore_cbd,,train,r2req0063,CBD,0.953,CBD,low,"Branched bright-Inlens textured material at crack junction; graphite-grey BSE, not dark."
+xgj4xftb_4046,Batch_3,xgj4xftb,4046,654,3256,active_uncertain_pore_cbd,,val,r2req0063,graphite,0.74,pore,low,"Blurry, darker ETD surface without crisp edges; likely pore floor below plane."
+uhdslk0o_1257,Batch_1,uhdslk0o,1257,212,2759,active_uncertain_other,,train,r2req0063,graphite,0.802,graphite,medium,"Uniform grey in all detectors, lamellar streaks; avoids bright CBD blob."
+vc2whyaq_4271,Batch_3,vc2whyaq,4271,686,505,active_uncertain_pore_cbd,,train,r2req0063,CBD,0.772,graphite,low,"Thin strip on particle side of bright edge; uniform grey, CBD beyond."
+ffwubibz_6161,Batch_1,ffwubibz,6161,931,3129,active_random_pore_cbd,,train,r2req0063,pore,0.951,pore,medium,"Rounded out-of-focus material at pore end; darker BSE, soft shading."
+r17byphk_3867,Batch_2,r17byphk,3867,613,3061,active_uncertain_other,,train,r2req0063,graphite,0.823,graphite,high,"Polished particle face: uniform BSE, flat ETD, Inlens channelling bands."
+uhdslk0o_659,Batch_1,uhdslk0o,659,123,1659,active_random_pore_cbd,,train,r2req0063,CBD,0.912,CBD,low,"Saturated bright Inlens, textured with nanopore, at particle edge beside crack."
+ufdvpb81_6576,Batch_3,ufdvpb81,6576,929,2286,active_uncertain_other,,train,r2req0002,graphite,0.76,CBD,low,"Grey carbon rim conforming around bright SiOx; film-like, could be graphite."
+hzumfsms_4380,Batch_3,hzumfsms,4380,663,3197,active_uncertain_other,,train,r2req0002,graphite,0.802,CBD,low,Thin band at particle neck; brighter textured Inlens suggests binder film.
+i9jiqjwl_612,Batch_2,i9jiqjwl,612,130,3376,active_uncertain_pore_cbd,,train,r2req0002,graphite,0.696,graphite,medium,Uniform flat grey in BSE and ETD within a large particle face.
+hawkfj64_3151,Batch_3,hawkfj64,3151,518,2242,active_random_pore_cbd,,train,r2req0002,CBD,0.956,CBD,medium,"Grey in BSE, very bright lacy Inlens filling gap between graphite particles."
+71vgq3fw_3118,Batch_3,71vgq3fw,3118,467,413,active_uncertain_other,,train,r2req0002,graphite,0.792,CBD,low,"Boundary zone between particles; lighter Inlens than graphite, crack, tiny bright inclusion."
+9luzk4jm_3655,Batch_3,9luzk4jm,3655,557,1598,active_random_pore_cbd,,train,r2req0002,pore,0.941,pore,high,"Black in BSE, Inlens and ETD; open void between particles."
+utfgcjfa_2892,Batch_3,utfgcjfa,2892,492,1746,active_random_pore_cbd,,train,r2req0002,pore,0.904,mixed,low,Upper part dark pore; lower part bright lacy Inlens CBD at neck.
+hzumfsms_877,Batch_3,hzumfsms,877,131,414,active_random_pore_cbd,,val,r2req0002,pore,0.987,pore,high,Black in all three detectors; void between particles.
+5n1q8atc_5359,Batch_1,5n1q8atc,5359,882,455,active_uncertain_other,,val,r2req0002,graphite,0.709,pore,medium,"Tapering pore end; shadowed in ETD, bright Inlens edge, grey floor."
+kbdh4tri_513,Batch_3,kbdh4tri,513,93,710,active_uncertain_other,,train,r2req0002,graphite,0.796,graphite,low,"Narrow sliver along seam; dark Inlens like graphite, flat grey BSE."
+3806gxp0_1210,Batch_2,3806gxp0,1210,204,2114,active_random_pore_cbd,,train,r2req0041,pore,0.952,pore,low,Mostly dark in BSE/ETD; remaining grey part looks like sloping pore wall/floor.
+9luzk4jm_3505,Batch_3,9luzk4jm,3505,533,1251,active_uncertain_pore_cbd,,train,r2req0041,graphite,0.783,CBD,low,"Textured grey neck between SiOx blob and graphite, bright Inlens rims, not flat."
+cfe5vt7s_4232,Batch_3,cfe5vt7s,4232,709,2994,active_uncertain_other,,train,r2req0041,graphite,0.813,pore,low,"Blurry, 3D-shaded bumpy lump surrounded by pores; no flat polished face."
+mgxahqnk_707,Batch_3,mgxahqnk,707,126,2188,active_uncertain_other,,train,r2req0041,SiOx,0.8,graphite,medium,"Smooth uniform core, graphite-grey in BSE, dark smooth Inlens, flat ETD."
+utfgcjfa_1850,Batch_3,utfgcjfa,1850,298,936,active_uncertain_pore_cbd,,train,r2req0041,CBD,0.763,CBD,low,"Thin porous film along graphite surface, darker BSE grey with nanopores."
+71vgq3fw_1082,Batch_3,71vgq3fw,1082,154,2752,active_uncertain_other,,val,r2req0041,graphite,0.714,pore,low,"Neck gap with dark slits in ETD/BSE, bright Inlens rim."
+x77cy643_653,Batch_3,x77cy643,653,108,57,active_uncertain_other,,val,r2req0041,graphite,0.821,graphite,medium,"Uniform flat grey in BSE and SE, smooth dark Inlens; graphite interior."
+uhdslk0o_4705,Batch_1,uhdslk0o,4705,745,2000,active_random_pore_cbd,,train,r2req0041,CBD,0.96,pore,low,"Narrow neck recess: ETD shadow, bright Inlens rims, grey floor in BSE."
+vc2whyaq_4909,Batch_3,vc2whyaq,4909,771,180,active_uncertain_pore_cbd,,train,r2req0041,graphite,0.774,graphite,low,"Smooth grey polished face at particle boundary, consistent with graphite."
+9luzk4jm_5585,Batch_3,9luzk4jm,5585,890,3105,active_random_pore_cbd,,train,r2req0041,pore,0.964,mixed,low,"Large outline spans black pore, grey material and bright SiOx."
+0grcilhi_3547,Batch_3,0grcilhi,3547,581,2378,active_random_pore_cbd,,train,r2req0016,pore,0.994,pore,high,"Inside large dark void; black in all detectors, faint out-of-focus floor."
+avn74qx1_3501,Batch_2,avn74qx1,3501,540,2006,active_uncertain_other,,train,r2req0016,graphite,0.814,graphite,low,Uniform grey particle edge below crack; no lacy texture; Inlens band likely edge effect.
+fzrt2k6r_4225,Batch_1,fzrt2k6r,4225,694,52,active_uncertain_pore_cbd,,val,r2req0016,graphite,0.759,graphite,low,"Flat grey strip on particle side of pore edge, bright edge rim."
+avn74qx1_3947,Batch_2,avn74qx1,3947,617,9,active_uncertain_pore_cbd,,train,r2req0016,pore,0.734,CBD,low,Small pocket between pore and particle rim; mottled bright Inlens texture.
+utfgcjfa_1033,Batch_3,utfgcjfa,1033,184,1945,active_uncertain_other,,train,r2req0016,graphite,0.847,CBD,medium,"Particle-boundary band with nanopores and textured, bright-edged Inlens features."
+fzrt2k6r_5892,Batch_1,fzrt2k6r,5892,957,1627,active_random_pore_cbd,,train,r2req0016,CBD,0.933,mixed,low,"Uniform graphite on left, lighter lacy textured material centre-right, roughly equal."
+f1vzngrs_3682,Batch_1,f1vzngrs,3682,606,2008,active_uncertain_pore_cbd,,val,r2req0016,CBD,0.744,graphite,medium,"Uniform flat fragment, dark in Inlens like graphite, unlike surrounding bright porous CBD."
+iv6g2oq0_5100,Batch_1,iv6g2oq0,5100,796,942,active_uncertain_pore_cbd,,train,r2req0016,pore,0.738,CBD,low,Thin Y-shaped neck between particles; lighter BSE film along particle edge.
+4ih2ggld_2669,Batch_1,4ih2ggld,2669,448,128,active_random_pore_cbd,,val,r2req0016,CBD,0.934,CBD,low,"Lighter film and neck between graphite and SiOx particle, bordered by pores."
+fzrt2k6r_1607,Batch_1,fzrt2k6r,1607,283,3028,active_random_pore_cbd,,train,r2req0016,pore,0.919,pore,medium,"Narrow dark gap between SiOx and graphite particles, black in all detectors."
+i9jiqjwl_1110,Batch_2,i9jiqjwl,1110,241,1893,active_random_pore_cbd,,train,r2req0006,pore,0.918,CBD,low,"Grey rim film along SiOx edge, darker than SiOx in BSE"
+vc2whyaq_3478,Batch_3,vc2whyaq,3478,558,589,active_random_pore_cbd,,train,r2req0006,pore,0.93,pore,medium,"Rounded blurred surface, very dark in SE; material below polished plane"
+3806gxp0_3039,Batch_2,3806gxp0,3039,480,1805,active_uncertain_pore_cbd,,train,r2req0006,CBD,0.676,CBD,low,"Graphite-grey BSE, bright textured Inlens, next to spongy band between particles"
+71vgq3fw_3426,Batch_3,71vgq3fw,3426,554,2505,active_random_pore_cbd,,train,r2req0006,CBD,0.901,CBD,low,Mostly lacy textured pocket material; graphite finger is smaller fraction
+pl8uabbv_5918,Batch_3,pl8uabbv,5918,953,206,active_uncertain_other,,train,r2req0006,graphite,0.727,graphite,medium,Smooth uniform grey in all detectors; end of graphite flake
+4ih2ggld_2154,Batch_1,4ih2ggld,2154,362,2115,active_uncertain_pore_cbd,,train,r2req0006,SiOx,0.75,pore,low,3D-shaded unpolished floor at lip of deep pore; no streaks
+mgxahqnk_4569,Batch_3,mgxahqnk,4569,763,2179,active_uncertain_pore_cbd,,val,r2req0006,pore,0.762,CBD,low,"Graphite-grey BSE, mottled bright Inlens, pocket between particles"
+0grcilhi_1019,Batch_3,0grcilhi,1019,178,576,active_random_pore_cbd,,train,r2req0006,pore,0.897,pore,medium,Darker blurred BSE and shadowed ETD indicate recessed pore floor
+ptg8lmto_3035,Batch_3,ptg8lmto,3035,454,1815,active_uncertain_other,,train,r2req0006,graphite,0.848,graphite,low,"Smooth mid-grey flat strip, graphite-like; adjacent dimpled region excluded"
+fzrt2k6r_4363,Batch_1,fzrt2k6r,4363,731,3402,active_uncertain_other,,train,r2req0006,graphite,0.817,pore,low,Dark Inlens cavity with 3D-shaded blobs in ETD; floor below plane
+avn74qx1_3252,Batch_2,avn74qx1,3252,500,2394,active_uncertain_pore_cbd,,train,r2req0073,graphite,0.715,graphite,low,"Uniform grey face next to curved lamellae; Inlens smooth, not bubbly like CBD."
+utfgcjfa_3975,Batch_3,utfgcjfa,3975,660,1523,active_uncertain_pore_cbd,,train,r2req0073,CBD,0.781,CBD,low,"Bright, finely textured Inlens material filling neck beside deep pore; grey BSE."
+ptg8lmto_4470,Batch_3,ptg8lmto,4470,652,2761,active_uncertain_pore_cbd,,val,r2req0073,graphite,0.807,pore,low,Smooth sliver inside gap with shading and bright Inlens; likely below-plane surface.
+hawkfj64_724,Batch_3,hawkfj64,724,140,1425,active_random_pore_cbd,,train,r2req0073,pore,0.952,pore,low,"Smooth bright Inlens band, darker ETD shading; sloped wall below particle edge."
+iv6g2oq0_1157,Batch_1,iv6g2oq0,1157,183,1393,active_uncertain_other,,train,r2req0073,graphite,0.771,graphite,low,"Smooth grey core of concentrically layered particle; not bright in BSE, not textured."
+xgj4xftb_4366,Batch_3,xgj4xftb,4366,712,1010,active_random_pore_cbd,,train,r2req0073,CBD,0.959,CBD,low,"Mottled textured material at particle junction; bright textured Inlens, darker ETD."
+ptg8lmto_1356,Batch_3,ptg8lmto,1356,217,890,active_uncertain_pore_cbd,,train,r2req0073,CBD,0.799,pore,low,Pore pocket with dark shadow and smoothly sloping wall; bright Inlens rim.
+r17byphk_1476,Batch_2,r17byphk,1476,265,2631,active_random_pore_cbd,,train,r2req0073,pore,0.964,pore,high,"Black in BSE, Inlens and ETD; open gap between particles."
+utfgcjfa_3479,Batch_3,utfgcjfa,3479,564,3197,active_uncertain_pore_cbd,,train,r2req0073,CBD,0.784,CBD,medium,Lumpy film on graphite surface with speckled bright Inlens; CBD coating.
+x7u69zsw_755,Batch_3,x7u69zsw,755,118,949,active_uncertain_pore_cbd,,train,r2req0073,graphite,0.765,graphite,medium,"Matches adjacent graphite: uniform grey BSE, dark smooth Inlens, flat ETD."
+b3esycq1_3182,Batch_2,b3esycq1,3182,500,2613,active_uncertain_pore_cbd,,train,r2req0001,graphite,0.746,graphite,medium,"Flat, uniform grey polished face in all detectors, near a particle boundary."
+r17byphk_3117,Batch_2,r17byphk,3117,514,3376,active_uncertain_other,,train,r2req0001,graphite,0.806,pore,medium,"Small inter-particle cavity: darker BSE, shadowed ETD with bright rims."
+hawkfj64_3509,Batch_3,hawkfj64,3509,571,1874,active_uncertain_pore_cbd,,val,r2req0001,CBD,0.73,CBD,low,Grey material at particle neck beside nanopores; could be graphite.
+i9jiqjwl_6015,Batch_2,i9jiqjwl,6015,925,352,active_random_pore_cbd,,train,r2req0001,pore,0.88,pore,high,Black triangular void in BSE and ETD at particle junction.
+xgj4xftb_4061,Batch_3,xgj4xftb,4061,660,1585,active_uncertain_other,,train,r2req0001,graphite,0.831,graphite,medium,"Edge of large flat flake: uniform BSE grey, dark flat Inlens."
+vc2whyaq_2239,Batch_3,vc2whyaq,2239,374,2628,active_random_pore_cbd,,val,r2req0001,pore,0.915,pore,medium,"Mostly black channel in SE, dark in BSE; minor grey strands."
+rxax5ozo_5903,Batch_2,rxax5ozo,5903,939,72,active_uncertain_other,,val,r2req0001,graphite,0.846,pore,low,"Shaded, sloped sliver within inter-particle gap; no flat polished face."
+r17byphk_1808,Batch_2,r17byphk,1808,328,3153,active_random_pore_cbd,,val,r2req0001,CBD,0.943,CBD,low,"Thin grey gap material along SiOx edge, plus small black pore."
+hzumfsms_5925,Batch_3,hzumfsms,5925,880,231,active_uncertain_other,,train,r2req0001,graphite,0.757,graphite,low,Uniform BSE grey continuous with flake; ETD shading adds ambiguity.
+pl8uabbv_3158,Batch_3,pl8uabbv,3158,515,3046,active_uncertain_other,,train,r2req0001,graphite,0.772,graphite,low,Mostly flat graphite edge; small lighter textured bulge near pore.
+0grcilhi_3102,Batch_3,0grcilhi,3102,514,732,active_uncertain_other,,val,r2req0017,graphite,0.833,CBD,low,"Spongy, mottled pocket with nanopores and bright Inlens rings; no flat polished face."
+f1vzngrs_3985,Batch_1,f1vzngrs,3985,655,1836,active_uncertain_pore_cbd,,train,r2req0017,graphite,0.744,CBD,low,"Mottled, finely porous material beside the flat graphite edge, near small SiOx bits."
+x77cy643_627,Batch_3,x77cy643,627,99,1230,active_uncertain_pore_cbd,,train,r2req0017,graphite,0.795,graphite,low,"Smooth, uniform BSE grey matching graphite; Inlens brightness likely channelling contrast."
+0grcilhi_3066,Batch_3,0grcilhi,3066,500,712,active_uncertain_other,,train,r2req0017,SiOx,0.745,CBD,low,"Same spongy mottled pocket; fine texture, bright Inlens, intermediate BSE grey."
+cfe5vt7s_5124,Batch_3,cfe5vt7s,5124,821,1285,active_random_pore_cbd,,val,r2req0017,pore,0.98,pore,medium,"Pore edge over a blurred, 3D-shaded sub-surface particle; dark and shadowed in ETD."
+fzrt2k6r_415,Batch_1,fzrt2k6r,415,85,2350,active_random_pore_cbd,,train,r2req0017,CBD,0.969,mixed,low,Upper part flat graphite; lower part crack-floor material and open pore.
+mgxahqnk_3486,Batch_3,mgxahqnk,3486,576,14,active_uncertain_pore_cbd,,train,r2req0017,CBD,0.778,pore,low,"Blurred grey material inside a large pore, with a bright Inlens edge band."
+hzumfsms_6176,Batch_3,hzumfsms,6176,917,115,active_uncertain_pore_cbd,,train,r2req0017,CBD,0.784,CBD,low,Thin bright film along graphite surface in Inlens and ETD; could be particle edge.
+ptg8lmto_3100,Batch_3,ptg8lmto,3100,468,704,active_random_pore_cbd,,train,r2req0017,pore,0.878,pore,medium,Mostly dark open pore channel; minor bright strand at left edge.
+epqdaau9_2858,Batch_2,epqdaau9,2858,482,2504,active_uncertain_pore_cbd,,train,r2req0017,CBD,0.722,CBD,low,Particle neck with lacy texture and small pores beside graphite edge.
+x7u69zsw_3074,Batch_3,x7u69zsw,3074,496,601,active_uncertain_pore_cbd,,val,r2req0091,CBD,0.772,CBD,low,Finely textured grey at neck where inter-particle crack ends; not clearly uniform graphite.
+ufdvpb81_6432,Batch_3,ufdvpb81,6432,909,1940,active_uncertain_pore_cbd,,val,r2req0091,CBD,0.767,CBD,medium,"Thin smooth film on graphite surface facing pore; slightly brighter BSE, typical CBD."
+epqdaau9_1411,Batch_2,epqdaau9,1411,251,156,active_uncertain_pore_cbd,,train,r2req0091,CBD,0.73,CBD,medium,"Bright-Inlens pocket between flakes, grey BSE, small nanopores; pore only minor part."
+vc2whyaq_1111,Batch_3,vc2whyaq,1111,186,3119,active_random_pore_cbd,,train,r2req0091,CBD,0.984,CBD,low,"Grey BSE, bright Inlens pocket between SiOx and graphite with few nanopores."
+b3esycq1_2380,Batch_2,b3esycq1,2380,387,1128,active_random_pore_cbd,,train,r2req0091,pore,0.949,pore,high,Black in all three detectors; deep pore between graphite and SiOx.
+5n1q8atc_4674,Batch_1,5n1q8atc,4674,775,1299,active_uncertain_pore_cbd,,val,r2req0091,pore,0.676,CBD,low,Mottled grey with nanopores at particle boundary near large pore; Inlens ambiguous.
+f1vzngrs_2369,Batch_1,f1vzngrs,2369,406,1528,active_random_pore_cbd,,train,r2req0091,pore,0.967,pore,high,Black in all three detectors; deep pore.
+9luzk4jm_5499,Batch_3,9luzk4jm,5499,843,1542,active_uncertain_pore_cbd,,train,r2req0091,graphite,0.729,pore,medium,"Thin crack between graphite particles, dark in BSE and ETD."
+epqdaau9_4481,Batch_2,epqdaau9,4481,736,1222,active_uncertain_other,,train,r2req0091,graphite,0.737,pore,medium,"Dark and shadowed in ETD, mottled grey BSE: open pore floor below plane."
+71vgq3fw_2126,Batch_3,71vgq3fw,2126,322,133,active_uncertain_pore_cbd,,val,r2req0091,graphite,0.713,graphite,medium,Elongated flake with uniform grey BSE face; ETD brightness likely charging.
+71vgq3fw_2749,Batch_3,71vgq3fw,2749,425,944,active_random_pore_cbd,,train,r2req0066,CBD,0.982,CBD,low,"Mostly lacy nanoporous domain, bright in Inlens; upper lobe is uniform graphite."
+mgxahqnk_4697,Batch_3,mgxahqnk,4697,767,2853,active_uncertain_pore_cbd,,train,r2req0066,CBD,0.717,graphite,low,Flat uniform grey in BSE and ETD between cracks; no lacy texture.
+avn74qx1_4754,Batch_2,avn74qx1,4754,745,79,active_uncertain_other,,train,r2req0066,graphite,0.796,graphite,high,Interior of large flat uniform grey particle in all detectors.
+0grcilhi_599,Batch_3,0grcilhi,599,108,382,active_uncertain_pore_cbd,,train,r2req0066,pore,0.769,CBD,low,Thin textured layer between pore and graphite; lacy bright Inlens lines.
+hzumfsms_3706,Batch_3,hzumfsms,3706,558,541,active_uncertain_pore_cbd,,val,r2req0066,CBD,0.787,pore,low,Bright sloped wall in ETD/Inlens beside pore; no flat polished face.
+i9jiqjwl_1725,Batch_2,i9jiqjwl,1725,303,2828,active_uncertain_other,,train,r2req0066,graphite,0.758,graphite,medium,"Uniform flat grey at edge of large graphite particle, beside CBD pocket."
+avn74qx1_2830,Batch_2,avn74qx1,2830,431,3485,active_uncertain_other,,val,r2req0066,graphite,0.808,CBD,low,"Mottled bright Inlens texture near pore; carbon-grey BSE, not flat graphite."
+hawkfj64_3733,Batch_3,hawkfj64,3733,612,2830,active_uncertain_other,,train,r2req0066,graphite,0.86,graphite,low,Uniform BSE grey with lamellar streaks next to SiOx; flat in ETD.
+71vgq3fw_1089,Batch_3,71vgq3fw,1089,161,169,active_random_pore_cbd,,val,r2req0066,pore,0.924,SiOx,low,"Angular block brighter than graphite in BSE, bright ETD; dimmer than other SiOx."
+b3esycq1_3034,Batch_2,b3esycq1,3034,479,2595,active_uncertain_other,,val,r2req0066,graphite,0.784,CBD,low,"Mottled, slightly lighter BSE with spongy bright Inlens texture."
+hawkfj64_1359,Batch_3,hawkfj64,1359,223,2151,active_uncertain_pore_cbd,,train,r2req0069,pore,0.725,pore,medium,"Recessed cavity floor: shadowed in ETD, soft blurred BSE, no flat polished face."
+i9jiqjwl_1061,Batch_2,i9jiqjwl,1061,199,338,active_uncertain_pore_cbd,,val,r2req0069,CBD,0.75,graphite,medium,Flat uniform graphite-grey polished face within particle; not SiOx-bright in BSE.
+4ih2ggld_3914,Batch_1,4ih2ggld,3914,659,3149,active_uncertain_pore_cbd,,train,r2req0069,CBD,0.746,pore,low,"Rounded surface with 3D shading in ETD, darker Inlens; likely below polished plane."
+avn74qx1_3362,Batch_2,avn74qx1,3362,520,2046,active_uncertain_pore_cbd,,train,r2req0069,graphite,0.725,graphite,low,Smooth graphite-grey band at particle edge; bumpy rim hints at CBD film.
+xgj4xftb_3237,Batch_3,xgj4xftb,3237,534,20,active_random_pore_cbd,,train,r2req0069,pore,0.972,pore,high,Black in all three detectors; deep open pore.
+hawkfj64_3811,Batch_3,hawkfj64,3811,622,3030,active_uncertain_pore_cbd,,train,r2req0069,graphite,0.806,graphite,low,Mostly grey polished graphite; dark crack wedge occupies roughly a third.
+vc2whyaq_1818,Batch_3,vc2whyaq,1818,287,1834,active_uncertain_pore_cbd,,train,r2req0069,graphite,0.705,graphite,low,Narrow uniform grey strip beside slit pore; graphite particle edge.
+epqdaau9_3539,Batch_2,epqdaau9,3539,590,61,active_uncertain_pore_cbd,,val,r2req0069,CBD,0.606,graphite,medium,"Dense curved flake, graphite-grey in BSE with curtaining; much darker than SiOx."
+iv6g2oq0_4395,Batch_1,iv6g2oq0,4395,674,3454,active_random_pore_cbd,,val,r2req0069,pore,0.995,pore,high,"Deep shadow in ETD, blurred dark-grey BSE; unfilled pore floor."
+uhdslk0o_2823,Batch_1,uhdslk0o,2823,460,824,active_random_pore_cbd,,train,r2req0069,pore,0.981,pore,high,Mostly black void in all detectors; bright Inlens rim at bottom.
+x77cy643_4207,Batch_3,x77cy643,4207,723,2239,active_uncertain_other,,train,r2req0040,graphite,0.816,graphite,high,Flat uniform BSE grey inside large particle; only touches particle edge.
+ptg8lmto_2608,Batch_3,ptg8lmto,2608,392,1781,active_random_pore_cbd,,train,r2req0040,CBD,0.854,graphite,low,"Flat grey face with straight, likely basal, crack; texture somewhat ambiguous."
+epqdaau9_535,Batch_2,epqdaau9,535,102,723,active_uncertain_other,,train,r2req0040,graphite,0.789,pore,low,"Small pit: ETD shadow, bright Inlens, grey BSE floor; near half."
+fzrt2k6r_2692,Batch_1,fzrt2k6r,2692,456,3256,active_uncertain_pore_cbd,,train,r2req0040,graphite,0.772,mixed,low,Graphite strip plus darker CBD band containing small round pores.
+5n1q8atc_2509,Batch_1,5n1q8atc,2509,424,875,active_uncertain_other,,train,r2req0040,graphite,0.797,pore,high,Black in BSE and ETD with bright Inlens wall; clear void.
+f1vzngrs_962,Batch_1,f1vzngrs,962,172,3208,active_uncertain_pore_cbd,,train,r2req0040,CBD,0.688,SiOx,low,"Brighter BSE than graphite, joins lighter particle; neck location ambiguous."
+tuy3zymq_3763,Batch_3,tuy3zymq,3763,601,398,active_random_pore_cbd,,val,r2req0040,pore,0.929,pore,high,"Inter-particle gap: dark BSE/ETD, out-of-plane floor visible in Inlens."
+ptg8lmto_461,Batch_3,ptg8lmto,461,83,1862,active_uncertain_pore_cbd,,train,r2req0040,graphite,0.794,CBD,medium,"Spongy textured material, bright Inlens, at particle junction with small voids."
+kbdh4tri_3867,Batch_3,kbdh4tri,3867,583,343,active_uncertain_pore_cbd,,train,r2req0040,graphite,0.749,CBD,medium,"Finely speckled bright Inlens at particle neck, graphite-like BSE grey."
+b3esycq1_3803,Batch_2,b3esycq1,3803,593,1235,active_uncertain_pore_cbd,,train,r2req0040,graphite,0.727,pore,medium,"Black hole in BSE, shadowed in ETD, bright Inlens rim."
+mgxahqnk_4710,Batch_3,mgxahqnk,4710,788,3462,active_uncertain_other,,train,r2req0032,graphite,0.836,graphite,low,Flat dark Inlens face and uniform BSE grey; slight texture leaves CBD possible.
+ffwubibz_4824,Batch_1,ffwubibz,4824,739,3386,active_uncertain_other,,train,r2req0032,graphite,0.764,pore,low,"Bright ETD, dark Inlens sliver; likely tilted sidewall descending into adjacent crack."
+epqdaau9_2144,Batch_2,epqdaau9,2144,374,3017,active_uncertain_other,,train,r2req0032,graphite,0.777,CBD,low,Mottled lighter pocket at crack end between particles; graphite-grey BSE.
+4ih2ggld_2454,Batch_1,4ih2ggld,2454,411,2736,active_uncertain_other,,train,r2req0032,SiOx,0.718,pore,low,"Blurred rounded particle with soft 3D shading, likely below polished plane."
+vc2whyaq_2934,Batch_3,vc2whyaq,2934,474,70,active_uncertain_other,,train,r2req0032,graphite,0.834,pore,medium,"Smoothly shaded sloping wall beside black pore; shadowed in SE, bright Inlens rim."
+hawkfj64_5282,Batch_3,hawkfj64,5282,861,3377,active_uncertain_other,,train,r2req0032,graphite,0.87,CBD,low,"Textured pocket among pores; Inlens brighter than graphite, BSE graphite-grey."
+x77cy643_4654,Batch_3,x77cy643,4654,793,2252,active_random_pore_cbd,,val,r2req0032,pore,0.84,pore,medium,"Out-of-focus particle below plane: darker shaded SE, soft glowing Inlens."
+4ih2ggld_6007,Batch_1,4ih2ggld,6007,995,2965,active_random_pore_cbd,,train,r2req0032,CBD,0.928,CBD,low,"Textured corner between graphite, SiOx and pore with bright edge specks."
+utfgcjfa_1425,Batch_3,utfgcjfa,1425,236,2084,active_uncertain_other,,train,r2req0032,graphite,0.824,CBD,medium,"Lighter Inlens band between dark graphite particles, nanoporous texture adjacent."
+ptg8lmto_722,Batch_3,ptg8lmto,722,114,461,active_random_pore_cbd,,train,r2req0032,CBD,0.855,CBD,medium,Bright mottled Inlens gap between dark graphite flakes; graphite-grey BSE.
+tuy3zymq_3330,Batch_3,tuy3zymq,3330,547,646,active_uncertain_pore_cbd,,train,r2req0004,graphite,0.733,pore,medium,"Shadowed gap beside out-of-focus particle; darker in BSE and ETD, no polished face."
+utfgcjfa_3498,Batch_3,utfgcjfa,3498,579,977,active_random_pore_cbd,,val,r2req0004,pore,0.835,pore,medium,"Recessed region, dark in SE; out-of-focus surfaces below polished plane."
+avn74qx1_2937,Batch_2,avn74qx1,2937,443,2608,active_uncertain_pore_cbd,,train,r2req0004,graphite,0.727,graphite,low,Thin strip at graphite edge with bright edge line; ambiguous with sloping band.
+ptg8lmto_3229,Batch_3,ptg8lmto,3229,473,1863,active_uncertain_pore_cbd,,train,r2req0004,graphite,0.71,CBD,low,Neck pocket between textured particle and graphite; intermediate Inlens brightness.
+4ih2ggld_2949,Batch_1,4ih2ggld,2949,490,3195,active_uncertain_other,,train,r2req0004,graphite,0.773,graphite,medium,"Uniform grey, sharp-edged flake end joining polished graphite particle."
+rxax5ozo_3500,Batch_2,rxax5ozo,3500,565,1642,active_uncertain_pore_cbd,,train,r2req0004,graphite,0.748,graphite,medium,Uniform BSE grey face near rounded particle edge; Inlens rim is particle shell.
+x77cy643_4307,Batch_3,x77cy643,4307,740,938,active_uncertain_other,,val,r2req0004,graphite,0.791,CBD,medium,"Bright mottled Inlens, graphite-grey speckled BSE, pocket beside flat graphite."
+epqdaau9_6009,Batch_2,epqdaau9,6009,971,479,active_uncertain_pore_cbd,,train,r2req0004,graphite,0.725,graphite,high,Flat uniform BSE grey with curtaining streaks in ETD; polished graphite face.
+tuy3zymq_5115,Batch_3,tuy3zymq,5115,814,3120,active_random_pore_cbd,,val,r2req0004,CBD,0.877,CBD,medium,Bright textured Inlens at particle neck with small pore; graphite-grey BSE.
+0grcilhi_1581,Batch_3,0grcilhi,1581,260,929,active_uncertain_pore_cbd,,train,r2req0004,graphite,0.752,pore,low,"Narrow seam darker in ETD, continuous with pore channel; might be graphite."
+tuy3zymq_3197,Batch_3,tuy3zymq,3197,519,3380,active_uncertain_pore_cbd,,val,r2req0057,pore,0.748,pore,medium,"Thin strip at pore edge; dark in BSE, Inlens and ETD."
+i9jiqjwl_2082,Batch_2,i9jiqjwl,2082,370,2391,active_random_pore_cbd,,train,r2req0057,CBD,0.917,CBD,medium,Mottled nanoporous pocket next to SiOx; textured in Inlens and ETD.
+4ih2ggld_2358,Batch_1,4ih2ggld,2358,397,2744,active_uncertain_pore_cbd,,val,r2req0057,SiOx,0.668,SiOx,low,"Rounded, slightly brighter BSE particle; mottled Inlens; partly dark crevice."
+tuy3zymq_2712,Batch_3,tuy3zymq,2712,448,2764,active_uncertain_pore_cbd,,train,r2req0057,graphite,0.773,graphite,low,"Medium BSE grey, dark Inlens, smooth ETD beside SiOx; could be CBD."
+hawkfj64_4058,Batch_3,hawkfj64,4058,656,48,active_uncertain_other,,train,r2req0057,graphite,0.864,CBD,medium,Thin bridge between pores near SiOx; bright textured Inlens.
+avn74qx1_5202,Batch_2,avn74qx1,5202,819,3070,active_random_pore_cbd,,train,r2req0057,CBD,0.866,CBD,low,"Curved textured film at pore edge, slightly lighter BSE; could be graphite."
+3806gxp0_1324,Batch_2,3806gxp0,1324,244,2648,active_random_pore_cbd,,train,r2req0057,pore,0.902,CBD,medium,"Textured band between graphite particles; bright Inlens, small dark nanopores."
+rxax5ozo_5601,Batch_2,rxax5ozo,5601,881,125,active_random_pore_cbd,,val,r2req0057,pore,0.989,pore,medium,"Grey BSE but shadowed smooth gradient in SE, hazy Inlens: pore floor."
+kbdh4tri_5521,Batch_3,kbdh4tri,5521,851,1850,active_uncertain_pore_cbd,,train,r2req0057,graphite,0.758,SiOx,low,"Brighter, mottled, non-lamellar particle in BSE; possibly below polished plane."
+utfgcjfa_5318,Batch_3,utfgcjfa,5318,869,824,active_uncertain_pore_cbd,,train,r2req0057,CBD,0.765,graphite,low,"Uniform grey BSE, dark Inlens, smooth SE beside small SiOx."
+iv6g2oq0_1930,Batch_1,iv6g2oq0,1930,314,78,active_uncertain_other,,train,r2req0046,graphite,0.791,graphite,medium,"Smooth uniform grey solid band in all detectors, polished face below pore."
+4ih2ggld_1181,Batch_1,4ih2ggld,1181,206,727,active_random_pore_cbd,,train,r2req0046,CBD,0.961,graphite,medium,Smooth thin flake layer with uniform BSE grey; only minor crack included.
+9luzk4jm_3365,Batch_3,9luzk4jm,3365,513,1824,active_uncertain_pore_cbd,,val,r2req0046,CBD,0.763,CBD,medium,"Lacy bright network in Inlens, textured grey BSE, pocket beside pore."
+b3esycq1_3921,Batch_2,b3esycq1,3921,614,989,active_uncertain_pore_cbd,,train,r2req0046,graphite,0.715,CBD,low,"Between flakes; clustered nanotextured blobs in Inlens, graphite-grey BSE; could be fragment."
+tuy3zymq_1565,Batch_3,tuy3zymq,1565,247,445,active_uncertain_other,,train,r2req0046,graphite,0.767,CBD,medium,"Wedge between particles, spongy bright Inlens texture, mottled BSE not SiOx-bright."
+i9jiqjwl_1067,Batch_2,i9jiqjwl,1067,202,232,active_uncertain_other,,train,r2req0046,graphite,0.691,graphite,medium,Inside polished graphite face; uniform BSE/ETD grey; Inlens dark band likely channelling.
+hawkfj64_2632,Batch_3,hawkfj64,2632,431,3363,active_uncertain_other,,train,r2req0046,graphite,0.847,graphite,medium,"Uniform BSE grey, ETD curtaining streaks; polished graphite near particle boundary."
+hzumfsms_3684,Batch_3,hzumfsms,3684,547,163,active_random_pore_cbd,,train,r2req0046,pore,0.932,pore,medium,Dark/shadowed in ETD and BSE; Inlens shows out-of-plane floor surface.
+mgxahqnk_2440,Batch_3,mgxahqnk,2440,419,1084,active_uncertain_pore_cbd,,train,r2req0046,pore,0.778,CBD,low,"Bright film along graphite edge in Inlens, lighter textured BSE, flat ETD."
+uhdslk0o_1745,Batch_1,uhdslk0o,1745,286,1685,active_random_pore_cbd,,val,r2req0046,CBD,0.914,CBD,low,"Junction at crack end, small nanopores and texture; boundaries make it ambiguous."
+utfgcjfa_3208,Batch_3,utfgcjfa,3208,548,171,active_random_pore_cbd,,train,r2req0068,pore,0.88,pore,high,Dark interior in BSE and ETD; grey pore floor visible below plane.
+cfe5vt7s_3259,Batch_3,cfe5vt7s,3259,537,1467,active_uncertain_other,,train,r2req0068,graphite,0.8,pore,low,"Rounded, 3D-shaded object beside deep pore; no polished texture, likely below plane."
+i9jiqjwl_615,Batch_2,i9jiqjwl,615,128,1701,active_uncertain_pore_cbd,,train,r2req0068,graphite,0.743,graphite,medium,"Flat, uniform grey face inside large graphite particle; only minor crack nearby."
+uhdslk0o_4742,Batch_1,uhdslk0o,4742,753,2676,active_uncertain_pore_cbd,,train,r2req0068,CBD,0.795,graphite,medium,Mostly uniform flat grey face consistent with graphite; minor bright edge spots.
+xgj4xftb_4116,Batch_3,xgj4xftb,4116,662,288,active_random_pore_cbd,,train,r2req0068,CBD,0.992,CBD,low,"Saturated bright Inlens film between particles, joining spongy pocket; likely CBD."
+0grcilhi_3710,Batch_3,0grcilhi,3710,606,1076,active_uncertain_pore_cbd,,train,r2req0068,pore,0.746,pore,low,"Rough, mottled, 3D-shaded block; not SiOx-bright in BSE; likely below plane."
+r17byphk_1774,Batch_2,r17byphk,1774,316,2137,active_random_pore_cbd,,val,r2req0068,pore,0.972,pore,low,Darker shaded depression with bright rim within rough pocket; likely open pore.
+b3esycq1_576,Batch_2,b3esycq1,576,93,2216,active_uncertain_pore_cbd,,train,r2req0068,pore,0.667,CBD,low,Textured material at particle neck beside pore; bright Inlens loops around fragments.
+r17byphk_704,Batch_2,r17byphk,704,132,2694,active_random_pore_cbd,,train,r2req0068,CBD,0.88,CBD,medium,Mottled nanoporous band with dark specks between graphite particles.
+ufdvpb81_949,Batch_3,ufdvpb81,949,150,3389,active_uncertain_pore_cbd,,train,r2req0068,graphite,0.726,CBD,low,"Mottled pocket at particle junction; distinct dark Inlens patch, speckled BSE."
+uhdslk0o_1116,Batch_1,uhdslk0o,1116,199,3385,active_uncertain_other,,train,r2req0050,graphite,0.818,CBD,low,Neck region with small pore and bright Inlens patches; partly graphite.
+x7u69zsw_2001,Batch_3,x7u69zsw,2001,334,18,active_uncertain_pore_cbd,,train,r2req0050,CBD,0.764,graphite,medium,"Inside large graphite particle; subtle streak, uniform BSE grey."
+kbdh4tri_4263,Batch_3,kbdh4tri,4263,648,875,active_random_pore_cbd,,train,r2req0050,pore,0.918,pore,high,Black in all three detectors between graphite particles.
+0grcilhi_4689,Batch_3,0grcilhi,4689,752,2068,active_uncertain_pore_cbd,,train,r2req0050,CBD,0.778,graphite,low,"Smooth flake-like band beside large pore; flat ETD, moderate BSE grey."
+cfe5vt7s_3318,Batch_3,cfe5vt7s,3318,546,2823,active_uncertain_pore_cbd,,train,r2req0050,graphite,0.778,pore,low,"Dark Inlens, slightly darker BSE/ETD pocket beside deep pore."
+vc2whyaq_4408,Batch_3,vc2whyaq,4408,691,1700,active_uncertain_pore_cbd,,train,r2req0050,pore,0.746,graphite,low,Grey in BSE/ETD at particle edge; dark Inlens likely channelling.
+tuy3zymq_2984,Batch_3,tuy3zymq,2984,484,1415,active_uncertain_other,,val,r2req0050,graphite,0.788,pore,low,"Blurry intermediate BSE, no curtaining, sunken region beside cracks; likely pore floor."
+iv6g2oq0_1868,Batch_1,iv6g2oq0,1868,309,2094,active_uncertain_pore_cbd,,val,r2req0050,graphite,0.728,graphite,medium,"Edge strip of graphite particle; uniform BSE grey, bright Inlens edge."
+uhdslk0o_4627,Batch_1,uhdslk0o,4627,740,169,active_uncertain_pore_cbd,,train,r2req0050,graphite,0.746,CBD,low,Narrow neck with nanopore and bright Inlens material between particles.
+i9jiqjwl_6400,Batch_2,i9jiqjwl,6400,982,1392,active_uncertain_pore_cbd,,train,r2req0050,pore,0.695,pore,high,"Dark BSE, black ETD gap between particles; pore floor."
+ffwubibz_1314,Batch_1,ffwubibz,1314,228,691,active_uncertain_pore_cbd,,train,r2req0022,pore,0.769,SiOx,medium,"Edge strip of a bright, mottled BSE particle, consistent across all detectors"
+9luzk4jm_4097,Batch_3,9luzk4jm,4097,623,867,active_uncertain_other,,val,r2req0022,graphite,0.738,graphite,low,Smooth uniform carbon-grey face with bright rim; could be shallow pore
+ptg8lmto_2057,Batch_3,ptg8lmto,2057,302,3334,active_uncertain_pore_cbd,,train,r2req0022,graphite,0.779,pore,medium,"Bright graded sloping wall above black pore; 3D-shaded, below polished plane"
+uhdslk0o_3009,Batch_1,uhdslk0o,3009,491,3216,active_uncertain_other,,train,r2req0022,graphite,0.836,graphite,low,Flat carbon-grey area at crack tip within lamellar graphite; small bright speck
+hzumfsms_2893,Batch_3,hzumfsms,2893,430,3451,active_uncertain_pore_cbd,,train,r2req0022,CBD,0.75,pore,low,"Smooth, darker in ETD beside black wedge pore; likely recessed floor"
+cfe5vt7s_3112,Batch_3,cfe5vt7s,3112,518,2265,active_uncertain_pore_cbd,,train,r2req0022,CBD,0.75,CBD,low,"Carbon-grey pocket where SiOx, pore and graphite meet; textured in Inlens"
+xgj4xftb_2513,Batch_3,xgj4xftb,2513,408,2059,active_uncertain_pore_cbd,,train,r2req0022,CBD,0.728,graphite,low,Uniform carbon-grey flat flake with bright edges; darker ETD hints pore floor
+kbdh4tri_3830,Batch_3,kbdh4tri,3830,577,501,active_uncertain_pore_cbd,,train,r2req0022,CBD,0.755,CBD,low,"Carbon-grey pocket between SiOx, pore and graphite; unlike dark graphite in Inlens"
+x7u69zsw_4692,Batch_3,x7u69zsw,4692,745,234,active_random_pore_cbd,,train,r2req0022,pore,0.953,CBD,low,"Narrow neck between two graphite faces; textured, slightly darker in BSE"
+kbdh4tri_5660,Batch_3,kbdh4tri,5660,864,789,active_uncertain_pore_cbd,,train,r2req0022,graphite,0.748,CBD,low,"Tip of darker BSE wedge at particle junction, bright specks in Inlens"
+ffwubibz_6168,Batch_1,ffwubibz,6168,931,3394,active_uncertain_other,,train,r2req0086,graphite,0.729,graphite,low,"Flat uniform grey face inside curved particle, similar brightness to nearby graphite flakes."
+f1vzngrs_4016,Batch_1,f1vzngrs,4016,652,3435,active_uncertain_other,,val,r2req0086,graphite,0.766,CBD,low,"Mottled grey material at pore edge, flat in ETD, nanoporous texture nearby."
+xgj4xftb_2110,Batch_3,xgj4xftb,2110,344,307,active_uncertain_pore_cbd,,train,r2req0086,CBD,0.799,CBD,low,Bright lacy Inlens texture in inter-particle pocket; ETD darkness suggests possible pore.
+pl8uabbv_4346,Batch_3,pl8uabbv,4346,695,485,active_uncertain_other,,train,r2req0086,graphite,0.777,mixed,low,"Straddles graphite edge, dark crack pores and bright CBD rim in similar amounts."
+kbdh4tri_3445,Batch_3,kbdh4tri,3445,537,3478,active_random_pore_cbd,,val,r2req0086,pore,0.94,pore,medium,"Mostly dark shadowed in ETD and Inlens, grey floor in BSE; open pore."
+iv6g2oq0_4116,Batch_1,iv6g2oq0,4116,649,1819,active_uncertain_pore_cbd,,train,r2req0086,graphite,0.738,graphite,medium,"Smooth flat band with Inlens channelling contrast, graphite BSE grey, not lacy."
+uhdslk0o_4525,Batch_1,uhdslk0o,4525,727,1039,active_uncertain_pore_cbd,,train,r2req0086,CBD,0.763,graphite,medium,Flat grey lamellar sliver at particle edge beside basal-plane crack.
+rxax5ozo_5784,Batch_2,rxax5ozo,5784,922,1351,active_uncertain_pore_cbd,,train,r2req0086,graphite,0.795,CBD,medium,"Grey band between SiOx and graphite; bright lacy Inlens, small pores in SE."
+tuy3zymq_5998,Batch_3,tuy3zymq,5998,949,1398,active_uncertain_other,,train,r2req0086,graphite,0.734,SiOx,low,"Brighter than graphite in BSE, mottled non-lamellar texture; could be CBD."
+b3esycq1_1025,Batch_2,b3esycq1,1025,160,943,active_uncertain_other,,train,r2req0086,graphite,0.742,CBD,low,"Small mottled domain in pocket beside pore, flat in ETD, brighter Inlens."
+uhdslk0o_1609,Batch_1,uhdslk0o,1609,262,1850,active_uncertain_pore_cbd,,train,r2req0035,graphite,0.781,graphite,medium,"Flat uniform BSE grey face between two pores; smooth in ETD, edge-bounded in Inlens."
+fzrt2k6r_2742,Batch_1,fzrt2k6r,2742,447,1490,active_uncertain_pore_cbd,,train,r2req0035,graphite,0.755,graphite,low,Edge band of large grey particle bordering deep pore; possible 3D shading adds doubt.
+0grcilhi_2898,Batch_3,0grcilhi,2898,467,2684,active_uncertain_pore_cbd,,train,r2req0035,pore,0.778,pore,low,Thin superpixel follows a dark basal crack in graphite; crack likely dominates.
+x77cy643_5497,Batch_3,x77cy643,5497,938,2479,active_uncertain_pore_cbd,,train,r2req0035,pore,0.784,CBD,low,"Curved film at particle neck, graphite-grey BSE, bright layered Inlens; could be pore wall."
+fzrt2k6r_3928,Batch_1,fzrt2k6r,3928,629,1897,active_uncertain_pore_cbd,,train,r2req0035,CBD,0.716,graphite,medium,"Smooth flat carbon-grey band below pore tip, between SiOx particles; not lacy."
+kbdh4tri_6064,Batch_3,kbdh4tri,6064,930,169,active_uncertain_pore_cbd,,train,r2req0035,graphite,0.753,graphite,low,"Smooth band along graphite particle edge, uniform BSE grey; could be CBD film."
+tuy3zymq_4276,Batch_3,tuy3zymq,4276,670,1475,active_uncertain_pore_cbd,,train,r2req0035,graphite,0.707,pore,medium,Small pocket dark in BSE and black in ETD between SiOx bit and graphite.
+3806gxp0_5647,Batch_2,3806gxp0,5647,878,3209,active_uncertain_other,,train,r2req0035,graphite,0.759,graphite,medium,"Just inside polished graphite edge, uniform BSE grey and flat ETD below pore."
+iv6g2oq0_2720,Batch_1,iv6g2oq0,2720,439,894,active_random_pore_cbd,,train,r2req0035,CBD,0.875,graphite,low,"Small particle with carbon-grey BSE, much darker than neighbouring SiOx; topography ambiguous."
+x77cy643_2134,Batch_3,x77cy643,2134,351,3207,active_uncertain_pore_cbd,,train,r2req0035,pore,0.773,pore,medium,"Particle below polished plane: blurry BSE, 3D shading and shadows in ETD."
+ufdvpb81_5252,Batch_3,ufdvpb81,5252,749,835,active_random_pore_cbd,,train,r2req0075,pore,0.996,pore,high,"Black in BSE, Inlens and ETD; deep open pore interior."
+0grcilhi_1741,Batch_3,0grcilhi,1741,282,2017,active_random_pore_cbd,,val,r2req0075,CBD,0.994,CBD,low,Bright textured Inlens and mottled BSE at particle tip; jagged boundary.
+pl8uabbv_3204,Batch_3,pl8uabbv,3204,510,3450,active_uncertain_pore_cbd,,train,r2req0075,CBD,0.774,CBD,low,Thin streaky film along graphite edge with bright Inlens lines.
+r17byphk_3619,Batch_2,r17byphk,3619,575,2209,active_uncertain_pore_cbd,,train,r2req0075,pore,0.772,pore,medium,"Dark ETD pocket, grey BSE floor, ringed by bright Inlens edges."
+xgj4xftb_2274,Batch_3,xgj4xftb,2274,380,938,active_uncertain_pore_cbd,,train,r2req0075,CBD,0.747,pore,medium,"Inside recess; 3D-shaded floor in ETD, lighter Inlens than polished matrix."
+fzrt2k6r_5948,Batch_1,fzrt2k6r,5948,944,2946,active_uncertain_pore_cbd,,train,r2req0075,CBD,0.738,pore,low,Dark Inlens patch ringed by bright edges; ETD shadow slit; shallow pore.
+epqdaau9_607,Batch_2,epqdaau9,607,111,1379,active_uncertain_pore_cbd,,train,r2req0075,graphite,0.684,CBD,low,Thin bright Inlens strip on particle edge bordering pore; spongy end.
+ufdvpb81_2718,Batch_3,ufdvpb81,2718,392,456,active_uncertain_pore_cbd,,train,r2req0075,CBD,0.77,graphite,low,Uniform flat grey in BSE and ETD at top of graphite particle.
+xgj4xftb_647,Batch_3,xgj4xftb,647,101,2544,active_uncertain_pore_cbd,,train,r2req0075,pore,0.733,CBD,low,"Mottled band, saturated Inlens, near-graphite BSE grey; layer on particle."
+uhdslk0o_2828,Batch_1,uhdslk0o,2828,473,331,active_uncertain_pore_cbd,,val,r2req0075,CBD,0.77,graphite,low,"Rounded domains, graphite-like BSE grey, no ETD shadows; ambiguous texture."
+71vgq3fw_1648,Batch_3,71vgq3fw,1648,248,2311,active_random_pore_cbd,,train,r2req0085,pore,0.925,graphite,low,Smooth grey horizontal band in all detectors; likely thin graphite flake between pores.
+utfgcjfa_3106,Batch_3,utfgcjfa,3106,501,1714,active_uncertain_other,,train,r2req0085,graphite,0.852,graphite,low,"Graphite-grey BSE, smooth dark Inlens matching neighbouring graphite faces."
+i9jiqjwl_6777,Batch_2,i9jiqjwl,6777,1044,27,active_uncertain_pore_cbd,,train,r2req0085,CBD,0.714,graphite,low,"Curved lamellar particle beside basal crack; smooth, not strongly bright in BSE."
+hawkfj64_3658,Batch_3,hawkfj64,3658,611,1692,active_random_pore_cbd,,train,r2req0085,CBD,0.922,pore,low,Wide bright Inlens band on sloped pore wall; soft BSE gradient.
+xgj4xftb_550,Batch_3,xgj4xftb,550,86,2425,active_uncertain_pore_cbd,,train,r2req0085,CBD,0.761,pore,low,Mottled bright particle but shaded dark in ETD; likely recessed pore floor.
+uhdslk0o_5253,Batch_1,uhdslk0o,5253,824,1706,active_random_pore_cbd,,train,r2req0085,CBD,0.916,graphite,medium,Smooth graphite-grey region adjacent to bright SiOx; no lacy texture.
+0grcilhi_3377,Batch_3,0grcilhi,3377,552,291,active_uncertain_pore_cbd,,train,r2req0085,CBD,0.772,CBD,low,Bright lacy Inlens material at particle neck; graphite-grey BSE.
+epqdaau9_5210,Batch_2,epqdaau9,5210,843,2117,active_uncertain_pore_cbd,,train,r2req0085,CBD,0.719,graphite,low,Graphite-grey in BSE and ETD at particle edge near SiOx junction.
+rxax5ozo_2369,Batch_2,rxax5ozo,2369,392,845,active_uncertain_other,,train,r2req0085,graphite,0.784,graphite,high,Uniform grey polished face with lamellar streaks in Inlens and SE.
+i9jiqjwl_2685,Batch_2,i9jiqjwl,2685,438,1350,active_uncertain_pore_cbd,,train,r2req0085,graphite,0.735,graphite,low,BSE and Inlens match graphite particle; ETD brightening likely edge effect.
+x77cy643_2929,Batch_3,x77cy643,2929,498,2438,active_uncertain_pore_cbd,,train,r2req0094,CBD,0.769,pore,high,"Dark gap beside SiOx; shadowed in SE, blurry pore floor in Inlens."
+xgj4xftb_3633,Batch_3,xgj4xftb,3633,590,55,active_uncertain_pore_cbd,,train,r2req0094,CBD,0.754,graphite,low,"Flat medium grey in BSE/ETD, dark uniform Inlens like graphite; no lacy texture."
+i9jiqjwl_876,Batch_2,i9jiqjwl,876,172,1612,active_uncertain_pore_cbd,,train,r2req0094,CBD,0.732,graphite,low,"Inside large graphite particle; darker band likely contrast variation, not clearly CBD."
+hzumfsms_1414,Batch_3,hzumfsms,1414,209,1285,active_uncertain_other,,train,r2req0094,graphite,0.808,CBD,medium,Spongy material with small pores and bright Inlens blobs at crack neck.
+avn74qx1_3284,Batch_2,avn74qx1,3284,506,1414,active_uncertain_pore_cbd,,train,r2req0094,graphite,0.64,graphite,medium,"Flat uniform grey in all detectors, below particle boundary line."
+x7u69zsw_5203,Batch_3,x7u69zsw,5203,836,712,active_uncertain_other,,train,r2req0094,SiOx,0.797,graphite,medium,"Rounded particle, carbon-level BSE, curved lamellar lines in Inlens."
+0grcilhi_939,Batch_3,0grcilhi,939,165,597,active_uncertain_pore_cbd,,train,r2req0094,pore,0.758,pore,medium,Dark shadowed pocket in ETD; grey blurry floor in BSE.
+ffwubibz_2174,Batch_1,ffwubibz,2174,350,3242,active_uncertain_other,,train,r2req0094,graphite,0.812,CBD,medium,Bright lacy Inlens texture with small pores within graphite matrix.
+hawkfj64_1672,Batch_3,hawkfj64,1672,284,2718,active_uncertain_pore_cbd,,val,r2req0094,CBD,0.802,CBD,low,"Mottled pocket between particles, bright lacy Inlens, dimmer than adjacent SiOx."
+xgj4xftb_1276,Batch_3,xgj4xftb,1276,218,167,active_uncertain_other,,train,r2req0094,graphite,0.875,CBD,low,"Thin in-plane strand beside pore, lacy Inlens texture at top."
+utfgcjfa_1569,Batch_3,utfgcjfa,1569,260,2105,active_uncertain_other,,train,r2req0055,graphite,0.804,CBD,medium,"Spongy, spotted nanoporous texture in neck between graphite particles; carbon-grey BSE."
+hzumfsms_4531,Batch_3,hzumfsms,4531,693,313,active_uncertain_pore_cbd,,train,r2req0055,CBD,0.719,pore,low,"Thin strip on 3D-shaded, wrinkled structure below polished plane inside pore."
+utfgcjfa_5798,Batch_3,utfgcjfa,5798,941,127,active_uncertain_pore_cbd,,train,r2req0055,graphite,0.75,graphite,medium,Uniform flat grey in BSE and SE; smooth dark Inlens like nearby graphite.
+5n1q8atc_2609,Batch_1,5n1q8atc,2609,442,3136,active_uncertain_pore_cbd,,train,r2req0055,CBD,0.749,graphite,medium,Flat uniform carbon-grey face at top of elongated particle in all detectors.
+tuy3zymq_1398,Batch_3,tuy3zymq,1398,230,1956,active_random_pore_cbd,,train,r2req0055,CBD,0.933,pore,low,Darker recessed floor in ETD beside pore shadow; no lamellar polished face.
+0grcilhi_5264,Batch_3,0grcilhi,5264,837,1958,active_uncertain_other,,train,r2req0055,graphite,0.813,pore,low,"Part of dark, blurry out-of-plane structure next to graphite edge."
+f1vzngrs_2170,Batch_1,f1vzngrs,2170,378,921,active_uncertain_other,,val,r2req0055,graphite,0.731,CBD,low,"Within textured, pore-dotted band between SiOx particle and graphite; boundary unclear."
+4ih2ggld_2373,Batch_1,4ih2ggld,2373,398,3207,active_uncertain_pore_cbd,,train,r2req0055,graphite,0.726,CBD,medium,Mottled spongy pocket between particles beside a pore; carbon-grey BSE.
+fzrt2k6r_5846,Batch_1,fzrt2k6r,5846,945,10,active_uncertain_other,,val,r2req0055,graphite,0.717,pore,medium,"Darker than graphite in BSE, black in Inlens, no polished texture."
+ffwubibz_1060,Batch_1,ffwubibz,1060,168,2943,active_random_pore_cbd,,val,r2req0055,pore,0.945,pore,medium,Dome-shaped area black in ETD; open crack between particles.
+f1vzngrs_4437,Batch_1,f1vzngrs,4437,708,803,active_uncertain_pore_cbd,,train,r2req0000,CBD,0.718,graphite,low,"Smooth edge band of upper graphite particle above pore; likely edge brightening, not lacy."
+3806gxp0_5824,Batch_2,3806gxp0,5824,907,3147,active_uncertain_pore_cbd,,train,r2req0000,CBD,0.734,graphite,medium,Flat smooth face with graphite BSE grey; brighter Inlens likely channelling contrast.
+kbdh4tri_5520,Batch_3,kbdh4tri,5520,844,1608,active_uncertain_pore_cbd,,train,r2req0000,graphite,0.736,CBD,low,Graphite-grey rim film along bright SiOx particle edge; carbon-like BSE contrast.
+ptg8lmto_3689,Batch_3,ptg8lmto,3689,542,129,active_random_pore_cbd,,train,r2req0000,pore,0.996,pore,high,"Centre of large open pore; dark BSE, black ETD shadow, defocused floor."
+xgj4xftb_505,Batch_3,xgj4xftb,505,81,3063,active_uncertain_pore_cbd,,train,r2req0000,CBD,0.695,pore,medium,"Blurry sub-surface material between particles, soft ETD shading, below polished plane."
+pl8uabbv_2843,Batch_3,pl8uabbv,2843,454,1326,active_uncertain_pore_cbd,,val,r2req0000,graphite,0.746,graphite,medium,"Flat uniform face beside pore, same grey as surrounding graphite in BSE/ETD."
+uhdslk0o_4828,Batch_1,uhdslk0o,4828,764,62,active_uncertain_pore_cbd,,train,r2req0000,graphite,0.78,graphite,low,Uniform graphite-grey face at particle corner; darker Inlens probably channelling contrast.
+x77cy643_1320,Batch_3,x77cy643,1320,210,1303,active_uncertain_other,,train,r2req0000,graphite,0.823,graphite,medium,"Top margin of polished graphite particle; flat, uniform grey in all detectors."
+fzrt2k6r_6247,Batch_1,fzrt2k6r,6247,996,2701,active_uncertain_pore_cbd,,train,r2req0000,graphite,0.753,graphite,low,"Narrow smooth sliver between dark gaps, graphite grey; likely edge-on flake."
+0grcilhi_3798,Batch_3,0grcilhi,3798,613,1046,active_uncertain_pore_cbd,,train,r2req0000,CBD,0.729,pore,low,"Soft, unstreaked, 3D-shaded surface, bright in Inlens; likely below polished plane."
+ufdvpb81_3744,Batch_3,ufdvpb81,3744,550,826,active_uncertain_other,,train,r2req0015,graphite,0.776,graphite,low,"Thin strip along graphite particle edge; flat grey BSE, no clear void."
+ufdvpb81_1572,Batch_3,ufdvpb81,1572,251,2887,active_uncertain_pore_cbd,,val,r2req0015,graphite,0.781,graphite,medium,Flat uniform grey face in all detectors; only thin arm on pore rim.
+hawkfj64_5348,Batch_3,hawkfj64,5348,871,1339,active_random_pore_cbd,,val,r2req0015,CBD,0.92,CBD,low,"Grey strip on SiOx edge, darker than SiOx in BSE, beside pore."
+71vgq3fw_607,Batch_3,71vgq3fw,607,99,120,active_uncertain_pore_cbd,,train,r2req0015,graphite,0.752,pore,medium,"Dark slit, shadowed in ETD, grey-dark BSE; crevice beside CBD pocket."
+ptg8lmto_4092,Batch_3,ptg8lmto,4092,595,3039,active_uncertain_pore_cbd,,train,r2req0015,CBD,0.775,pore,high,Black elongated void in all detectors with bright Inlens rim.
+ufdvpb81_6254,Batch_3,ufdvpb81,6254,881,2165,active_uncertain_pore_cbd,,train,r2req0015,CBD,0.719,graphite,medium,"Flat uniform grey polished face with curtaining, continuous with graphite particle."
+pl8uabbv_4825,Batch_3,pl8uabbv,4825,775,3197,active_uncertain_pore_cbd,,train,r2req0015,graphite,0.739,pore,low,"Blurred, 3D-shaded rounded surface inside open pore; no flat polished face."
+4ih2ggld_4204,Batch_1,4ih2ggld,4204,718,2696,active_uncertain_pore_cbd,,train,r2req0015,graphite,0.718,CBD,low,"Lacy mottled textured material in pocket between particles, near spongy nanopores."
+f1vzngrs_2202,Batch_1,f1vzngrs,2202,390,1500,active_uncertain_pore_cbd,,train,r2req0015,graphite,0.733,CBD,low,"Thin seam between particles: bright Inlens/ETD line, graphite-grey BSE."
+ptg8lmto_1370,Batch_3,ptg8lmto,1370,205,2029,active_uncertain_pore_cbd,,train,r2req0015,graphite,0.816,pore,low,Dark lens-shaped crack fills centre in BSE and ETD; tails graphite.
+ffwubibz_5622,Batch_1,ffwubibz,5622,847,1239,active_uncertain_pore_cbd,,train,r2req0020,graphite,0.789,graphite,medium,Uniform grey polished face in all detectors; adjacent pore only at edge.
+i9jiqjwl_2719,Batch_2,i9jiqjwl,2719,452,1534,active_uncertain_pore_cbd,,train,r2req0020,graphite,0.748,CBD,low,"Grey bridging material in inter-particle gap, textured with bright Inlens spots."
+fzrt2k6r_1521,Batch_1,fzrt2k6r,1521,261,73,active_random_pore_cbd,,train,r2req0020,CBD,0.859,graphite,low,Mostly grey particle face beside crack edge; thin bright edge streaks.
+71vgq3fw_5761,Batch_3,71vgq3fw,5761,865,3320,active_uncertain_other,,train,r2req0020,graphite,0.773,pore,medium,"Dark in ETD, grey in BSE, not bright Inlens: recessed pore floor."
+0grcilhi_4482,Batch_3,0grcilhi,4482,722,3325,active_uncertain_other,,train,r2req0020,graphite,0.852,pore,low,"Smooth unfocused grey pocket between flakes, no polished texture; ambiguous."
+b3esycq1_2269,Batch_2,b3esycq1,2269,353,1968,active_uncertain_pore_cbd,,train,r2req0020,CBD,0.754,pore,medium,Dark in BSE and ETD beneath mottled pocket; open pore.
+tuy3zymq_1543,Batch_3,tuy3zymq,1543,255,2456,active_random_pore_cbd,,train,r2req0020,pore,0.899,pore,medium,Narrow slit black in BSE and ETD with bright Inlens rim.
+hzumfsms_1499,Batch_3,hzumfsms,1499,225,1773,active_random_pore_cbd,,train,r2req0020,pore,0.994,pore,high,Dark in all detectors with out-of-focus fibrous pore floor.
+epqdaau9_3587,Batch_2,epqdaau9,3587,603,99,active_uncertain_other,,train,r2req0020,graphite,0.696,graphite,low,"Smooth band, graphite BSE grey, flake-like along pore edge; could be CBD film."
+utfgcjfa_3496,Batch_3,utfgcjfa,3496,583,30,active_random_pore_cbd,,train,r2req0020,CBD,0.963,pore,medium,Black pore between bright SiOx particles grading into shadowed floor.
+9luzk4jm_1529,Batch_3,9luzk4jm,1529,228,2662,active_uncertain_pore_cbd,,train,r2req0010,CBD,0.764,pore,medium,Shadowed valley in ETD; grey out-of-focus floor in BSE; bright Inlens rims.
+utfgcjfa_2232,Batch_3,utfgcjfa,2232,356,221,active_uncertain_pore_cbd,,train,r2req0010,CBD,0.78,CBD,low,"Thin strip bright in Inlens, graphite-grey BSE, beside pore slit; likely binder film."
+f1vzngrs_5936,Batch_1,f1vzngrs,5936,945,1199,active_uncertain_pore_cbd,,train,r2req0010,SiOx,0.74,CBD,low,"Lighter BSE film at particle neck, continuous with textured CBD band; ambiguous."
+9luzk4jm_5957,Batch_3,9luzk4jm,5957,894,1320,active_uncertain_pore_cbd,,train,r2req0010,CBD,0.723,pore,low,"Narrow crevice: dark centre in ETD, grey floor in BSE, bright Inlens rims."
+fzrt2k6r_3188,Batch_1,fzrt2k6r,3188,512,3177,active_uncertain_other,,val,r2req0010,graphite,0.803,graphite,medium,"Flat uniform BSE grey, smooth ETD with streaks; polished graphite face."
+ffwubibz_3698,Batch_1,ffwubibz,3698,570,680,active_uncertain_pore_cbd,,train,r2req0010,pore,0.8,graphite,medium,"Smooth flat BSE grey, no ETD shadow; dark Inlens likely channelling contrast."
+rxax5ozo_6028,Batch_2,rxax5ozo,6028,948,1602,active_uncertain_pore_cbd,,train,r2req0010,pore,0.768,pore,medium,Mostly in dark shadowed SE region below SiOx; recessed pore floor.
+kbdh4tri_2416,Batch_3,kbdh4tri,2416,375,1176,active_uncertain_other,,val,r2req0010,graphite,0.801,graphite,low,"Thin outline within rounded mid-grey particle; identity ambiguous, likely graphite."
+mgxahqnk_3649,Batch_3,mgxahqnk,3649,608,2567,active_uncertain_other,,train,r2req0010,graphite,0.851,CBD,low,"Wedge at SiOx-graphite neck; lighter Inlens with bright specks, graphite-grey BSE."
+r17byphk_3353,Batch_2,r17byphk,3353,558,2853,active_random_pore_cbd,,train,r2req0010,CBD,0.92,mixed,medium,"Spans bright SiOx core, carbon shell or CBD, and gap edges; no majority."
+x7u69zsw_1661,Batch_3,x7u69zsw,1661,280,907,active_uncertain_pore_cbd,,train,r2req0043,pore,0.758,pore,low,"Darker shaded ETD, blurred grey BSE between particles; likely open pore floor."
+9luzk4jm_488,Batch_3,9luzk4jm,488,82,2244,active_random_pore_cbd,,train,r2req0043,CBD,0.942,graphite,medium,Larger left lobe is flat graphite face; right lobe has fragment/CBD.
+vc2whyaq_4022,Batch_3,vc2whyaq,4022,642,1519,active_uncertain_other,,train,r2req0043,graphite,0.839,graphite,low,Left lobe smooth uniform grey like graphite; right lobe ambiguous junction material.
+71vgq3fw_1773,Batch_3,71vgq3fw,1773,320,2265,active_random_pore_cbd,,train,r2req0043,CBD,0.909,pore,low,Black channel and dark pocket dominate; grey CBD or floor between.
+hzumfsms_2037,Batch_3,hzumfsms,2037,315,300,active_uncertain_pore_cbd,,train,r2req0043,CBD,0.776,CBD,low,Particle neck with small pores and fine bright Inlens texture.
+ptg8lmto_4079,Batch_3,ptg8lmto,4079,591,1661,active_uncertain_pore_cbd,,train,r2req0043,pore,0.776,CBD,low,"Uniform grey film on bright SiOx particle, carbon-level BSE; likely coating."
+xgj4xftb_4174,Batch_3,xgj4xftb,4174,669,3226,active_uncertain_pore_cbd,,train,r2req0043,CBD,0.763,pore,low,"Dark shaded ETD band, smooth grey BSE floor below plane."
+f1vzngrs_3338,Batch_1,f1vzngrs,3338,558,1906,active_uncertain_other,,train,r2req0043,graphite,0.731,pore,low,"Outline hugs open crack; black slit in ETD, some graphite flanks."
+ffwubibz_3238,Batch_1,ffwubibz,3238,499,2798,active_random_pore_cbd,,train,r2req0043,pore,0.869,pore,low,"Dark hole, black in ETD, fills much of outline; CBD around."
+tuy3zymq_4315,Batch_3,tuy3zymq,4315,678,1043,active_uncertain_pore_cbd,,val,r2req0043,CBD,0.745,CBD,low,"Thin strip at particle boundary; ambiguous brightness, possibly CBD film."
+4ih2ggld_5489,Batch_1,4ih2ggld,5489,909,1574,active_random_pore_cbd,,train,r2req0038,pore,0.842,CBD,low,"Darker than SiOx in BSE, flat in ETD, at pore edge; likely CBD."
+5n1q8atc_4785,Batch_1,5n1q8atc,4785,787,2401,active_uncertain_pore_cbd,,train,r2req0038,graphite,0.709,graphite,medium,"Uniform grey in all detectors, continuous with graphite particle above."
+b3esycq1_1986,Batch_2,b3esycq1,1986,316,936,active_uncertain_pore_cbd,,train,r2req0038,CBD,0.594,CBD,low,Grey in BSE/ETD inside crack band; dark Inlens likely charging contrast.
+iv6g2oq0_3900,Batch_1,iv6g2oq0,3900,605,2145,active_uncertain_pore_cbd,,train,r2req0038,pore,0.695,graphite,low,BSE/ETD match surrounding graphite; Inlens dark patch possibly channelling or shallow pore.
+kbdh4tri_4646,Batch_3,kbdh4tri,4646,709,2180,active_random_pore_cbd,,train,r2req0038,pore,0.966,pore,high,"Black in BSE, Inlens and ETD; deep open pore."
+cfe5vt7s_415,Batch_3,cfe5vt7s,415,83,1294,active_uncertain_pore_cbd,,train,r2req0038,CBD,0.749,graphite,medium,"Smooth, flat, carbon-grey band beside SiOx particle; polished graphite flake."
+tuy3zymq_3088,Batch_3,tuy3zymq,3088,512,624,active_uncertain_pore_cbd,,train,r2req0038,CBD,0.758,pore,low,Dark shadowed area in ETD beside 3D-textured particle; likely pore floor.
+vc2whyaq_5692,Batch_3,vc2whyaq,5692,894,570,active_random_pore_cbd,,train,r2req0038,CBD,0.996,pore,low,Dark lens with bright rim in ETD; grey BSE suggests pore floor.
+0grcilhi_708,Batch_3,0grcilhi,708,124,324,active_uncertain_other,,val,r2req0038,graphite,0.848,pore,medium,"Particle below polished plane: dark ETD, 3D Inlens texture, soft BSE."
+fzrt2k6r_3761,Batch_1,fzrt2k6r,3761,604,2779,active_uncertain_pore_cbd,,train,r2req0038,graphite,0.764,pore,low,"Rounded dark Inlens cell with bright rim, 3D shading in ETD."
+71vgq3fw_2887,Batch_3,71vgq3fw,2887,427,1760,active_uncertain_pore_cbd,,val,r2req0023,CBD,0.742,pore,medium,Darker dimple in BSE; ETD shows shaded depression with bright rim.
+mgxahqnk_4025,Batch_3,mgxahqnk,4025,682,877,active_random_pore_cbd,,train,r2req0023,CBD,0.976,pore,medium,Open gap between graphite; ETD shading and bright Inlens walls suggest sloping floor.
+kbdh4tri_5279,Batch_3,kbdh4tri,5279,801,2380,active_uncertain_other,,train,r2req0023,graphite,0.804,pore,medium,Black sliver in BSE and ETD between graphite particle and thin flap.
+xgj4xftb_3617,Batch_3,xgj4xftb,3617,590,248,active_random_pore_cbd,,train,r2req0023,pore,0.987,pore,medium,"Recessed area below graphite edge: dark in ETD, grey-to-black in BSE."
+avn74qx1_2925,Batch_2,avn74qx1,2925,447,2475,active_random_pore_cbd,,train,r2req0023,pore,0.996,pore,low,Band darkens toward pore in BSE; ETD edge then shading suggests sloped wall.
+iv6g2oq0_4995,Batch_1,iv6g2oq0,4995,763,918,active_uncertain_pore_cbd,,train,r2req0023,graphite,0.749,CBD,low,"Thin textured film between particles; only slightly lighter in BSE, not SiOx-bright."
+b3esycq1_637,Batch_2,b3esycq1,637,123,711,active_random_pore_cbd,,val,r2req0023,CBD,0.9,CBD,low,"Mottled seam between graphite particles; textured Inlens, graphite-grey BSE; ambiguous."
+ffwubibz_3019,Batch_1,ffwubibz,3019,464,3212,active_uncertain_pore_cbd,,train,r2req0023,CBD,0.783,graphite,medium,Flat uniform grey in BSE and ETD; Inlens darkening likely channelling contrast.
+71vgq3fw_1220,Batch_3,71vgq3fw,1220,182,2970,active_uncertain_pore_cbd,,train,r2req0023,graphite,0.733,pore,medium,"Black in ETD, grey in BSE: recessed pore floor among flakes."
+i9jiqjwl_2748,Batch_2,i9jiqjwl,2748,454,1114,active_uncertain_other,,train,r2req0023,graphite,0.782,graphite,low,Uniform graphite grey in BSE and ETD beside pore chain; pore mostly excluded.
+hawkfj64_1408,Batch_3,hawkfj64,1408,230,2168,active_uncertain_pore_cbd,,train,r2req0052,graphite,0.774,CBD,low,"Lighter speckled band between pore and graphite; bright in Inlens, likely CBD film."
+kbdh4tri_5773,Batch_3,kbdh4tri,5773,881,3482,active_uncertain_pore_cbd,,train,r2req0052,SiOx,0.747,pore,medium,"Smooth shaded surface, dark and shadowed in ETD; pore floor below plane."
+r17byphk_575,Batch_2,r17byphk,575,108,2543,active_random_pore_cbd,,train,r2req0052,pore,0.842,pore,medium,Dark in BSE and ETD between SiOx particles; mostly empty neck pore.
+0grcilhi_1325,Batch_3,0grcilhi,1325,221,1749,active_random_pore_cbd,,train,r2req0052,pore,0.995,pore,medium,"Smooth grey wedge, dark in ETD, no polished texture; pore floor."
+iv6g2oq0_4156,Batch_1,iv6g2oq0,4156,645,2245,active_uncertain_pore_cbd,,val,r2req0052,graphite,0.761,CBD,low,Pocket below SiOx at graphite edge with bright Inlens specks; possibly graphite.
+avn74qx1_2916,Batch_2,avn74qx1,2916,447,3062,active_uncertain_pore_cbd,,val,r2req0052,CBD,0.747,CBD,medium,Bright mottled Inlens texture beside pore; graphite-grey BSE suggests CBD pocket.
+ufdvpb81_6822,Batch_3,ufdvpb81,6822,961,1962,active_uncertain_other,,train,r2req0052,graphite,0.787,CBD,low,"Thin light BSE band on particle edge, bright ETD line; film or edge."
+pl8uabbv_3594,Batch_3,pl8uabbv,3594,593,1504,active_uncertain_pore_cbd,,train,r2req0052,graphite,0.77,pore,low,"Bright ETD wall beside particle edge, shaded cavity; mostly pore wall."
+9luzk4jm_3302,Batch_3,9luzk4jm,3302,496,1556,active_uncertain_pore_cbd,,train,r2req0052,CBD,0.786,pore,medium,"Soft out-of-focus grey above SiOx, blobby dark ETD floor; open pore."
+x7u69zsw_4166,Batch_3,x7u69zsw,4166,670,296,active_random_pore_cbd,,val,r2req0052,pore,0.893,mixed,low,Dark pore pocket plus textured CBD along graphite edge; roughly equal.
+3806gxp0_5859,Batch_2,3806gxp0,5859,923,3352,active_uncertain_other,,train,r2req0082,graphite,0.811,CBD,medium,"Mottled, brighter Inlens pocket at particle junction; graphite-grey BSE with small nanopores."
+hzumfsms_3194,Batch_3,hzumfsms,3194,495,368,active_random_pore_cbd,,val,r2req0082,CBD,0.909,graphite,low,"Thin sliver along graphite particle edge; bright edge zone, small pore part."
+71vgq3fw_2981,Batch_3,71vgq3fw,2981,445,1546,active_uncertain_pore_cbd,,train,r2req0082,pore,0.754,CBD,medium,"Grey textured film between SiOx and graphite; mottled, lighter Inlens band."
+ffwubibz_586,Batch_1,ffwubibz,586,100,1546,active_random_pore_cbd,,train,r2req0082,CBD,0.964,CBD,low,Grey pocket between particles matching surrounding film; ETD not shadowed.
+ffwubibz_737,Batch_1,ffwubibz,737,124,107,active_random_pore_cbd,,train,r2req0082,pore,0.926,pore,medium,"Mostly dark in BSE and ETD, joined to open pore; small grey finger."
+ptg8lmto_1106,Batch_3,ptg8lmto,1106,174,2108,active_random_pore_cbd,,val,r2req0082,pore,0.955,pore,high,Black in all three detectors; open gap between particles.
+pl8uabbv_3254,Batch_3,pl8uabbv,3254,522,1306,active_uncertain_pore_cbd,,train,r2req0082,pore,0.735,pore,low,"Slit tip of open pore; bright Inlens rim, dark ETD wedge."
+pl8uabbv_421,Batch_3,pl8uabbv,421,82,2348,active_uncertain_pore_cbd,,val,r2req0082,CBD,0.742,graphite,low,Uniform grey wedge between particles; no lacy texture; likely small fragment.
+5n1q8atc_4418,Batch_1,5n1q8atc,4418,736,2311,active_uncertain_pore_cbd,,val,r2req0082,CBD,0.733,CBD,low,"Lacy, nanoporous-looking pocket at triple junction; slightly darker mottled texture."
+iv6g2oq0_5046,Batch_1,iv6g2oq0,5046,772,925,active_uncertain_pore_cbd,,train,r2req0082,graphite,0.712,pore,low,"3D shading in ETD, smooth out-of-focus band; likely pore floor."
+ptg8lmto_3784,Batch_3,ptg8lmto,3784,548,2660,active_uncertain_pore_cbd,,val,r2req0064,graphite,0.787,pore,low,"Smooth band brighter in all detectors, shaded; likely sloped wall below polished plane."
+xgj4xftb_1730,Batch_3,xgj4xftb,1730,300,1736,active_random_pore_cbd,,train,r2req0064,pore,0.959,pore,high,Black in BSE and ETD; deep open pore despite bright Inlens edges.
+x7u69zsw_1925,Batch_3,x7u69zsw,1925,324,2742,active_uncertain_pore_cbd,,train,r2req0064,graphite,0.752,CBD,low,"Neck pocket, mid-grey BSE, darker textured ETD, continuous with lacy CBD nearby."
+4ih2ggld_4839,Batch_1,4ih2ggld,4839,811,2947,active_uncertain_other,,train,r2req0064,graphite,0.748,pore,medium,Dark in all three detectors at particle boundary within CBD zone.
+5n1q8atc_3727,Batch_1,5n1q8atc,3727,626,2501,active_random_pore_cbd,,train,r2req0064,CBD,0.818,graphite,low,"Uniform graphite-like grey in all detectors, darker than adjacent SiOx particle."
+i9jiqjwl_1684,Batch_2,i9jiqjwl,1684,303,1448,active_uncertain_pore_cbd,,train,r2req0064,graphite,0.756,graphite,low,Mostly uniform graphite grey; small black pore and dark wedge at edges.
+xgj4xftb_2800,Batch_3,xgj4xftb,2800,460,342,active_random_pore_cbd,,train,r2req0064,pore,0.939,pore,low,"Lies beyond bright step edge; shaded, textured sub-surface region beside open pore."
+tuy3zymq_4503,Batch_3,tuy3zymq,4503,700,2234,active_uncertain_other,,train,r2req0064,graphite,0.768,pore,low,Particle top shows 3D shading and crinkly Inlens; appears below polished plane.
+4ih2ggld_1847,Batch_1,4ih2ggld,1847,312,2070,active_uncertain_pore_cbd,,val,r2req0064,CBD,0.755,pore,low,"Recessed pocket: darker in ETD and Inlens, smooth, no flat polished face."
+vc2whyaq_3216,Batch_3,vc2whyaq,3216,502,3383,active_uncertain_other,,train,r2req0064,graphite,0.827,graphite,medium,"Flat, uniform grey polished face of flake-shaped graphite particle; tiny pore."
+utfgcjfa_2723,Batch_3,utfgcjfa,2723,437,2106,active_uncertain_pore_cbd,,val,r2req0056,pore,0.773,pore,medium,"Recessed textured material; dark in SE, grey in BSE, no polished face."
+rxax5ozo_2797,Batch_2,rxax5ozo,2797,464,470,active_uncertain_pore_cbd,,train,r2req0056,CBD,0.794,CBD,low,"Thin strip at graphite tip; brighter Inlens than graphite, same BSE grey."
+i9jiqjwl_5238,Batch_2,i9jiqjwl,5238,822,1613,active_random_pore_cbd,,train,r2req0056,pore,0.995,pore,high,Black in all three detectors; deep open pore.
+i9jiqjwl_5223,Batch_2,i9jiqjwl,5223,815,2340,active_uncertain_pore_cbd,,train,r2req0056,graphite,0.739,pore,medium,"Inside pore corner beyond bright edge; sloped wall, dark in SE."
+tuy3zymq_2968,Batch_3,tuy3zymq,2968,481,1584,active_uncertain_pore_cbd,,train,r2req0056,CBD,0.771,pore,medium,Darker than graphite in BSE and ETD; out-of-focus pore floor.
+ufdvpb81_6445,Batch_3,ufdvpb81,6445,928,1864,active_uncertain_pore_cbd,,train,r2req0056,pore,0.766,CBD,medium,Textured in-plane film between particles; lighter Inlens than adjacent graphite.
+ffwubibz_4942,Batch_1,ffwubibz,4942,758,822,active_uncertain_pore_cbd,,train,r2req0056,graphite,0.799,graphite,low,Flat uniform BSE and ETD grey; dark Inlens spot likely channelling contrast.
+r17byphk_5040,Batch_2,r17byphk,5040,781,1153,active_uncertain_other,,train,r2req0056,graphite,0.822,CBD,low,Left end of porous CBD band at graphite edge; BSE grey.
+ffwubibz_6044,Batch_1,ffwubibz,6044,917,2617,active_uncertain_pore_cbd,,train,r2req0056,CBD,0.751,graphite,low,Smooth medium-grey polished graphite edge above pore; no topography in ETD.
+fzrt2k6r_4759,Batch_1,fzrt2k6r,4759,762,2114,active_uncertain_pore_cbd,,train,r2req0056,graphite,0.755,graphite,medium,"Inside lamellar graphite particle near edge; uniform BSE grey, flat."
+pl8uabbv_2526,Batch_3,pl8uabbv,2526,419,2734,active_uncertain_pore_cbd,,val,r2req0058,graphite,0.764,pore,low,"Smooth darker-grey floor in inter-particle crack, bright Inlens rims, no polished face"
+0grcilhi_4896,Batch_3,0grcilhi,4896,794,938,active_uncertain_other,,train,r2req0058,graphite,0.829,CBD,low,"Graphite-grey BSE but lighter Inlens, mottled ETD; irregular domain beside pore"
+3806gxp0_3536,Batch_2,3806gxp0,3536,558,1041,active_uncertain_pore_cbd,,train,r2req0058,graphite,0.73,graphite,medium,Flat grey graphite face with curved internal crack streaks; streak is minor
+71vgq3fw_3705,Batch_3,71vgq3fw,3705,576,1848,active_random_pore_cbd,,val,r2req0058,pore,0.971,pore,high,Black narrow gap along SiOx edge in all three detectors
+f1vzngrs_2296,Batch_1,f1vzngrs,2296,399,3027,active_uncertain_other,,val,r2req0058,graphite,0.779,CBD,medium,Finely mottled texture with small black nanopores between graphite and SiOx
+avn74qx1_538,Batch_2,avn74qx1,538,87,689,active_uncertain_pore_cbd,,train,r2req0058,pore,0.746,CBD,low,Mottled grey near SiOx fragments and pores; dark Inlens patch ambiguous
+3806gxp0_582,Batch_2,3806gxp0,582,100,3458,active_random_pore_cbd,,train,r2req0058,pore,0.966,pore,medium,"Dark narrow gap along SiOx edge in BSE, ETD and Inlens"
+4ih2ggld_806,Batch_1,4ih2ggld,806,136,2715,active_uncertain_pore_cbd,,train,r2req0058,pore,0.749,pore,high,"Out-of-focus floor below plane: grey BSE, dark shadowed ETD"
+3806gxp0_743,Batch_2,3806gxp0,743,127,2693,active_uncertain_pore_cbd,,train,r2req0058,CBD,0.742,CBD,low,"Textured Inlens-bright material between graphite edge and pore, graphite-grey BSE"
+tuy3zymq_5980,Batch_3,tuy3zymq,5980,947,1409,active_uncertain_other,,train,r2req0058,graphite,0.788,SiOx,medium,"Brighter than graphite in BSE, mottled non-lamellar texture, angular particle"
+utfgcjfa_4995,Batch_3,utfgcjfa,4995,820,2399,active_uncertain_other,,train,r2req0078,graphite,0.851,pore,low,"Grey sloped crack wall/floor between particles, shaded in SE, below polish plane."
+rxax5ozo_5863,Batch_2,rxax5ozo,5863,927,3110,active_uncertain_other,,train,r2req0078,graphite,0.823,CBD,low,Particle neck with bright Inlens fragments and nanopores; graphite-like BSE grey.
+iv6g2oq0_2437,Batch_1,iv6g2oq0,2437,404,859,active_uncertain_pore_cbd,,train,r2req0078,CBD,0.755,pore,low,"Dark in BSE and Inlens, recessed patch among CBD; likely shallow pore floor."
+rxax5ozo_1543,Batch_2,rxax5ozo,1543,241,2157,active_uncertain_pore_cbd,,train,r2req0078,pore,0.8,graphite,medium,"Outer shell of graphite particle; uniform BSE grey, curtaining streaks in SE."
+71vgq3fw_5898,Batch_3,71vgq3fw,5898,877,516,active_uncertain_other,,train,r2req0078,graphite,0.798,pore,low,"Soft, out-of-focus rounded surface below polish plane; diffuse shading in ETD/Inlens."
+xgj4xftb_3064,Batch_3,xgj4xftb,3064,514,2217,active_uncertain_other,,train,r2req0078,graphite,0.86,graphite,medium,Flat uniform graphite face with small cracks; majority polished graphite.
+vc2whyaq_3170,Batch_3,vc2whyaq,3170,504,61,active_uncertain_pore_cbd,,train,r2req0078,CBD,0.694,graphite,medium,Large flat graphite flake with basal cracks and curtaining; uniform BSE grey.
+5n1q8atc_6097,Batch_1,5n1q8atc,6097,1001,3463,active_uncertain_pore_cbd,,train,r2req0078,CBD,0.758,SiOx,low,"Brighter mottled BSE, non-lamellar cracked particle; topography may contribute to contrast."
+mgxahqnk_4846,Batch_3,mgxahqnk,4846,799,3448,active_uncertain_other,,val,r2req0078,graphite,0.801,graphite,medium,"Polished particle interior, graphite BSE grey, dark Inlens, flat ETD face."
+r17byphk_529,Batch_2,r17byphk,529,97,3225,active_uncertain_pore_cbd,,train,r2req0078,CBD,0.776,CBD,low,Bright Inlens film rimming graphite edge at pore; slightly lighter textured BSE.
+71vgq3fw_5723,Batch_3,71vgq3fw,5723,856,3203,active_uncertain_other,,train,r2req0099,graphite,0.776,graphite,medium,Flat graphite-grey in BSE and ETD; dark in Inlens like nearby graphite.
+3806gxp0_5507,Batch_2,3806gxp0,5507,892,3110,active_random_pore_cbd,,train,r2req0099,pore,0.912,pore,low,Pore tip: dark shadowed wedge plus granular recessed floor; could be CBD instead.
+cfe5vt7s_2707,Batch_3,cfe5vt7s,2707,459,1990,active_uncertain_other,,train,r2req0095,graphite,0.771,CBD,medium,Granular spongy material filling inter-particle pocket; textured in all three detectors.
+ptg8lmto_2492,Batch_3,ptg8lmto,2492,388,3365,active_uncertain_other,,train,r2req0095,graphite,0.863,pore,low,"Recessed, shaded area beside black pore; grey floor without flat polished face."
+x77cy643_1145,Batch_3,x77cy643,1145,186,1104,active_uncertain_other,,train,r2req0095,graphite,0.802,graphite,low,Flat uniform BSE grey continuous with graphite; curtaining in SE; Inlens slightly lighter.
+71vgq3fw_5345,Batch_3,71vgq3fw,5345,790,481,active_uncertain_pore_cbd,,train,r2req0095,CBD,0.755,CBD,low,"Thin, slightly brighter rim along graphite particle boundary, likely binder film."
+fzrt2k6r_910,Batch_1,fzrt2k6r,910,154,741,active_uncertain_pore_cbd,,train,r2req0095,pore,0.745,pore,medium,"Dark shadowed interior in ETD, bright Inlens rim, continuous with black pore."
+epqdaau9_1871,Batch_2,epqdaau9,1871,326,193,active_uncertain_other,,train,r2req0095,graphite,0.781,CBD,low,"Mottled, speckled Inlens texture at particle junction; graphite-like BSE grey."
+rxax5ozo_5918,Batch_2,rxax5ozo,5918,935,2715,active_uncertain_pore_cbd,,train,r2req0095,graphite,0.755,CBD,medium,"Intermediate BSE grey between SiOx particles, strongly charging in Inlens, irregular texture."
+epqdaau9_3840,Batch_2,epqdaau9,3840,669,3383,active_random_pore_cbd,,train,r2req0095,CBD,0.937,CBD,medium,Lacy textured material wrapping pore beside SiOx particle; not bright in BSE.
+kbdh4tri_5320,Batch_3,kbdh4tri,5320,810,1479,active_uncertain_pore_cbd,,train,r2req0095,graphite,0.693,pore,high,"Narrow gap between graphite particles; dark in BSE, black in ETD."
+9luzk4jm_2715,Batch_3,9luzk4jm,2715,425,720,active_uncertain_pore_cbd,,train,r2req0095,CBD,0.779,CBD,low,"Thin boundary film between graphite particles, bright in Inlens and ETD."
+3806gxp0_1925,Batch_2,3806gxp0,1925,321,1947,active_uncertain_pore_cbd,,train,r2req0048,CBD,0.68,graphite,medium,Flat uniform grey polished face just inside particle edge in all detectors
+xgj4xftb_3020,Batch_3,xgj4xftb,3020,501,2828,active_uncertain_other,,train,r2req0048,graphite,0.879,graphite,medium,Uniform BSE grey with lamellar texture and basal cracks; graphite edge zone
+x77cy643_1686,Batch_3,x77cy643,1686,286,1735,active_random_pore_cbd,,val,r2req0048,CBD,0.984,mixed,low,Top of bright SiOx particle plus CBD and small gap above
+vc2whyaq_5595,Batch_3,vc2whyaq,5595,880,2200,active_random_pore_cbd,,val,r2req0048,pore,0.924,pore,high,"Black in BSE, Inlens and SE; deep empty pore"
+4ih2ggld_4640,Batch_1,4ih2ggld,4640,774,799,active_uncertain_other,,train,r2req0048,graphite,0.754,CBD,low,Mottled grey material beside SiOx corner in nanoporous CBD context; ambiguous
+5n1q8atc_1514,Batch_1,5n1q8atc,1514,261,199,active_uncertain_pore_cbd,,train,r2req0048,graphite,0.707,CBD,medium,"Lacy nanoporous texture in pocket between particles, above graphite flake"
+avn74qx1_2006,Batch_2,avn74qx1,2006,321,314,active_random_pore_cbd,,train,r2req0048,pore,0.963,pore,high,Black in all three detectors; deep pore
+9luzk4jm_5327,Batch_3,9luzk4jm,5327,802,1324,active_uncertain_pore_cbd,,train,r2req0048,graphite,0.771,pore,low,Smooth bright 3D-shaded blob at pore edge with Inlens rim; likely floor
+hawkfj64_4951,Batch_3,hawkfj64,4951,807,45,active_random_pore_cbd,,train,r2req0048,CBD,0.944,CBD,low,"Textured grey, strongly charging Inlens material at particle edge above pore"
+9luzk4jm_3230,Batch_3,9luzk4jm,3230,490,1533,active_uncertain_other,,train,r2req0048,graphite,0.824,pore,low,Dark bumpy ETD surface without flat face; likely open pore floor
+5n1q8atc_4974,Batch_1,5n1q8atc,4974,856,2479,active_random_pore_cbd,,val,r2req0092,pore,0.97,pore,medium,Mostly dark open pore with lacy CBD below plane; upper part on particle.
+0grcilhi_1757,Batch_3,0grcilhi,1757,293,831,active_uncertain_other,,train,r2req0092,graphite,0.845,graphite,high,"Uniform graphite BSE grey, ETD curtaining streaks; only a tiny hole inside."
+cfe5vt7s_852,Batch_3,cfe5vt7s,852,161,1471,active_random_pore_cbd,,train,r2req0092,pore,0.896,pore,medium,Black in ETD and dark BSE gap between particles; small grey particle edge.
+pl8uabbv_2560,Batch_3,pl8uabbv,2560,415,2196,active_uncertain_pore_cbd,,train,r2req0092,graphite,0.748,CBD,low,Thin textured film along pore edge on particle surface; likely CBD lining.
+rxax5ozo_3874,Batch_2,rxax5ozo,3874,615,2282,active_random_pore_cbd,,train,r2req0092,pore,0.996,pore,high,"Inside open pore: dark in SE, grey floor below polished plane."
+iv6g2oq0_3077,Batch_1,iv6g2oq0,3077,498,1584,active_uncertain_other,,train,r2req0092,graphite,0.789,graphite,medium,"Flat uniform BSE and ETD grey, smooth; graphite face beside pore."
+uhdslk0o_3889,Batch_1,uhdslk0o,3889,630,79,active_uncertain_pore_cbd,,val,r2req0092,CBD,0.792,CBD,low,Grey textured material at particle junction above bright SiOx tip.
+uhdslk0o_3629,Batch_1,uhdslk0o,3629,591,2129,active_uncertain_other,,train,r2req0092,graphite,0.837,pore,medium,Faceted 3D-shaded surfaces with ETD shadows; pore floor below plane.
+f1vzngrs_4921,Batch_1,f1vzngrs,4921,782,3083,active_random_pore_cbd,,train,r2req0092,CBD,0.874,SiOx,low,"Brighter than graphite in BSE, porous with holes, adjoining SiOx; ambiguous."
+rxax5ozo_3918,Batch_2,rxax5ozo,3918,622,2176,active_uncertain_pore_cbd,,val,r2req0092,CBD,0.727,pore,medium,"Gap between particles, dark in SE; material below polished plane."
+avn74qx1_3407,Batch_2,avn74qx1,3407,530,1852,active_uncertain_pore_cbd,,train,r2req0026,graphite,0.745,graphite,medium,"Flat uniform BSE grey and smooth ETD inside graphite particle, beside small pore."
+71vgq3fw_5552,Batch_3,71vgq3fw,5552,822,903,active_uncertain_pore_cbd,,train,r2req0026,pore,0.748,pore,low,"Thin gap between particles; dark in ETD, darker in BSE."
+x7u69zsw_4158,Batch_3,x7u69zsw,4158,668,1532,active_uncertain_pore_cbd,,train,r2req0026,graphite,0.779,graphite,low,Uniform BSE grey matches adjacent graphite; dark Inlens like graphite; no texture.
+kbdh4tri_3669,Batch_3,kbdh4tri,3669,574,2224,active_random_pore_cbd,,train,r2req0026,CBD,0.927,graphite,low,Mostly flat graphite faces; minor pores and CBD in large irregular outline.
+pl8uabbv_6277,Batch_3,pl8uabbv,6277,1001,531,active_uncertain_pore_cbd,,train,r2req0026,graphite,0.748,pore,low,Shadowed ETD interior continues adjacent crack; grey pore floor in BSE.
+cfe5vt7s_5855,Batch_3,cfe5vt7s,5855,940,3172,active_uncertain_other,,train,r2req0026,graphite,0.8,graphite,low,Flat grey in BSE and ETD; lamellar Inlens texture; pore only at edge.
+9luzk4jm_4804,Batch_3,9luzk4jm,4804,743,574,active_random_pore_cbd,,train,r2req0026,pore,0.876,pore,high,"Inside triangular pore: dark in all detectors, bright Inlens rim."
+x77cy643_4812,Batch_3,x77cy643,4812,825,431,active_uncertain_pore_cbd,,train,r2req0026,graphite,0.75,graphite,low,Flat grey region with vertical lamellar streaks between SiOx particles.
+4ih2ggld_6172,Batch_1,4ih2ggld,6172,1018,558,active_uncertain_other,,train,r2req0026,graphite,0.734,graphite,low,Smooth grey in BSE and ETD; dark Inlens like graphite; small fragment.
+0grcilhi_608,Batch_3,0grcilhi,608,114,332,active_uncertain_pore_cbd,,train,r2req0026,CBD,0.772,pore,medium,"Below-plane particle in gap: dark ETD, blurry BSE, bright Inlens rims."
+hzumfsms_2764,Batch_3,hzumfsms,2764,444,2714,active_random_pore_cbd,,train,r2req0011,CBD,0.896,mixed,medium,"Graphite face, lacy CBD and several black pores in comparable proportions."
+ufdvpb81_4213,Batch_3,ufdvpb81,4213,605,2254,active_uncertain_pore_cbd,,val,r2req0011,graphite,0.73,graphite,medium,"Flat uniform grey in all detectors, continuous with surrounding graphite face."
+mgxahqnk_3971,Batch_3,mgxahqnk,3971,660,2732,active_uncertain_other,,train,r2req0011,graphite,0.841,CBD,medium,"Spongy, finely textured carbon-grey material with nanopores in pocket between particles."
+avn74qx1_4745,Batch_2,avn74qx1,4745,739,1125,active_uncertain_pore_cbd,,train,r2req0011,graphite,0.739,graphite,low,Flat graphite-grey in BSE and ETD; lighter Inlens patch likely channelling contrast.
+0grcilhi_400,Batch_3,0grcilhi,400,83,1555,active_random_pore_cbd,,train,r2req0011,pore,0.901,SiOx,low,"Edge of mottled, non-lamellar particle brighter than graphite in BSE."
+epqdaau9_4293,Batch_2,epqdaau9,4293,704,696,active_random_pore_cbd,,train,r2req0011,CBD,0.955,CBD,low,"Textured, nanoporous neck material between SiOx particle and graphite, beside black pore."
+avn74qx1_1009,Batch_2,avn74qx1,1009,164,828,active_uncertain_pore_cbd,,val,r2req0011,CBD,0.752,CBD,low,Inlens-bright film along graphite particle edge; BSE grey like graphite.
+vc2whyaq_1419,Batch_3,vc2whyaq,1419,217,627,active_uncertain_pore_cbd,,train,r2req0011,graphite,0.767,pore,low,"Recessed gap between flakes: ETD shadowing, blurry lighter BSE, charging Inlens."
+hzumfsms_3479,Batch_3,hzumfsms,3479,536,1864,active_uncertain_other,,train,r2req0011,graphite,0.818,pore,medium,"Cavity in graphite: darker BSE, ETD shadow with bright rim, floor visible."
+71vgq3fw_4886,Batch_3,71vgq3fw,4886,724,1942,active_uncertain_pore_cbd,,train,r2req0011,CBD,0.722,pore,low,"Dark in ETD between particles, recessed; BSE grey floor, no polished texture."
+vc2whyaq_1257,Batch_3,vc2whyaq,1257,193,1060,active_uncertain_pore_cbd,,train,r2req0054,CBD,0.775,graphite,low,Thin strip along graphite particle edge; BSE grey matches particle
+fzrt2k6r_2055,Batch_1,fzrt2k6r,2055,330,3378,active_uncertain_other,,train,r2req0054,graphite,0.797,CBD,low,Bright Inlens infill along crack with small void; not SiOx-bright in BSE
+cfe5vt7s_6001,Batch_3,cfe5vt7s,6001,957,2242,active_uncertain_pore_cbd,,train,r2req0054,pore,0.784,pore,medium,"Black in ETD, darker BSE; Inlens shows textured floor below plane"
+71vgq3fw_2214,Batch_3,71vgq3fw,2214,334,1766,active_uncertain_pore_cbd,,train,r2req0054,graphite,0.734,CBD,low,Bright Inlens infill in narrow interparticle gap; ETD only partly dark
+x77cy643_2937,Batch_3,x77cy643,2937,504,613,active_random_pore_cbd,,val,r2req0054,pore,0.897,graphite,low,Uniform grey in BSE and ETD like adjacent particle; not lacy
+4ih2ggld_1730,Batch_1,4ih2ggld,1730,293,3419,active_uncertain_pore_cbd,,train,r2req0054,graphite,0.739,pore,low,Shaded sloped surface inside open pore beside graphite edge; no polished face
+avn74qx1_722,Batch_2,avn74qx1,722,128,180,active_uncertain_other,,val,r2req0054,graphite,0.808,graphite,low,Uniform flat BSE grey; moderate Inlens; bright CBD network only at margins
+f1vzngrs_5740,Batch_1,f1vzngrs,5740,903,2761,active_random_pore_cbd,,train,r2req0054,pore,0.996,pore,high,Dark in all three detectors inside elongated interparticle pore
+avn74qx1_2667,Batch_2,avn74qx1,2667,404,3064,active_uncertain_pore_cbd,,train,r2req0054,pore,0.676,pore,low,"ETD black void, darker BSE; Inlens partly black, partly bright rim"
+0grcilhi_4228,Batch_3,0grcilhi,4228,674,2518,active_uncertain_other,,train,r2req0054,graphite,0.83,CBD,low,"Bright mottled Inlens pocket at particle junction; grey BSE, no shadow"
+pl8uabbv_1662,Batch_3,pl8uabbv,1662,263,2693,active_uncertain_pore_cbd,,train,r2req0053,CBD,0.756,CBD,medium,"Textured grey pocket between graphite particles and SiOx, bright Inlens edges."
+tuy3zymq_5781,Batch_3,tuy3zymq,5781,927,2236,active_uncertain_other,,train,r2req0053,graphite,0.769,CBD,medium,"Narrow inter-particle gap filled with material bright in Inlens, grey in BSE."
+hawkfj64_4334,Batch_3,hawkfj64,4334,718,1367,active_uncertain_pore_cbd,,train,r2req0053,graphite,0.785,CBD,low,Thin bright-Inlens film along graphite edge beside pore; grey in BSE.
+pl8uabbv_4135,Batch_3,pl8uabbv,4135,710,682,active_random_pore_cbd,,val,r2req0053,pore,0.854,CBD,low,Elongated neck region between particles with lacy texture and small pores.
+i9jiqjwl_3668,Batch_2,i9jiqjwl,3668,582,457,active_uncertain_pore_cbd,,train,r2req0053,graphite,0.748,CBD,medium,Textured darker-grey pocket with small pores beside SiOx particle.
+x7u69zsw_4035,Batch_3,x7u69zsw,4035,643,500,active_uncertain_pore_cbd,,train,r2req0053,CBD,0.774,mixed,low,"Roughly half dark pore, half bright material at pore edge."
+f1vzngrs_1929,Batch_1,f1vzngrs,1929,346,2271,active_random_pore_cbd,,train,r2req0053,CBD,0.909,CBD,medium,"Mottled grey pocket between two SiOx particles, near small pore."
+hawkfj64_4051,Batch_3,hawkfj64,4051,661,139,active_uncertain_other,,train,r2req0053,graphite,0.827,graphite,medium,"Uniform flat grey face in BSE/ETD, dark Inlens like adjacent graphite."
+utfgcjfa_3678,Batch_3,utfgcjfa,3678,606,1614,active_uncertain_pore_cbd,,train,r2req0053,pore,0.778,CBD,medium,"Finely textured, bright lacy Inlens material beside deep pore groove."
+epqdaau9_3646,Batch_2,epqdaau9,3646,613,21,active_uncertain_pore_cbd,,train,r2req0053,CBD,0.594,graphite,low,"Flat uniform medium-grey face with curtaining, darker than adjacent SiOx."
+vc2whyaq_4750,Batch_3,vc2whyaq,4750,756,1381,active_uncertain_pore_cbd,,val,r2req0013,graphite,0.77,graphite,low,"Elongated grey island matching graphite Inlens tone, surrounded by bright CBD."
+ufdvpb81_5021,Batch_3,ufdvpb81,5021,731,1153,active_uncertain_pore_cbd,,val,r2req0013,CBD,0.767,pore,medium,"Gap between particles; lumpy 3D-shaded material below plane, dark in SE."
+b3esycq1_5908,Batch_2,b3esycq1,5908,927,895,active_uncertain_other,,train,r2req0013,graphite,0.8,CBD,low,Thin band wrapping particle edge near crack; variable textured Inlens contrast.
+x77cy643_2256,Batch_3,x77cy643,2256,374,414,active_uncertain_pore_cbd,,train,r2req0013,CBD,0.719,pore,high,"Blurry floor, dark bumpy SE, saturated Inlens; no flat polished face."
+xgj4xftb_1417,Batch_3,xgj4xftb,1417,264,680,active_random_pore_cbd,,train,r2req0013,CBD,0.96,CBD,medium,"Pocket between particles; fibrous bright Inlens, textured BSE with small pores."
+vc2whyaq_5177,Batch_3,vc2whyaq,5177,814,2403,active_uncertain_other,,train,r2req0013,graphite,0.801,graphite,medium,Flat uniform grey matching large graphite particle; minor CBD at corner.
+4ih2ggld_5952,Batch_1,4ih2ggld,5952,982,749,active_uncertain_other,,val,r2req0013,graphite,0.697,pore,medium,"Darker BSE, black Inlens, smooth recessed look in SE along boundary."
+x77cy643_2248,Batch_3,x77cy643,2248,398,2953,active_random_pore_cbd,,train,r2req0013,pore,0.921,pore,low,Shaded rounded surface between particles extending into dark pore.
+5n1q8atc_3818,Batch_1,5n1q8atc,3818,629,3361,active_uncertain_other,,train,r2req0013,graphite,0.773,pore,medium,"Widened part of black crack; dark in Inlens and SE, recessed floor."
+r17byphk_2506,Batch_2,r17byphk,2506,436,3334,active_uncertain_pore_cbd,,val,r2req0013,graphite,0.784,pore,medium,"Central depression with blurry shaded floor; SE shadows, no polished face."
+5n1q8atc_2857,Batch_1,5n1q8atc,2857,507,1048,active_uncertain_pore_cbd,,train,r2req0097,CBD,0.753,CBD,medium,Finely textured graphite-grey material in pocket between SiOx particles
+cfe5vt7s_3765,Batch_3,cfe5vt7s,3765,622,3003,active_uncertain_other,,train,r2req0097,graphite,0.832,pore,low,"Smooth blurred surface beside deep pore, likely below polished plane"
+b3esycq1_5815,Batch_2,b3esycq1,5815,913,1612,active_uncertain_other,,train,r2req0097,graphite,0.762,graphite,low,Mostly graphite particle edge; bright band likely tilted rim or crack
+hzumfsms_1634,Batch_3,hzumfsms,1634,244,2232,active_uncertain_pore_cbd,,train,r2req0097,CBD,0.695,pore,medium,"Slit and wavy out-of-plane surfaces, darker in ETD than polished faces"
+4ih2ggld_5925,Batch_1,4ih2ggld,5925,972,912,active_uncertain_pore_cbd,,train,r2req0097,graphite,0.708,pore,high,"Small pocket between graphite particles, dark in all three detectors"
+cfe5vt7s_519,Batch_3,cfe5vt7s,519,92,1317,active_uncertain_pore_cbd,,train,r2req0097,pore,0.776,pore,medium,"Rounded 3D bumps in ETD, blurred BSE; pore floor beside SiOx"
+hawkfj64_3603,Batch_3,hawkfj64,3603,588,2055,active_uncertain_pore_cbd,,val,r2req0097,graphite,0.8,graphite,low,Smooth grey flake fragment next to pore; depth ambiguous
+pl8uabbv_5616,Batch_3,pl8uabbv,5616,897,3203,active_uncertain_pore_cbd,,val,r2req0097,pore,0.764,graphite,medium,Smooth flat graphite-grey strip matching neighbouring particle faces
+b3esycq1_5896,Batch_2,b3esycq1,5896,927,2767,active_uncertain_other,,train,r2req0097,SiOx,0.776,CBD,low,"Fibrous, finely textured material at particle neck; graphite-grey in BSE"
+b3esycq1_1900,Batch_2,b3esycq1,1900,300,1926,active_uncertain_pore_cbd,,train,r2req0097,CBD,0.713,pore,low,Dark Inlens patch with bright rim inside particle suggests internal pore
+tuy3zymq_1220,Batch_3,tuy3zymq,1220,205,3301,active_uncertain_pore_cbd,,train,r2req0072,pore,0.754,graphite,low,Smooth grey strip along graphite edge; boundary ambiguous with CBD or pore wall.
+ptg8lmto_4241,Batch_3,ptg8lmto,4241,632,1755,active_uncertain_pore_cbd,,train,r2req0072,CBD,0.786,graphite,medium,Smooth grey matching adjacent graphite particle; not bright like neighbouring SiOx.
+cfe5vt7s_3014,Batch_3,cfe5vt7s,3014,509,2963,active_random_pore_cbd,,train,r2req0072,pore,0.925,pore,medium,"Blurred, darker grey material inside inter-particle gap; shaded, below polished plane."
+4ih2ggld_2006,Batch_1,4ih2ggld,2006,354,1821,active_random_pore_cbd,,val,r2req0072,CBD,0.95,CBD,high,"Lacy, bright nanoporous network in Inlens and ETD beside pore."
+ffwubibz_5963,Batch_1,ffwubibz,5963,907,1828,active_uncertain_pore_cbd,,train,r2req0072,CBD,0.672,SiOx,low,"Brighter than graphite in BSE and ETD, but dimmer than clear SiOx."
+ffwubibz_4910,Batch_1,ffwubibz,4910,751,240,active_uncertain_pore_cbd,,train,r2req0072,graphite,0.793,pore,medium,"Pocket darker than graphite in all detectors, no lacy texture; pore floor."
+cfe5vt7s_2780,Batch_3,cfe5vt7s,2780,474,529,active_uncertain_other,,train,r2req0072,graphite,0.837,graphite,high,Flat uniform grey face on elongated flake; smooth in all detectors.
+i9jiqjwl_2085,Batch_2,i9jiqjwl,2085,363,1319,active_uncertain_pore_cbd,,val,r2req0072,CBD,0.743,pore,low,ETD shows recessed interior with bright rim; BSE graphite-grey; Inlens ambiguous.
+4ih2ggld_1321,Batch_1,4ih2ggld,1321,228,2260,active_random_pore_cbd,,train,r2req0072,pore,0.986,pore,high,Mostly black void; remainder dark out-of-focus material below plane.
+fzrt2k6r_3651,Batch_1,fzrt2k6r,3651,592,2424,active_uncertain_pore_cbd,,train,r2req0072,CBD,0.772,graphite,high,Smooth uniform polished face within large graphite particle.
+4ih2ggld_754,Batch_1,4ih2ggld,754,118,3299,active_uncertain_pore_cbd,,train,r2req0096,pore,0.753,pore,high,Shadowed black in ETD; grey BSE floor below polished plane in open pocket
+xgj4xftb_756,Batch_3,xgj4xftb,756,119,2620,active_uncertain_pore_cbd,,train,r2req0096,graphite,0.788,CBD,low,"Lighter BSE than graphite, saturated Inlens, unshadowed ETD; textured band between particles"
+xgj4xftb_3397,Batch_3,xgj4xftb,3397,564,1376,active_uncertain_other,,train,r2req0096,graphite,0.869,graphite,low,Dark Inlens like host graphite; plain grey BSE between CBD strand and blob
+epqdaau9_1255,Batch_2,epqdaau9,1255,224,1827,active_uncertain_pore_cbd,,train,r2req0096,CBD,0.711,CBD,medium,"Thin lighter seam between graphite particles, bright Inlens, at polished plane"
+mgxahqnk_4678,Batch_3,mgxahqnk,4678,767,1876,active_uncertain_pore_cbd,,train,r2req0096,pore,0.766,pore,medium,Inside large ETD-shadowed cavity; grey floor material below plane in BSE
+avn74qx1_5762,Batch_2,avn74qx1,5762,889,349,active_uncertain_pore_cbd,,val,r2req0096,CBD,0.742,graphite,low,"Smooth grey BSE, unshadowed ETD; edge of graphite below bumpy pore band"
+5n1q8atc_5320,Batch_1,5n1q8atc,5320,898,2035,active_random_pore_cbd,,train,r2req0096,CBD,0.801,pore,low,"Dark Inlens interior ringed by bright edges; mottled, out-of-focus floor material"
+epqdaau9_4422,Batch_2,epqdaau9,4422,721,1249,active_uncertain_pore_cbd,,train,r2req0096,CBD,0.72,pore,low,"Pocket shows 3D ETD shading; mottled floor below plane, though possibly CBD"
+kbdh4tri_1959,Batch_3,kbdh4tri,1959,317,580,active_random_pore_cbd,,train,r2req0096,CBD,0.893,pore,medium,Dark in ETD beside deep pore; sloped wall below polished plane
+iv6g2oq0_5325,Batch_1,iv6g2oq0,5325,807,928,active_uncertain_pore_cbd,,train,r2req0096,graphite,0.724,CBD,low,"Thin lighter strip coating graphite edge, brighter in BSE and Inlens"

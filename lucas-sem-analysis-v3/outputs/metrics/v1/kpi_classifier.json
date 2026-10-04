@@ -1,0 +1,23 @@
+{
+  "config": "K (exploratory): top-5 KPIs by in-fold Kruskal H -> shrinkage LDA",
+  "n_kpis": 35,
+  "LOO_balanced_accuracy": 0.493,
+  "recall": {
+    "Batch_1": "3/7",
+    "Batch_2": "2/7",
+    "Batch_3": "13/17"
+  },
+  "null_mean": 0.337,
+  "null_p95": 0.577,
+  "p_value": 0.1362,
+  "most_often_selected": {
+    "bse_siox_contrast_ratio": 31,
+    "dark_boundary_fractal_dim": 31,
+    "dark_cv_10um": 31,
+    "bse_mid_skew": 29,
+    "flake_coherence_mean": 11,
+    "dark_n_per_1000um2": 10,
+    "thr_dark_frac": 8,
+    "bright_clark_evans": 2
+  }
+}
