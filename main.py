@@ -15,6 +15,7 @@ from sentinel.pipeline_facts import FactsResponse, PipelineSample, explain_facts
 from sentinel.baselines import BatchBaselines, load_default_baselines
 
 ROOT = Path(__file__).resolve().parent
+DEFAULT_RESPONSE_CACHE = ROOT / "explanations" / ".cache"
 
 
 def format_points(points, *, separator: str = "\n\n") -> str:
@@ -100,15 +101,21 @@ def main(*, debug: bool = False, question: str | None = None, sample: str | Path
          timeout: float = 90.0, max_attempts: int = 3, max_tokens: int = 8000,
          facts: str | Path | None = None, legacy_result: BatteryResult | None = None,
          dino_only: bool = False, baselines: str | Path | None = None,
-         use_baselines: bool = True, effort: str | None = "medium",
-         critic: str = "advisory") -> dict[str, str] | None:
+         use_baselines: bool = True, effort: str | None = "low",
+         critic: str = "advisory", model: str | None = None,
+         use_cache: bool = True, cache_dir: str | Path | None = None,
+         refresh_cache: bool = False) -> dict[str, str] | None:
     if facts is not None and sample is not None:
         raise ValueError("supply facts or sample, not both")
     if legacy_result is not None and (facts is not None or sample is not None or question is not None or images):
         raise ValueError("legacy_result cannot be combined with facts, sample, question or image inputs")
     if max_attempts < 1 or max_tokens < 1:
         raise ValueError("max-attempts and max-output-tokens must be positive")
-    config = ExplainerConfig(timeout_seconds=timeout, max_tokens=max_tokens, effort=effort)
+    if refresh_cache and not use_cache:
+        raise ValueError("--refresh-cache cannot be combined with --no-cache")
+    selected_model = model or ExplainerConfig().model
+    config = ExplainerConfig(model=selected_model, timeout_seconds=timeout, max_tokens=max_tokens,
+                             effort=None if selected_model.startswith("claude-haiku-") else effort)
     started = time.monotonic()
 
     def report(message):
@@ -138,7 +145,10 @@ def main(*, debug: bool = False, question: str | None = None, sample: str | Path
                                          max_retries=max_attempts - 1, full_context=full_context,
                                          question=question, progress=progress,
                                          decision_mode="dino" if dino_only else "pipeline",
-                                         baselines=batch_baselines, critic_mode=critic)
+                                         baselines=batch_baselines, critic_mode=critic, short_ids=True,
+                                         cache_dir=(Path(cache_dir).expanduser() if cache_dir is not None
+                                                    else DEFAULT_RESPONSE_CACHE) if use_cache else None,
+                                         refresh_cache=refresh_cache)
         explanations = format_facts_response(outcome.response.model_dump_json(), outcome.samples)
         print(json.dumps(explanations, ensure_ascii=False, indent=2))
         if debug:
@@ -204,14 +214,20 @@ if __name__ == "__main__":
     parser.add_argument("--no-baselines", action="store_true", help="Do not compare with batch baselines.")
     parser.add_argument("--critic", choices=["advisory", "blocking", "off"], default="advisory",
                         help="Grounding critic: advisory records objections in the audit (default); blocking lets them reject the answer; off skips the call (fastest).")
-    parser.add_argument("--effort", choices=["low", "medium", "high", "xhigh", "max", "default"], default="medium",
-                        help="Thinking effort before the model writes (default medium; low is faster, high is the model's own default and slowest; 'default' sends nothing).")
+    parser.add_argument("--effort", choices=["low", "medium", "high", "xhigh", "max", "default"], default="low",
+                        help="Thinking effort (default low; medium restores the previous setting; ignored for Haiku; 'default' sends nothing).")
+    parser.add_argument("--model", help="Override the generation model (default: Sonnet; smaller models may need more repairs).")
+    parser.add_argument("--no-cache", action="store_true", help="Generate afresh without reading or writing the checked-response cache.")
+    parser.add_argument("--refresh-cache", action="store_true", help="Generate afresh and replace the cache entry only after checks pass.")
+    parser.add_argument("--cache-dir", type=Path, help="Private response-cache directory (default explanations/.cache; entries expire after 24 hours).")
     args = parser.parse_args()
     try:
         main(debug=args.debug, question=args.question, facts=args.facts, images=args.image,
              quiet=not args.verbose, full_context=args.full_context, timeout=args.timeout,
              max_attempts=args.max_attempts, max_tokens=args.max_output_tokens,
              dino_only=args.dino_only, baselines=args.baselines, use_baselines=not args.no_baselines,
-             effort=None if args.effort == "default" else args.effort, critic=args.critic)
+             effort=None if args.effort == "default" else args.effort, critic=args.critic,
+             model=args.model, use_cache=not args.no_cache, cache_dir=args.cache_dir,
+             refresh_cache=args.refresh_cache)
     except (OSError, ValueError, ExplainerError) as exc:
         parser.exit(1, f"Unable to generate a grounded response: {exc}\n")

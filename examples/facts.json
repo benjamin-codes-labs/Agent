@@ -4,7 +4,7 @@
   "runner_up": "Batch_2",
   "probabilities": {
     "fused_F": {
-      "Batch_1": 0.069,
+      "Batch_1": 0.070,
       "Batch_2": 0.224,
       "Batch_3": 0.707
     },

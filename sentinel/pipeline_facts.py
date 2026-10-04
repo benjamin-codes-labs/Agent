@@ -5,7 +5,8 @@ import json
 import math
 import re
 import time
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
 from typing import Any, Callable, Iterable, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError
@@ -16,6 +17,7 @@ from .explainer import ClaudeExplainer, ExplainerConfig, ExplainerError, ModelCa
 from .knowledge import KnowledgePack
 from .prompts import CRITIC_ROLE, CRITIC_TOOL, PROJECT_CONTEXT_RULES
 from .questions import AnswerParagraph, GroundedAnswer, _display_text, validate_answer
+from .response_cache import ResponseCache, response_cache_key
 from .textrules import PLACEHOLDER, find_certainty_breaches
 
 
@@ -586,7 +588,9 @@ Each measurement carries a group. Say which kind it is in words: "imaging" measu
 are properties of how the image was taken, "material" measurements come from the
 segmented microstructure. Never present an imaging match as a material property. When
 scope=imaging_only, only imaging measurements could be compared like for like; say so in
-the limitation.
+the limitation. Baseline compatibility does not expose classifier weights: do not claim one cue
+"outvoted" another or caused the decision without an explicit attribution in the record. With
+imaging-only baselines, material measurements do not establish a batch match through these profiles.
 
 Rules: no probabilities or model scores, as above. Call q1-q3 the "typical range"; a
 median is not a mean. Name measurements in plain words from their "meaning" field ("BSE
@@ -877,7 +881,43 @@ def _evidence_breadth_checks(item: SampleExplanation, context: FactsContext, sho
 # --------------------------------------------------------------------------- #
 # What the model is shown
 # --------------------------------------------------------------------------- #
-def _baseline_table(context: FactsContext, sample_id: str) -> str:
+def _fact_aliases(context: FactsContext) -> dict[str, str]:
+    return {fid: f"f{index}" for index, fid in enumerate(context.pack.context_facts, 1)}
+
+
+def _expand_fact_aliases(response: FactsResponse, aliases: dict[str, str]) -> FactsResponse:
+    reverse = {alias: fid for fid, alias in aliases.items()}
+    expanded = response.model_copy(deep=True)
+    for item in expanded.explanations:
+        for point in item.points:
+            point.text = PLACEHOLDER.sub(lambda match: "{" + reverse.get(match.group(1).strip(), match.group(1).strip()) + "}", point.text)
+            if aliases:
+                point.facts = list(dict.fromkeys(match.group(1).strip() for match in PLACEHOLDER.finditer(point.text)))
+    return expanded
+
+
+def _facts_wire_schema(short_ids: bool) -> dict[str, Any]:
+    schema = FactsResponse.model_json_schema()
+    if short_ids:
+        schema["$defs"]["FactsPoint"]["properties"].pop("facts", None)
+    return schema
+
+
+SHORT_FACT_RULES = """# Short fact aliases
+For this request, each displayed {fN} is an alias for one exact fact. Use the shown alias in
+point text; code expands it before applying every existing check. Never invent an alias.
+For example, if the table labels the image value {f12} and the comparison median {f13}, write
+"Image value {f12}; batch median {f13}". Use each baseline cell's printed alias, not a long fact ID.
+TRANSPORT OVERRIDE: omit the facts array, despite earlier instructions to list it. Code derives
+that redundant list from the text placeholders. Every number must still use its exact placeholder.
+A placeholder REPLACES its numeric value; it is not a footnote. Write "BSE noise {f12}", never
+"BSE noise [numeric value] {f12}". Do not copy the table's '=value' into your point text.
+Aliases do not change units, provenance, sample ownership or any grounding rule. Citation
+source IDs and exact quote text are unchanged. Do not print aliases outside placeholders.
+"""
+
+
+def _baseline_table(context: FactsContext, sample_id: str, *, fact_aliases: dict[str, str] | None = None) -> str:
     """One compact block per measurement: this image against every batch.
 
     Replaces the baseline JSON and its one-line-per-number fact table entries,
@@ -893,8 +933,11 @@ def _baseline_table(context: FactsContext, sample_id: str) -> str:
     facts = context.pack.context_facts
 
     def show(measurement: str, field_name: str) -> str:
-        fact = facts.get(f"{base}.{measurement}.{field_name}")
-        return fact.display if fact is not None else "n/a"
+        fid = f"{base}.{measurement}.{field_name}"
+        fact = facts.get(fid)
+        if fact is None:
+            return "n/a"
+        return f"{{{fact_aliases[fid]}}}={fact.display}" if fact_aliases else fact.display
 
     measurements = comparison["measurements"]
     batches = sorted({k for entry in measurements.values() for k in entry if k.startswith("Batch_")})
@@ -902,10 +945,13 @@ def _baseline_table(context: FactsContext, sample_id: str) -> str:
     reference = comparison["reference_set"]
     lines = [
         f"## {sample_id}: source {source}, scope {comparison['scope']}",
-        f"Placeholder ID = {base}.<measurement>.<field>. Fields: this_image; per batch "
-        "Batch_N.median, .q1, .q3 (typical range), .min, .max (observed range), .n (images), "
-        ".lower_n (how many of that batch's images are LOWER than this image); verdict. "
-        f"Example: {{{base}.{first}.{batches[-1]}.lower_n}}",
+        ("Use each cell's {fN} alias as its fact placeholder. Typical = q1 to q3; observed = min to max; "
+         "lower = how many batch images are lower than this image."
+         if fact_aliases else
+         f"Placeholder ID = {base}.<measurement>.<field>. Fields: this_image; per batch "
+         "Batch_N.median, .q1, .q3 (typical range), .min, .max (observed range), .n (images), "
+         ".lower_n (how many of that batch's images are LOWER than this image); verdict. "
+         f"Example: {{{base}.{first}.{batches[-1]}.lower_n}}"),
         f"Reported: {', '.join(comparison['reported_batches'])}; this image left out: "
         f"{'yes' if reference['this_image_left_out'] else 'no'}",
     ]
@@ -1142,13 +1188,50 @@ def _critic_reply_problem(reply: Any, max_tokens: int) -> str | None:
     return None
 
 
+def _render_facts_response(draft: FactsResponse, context: FactsContext) -> FactsResponse:
+    rendered = draft.model_copy(deep=True)
+    by_id = {item.sample_id: item for item in rendered.explanations}
+    rendered.explanations = [by_id[sample.sample_id] for sample in context.samples]
+    for item in rendered.explanations:
+        local = context.for_sample(item.sample_id)
+        for point in item.points:
+            point.text = _display_text(point.text, local)
+    return rendered
+
+
+def _cached_facts_outcome(entry: dict | None, context: FactsContext, started: float) -> FactsOutcome | None:
+    if not entry or not isinstance(entry.get("audit"), dict):
+        return None
+    original = entry["audit"]
+    if original.get("validator_passed") is not True or original.get("critic_error"):
+        return None
+    if original.get("critic_mode") != "off" and original.get("semantic_critic_ran") is not True:
+        return None
+    try:
+        draft = FactsResponse.model_validate(entry.get("draft"))
+        if validate_facts_response(draft, context):
+            return None
+    except (ValueError, TypeError, KeyError):
+        return None
+    audit = {**original, "cache_hit": True, "api_calls_this_run": 0,
+             "cached_critic_verdict": original.get("semantic_critic_ran", False),
+             "original_elapsed_seconds": original.get("elapsed_seconds"),
+             "original_generation_seconds": original.get("generation_seconds"),
+             "original_critic_seconds": original.get("critic_seconds"),
+             "generation_seconds": 0.0, "critic_seconds": 0.0, "semantic_critic_ran_this_run": False,
+             "elapsed_seconds": round(time.monotonic() - started, 3)}
+    return FactsOutcome(context.samples, _render_facts_response(draft, context), audit)
+
+
 def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack | None = None, *, client=None,
                            config: ExplainerConfig | None = None, critic_config: CriticConfig | None = None,
                            max_retries: int = 1, full_context: bool = False, question: str | None = None,
                            progress: Callable[[str], None] | None = None,
                            decision_mode: Literal["dino", "pipeline"] = "pipeline",
                            baselines: BatchBaselines | None = None,
-                           critic_mode: Literal["advisory", "blocking", "off"] = "advisory") -> FactsOutcome:
+                           critic_mode: Literal["advisory", "blocking", "off"] = "advisory",
+                           short_ids: bool = False, cache_dir: str | Path | None = None,
+                           refresh_cache: bool = False) -> FactsOutcome:
     """Explain every sample in a facts document.
 
     ``decision_mode="pipeline"`` (the default) narrates the reported decision
@@ -1163,6 +1246,7 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
     context = prepare_facts_context(parsed, knowledge or KnowledgePack.empty(), full_context=full_context,
                                     baselines=baselines)
     dino_only = decision_mode == "dino"
+    aliases = _fact_aliases(context) if short_ids else {}
     role = DINO_FACTS_ROLE if dino_only else FACTS_ROLE + "\n\n" + PROJECT_CONTEXT_RULES
     if not dino_only:
         # Every pipeline explanation answers WHY, with or without a baseline,
@@ -1182,7 +1266,7 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
     if context.baselines:
         baseline_text = (
             "\n\n# Batch baseline comparisons (computed in code; cite their facts by placeholder)\n"
-            + "\n\n".join(_baseline_table(context, sample.sample_id) for sample in context.samples
+            + "\n\n".join(_baseline_table(context, sample.sample_id, fact_aliases=aliases) for sample in context.samples
                           if sample.sample_id in context.baselines))
     shown = _displayed_facts(context)
     stable = "# Shared field definitions and reference knowledge\n" + shared.to_prompt_block()
@@ -1190,10 +1274,12 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
                      + ("\n\n# DINO-only view of all samples (other fields withheld; input file unchanged)\n" if dino_only
                         else "\n\n# Complete input facts document (unaltered text; no pixels)\n") + model_text
                      + baseline_text
-                     + "\n\n# Fact table\n" + "\n".join(f"{fid} = {fact.display}" for fid, fact in shown))
+                     + "\n\n# Fact table\n" + "\n".join(
+                         (f"{{{aliases[fid]}}} ({fid}) = {fact.display}" if aliases else f"{fid} = {fact.display}")
+                         for fid, fact in shown))
     if question:
         document_part += "\n\n# Additional focus for each sample\n" + question
-    system = role + "\n\n" + json.dumps(FactsResponse.model_json_schema())
+    system = role + ("\n\n" + SHORT_FACT_RULES if aliases else "") + "\n\n" + json.dumps(_facts_wire_schema(short_ids))
     # Two cache breakpoints. The first covers system + shared knowledge, which
     # is identical for every document, so a second file within the cache TTL
     # skips that prefill. The second covers this document, so every repair
@@ -1208,7 +1294,6 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
         # omitted; the thinking happens before any output, so it is pure wait.
         request_options["output_config"] = {"effort": engine_effort}
     engine = ClaudeExplainer(client=client, config=config)
-    _ = engine.client
     # The critic is ADVISORY by default: it runs, its objections are recorded in
     # the audit, and it cannot block delivery. Across live runs it rejected
     # correct explanations in four different ways -- demanding a quote prove the
@@ -1227,7 +1312,25 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
         critic = ClaudeCritic(client=client, config=critic_config or CriticConfig(
             timeout_seconds=engine.config.timeout_seconds, blocking=critic_mode == "blocking",
             blocking_kinds=FACTS_CRITIC_BLOCKING_KINDS))
+    cache = ResponseCache(cache_dir) if cache_dir is not None else None
+    cache_key = response_cache_key({
+        "system": system, "messages": messages, "options": request_options,
+        "explainer": asdict(engine.config), "critic_mode": critic_mode,
+        "critic": asdict(critic.config) if critic is not None else None,
+        "document_sha256": hashlib.sha256(parsed.text.encode("utf-8")).hexdigest(),
+        "knowledge": context.pack.version, "baselines": context.baselines,
+        "facts": {fid: {"value": fact.value, "display": fact.display}
+                  for fid, fact in context.pack.context_facts.items()},
+    }) if cache is not None else None
+    if cache is not None and not refresh_cache:
+        cached = _cached_facts_outcome(cache.get(cache_key), context, started)
+        if cached is not None:
+            if progress:
+                progress("Reusing an exact-input cached AI explanation; revalidated locally, no API calls")
+            return cached
+    _ = engine.client
     attempts = []
+    generation_seconds = critic_seconds = 0.0
     if progress:
         progress(f"Prepared the whole document: {len(parsed.samples)} sample(s), "
                  + ("DINO-only classification" if dino_only else "reported pipeline decisions")
@@ -1235,13 +1338,15 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
     for attempt in range(max_retries + 1):
         draft = None
         try:
+            generation_started = time.monotonic()
             with report_activity(progress, f"Explaining all samples together (attempt {attempt + 1}/{max_retries + 1})"):
                 reply = engine.client.messages.create(model=engine.config.model, max_tokens=engine.config.max_tokens,
                     timeout=engine.config.timeout_seconds, system=system, messages=messages, **request_options)
+            generation_seconds += time.monotonic() - generation_started
             if getattr(reply, "stop_reason", None) == "max_tokens":
                 raise TruncatedResponse("whole-file generation hit the output limit")
             call, payload = engine._read_response(reply)
-            draft = FactsResponse.model_validate(payload)
+            draft = _expand_fact_aliases(FactsResponse.model_validate(payload), aliases)
             if progress:
                 progress("Checking sample coverage, decisions, per-image fact ownership and brevity")
             errors = validate_facts_response(draft, context)
@@ -1256,13 +1361,10 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
             hint = " Check the local API credential and endpoint." if status in {401, 403} else ""
             raise ExplainerError(f"Whole-file AI request failed ({detail}); no partial result is returned.{hint}") from exc
         if not errors:
-            rendered = draft.model_copy(deep=True)
-            for item in rendered.explanations:
-                local = context.for_sample(item.sample_id)
-                for point in item.points:
-                    point.text = _display_text(point.text, local)
+            rendered = _render_facts_response(draft, context)
             verdict, critic_error = None, None
             if critic is not None:
+                critic_started = time.monotonic()
                 try:
                     with report_activity(progress, "Checking all image explanations with the grounding critic"):
                         verdict = _review_document(context, draft, critic)
@@ -1274,12 +1376,12 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
                     # Advisory: every code check has already passed. Deliver,
                     # and record that the second opinion is missing.
                     critic_error = str(exc)
+                finally:
+                    critic_seconds += time.monotonic() - critic_started
             if verdict is not None and not verdict.passed:
                 errors = [verdict.feedback() or "The grounding critic rejected this document without detailed findings; review all sample claims."]
         attempts.append({"attempt": attempt + 1, "errors": errors})
         if not errors:
-            by_id = {item.sample_id: item for item in rendered.explanations}
-            rendered.explanations = [by_id[sample.sample_id] for sample in context.samples]
             audit = {"generator": "llm", "sample_count": len(context.samples), "sample_ids": [s.sample_id for s in context.samples],
                      "classification_basis": "dino_head_only" if dino_only else "reported_pipeline_decision",
                      "batch_baselines": {
@@ -1295,12 +1397,23 @@ def explain_facts_document(document: str | dict | list, knowledge: KnowledgePack
                      "knowledge_pack": context.pack.version, "sample_sources": context.sample_sources,
                      "validator_passed": True, "critic_mode": critic_mode,
                      "critic_passed": verdict.declared_passed if verdict is not None else None,
-                     "semantic_critic_ran": verdict is not None, "critic_error": critic_error,
+                     "semantic_critic_ran": verdict is not None, "semantic_critic_ran_this_run": verdict is not None,
+                     "critic_error": critic_error,
                      "critic_advisory_findings": ([f.render() for f in verdict.findings if f.severity == "warning"]
                                                   if verdict is not None else []),
                      "attempts": attempt + 1, "attempt_log": attempts, "model": call.model,
                      "input_tokens": call.input_tokens, "output_tokens": call.output_tokens,
+                     "generation_seconds": round(generation_seconds, 3), "critic_seconds": round(critic_seconds, 3),
+                     "short_fact_ids": short_ids, "effort": engine.config.effort,
+                     "cache_hit": False, "cache_key": cache_key, "cached_critic_verdict": False,
                      "elapsed_seconds": round(time.monotonic() - started, 3)}
+            if cache is not None and critic_error is None:
+                try:
+                    cache.put(cache_key, {"draft": draft.model_dump(), "audit": audit})
+                except OSError as exc:
+                    audit["cache_write_error"] = type(exc).__name__
+                    if progress:
+                        progress("Could not save the optional response cache; returning the checked result")
             if progress:
                 progress(f"All {len(context.samples)} explanations passed; returning the complete ordered result")
             return FactsOutcome(context.samples, rendered, audit)

@@ -171,6 +171,13 @@ def good_draft(result, pack):
 
 
 @pytest.fixture(autouse=True)
+def _isolated_response_cache(monkeypatch, tmp_path):
+    import main
+
+    monkeypatch.setattr(main, "DEFAULT_RESPONSE_CACHE", tmp_path / "responses")
+
+
+@pytest.fixture(autouse=True)
 def _no_accidental_api_calls(monkeypatch, request):
     """Fail loudly instead of billing a real call.
 
